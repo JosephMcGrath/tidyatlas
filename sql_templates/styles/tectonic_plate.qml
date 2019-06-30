@@ -1,5 +1,5 @@
-<!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis labelsEnabled="0" minScale="1e+08" simplifyDrawingHints="1" simplifyLocal="1" simplifyMaxScale="1" simplifyDrawingTol="1" version="{{qgis_version}}" hasScaleBasedVisibilityFlag="0" maxScale="0" simplifyAlgorithm="0" styleCategories="AllStyleCategories" readOnly="0">
+<!DOCTYPE qgis PUBLIC ''http://mrcc.com/qgis.dtd'' ''SYSTEM''>
+<qgis labelsEnabled="0" minScale="1e+08" simplifyDrawingHints="1" simplifyLocal="1" simplifyMaxScale="1" simplifyDrawingTol="1" version="3.6.0-Noosa" hasScaleBasedVisibilityFlag="0" maxScale="0" simplifyAlgorithm="0" styleCategories="AllStyleCategories" readOnly="0">
   <flags>
     <Identifiable>1</Identifiable>
     <Removable>1</Removable>
@@ -193,9 +193,9 @@
   <defaults>
     <default field="fid" applyOnUpdate="0" expression=""/>
     <default field="category" applyOnUpdate="0" expression=""/>
-    <default field="uuid" applyOnUpdate="0" expression=" regexp_replace( uuid() , '\\{|\\}', '')"/>
-    <default field="created" applyOnUpdate="0" expression=" format_date( now() , 'yyyy-MM-dd HH:mm:ss' )"/>
-    <default field="modified" applyOnUpdate="1" expression=" format_date( now() , 'yyyy-MM-dd HH:mm:ss' )"/>
+    <default field="uuid" applyOnUpdate="0" expression=" regexp_replace( uuid() , ''\\{|\\}'', '''')"/>
+    <default field="created" applyOnUpdate="0" expression=" format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )"/>
+    <default field="modified" applyOnUpdate="1" expression=" format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )"/>
   </defaults>
   <constraints>
     <constraint exp_strength="0" field="fid" constraints="3" notnull_strength="1" unique_strength="1"/>
@@ -233,7 +233,23 @@
   <editforminit/>
   <editforminitcodesource>0</editforminitcodesource>
   <editforminitfilepath></editforminitfilepath>
-  <editforminitcode/>
+  <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
+"""
+QGIS forms can have a Python function that is called when the form is
+opened.
+
+Use this function to add extra logic to your forms.
+
+Enter the name of the function in the "Python Init function"
+field.
+An example follows:
+"""
+from qgis.PyQt.QtWidgets import QWidget
+
+def my_form_open(dialog, layer, feature):
+	geom = feature.geometry()
+	control = dialog.findChild(QWidget, "MyLineEdit")
+]]></editforminitcode>
   <featformsuppress>0</featformsuppress>
   <editorlayout>tablayout</editorlayout>
   <attributeEditorForm>

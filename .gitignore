@@ -116,3 +116,4 @@ dmypy.json
 
 # Compiled
 compiled/
+qml_raw/

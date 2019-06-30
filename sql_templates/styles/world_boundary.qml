@@ -1,5 +1,5 @@
-<!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis labelsEnabled="0" minScale="1e+08" simplifyDrawingHints="1" simplifyLocal="1" simplifyMaxScale="1" simplifyDrawingTol="1" version="{{qgis_version}}" hasScaleBasedVisibilityFlag="0" maxScale="0" simplifyAlgorithm="0" styleCategories="AllStyleCategories" readOnly="0">
+<!DOCTYPE qgis PUBLIC ''http://mrcc.com/qgis.dtd'' ''SYSTEM''>
+<qgis labelsEnabled="0" minScale="1e+08" simplifyDrawingHints="1" simplifyLocal="1" simplifyMaxScale="1" simplifyDrawingTol="1" version="3.6.0-Noosa" hasScaleBasedVisibilityFlag="0" maxScale="0" simplifyAlgorithm="0" styleCategories="AllStyleCategories" readOnly="0">
   <flags>
     <Identifiable>1</Identifiable>
     <Removable>1</Removable>
@@ -68,20 +68,14 @@
     <field name="fid">
       <editWidget type="TextEdit">
         <config>
-          <Option type="Map">
-            <Option name="IsMultiline" type="bool" value="false"/>
-            <Option name="UseHtml" type="bool" value="false"/>
-          </Option>
+          <Option/>
         </config>
       </editWidget>
     </field>
     <field name="uuid">
       <editWidget type="TextEdit">
         <config>
-          <Option type="Map">
-            <Option name="IsMultiline" type="bool" value="false"/>
-            <Option name="UseHtml" type="bool" value="false"/>
-          </Option>
+          <Option/>
         </config>
       </editWidget>
     </field>
@@ -94,7 +88,7 @@
   <excludeAttributesWFS/>
   <defaults>
     <default field="fid" applyOnUpdate="0" expression=""/>
-    <default field="uuid" applyOnUpdate="0" expression=" regexp_replace( uuid() , '\\{|\\}', '')"/>
+    <default field="uuid" applyOnUpdate="0" expression=""/>
   </defaults>
   <constraints>
     <constraint exp_strength="0" field="fid" constraints="3" notnull_strength="1" unique_strength="1"/>
@@ -123,12 +117,28 @@
   <editforminit/>
   <editforminitcodesource>0</editforminitcodesource>
   <editforminitfilepath></editforminitfilepath>
-  <editforminitcode/>
+  <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
+"""
+QGIS forms can have a Python function that is called when the form is
+opened.
+
+Use this function to add extra logic to your forms.
+
+Enter the name of the function in the "Python Init function"
+field.
+An example follows:
+"""
+from qgis.PyQt.QtWidgets import QWidget
+
+def my_form_open(dialog, layer, feature):
+	geom = feature.geometry()
+	control = dialog.findChild(QWidget, "MyLineEdit")
+]]></editforminitcode>
   <featformsuppress>0</featformsuppress>
   <editorlayout>generatedlayout</editorlayout>
   <editable>
-    <field name="fid" editable="0"/>
-    <field name="uuid" editable="0"/>
+    <field name="fid" editable="1"/>
+    <field name="uuid" editable="1"/>
   </editable>
   <labelOnTop>
     <field name="fid" labelOnTop="0"/>

@@ -16,4 +16,16 @@ BEGIN;
       , 'update_time' TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
 COMMIT;
+
+{% if global %}
+BEGIN;
+    INSERT INTO layer_styles (f_table_catalog, f_table_schema, owner, f_table_name, stylename, description, f_geometry_column, useasdefault, styleqml)
+    VALUES
+        ('', '', '', 'tectonic_plate', 'tectonic_plate', 'tectonic_plate', 'the_geom', 1, '{% include 'styles/tectonic_plate.qml' %}')
+      , ('', '', '', 'world_boundary', 'world_boundary', 'world_boundary', 'the_geom', 1, '{% include 'styles/world_boundary.qml' %}')
+      , ('', '', '', 'reference_latitude_zone', 'reference_latitude_zone', 'reference_latitude_zone', 'the_geom', 1, '{% include 'styles/reference_latitude_zone.qml' %}')
+    ;
+    {% endif %}
+COMMIT;
+
 {% endif %}
