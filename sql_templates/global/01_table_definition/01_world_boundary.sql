@@ -9,7 +9,7 @@ BEGIN;
     );
 
     SELECT
-        RecoverGeometryColumn('worldworld_boundary_box',
+        RecoverGeometryColumn('world_boundary',
                               'the_geom',
                               4326,
                               'POLYGON',
