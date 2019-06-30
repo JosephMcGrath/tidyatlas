@@ -37,7 +37,7 @@ BEGIN;
           , NEW.category
           , CreateUUID()
           , MakeLine(MakePoint(-180, NEW.latitude, 4326),
-                     MakePoint(-180, NEW.latitude, 4326)
+                     MakePoint(180, NEW.latitude, 4326)
                  );
     END;
 
@@ -49,7 +49,7 @@ BEGIN;
           , label = NEW.label
           , category = NEW.category
           , the_geom = MakeLine(MakePoint(-180, NEW.latitude, 4326),
-                                MakePoint(-180, NEW.latitude, 4326)
+                                MakePoint(180, NEW.latitude, 4326)
                             )
         WHERE fid = OLD.fid;
     END;
