@@ -1,3 +1,4 @@
+{% if global %}
 BEGIN;
     /*World bounding box*/
     INSERT OR IGNORE INTO reference_latitude_input (label, latitude)
@@ -10,3 +11,4 @@ BEGIN;
       , ('Polar Front (South)', -60)
     ;
 COMMIT;
+{% endif %}

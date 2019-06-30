@@ -1,3 +1,4 @@
+{% if global %}
 BEGIN;
 
     /*World bounding box.*/
@@ -16,3 +17,4 @@ BEGIN;
                               );
 
 COMMIT;
+{% endif %}

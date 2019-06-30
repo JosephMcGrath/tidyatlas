@@ -1,3 +1,4 @@
+{% if global %}
 BEGIN;
 
     CREATE TABLE reference_latitude_input (
@@ -56,3 +57,4 @@ BEGIN;
     END;
 
 COMMIT;
+{% endif %}
