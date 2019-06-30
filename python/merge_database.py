@@ -28,7 +28,9 @@ def build_db(config, template_dir, dst_dir):
     env = jinja2.Environment(loader=file_loader)
     output = []
 
-    for src in sorted(env.list_templates()):
+    templates = [x for x in sorted(env.list_templates()) if x[-4:].lower() == ".sql"]
+
+    for src in templates:
         print(src)
         template = env.get_template(src)
         template.trim_blocks = True
@@ -49,6 +51,6 @@ root_path = os.path.split(os.getcwd())[0]
 template_dir = os.path.join(root_path, "sql_templates")
 dst_dir = os.path.join(root_path, "compiled")
 
-os.makedirs(dst_dir, exist_ok = True)
+os.makedirs(dst_dir, exist_ok=True)
 
 build_from_config("config.json", template_dir, dst_dir)
