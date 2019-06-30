@@ -1,6 +1,7 @@
 [
   {
     "name" : "Global",
-    "global" : true
+    "global" : true,
+    "qgis_version" : "3.6.0-Noosa"
   }
 ]
