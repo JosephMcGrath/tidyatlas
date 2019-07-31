@@ -37,6 +37,8 @@ BEGIN;
     INSERT INTO layer_styles (f_table_catalog, f_table_schema, owner, f_table_name, stylename, description, f_geometry_column, useasdefault, styleqml)
     VALUES
         ('', '', '', 'coastline', 'coastline', 'coastline', 'the_geom', 1, '{% include 'styles/coastline.qml' %}')
+      , ('', '', '', 'elevation_contour', 'elevation_contour', 'elevation_contour', 'the_geom', 1, '{% include 'styles/elevation_contour.qml' %}')
+      , ('', '', '', 'elevation_point', 'elevation_point', 'elevation_point', 'the_geom', 1, '{% include 'styles/elevation_point.qml' %}')
     ;
 COMMIT;
 {% endif %}
