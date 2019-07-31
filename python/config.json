@@ -2,7 +2,24 @@
   {
     "name" : "Global",
     "global" : true,
+    "local" : false,
     "style" : true,
     "qgis_version" : "3.6.0-Noosa"
+  },
+  {
+    "name" : "Local",
+    "global" : false,
+    "local" : true,
+    "style" : true,
+    "qgis_version" : "3.6.0-Noosa",
+    "local_datum" : 32637
+  },
+  {
+    "name" : "Combined",
+    "global" : true,
+    "local" : true,
+    "style" : true,
+    "qgis_version" : "3.6.0-Noosa",
+    "local_datum" : 32637
   }
 ]

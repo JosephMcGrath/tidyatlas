@@ -29,7 +29,16 @@ BEGIN;
       , ('', '', '', 'tectonic_boundary', 'tectonic_boundary', 'tectonic_boundary', 'the_geom', 1, '{% include 'styles/tectonic_boundary.qml' %}')
       , ('', '', '', 'continental_shelf', 'continental_shelf', 'continental_shelf', 'the_geom', 1, '{% include 'styles/continental_shelf.qml' %}')
     ;
-    {% endif %}
 COMMIT;
+{% endif %}
+
+{% if local %}
+BEGIN;
+    INSERT INTO layer_styles (f_table_catalog, f_table_schema, owner, f_table_name, stylename, description, f_geometry_column, useasdefault, styleqml)
+    VALUES
+        ('', '', '', 'coastline', 'coastline', 'coastline', 'the_geom', 1, '{% include 'styles/coastline.qml' %}')
+    ;
+COMMIT;
+{% endif %}
 
 {% endif %}
