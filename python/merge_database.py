@@ -1,6 +1,7 @@
 import jinja2
 import json
 import os
+import sys
 
 
 def make_floor(n):
@@ -53,4 +54,6 @@ dst_dir = os.path.join(root_path, "compiled")
 
 os.makedirs(dst_dir, exist_ok=True)
 
-build_from_config("config.json", template_dir, dst_dir)
+args = sys.argv
+
+build_from_config(args[1] if len(args) > 1 else "config.json", template_dir, dst_dir)
