@@ -40,6 +40,7 @@ BEGIN;
       , ('', '', '', 'elevation_contour', 'elevation_contour', 'elevation_contour', 'the_geom', 1, '{% include 'styles/elevation_contour.qml' %}')
       , ('', '', '', 'elevation_point', 'elevation_point', 'elevation_point', 'the_geom', 1, '{% include 'styles/elevation_point.qml' %}')
       , ('', '', '', 'settlement', 'settlement', 'settlement', 'the_geom', 1, '{% include 'styles/settlement.qml' %}')
+      , ('', '', '', 'watercourse', 'watercourse', 'settlement', 'the_geom', 1, '{% include 'styles/watercourse.qml' %}')
     ;
 COMMIT;
 {% endif %}
