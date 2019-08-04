@@ -6,9 +6,8 @@ BEGIN;
 
     INSERT INTO watercourse_scale (scale)
     VALUES
-        ('Major Primary')
-      , ('Major Secondary')
-      , ('Minor')
+        ('Major River')
+      , ('Minor River')
       , ('Stream')
       , ('Other')
     ;
