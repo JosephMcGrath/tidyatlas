@@ -1,10 +1,10 @@
 {% if local %}
 BEGIN;
-    CREATE TABLE watercourse_scale (
-        scale TEXT PRIMARY KEY
+    CREATE TABLE watercourse_size (
+        size TEXT PRIMARY KEY
     );
 
-    INSERT INTO watercourse_scale (scale)
+    INSERT INTO watercourse_size (size)
     VALUES
         ('Major River')
       , ('Minor River')
@@ -15,7 +15,7 @@ BEGIN;
     CREATE TABLE IF NOT EXISTS watercourse (
         fid INTEGER PRIMARY KEY AUTOINCREMENT
       , name TEXT
-      , scale TEXT NOT NULL DEFAULT 'Other' REFERENCES watercourse_scale(scale)
+      , size TEXT NOT NULL DEFAULT 'Other' REFERENCES watercourse_size(size)
       , uuid TEXT NOT NULL UNIQUE
       , line_length REAL
       , created TEXT NOT NULL
