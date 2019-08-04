@@ -21,7 +21,7 @@ BEGIN;
       , specialisation TEXT
       , uuid TEXT NOT NULL UNIQUE
       , created TEXT NOT NULL
-      , edited TEXT NOT NULL
+      , modified TEXT NOT NULL
       , the_geom POINT
     );
 

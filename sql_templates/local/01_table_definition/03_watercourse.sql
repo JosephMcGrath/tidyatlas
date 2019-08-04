@@ -19,7 +19,7 @@ BEGIN;
       , uuid TEXT NOT NULL UNIQUE
       , line_length REAL
       , created TEXT NOT NULL
-      , edited TEXT NOT NULL
+      , modified TEXT NOT NULL
       , the_geom LINESTRING
     );
 
