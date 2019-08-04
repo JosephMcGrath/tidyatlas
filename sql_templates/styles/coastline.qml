@@ -238,7 +238,6 @@ def my_form_open(dialog, layer, feature):
   <editable>
     <field editable="0" name="area"/>
     <field editable="0" name="created"/>
-    <field editable="0" name="edited"/>
     <field editable="1" name="fid"/>
     <field editable="0" name="modified"/>
     <field editable="1" name="name"/>
@@ -249,7 +248,6 @@ def my_form_open(dialog, layer, feature):
   <labelOnTop>
     <field labelOnTop="0" name="area"/>
     <field labelOnTop="0" name="created"/>
-    <field labelOnTop="0" name="edited"/>
     <field labelOnTop="0" name="fid"/>
     <field labelOnTop="0" name="modified"/>
     <field labelOnTop="0" name="name"/>

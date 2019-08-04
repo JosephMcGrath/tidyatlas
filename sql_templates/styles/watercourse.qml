@@ -263,7 +263,7 @@
         </config>
       </editWidget>
     </field>
-    <field name="edited">
+    <field name="modified">
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
@@ -281,7 +281,7 @@
     <alias field="uuid" index="3" name=""/>
     <alias field="line_length" index="4" name=""/>
     <alias field="created" index="5" name=""/>
-    <alias field="edited" index="6" name=""/>
+    <alias field="modified" index="6" name=""/>
   </aliases>
   <excludeAttributesWMS/>
   <excludeAttributesWFS/>
@@ -292,7 +292,7 @@
     <default field="uuid" expression=" regexp_replace( uuid() , ''\\{|\\}'', '''')" applyOnUpdate="0"/>
     <default field="line_length" expression="" applyOnUpdate="0"/>
     <default field="created" expression=" format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )" applyOnUpdate="0"/>
-    <default field="edited" expression=" format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )" applyOnUpdate="1"/>
+    <default field="modified" expression=" format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )" applyOnUpdate="1"/>
   </defaults>
   <constraints>
     <constraint field="fid" unique_strength="1" exp_strength="0" notnull_strength="1" constraints="3"/>
@@ -301,7 +301,7 @@
     <constraint field="uuid" unique_strength="0" exp_strength="0" notnull_strength="1" constraints="1"/>
     <constraint field="line_length" unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0"/>
     <constraint field="created" unique_strength="0" exp_strength="0" notnull_strength="1" constraints="1"/>
-    <constraint field="edited" unique_strength="0" exp_strength="0" notnull_strength="1" constraints="1"/>
+    <constraint field="modified" unique_strength="0" exp_strength="0" notnull_strength="1" constraints="1"/>
   </constraints>
   <constraintExpressions>
     <constraint field="fid" desc="" exp=""/>
@@ -310,7 +310,7 @@
     <constraint field="uuid" desc="" exp=""/>
     <constraint field="line_length" desc="" exp=""/>
     <constraint field="created" desc="" exp=""/>
-    <constraint field="edited" desc="" exp=""/>
+    <constraint field="modified" desc="" exp=""/>
   </constraintExpressions>
   <expressionfields/>
   <attributeactions>
@@ -324,7 +324,7 @@
       <column type="field" width="-1" name="uuid" hidden="0"/>
       <column type="field" width="-1" name="line_length" hidden="0"/>
       <column type="field" width="-1" name="created" hidden="0"/>
-      <column type="field" width="-1" name="edited" hidden="0"/>
+      <column type="field" width="-1" name="modified" hidden="0"/>
       <column type="actions" width="-1" hidden="1"/>
     </columns>
   </attributetableconfig>
@@ -363,12 +363,12 @@ def my_form_open(dialog, layer, feature):
       <attributeEditorField showLabel="1" index="0" name="fid"/>
       <attributeEditorField showLabel="1" index="4" name="line_length"/>
       <attributeEditorField showLabel="1" index="5" name="created"/>
-      <attributeEditorField showLabel="1" index="6" name="edited"/>
+      <attributeEditorField showLabel="1" index="6" name="modified"/>
     </attributeEditorContainer>
   </attributeEditorForm>
   <editable>
     <field editable="0" name="created"/>
-    <field editable="0" name="edited"/>
+    <field editable="0" name="modified"/>
     <field editable="0" name="fid"/>
     <field editable="0" name="line_length"/>
     <field editable="1" name="name"/>
@@ -377,7 +377,7 @@ def my_form_open(dialog, layer, feature):
   </editable>
   <labelOnTop>
     <field labelOnTop="0" name="created"/>
-    <field labelOnTop="0" name="edited"/>
+    <field labelOnTop="0" name="modified"/>
     <field labelOnTop="0" name="fid"/>
     <field labelOnTop="0" name="line_length"/>
     <field labelOnTop="0" name="name"/>
