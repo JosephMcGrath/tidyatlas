@@ -1,13 +1,13 @@
 <!DOCTYPE qgis PUBLIC ''http://mrcc.com/qgis.dtd'' ''SYSTEM''>
-<qgis simplifyDrawingTol="1" simplifyLocal="1" simplifyAlgorithm="0" version="3.4.9-Madeira" minScale="1e+08" hasScaleBasedVisibilityFlag="0" styleCategories="AllStyleCategories" labelsEnabled="1" simplifyMaxScale="1" maxScale="0" simplifyDrawingHints="0" readOnly="0">
-  <renderer-3d layer="db_elevation_point_dd73fb77_ef04_4e9a_9aab_defd876d2c5f" type="vector">
+<qgis readOnly="0" version="3.6.0-Noosa" simplifyDrawingHints="0" hasScaleBasedVisibilityFlag="0" simplifyMaxScale="1" styleCategories="AllStyleCategories" simplifyDrawingTol="1" minScale="1e+08" simplifyAlgorithm="0" simplifyLocal="1" maxScale="0" labelsEnabled="1">
+  <renderer-3d layer="Drakensard_elevation_point_7aa61d58_0276_4606_9730_74619315ae4a" type="vector">
     <symbol type="point" shape="sphere">
       <data alt-clamping="relative"/>
-      <material specular="255,255,255,255" shininess="0" diffuse="179,179,179,255" ambient="25,25,25,255"/>
+      <material diffuse="179,179,179,255" shininess="0" specular="255,255,255,255" ambient="25,25,25,255"/>
       <shape-properties>
         <Option type="Map">
-          <Option type="QString" name="model" value=""/>
-          <Option type="double" name="radius" value="2"/>
+          <Option value="" name="model" type="QString"/>
+          <Option value="2" name="radius" type="double"/>
         </Option>
       </shape-properties>
       <transform matrix="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>
@@ -18,33 +18,33 @@
     <Removable>1</Removable>
     <Searchable>1</Searchable>
   </flags>
-  <renderer-v2 enableorderby="0" type="singleSymbol" symbollevels="0" forceraster="0">
+  <renderer-v2 symbollevels="0" forceraster="0" type="singleSymbol" enableorderby="0">
     <symbols>
-      <symbol alpha="1" type="marker" clip_to_extent="1" name="0" force_rhr="0">
-        <layer pass="0" locked="0" enabled="1" class="SimpleMarker">
-          <prop k="angle" v="0"/>
-          <prop k="color" v="0,0,0,255"/>
-          <prop k="horizontal_anchor_point" v="1"/>
-          <prop k="joinstyle" v="bevel"/>
-          <prop k="name" v="circle"/>
-          <prop k="offset" v="0,0"/>
-          <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="outline_color" v="35,35,35,255"/>
-          <prop k="outline_style" v="no"/>
-          <prop k="outline_width" v="0"/>
-          <prop k="outline_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="outline_width_unit" v="MM"/>
-          <prop k="scale_method" v="diameter"/>
-          <prop k="size" v="1"/>
-          <prop k="size_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="size_unit" v="MM"/>
-          <prop k="vertical_anchor_point" v="1"/>
+      <symbol clip_to_extent="1" name="0" force_rhr="0" alpha="1" type="marker">
+        <layer class="SimpleMarker" pass="0" enabled="1" locked="0">
+          <prop v="0" k="angle"/>
+          <prop v="0,0,0,255" k="color"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="bevel" k="joinstyle"/>
+          <prop v="circle" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="35,35,35,255" k="outline_color"/>
+          <prop v="no" k="outline_style"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="1" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" name="name" value=""/>
+              <Option value="" name="name" type="QString"/>
               <Option name="properties"/>
-              <Option type="QString" name="type" value="collection"/>
+              <Option value="collection" name="type" type="QString"/>
             </Option>
           </data_defined_properties>
         </layer>
@@ -55,26 +55,26 @@
   </renderer-v2>
   <labeling type="simple">
     <settings>
-      <text-style namedStyle="Regular" fontItalic="0" fontUnderline="0" textColor="0,0,0,255" fontCapitals="0" previewBkgrdColor="#ffffff" textOpacity="1" fontLetterSpacing="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" fontWeight="50" fontStrikeout="0" multilineHeight="1" fontSizeUnit="MM" fontFamily="Arial" blendMode="0" isExpression="0" fontWordSpacing="0" useSubstitutions="0" fontSize="3" fieldName="elevation">
-        <text-buffer bufferOpacity="1" bufferColor="255,255,255,255" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferDraw="1" bufferNoFill="1" bufferJoinStyle="128" bufferSizeUnits="MM" bufferBlendMode="0"/>
-        <background shapeSizeX="0" shapeBorderWidthMapUnitScale="3x:0,0,0,0,0,0" shapeOpacity="1" shapeRotationType="0" shapeOffsetX="0" shapeBorderWidthUnit="MM" shapeBorderColor="128,128,128,255" shapeJoinStyle="64" shapeSizeUnit="MM" shapeFillColor="255,255,255,255" shapeSizeType="0" shapeRadiiX="0" shapeRotation="0" shapeSizeY="0" shapeOffsetUnit="MM" shapeSizeMapUnitScale="3x:0,0,0,0,0,0" shapeRadiiUnit="MM" shapeRadiiY="0" shapeOffsetY="0" shapeSVGFile="" shapeDraw="0" shapeBorderWidth="0" shapeOffsetMapUnitScale="3x:0,0,0,0,0,0" shapeBlendMode="0" shapeType="0" shapeRadiiMapUnitScale="3x:0,0,0,0,0,0"/>
-        <shadow shadowOffsetMapUnitScale="3x:0,0,0,0,0,0" shadowRadius="1.5" shadowUnder="0" shadowOffsetAngle="135" shadowDraw="0" shadowRadiusAlphaOnly="0" shadowBlendMode="6" shadowColor="0,0,0,255" shadowOffsetDist="1" shadowOffsetGlobal="1" shadowRadiusUnit="MM" shadowScale="100" shadowOpacity="0.7" shadowOffsetUnit="MM" shadowRadiusMapUnitScale="3x:0,0,0,0,0,0"/>
+      <text-style fontCapitals="0" fontWeight="50" fontStrikeout="0" fontFamily="Arial" blendMode="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" fieldName="elevation" textColor="0,0,0,255" textOpacity="0.5" fontUnderline="0" fontSizeUnit="MM" fontLetterSpacing="0" fontItalic="0" useSubstitutions="0" fontSize="2.5" fontWordSpacing="0" isExpression="0" previewBkgrdColor="#ffffff" namedStyle="Regular" multilineHeight="1">
+        <text-buffer bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferSizeUnits="MM" bufferDraw="1" bufferNoFill="1" bufferOpacity="0.5" bufferSize="0.75" bufferBlendMode="0" bufferJoinStyle="128" bufferColor="255,255,255,255"/>
+        <background shapeRadiiX="0" shapeType="0" shapeBlendMode="0" shapeFillColor="255,255,255,255" shapeBorderWidthUnit="MM" shapeSizeUnit="MM" shapeOffsetX="0" shapeBorderWidthMapUnitScale="3x:0,0,0,0,0,0" shapeSizeX="0" shapeOffsetMapUnitScale="3x:0,0,0,0,0,0" shapeSVGFile="" shapeRadiiMapUnitScale="3x:0,0,0,0,0,0" shapeOpacity="1" shapeBorderWidth="0" shapeSizeMapUnitScale="3x:0,0,0,0,0,0" shapeRadiiUnit="MM" shapeRotation="0" shapeOffsetY="0" shapeRotationType="0" shapeSizeY="0" shapeSizeType="0" shapeBorderColor="128,128,128,255" shapeJoinStyle="64" shapeDraw="0" shapeRadiiY="0" shapeOffsetUnit="MM"/>
+        <shadow shadowDraw="0" shadowOpacity="0.7" shadowScale="100" shadowOffsetUnit="MM" shadowRadiusAlphaOnly="0" shadowRadiusUnit="MM" shadowColor="0,0,0,255" shadowBlendMode="6" shadowOffsetDist="1" shadowOffsetMapUnitScale="3x:0,0,0,0,0,0" shadowRadius="1.5" shadowRadiusMapUnitScale="3x:0,0,0,0,0,0" shadowUnder="0" shadowOffsetAngle="135" shadowOffsetGlobal="1"/>
         <substitutions/>
       </text-style>
-      <text-format wrapChar="" leftDirectionSymbol="&lt;" useMaxLineLengthForAutoWrap="1" plussign="0" formatNumbers="0" autoWrapLength="0" addDirectionSymbol="0" rightDirectionSymbol=">" placeDirectionSymbol="0" decimals="3" multilineAlign="3" reverseDirectionSymbol="0"/>
-      <placement fitInPolygonOnly="0" rotationAngle="0" yOffset="0" distUnits="MM" priority="5" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" offsetType="0" centroidInside="0" xOffset="0" offsetUnits="MM" centroidWhole="0" distMapUnitScale="3x:0,0,0,0,0,0" quadOffset="4" maxCurvedCharAngleOut="-25" placement="0" repeatDistanceUnits="MM" placementFlags="10" dist="0" preserveRotation="1" maxCurvedCharAngleIn="25" repeatDistanceMapUnitScale="3x:0,0,0,0,0,0" labelOffsetMapUnitScale="3x:0,0,0,0,0,0" repeatDistance="0"/>
-      <rendering scaleVisibility="0" obstacle="1" labelPerPart="0" fontLimitPixelSize="0" scaleMax="0" upsidedownLabels="0" fontMaxPixelSize="10000" drawLabels="1" minFeatureSize="0" displayAll="1" obstacleType="0" zIndex="-9" limitNumLabels="0" obstacleFactor="1" mergeLines="0" fontMinPixelSize="3" maxNumLabels="2000" scaleMin="0"/>
+      <text-format wrapChar="" useMaxLineLengthForAutoWrap="1" reverseDirectionSymbol="0" addDirectionSymbol="0" placeDirectionSymbol="0" autoWrapLength="0" formatNumbers="0" multilineAlign="3" plussign="0" leftDirectionSymbol="&lt;" rightDirectionSymbol=">" decimals="3"/>
+      <placement offsetType="0" placement="0" dist="0" maxCurvedCharAngleOut="-25" repeatDistance="0" offsetUnits="MM" distUnits="MM" placementFlags="10" quadOffset="4" fitInPolygonOnly="0" rotationAngle="0" xOffset="0" repeatDistanceMapUnitScale="3x:0,0,0,0,0,0" maxCurvedCharAngleIn="25" preserveRotation="1" labelOffsetMapUnitScale="3x:0,0,0,0,0,0" yOffset="0" distMapUnitScale="3x:0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" centroidWhole="0" priority="5" repeatDistanceUnits="MM" centroidInside="0"/>
+      <rendering fontLimitPixelSize="0" obstacleType="0" labelPerPart="0" obstacleFactor="1" limitNumLabels="0" upsidedownLabels="0" obstacle="1" displayAll="1" mergeLines="0" scaleMin="0" fontMinPixelSize="3" fontMaxPixelSize="10000" scaleVisibility="0" drawLabels="1" minFeatureSize="0" scaleMax="0" zIndex="-9" maxNumLabels="2000"/>
       <dd_properties>
         <Option type="Map">
-          <Option type="QString" name="name" value=""/>
+          <Option value="" name="name" type="QString"/>
           <Option name="properties"/>
-          <Option type="QString" name="type" value="collection"/>
+          <Option value="collection" name="type" type="QString"/>
         </Option>
       </dd_properties>
     </settings>
   </labeling>
   <customproperties>
-    <property key="embeddedWidgets/count" value="0"/>
+    <property value="0" key="embeddedWidgets/count"/>
     <property key="variableNames"/>
     <property key="variableValues"/>
   </customproperties>
@@ -82,20 +82,21 @@
   <featureBlendMode>0</featureBlendMode>
   <layerOpacity>1</layerOpacity>
   <SingleCategoryDiagramRenderer attributeLegend="1" diagramType="Histogram">
-    <DiagramCategory sizeType="MM" sizeScale="3x:0,0,0,0,0,0" penColor="#000000" minimumSize="0" opacity="1" labelPlacementMethod="XHeight" backgroundColor="#ffffff" scaleBasedVisibility="0" height="15" backgroundAlpha="255" scaleDependency="Area" minScaleDenominator="0" penWidth="0" barWidth="5" diagramOrientation="Up" rotationOffset="270" enabled="0" maxScaleDenominator="1e+08" lineSizeType="MM" width="15" penAlpha="255" lineSizeScale="3x:0,0,0,0,0,0">
+    <DiagramCategory width="15" penColor="#000000" opacity="1" height="15" lineSizeType="MM" backgroundAlpha="255" penWidth="0" scaleDependency="Area" maxScaleDenominator="1e+08" minScaleDenominator="0" penAlpha="255" labelPlacementMethod="XHeight" lineSizeScale="3x:0,0,0,0,0,0" scaleBasedVisibility="0" diagramOrientation="Up" barWidth="5" sizeType="MM" enabled="0" minimumSize="0" backgroundColor="#ffffff" sizeScale="3x:0,0,0,0,0,0" rotationOffset="270">
       <fontProperties description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0" style=""/>
+      <attribute field="" label="" color="#000000"/>
     </DiagramCategory>
   </SingleCategoryDiagramRenderer>
-  <DiagramLayerSettings placement="0" obstacle="0" priority="0" linePlacementFlags="18" zIndex="0" showAll="1" dist="0">
+  <DiagramLayerSettings dist="0" placement="0" priority="0" showAll="1" obstacle="0" linePlacementFlags="18" zIndex="0">
     <properties>
       <Option type="Map">
-        <Option type="QString" name="name" value=""/>
+        <Option value="" name="name" type="QString"/>
         <Option name="properties"/>
-        <Option type="QString" name="type" value="collection"/>
+        <Option value="collection" name="type" type="QString"/>
       </Option>
     </properties>
   </DiagramLayerSettings>
-  <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
+  <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
     <activeChecks/>
     <checkConfiguration/>
   </geometryOptions>
@@ -111,8 +112,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option type="bool" name="IsMultiline" value="false"/>
-            <Option type="bool" name="UseHtml" value="false"/>
+            <Option value="false" name="IsMultiline" type="bool"/>
+            <Option value="false" name="UseHtml" type="bool"/>
           </Option>
         </config>
       </editWidget>
@@ -121,8 +122,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option type="bool" name="IsMultiline" value="false"/>
-            <Option type="bool" name="UseHtml" value="false"/>
+            <Option value="false" name="IsMultiline" type="bool"/>
+            <Option value="false" name="UseHtml" type="bool"/>
           </Option>
         </config>
       </editWidget>
@@ -131,8 +132,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option type="bool" name="IsMultiline" value="false"/>
-            <Option type="bool" name="UseHtml" value="false"/>
+            <Option value="false" name="IsMultiline" type="bool"/>
+            <Option value="false" name="UseHtml" type="bool"/>
           </Option>
         </config>
       </editWidget>
@@ -141,55 +142,55 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option type="bool" name="IsMultiline" value="false"/>
-            <Option type="bool" name="UseHtml" value="false"/>
+            <Option value="false" name="IsMultiline" type="bool"/>
+            <Option value="false" name="UseHtml" type="bool"/>
           </Option>
         </config>
       </editWidget>
     </field>
   </fieldConfiguration>
   <aliases>
-    <alias index="0" name="" field="fid"/>
-    <alias index="1" name="" field="elevation"/>
-    <alias index="2" name="" field="uuid"/>
-    <alias index="3" name="" field="created"/>
-    <alias index="4" name="" field="modified"/>
+    <alias name="" field="fid" index="0"/>
+    <alias name="" field="elevation" index="1"/>
+    <alias name="" field="uuid" index="2"/>
+    <alias name="" field="created" index="3"/>
+    <alias name="" field="modified" index="4"/>
   </aliases>
   <excludeAttributesWMS/>
   <excludeAttributesWFS/>
   <defaults>
-    <default applyOnUpdate="0" expression="" field="fid"/>
-    <default applyOnUpdate="0" expression="''''" field="elevation"/>
-    <default applyOnUpdate="0" expression="regexp_replace( uuid() , ''\\{|\\}'', '''' )" field="uuid"/>
-    <default applyOnUpdate="0" expression="format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )" field="created"/>
-    <default applyOnUpdate="1" expression="format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )" field="modified"/>
+    <default expression="" field="fid" applyOnUpdate="0"/>
+    <default expression="''''" field="elevation" applyOnUpdate="0"/>
+    <default expression="regexp_replace( uuid() , ''\\{|\\}'', '''' )" field="uuid" applyOnUpdate="0"/>
+    <default expression="format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )" field="created" applyOnUpdate="0"/>
+    <default expression="format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )" field="modified" applyOnUpdate="1"/>
   </defaults>
   <constraints>
-    <constraint unique_strength="1" notnull_strength="1" constraints="3" field="fid" exp_strength="0"/>
-    <constraint unique_strength="0" notnull_strength="0" constraints="0" field="elevation" exp_strength="0"/>
-    <constraint unique_strength="0" notnull_strength="1" constraints="1" field="uuid" exp_strength="0"/>
-    <constraint unique_strength="0" notnull_strength="0" constraints="0" field="created" exp_strength="0"/>
-    <constraint unique_strength="0" notnull_strength="0" constraints="0" field="modified" exp_strength="0"/>
+    <constraint constraints="3" unique_strength="1" field="fid" exp_strength="0" notnull_strength="1"/>
+    <constraint constraints="0" unique_strength="0" field="elevation" exp_strength="0" notnull_strength="0"/>
+    <constraint constraints="1" unique_strength="0" field="uuid" exp_strength="0" notnull_strength="1"/>
+    <constraint constraints="0" unique_strength="0" field="created" exp_strength="0" notnull_strength="0"/>
+    <constraint constraints="0" unique_strength="0" field="modified" exp_strength="0" notnull_strength="0"/>
   </constraints>
   <constraintExpressions>
-    <constraint exp="" desc="" field="fid"/>
-    <constraint exp="" desc="" field="elevation"/>
-    <constraint exp="" desc="" field="uuid"/>
-    <constraint exp="" desc="" field="created"/>
-    <constraint exp="" desc="" field="modified"/>
+    <constraint field="fid" desc="" exp=""/>
+    <constraint field="elevation" desc="" exp=""/>
+    <constraint field="uuid" desc="" exp=""/>
+    <constraint field="created" desc="" exp=""/>
+    <constraint field="modified" desc="" exp=""/>
   </constraintExpressions>
   <expressionfields/>
   <attributeactions>
-    <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
+    <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
   </attributeactions>
-  <attributetableconfig actionWidgetStyle="dropDown" sortOrder="0" sortExpression="">
+  <attributetableconfig sortOrder="0" sortExpression="" actionWidgetStyle="dropDown">
     <columns>
-      <column width="-1" type="field" hidden="0" name="fid"/>
-      <column width="-1" type="field" hidden="0" name="elevation"/>
-      <column width="-1" type="field" hidden="0" name="uuid"/>
-      <column width="-1" type="field" hidden="0" name="created"/>
-      <column width="-1" type="field" hidden="0" name="modified"/>
-      <column width="-1" type="actions" hidden="1"/>
+      <column width="-1" name="fid" hidden="0" type="field"/>
+      <column width="-1" name="elevation" hidden="0" type="field"/>
+      <column width="-1" name="uuid" hidden="0" type="field"/>
+      <column width="-1" name="created" hidden="0" type="field"/>
+      <column width="-1" name="modified" hidden="0" type="field"/>
+      <column width="-1" hidden="1" type="actions"/>
     </columns>
   </attributetableconfig>
   <conditionalstyles>
@@ -220,20 +221,20 @@ def my_form_open(dialog, layer, feature):
   <featformsuppress>0</featformsuppress>
   <editorlayout>tablayout</editorlayout>
   <attributeEditorForm>
-    <attributeEditorContainer groupBox="1" visibilityExpressionEnabled="0" showLabel="1" columnCount="1" name="" visibilityExpression="">
-      <attributeEditorField index="1" showLabel="1" name="elevation"/>
-      <attributeEditorField index="2" showLabel="1" name="uuid"/>
-      <attributeEditorField index="0" showLabel="1" name="fid"/>
-      <attributeEditorField index="3" showLabel="1" name="created"/>
-      <attributeEditorField index="4" showLabel="1" name="modified"/>
+    <attributeEditorContainer groupBox="1" visibilityExpressionEnabled="0" name="" showLabel="1" visibilityExpression="" columnCount="1">
+      <attributeEditorField name="elevation" showLabel="1" index="1"/>
+      <attributeEditorField name="uuid" showLabel="1" index="2"/>
+      <attributeEditorField name="fid" showLabel="1" index="0"/>
+      <attributeEditorField name="created" showLabel="1" index="3"/>
+      <attributeEditorField name="modified" showLabel="1" index="4"/>
     </attributeEditorContainer>
   </attributeEditorForm>
   <editable>
-    <field editable="0" name="created"/>
-    <field editable="1" name="elevation"/>
-    <field editable="1" name="fid"/>
-    <field editable="0" name="modified"/>
-    <field editable="0" name="uuid"/>
+    <field name="created" editable="0"/>
+    <field name="elevation" editable="1"/>
+    <field name="fid" editable="1"/>
+    <field name="modified" editable="0"/>
+    <field name="uuid" editable="0"/>
   </editable>
   <labelOnTop>
     <field labelOnTop="0" name="created"/>
