@@ -63,6 +63,14 @@ SELECT
 FROM previous.bathymetry_point;
 
 
+/*Shipping Lanes*/
+INSERT INTO shipping
+    (source, destination, typical_duration, uuid, line_length, created, modified, the_geom)
+SELECT
+    source, destination, typical_duration, uuid, line_length, created, modified, the_geom
+FROM previous.shipping;
+
+
 COMMIT;
 
 DETACH previous;
