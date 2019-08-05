@@ -2,10 +2,9 @@
 BEGIN;
     CREATE TABLE IF NOT EXISTS shipping (
         fid INTEGER PRIMARY KEY AUTOINCREMENT
-      , name TEXT
       , source TEXT
       , destination TEXT
-      , tupical_duration TEXT
+      , typical_duration TEXT
       , uuid TEXT NOT NULL UNIQUE
       , line_length REAL
       , created TEXT NOT NULL
