@@ -1,35 +1,35 @@
 <!DOCTYPE qgis PUBLIC ''http://mrcc.com/qgis.dtd'' ''SYSTEM''>
-<qgis readOnly="0" version="3.6.0-Noosa" simplifyDrawingHints="1" hasScaleBasedVisibilityFlag="0" simplifyMaxScale="1" styleCategories="AllStyleCategories" simplifyDrawingTol="1" minScale="1e+08" simplifyAlgorithm="0" simplifyLocal="1" maxScale="0" labelsEnabled="1">
+<qgis simplifyMaxScale="1" styleCategories="AllStyleCategories" minScale="1e+08" labelsEnabled="1" readOnly="0" simplifyDrawingHints="1" simplifyAlgorithm="0" simplifyDrawingTol="1" maxScale="0" simplifyLocal="1" version="3.4.9-Madeira" hasScaleBasedVisibilityFlag="0">
   <flags>
     <Identifiable>1</Identifiable>
     <Removable>1</Removable>
     <Searchable>1</Searchable>
   </flags>
-  <renderer-v2 symbollevels="0" forceraster="0" type="singleSymbol" enableorderby="0">
+  <renderer-v2 symbollevels="0" enableorderby="0" type="singleSymbol" forceraster="0">
     <symbols>
-      <symbol clip_to_extent="1" name="0" force_rhr="0" alpha="1" type="line">
-        <layer class="SimpleLine" pass="0" enabled="1" locked="0">
-          <prop v="square" k="capstyle"/>
-          <prop v="10;2" k="customdash"/>
-          <prop v="3x:0,0,0,0,0,0" k="customdash_map_unit_scale"/>
-          <prop v="MM" k="customdash_unit"/>
-          <prop v="0" k="draw_inside_polygon"/>
-          <prop v="bevel" k="joinstyle"/>
-          <prop v="51,51,51,255" k="line_color"/>
-          <prop v="dash" k="line_style"/>
-          <prop v="0.3" k="line_width"/>
-          <prop v="MM" k="line_width_unit"/>
-          <prop v="0" k="offset"/>
-          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
-          <prop v="MM" k="offset_unit"/>
-          <prop v="0" k="ring_filter"/>
-          <prop v="1" k="use_custom_dash"/>
-          <prop v="3x:0,0,0,0,0,0" k="width_map_unit_scale"/>
+      <symbol type="line" clip_to_extent="1" name="0" alpha="1" force_rhr="0">
+        <layer class="SimpleLine" pass="0" locked="0" enabled="1">
+          <prop k="capstyle" v="square"/>
+          <prop k="customdash" v="10;2"/>
+          <prop k="customdash_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+          <prop k="customdash_unit" v="MM"/>
+          <prop k="draw_inside_polygon" v="0"/>
+          <prop k="joinstyle" v="bevel"/>
+          <prop k="line_color" v="19,77,115,255"/>
+          <prop k="line_style" v="dash"/>
+          <prop k="line_width" v="0.1"/>
+          <prop k="line_width_unit" v="MM"/>
+          <prop k="offset" v="0"/>
+          <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+          <prop k="offset_unit" v="MM"/>
+          <prop k="ring_filter" v="0"/>
+          <prop k="use_custom_dash" v="1"/>
+          <prop k="width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option value="" name="name" type="QString"/>
+              <Option value="" type="QString" name="name"/>
               <Option name="properties"/>
-              <Option value="collection" name="type" type="QString"/>
+              <Option value="collection" type="QString" name="type"/>
             </Option>
           </data_defined_properties>
         </layer>
@@ -40,20 +40,20 @@
   </renderer-v2>
   <labeling type="simple">
     <settings>
-      <text-style fontCapitals="0" fontWeight="50" fontStrikeout="0" fontFamily="Arial" blendMode="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" fieldName=" &quot;source&quot; || '' to '' ||  &quot;destination&quot;  || If( &quot;typical_duration&quot;  IS NOT NULL, '' ('' ||  &quot;typical_duration&quot; || '')'', '''')" textColor="0,0,0,255" textOpacity="1" fontUnderline="0" fontSizeUnit="MM" fontLetterSpacing="0" fontItalic="1" useSubstitutions="0" fontSize="4" fontWordSpacing="0" isExpression="1" previewBkgrdColor="#ffffff" namedStyle="Italic" multilineHeight="1">
-        <text-buffer bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferSizeUnits="MM" bufferDraw="0" bufferNoFill="1" bufferOpacity="1" bufferSize="1" bufferBlendMode="0" bufferJoinStyle="128" bufferColor="255,255,255,255"/>
-        <background shapeRadiiX="0" shapeType="0" shapeBlendMode="0" shapeFillColor="255,255,255,255" shapeBorderWidthUnit="MM" shapeSizeUnit="MM" shapeOffsetX="0" shapeBorderWidthMapUnitScale="3x:0,0,0,0,0,0" shapeSizeX="0" shapeOffsetMapUnitScale="3x:0,0,0,0,0,0" shapeSVGFile="" shapeRadiiMapUnitScale="3x:0,0,0,0,0,0" shapeOpacity="1" shapeBorderWidth="0" shapeSizeMapUnitScale="3x:0,0,0,0,0,0" shapeRadiiUnit="MM" shapeRotation="0" shapeOffsetY="0" shapeRotationType="0" shapeSizeY="0" shapeSizeType="0" shapeBorderColor="128,128,128,255" shapeJoinStyle="64" shapeDraw="0" shapeRadiiY="0" shapeOffsetUnit="MM"/>
-        <shadow shadowDraw="0" shadowOpacity="0.7" shadowScale="100" shadowOffsetUnit="MM" shadowRadiusAlphaOnly="0" shadowRadiusUnit="MM" shadowColor="0,0,0,255" shadowBlendMode="6" shadowOffsetDist="1" shadowOffsetMapUnitScale="3x:0,0,0,0,0,0" shadowRadius="1.5" shadowRadiusMapUnitScale="3x:0,0,0,0,0,0" shadowUnder="0" shadowOffsetAngle="135" shadowOffsetGlobal="1"/>
+      <text-style fontWeight="50" isExpression="1" fontItalic="1" useSubstitutions="0" fieldName=" &quot;source&quot; || '' to '' ||  &quot;destination&quot;  || COALESCE( IF( LENGTH( &quot;typical_duration&quot; ) > 0, '' ('' ||  &quot;typical_duration&quot; || '')'', ''''), '''' )" fontSize="3" fontFamily="Arial" textColor="19,77,115,255" fontUnderline="0" fontSizeUnit="MM" fontCapitals="0" namedStyle="Italic" textOpacity="1" multilineHeight="1" previewBkgrdColor="#ffffff" fontStrikeout="0" fontLetterSpacing="0" fontWordSpacing="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" blendMode="0">
+        <text-buffer bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferColor="255,255,255,255" bufferOpacity="1" bufferNoFill="1" bufferJoinStyle="128" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeUnits="MM"/>
+        <background shapeRadiiMapUnitScale="3x:0,0,0,0,0,0" shapeBorderWidth="0" shapeSizeY="0" shapeOpacity="1" shapeSizeUnit="MM" shapeRadiiUnit="MM" shapeJoinStyle="64" shapeBlendMode="0" shapeSizeType="0" shapeOffsetMapUnitScale="3x:0,0,0,0,0,0" shapeOffsetX="0" shapeRotationType="0" shapeFillColor="255,255,255,255" shapeType="0" shapeRadiiY="0" shapeBorderWidthMapUnitScale="3x:0,0,0,0,0,0" shapeOffsetY="0" shapeSizeX="0" shapeBorderWidthUnit="MM" shapeRadiiX="0" shapeOffsetUnit="MM" shapeSVGFile="" shapeBorderColor="128,128,128,255" shapeRotation="0" shapeSizeMapUnitScale="3x:0,0,0,0,0,0" shapeDraw="0"/>
+        <shadow shadowOffsetMapUnitScale="3x:0,0,0,0,0,0" shadowBlendMode="6" shadowOffsetGlobal="1" shadowOffsetUnit="MM" shadowUnder="0" shadowOffsetAngle="135" shadowRadiusUnit="MM" shadowColor="0,0,0,255" shadowDraw="0" shadowOffsetDist="1" shadowOpacity="0.7" shadowRadiusAlphaOnly="0" shadowScale="100" shadowRadius="1.5" shadowRadiusMapUnitScale="3x:0,0,0,0,0,0"/>
         <substitutions/>
       </text-style>
-      <text-format wrapChar="" useMaxLineLengthForAutoWrap="1" reverseDirectionSymbol="0" addDirectionSymbol="0" placeDirectionSymbol="0" autoWrapLength="0" formatNumbers="0" multilineAlign="4294967295" plussign="0" leftDirectionSymbol="&lt;" rightDirectionSymbol=">" decimals="3"/>
-      <placement offsetType="0" placement="3" dist="0" maxCurvedCharAngleOut="-25" repeatDistance="0" offsetUnits="MM" distUnits="MM" placementFlags="14" quadOffset="4" fitInPolygonOnly="0" rotationAngle="0" xOffset="0" repeatDistanceMapUnitScale="3x:0,0,0,0,0,0" maxCurvedCharAngleIn="25" preserveRotation="1" labelOffsetMapUnitScale="3x:0,0,0,0,0,0" yOffset="0" distMapUnitScale="3x:0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" centroidWhole="0" priority="5" repeatDistanceUnits="MM" centroidInside="0"/>
-      <rendering fontLimitPixelSize="0" obstacleType="0" labelPerPart="0" obstacleFactor="1" limitNumLabels="0" upsidedownLabels="0" obstacle="1" displayAll="0" mergeLines="0" scaleMin="0" fontMinPixelSize="3" fontMaxPixelSize="10000" scaleVisibility="0" drawLabels="1" minFeatureSize="0" scaleMax="0" zIndex="0" maxNumLabels="2000"/>
+      <text-format addDirectionSymbol="0" placeDirectionSymbol="0" plussign="0" rightDirectionSymbol=">" useMaxLineLengthForAutoWrap="1" wrapChar="" formatNumbers="0" autoWrapLength="0" multilineAlign="4294967295" reverseDirectionSymbol="0" decimals="3" leftDirectionSymbol="&lt;"/>
+      <placement distUnits="MM" rotationAngle="0" centroidWhole="0" distMapUnitScale="3x:0,0,0,0,0,0" maxCurvedCharAngleIn="25" centroidInside="0" preserveRotation="1" quadOffset="4" repeatDistanceUnits="MM" xOffset="0" dist="0" offsetType="0" repeatDistanceMapUnitScale="3x:0,0,0,0,0,0" placement="3" labelOffsetMapUnitScale="3x:0,0,0,0,0,0" repeatDistance="0" placementFlags="14" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" yOffset="0" priority="5" fitInPolygonOnly="0" offsetUnits="MM" maxCurvedCharAngleOut="-25"/>
+      <rendering labelPerPart="0" fontMinPixelSize="3" obstacleFactor="1" mergeLines="0" zIndex="0" displayAll="0" fontLimitPixelSize="0" fontMaxPixelSize="10000" drawLabels="1" maxNumLabels="2000" minFeatureSize="0" upsidedownLabels="0" limitNumLabels="0" scaleMax="0" obstacle="1" scaleMin="0" scaleVisibility="0" obstacleType="0"/>
       <dd_properties>
         <Option type="Map">
-          <Option value="" name="name" type="QString"/>
+          <Option value="" type="QString" name="name"/>
           <Option name="properties"/>
-          <Option value="collection" name="type" type="QString"/>
+          <Option value="collection" type="QString" name="type"/>
         </Option>
       </dd_properties>
     </settings>
@@ -66,21 +66,22 @@
   <blendMode>0</blendMode>
   <featureBlendMode>0</featureBlendMode>
   <layerOpacity>1</layerOpacity>
-  <SingleCategoryDiagramRenderer attributeLegend="1" diagramType="Histogram">
-    <DiagramCategory width="15" penColor="#000000" opacity="1" height="15" lineSizeType="MM" backgroundAlpha="255" penWidth="0" scaleDependency="Area" maxScaleDenominator="1e+08" minScaleDenominator="0" penAlpha="255" labelPlacementMethod="XHeight" lineSizeScale="3x:0,0,0,0,0,0" scaleBasedVisibility="0" diagramOrientation="Up" barWidth="5" sizeType="MM" enabled="0" minimumSize="0" backgroundColor="#ffffff" sizeScale="3x:0,0,0,0,0,0" rotationOffset="270">
-      <fontProperties description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0" style=""/>
+  <SingleCategoryDiagramRenderer diagramType="Histogram" attributeLegend="1">
+    <DiagramCategory scaleDependency="Area" penColor="#000000" penWidth="0" penAlpha="255" sizeScale="3x:0,0,0,0,0,0" sizeType="MM" lineSizeScale="3x:0,0,0,0,0,0" barWidth="5" minScaleDenominator="0" diagramOrientation="Up" width="15" height="15" enabled="0" maxScaleDenominator="1e+08" opacity="1" labelPlacementMethod="XHeight" rotationOffset="270" scaleBasedVisibility="0" lineSizeType="MM" backgroundAlpha="255" minimumSize="0" backgroundColor="#ffffff">
+      <fontProperties style="" description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0"/>
+      <attribute field="" color="#000000" label=""/>
     </DiagramCategory>
   </SingleCategoryDiagramRenderer>
-  <DiagramLayerSettings dist="0" placement="2" priority="0" showAll="1" obstacle="0" linePlacementFlags="18" zIndex="0">
+  <DiagramLayerSettings priority="0" obstacle="0" linePlacementFlags="18" zIndex="0" dist="0" showAll="1" placement="2">
     <properties>
       <Option type="Map">
-        <Option value="" name="name" type="QString"/>
+        <Option value="" type="QString" name="name"/>
         <Option name="properties"/>
-        <Option value="collection" name="type" type="QString"/>
+        <Option value="collection" type="QString" name="type"/>
       </Option>
     </properties>
   </DiagramLayerSettings>
-  <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
+  <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
     <activeChecks/>
     <checkConfiguration/>
   </geometryOptions>
@@ -89,8 +90,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option value="false" type="bool" name="IsMultiline"/>
+            <Option value="false" type="bool" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -99,8 +100,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option value="false" type="bool" name="IsMultiline"/>
+            <Option value="false" type="bool" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -109,8 +110,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option value="false" type="bool" name="IsMultiline"/>
+            <Option value="false" type="bool" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -119,8 +120,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option value="false" type="bool" name="IsMultiline"/>
+            <Option value="false" type="bool" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -129,8 +130,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option value="false" type="bool" name="IsMultiline"/>
+            <Option value="false" type="bool" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -139,8 +140,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option value="false" type="bool" name="IsMultiline"/>
+            <Option value="false" type="bool" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -149,8 +150,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option value="false" type="bool" name="IsMultiline"/>
+            <Option value="false" type="bool" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -159,70 +160,70 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option value="false" type="bool" name="IsMultiline"/>
+            <Option value="false" type="bool" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
     </field>
   </fieldConfiguration>
   <aliases>
-    <alias name="" field="fid" index="0"/>
-    <alias name="" field="source" index="1"/>
-    <alias name="" field="destination" index="2"/>
-    <alias name="" field="typical_duration" index="3"/>
-    <alias name="" field="uuid" index="4"/>
-    <alias name="" field="line_length" index="5"/>
-    <alias name="" field="created" index="6"/>
-    <alias name="" field="modified" index="7"/>
+    <alias field="fid" index="0" name=""/>
+    <alias field="source" index="1" name=""/>
+    <alias field="destination" index="2" name=""/>
+    <alias field="typical_duration" index="3" name=""/>
+    <alias field="uuid" index="4" name=""/>
+    <alias field="line_length" index="5" name=""/>
+    <alias field="created" index="6" name=""/>
+    <alias field="modified" index="7" name=""/>
   </aliases>
   <excludeAttributesWMS/>
   <excludeAttributesWFS/>
   <defaults>
-    <default expression="" field="fid" applyOnUpdate="0"/>
-    <default expression="''''" field="source" applyOnUpdate="0"/>
-    <default expression="''''" field="destination" applyOnUpdate="0"/>
-    <default expression="''''" field="typical_duration" applyOnUpdate="0"/>
-    <default expression=" regexp_replace( uuid() , ''\\{|\\}'', '''')" field="uuid" applyOnUpdate="0"/>
-    <default expression="" field="line_length" applyOnUpdate="0"/>
-    <default expression=" format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )" field="created" applyOnUpdate="1"/>
-    <default expression=" format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )" field="modified" applyOnUpdate="1"/>
+    <default field="fid" expression="" applyOnUpdate="0"/>
+    <default field="source" expression="''''" applyOnUpdate="0"/>
+    <default field="destination" expression="''''" applyOnUpdate="0"/>
+    <default field="typical_duration" expression="''''" applyOnUpdate="0"/>
+    <default field="uuid" expression=" regexp_replace( uuid() , ''\\{|\\}'', '''')" applyOnUpdate="0"/>
+    <default field="line_length" expression="" applyOnUpdate="0"/>
+    <default field="created" expression=" format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )" applyOnUpdate="1"/>
+    <default field="modified" expression=" format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )" applyOnUpdate="1"/>
   </defaults>
   <constraints>
-    <constraint constraints="3" unique_strength="1" field="fid" exp_strength="0" notnull_strength="1"/>
-    <constraint constraints="1" unique_strength="0" field="source" exp_strength="0" notnull_strength="2"/>
-    <constraint constraints="1" unique_strength="0" field="destination" exp_strength="0" notnull_strength="2"/>
-    <constraint constraints="1" unique_strength="0" field="typical_duration" exp_strength="0" notnull_strength="2"/>
-    <constraint constraints="1" unique_strength="0" field="uuid" exp_strength="0" notnull_strength="1"/>
-    <constraint constraints="0" unique_strength="0" field="line_length" exp_strength="0" notnull_strength="0"/>
-    <constraint constraints="1" unique_strength="0" field="created" exp_strength="0" notnull_strength="1"/>
-    <constraint constraints="1" unique_strength="0" field="modified" exp_strength="0" notnull_strength="1"/>
+    <constraint field="fid" notnull_strength="1" unique_strength="1" constraints="3" exp_strength="0"/>
+    <constraint field="source" notnull_strength="2" unique_strength="0" constraints="1" exp_strength="0"/>
+    <constraint field="destination" notnull_strength="2" unique_strength="0" constraints="1" exp_strength="0"/>
+    <constraint field="typical_duration" notnull_strength="2" unique_strength="0" constraints="1" exp_strength="0"/>
+    <constraint field="uuid" notnull_strength="1" unique_strength="0" constraints="1" exp_strength="0"/>
+    <constraint field="line_length" notnull_strength="0" unique_strength="0" constraints="0" exp_strength="0"/>
+    <constraint field="created" notnull_strength="1" unique_strength="0" constraints="1" exp_strength="0"/>
+    <constraint field="modified" notnull_strength="1" unique_strength="0" constraints="1" exp_strength="0"/>
   </constraints>
   <constraintExpressions>
-    <constraint field="fid" desc="" exp=""/>
-    <constraint field="source" desc="" exp=""/>
-    <constraint field="destination" desc="" exp=""/>
-    <constraint field="typical_duration" desc="" exp=""/>
-    <constraint field="uuid" desc="" exp=""/>
-    <constraint field="line_length" desc="" exp=""/>
-    <constraint field="created" desc="" exp=""/>
-    <constraint field="modified" desc="" exp=""/>
+    <constraint field="fid" exp="" desc=""/>
+    <constraint field="source" exp="" desc=""/>
+    <constraint field="destination" exp="" desc=""/>
+    <constraint field="typical_duration" exp="" desc=""/>
+    <constraint field="uuid" exp="" desc=""/>
+    <constraint field="line_length" exp="" desc=""/>
+    <constraint field="created" exp="" desc=""/>
+    <constraint field="modified" exp="" desc=""/>
   </constraintExpressions>
   <expressionfields/>
   <attributeactions>
     <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
   </attributeactions>
-  <attributetableconfig sortOrder="0" sortExpression="" actionWidgetStyle="dropDown">
+  <attributetableconfig sortExpression="" actionWidgetStyle="dropDown" sortOrder="0">
     <columns>
-      <column width="-1" name="fid" hidden="0" type="field"/>
-      <column width="-1" name="source" hidden="0" type="field"/>
-      <column width="-1" name="destination" hidden="0" type="field"/>
-      <column width="-1" name="typical_duration" hidden="0" type="field"/>
-      <column width="-1" name="uuid" hidden="0" type="field"/>
-      <column width="-1" name="line_length" hidden="0" type="field"/>
-      <column width="-1" name="created" hidden="0" type="field"/>
-      <column width="-1" name="modified" hidden="0" type="field"/>
-      <column width="-1" hidden="1" type="actions"/>
+      <column type="field" width="-1" hidden="0" name="fid"/>
+      <column type="field" width="-1" hidden="0" name="source"/>
+      <column type="field" width="-1" hidden="0" name="destination"/>
+      <column type="field" width="-1" hidden="0" name="typical_duration"/>
+      <column type="field" width="-1" hidden="0" name="uuid"/>
+      <column type="field" width="-1" hidden="0" name="line_length"/>
+      <column type="field" width="-1" hidden="0" name="created"/>
+      <column type="field" width="-1" hidden="0" name="modified"/>
+      <column type="actions" width="-1" hidden="1"/>
     </columns>
   </attributetableconfig>
   <conditionalstyles>
@@ -253,26 +254,26 @@ def my_form_open(dialog, layer, feature):
   <featformsuppress>0</featformsuppress>
   <editorlayout>tablayout</editorlayout>
   <attributeEditorForm>
-    <attributeEditorContainer groupBox="1" visibilityExpressionEnabled="0" name="" showLabel="1" visibilityExpression="" columnCount="1">
-      <attributeEditorField name="source" showLabel="1" index="1"/>
-      <attributeEditorField name="destination" showLabel="1" index="2"/>
-      <attributeEditorField name="typical_duration" showLabel="1" index="3"/>
-      <attributeEditorField name="uuid" showLabel="1" index="4"/>
-      <attributeEditorField name="fid" showLabel="1" index="0"/>
-      <attributeEditorField name="line_length" showLabel="1" index="5"/>
-      <attributeEditorField name="created" showLabel="1" index="6"/>
-      <attributeEditorField name="modified" showLabel="1" index="7"/>
+    <attributeEditorContainer visibilityExpressionEnabled="0" visibilityExpression="" columnCount="1" showLabel="1" name="" groupBox="1">
+      <attributeEditorField index="1" showLabel="1" name="source"/>
+      <attributeEditorField index="2" showLabel="1" name="destination"/>
+      <attributeEditorField index="3" showLabel="1" name="typical_duration"/>
+      <attributeEditorField index="4" showLabel="1" name="uuid"/>
+      <attributeEditorField index="0" showLabel="1" name="fid"/>
+      <attributeEditorField index="5" showLabel="1" name="line_length"/>
+      <attributeEditorField index="6" showLabel="1" name="created"/>
+      <attributeEditorField index="7" showLabel="1" name="modified"/>
     </attributeEditorContainer>
   </attributeEditorForm>
   <editable>
-    <field name="created" editable="0"/>
-    <field name="destination" editable="1"/>
-    <field name="fid" editable="0"/>
-    <field name="line_length" editable="0"/>
-    <field name="modified" editable="0"/>
-    <field name="source" editable="1"/>
-    <field name="typical_duration" editable="1"/>
-    <field name="uuid" editable="0"/>
+    <field editable="0" name="created"/>
+    <field editable="1" name="destination"/>
+    <field editable="0" name="fid"/>
+    <field editable="0" name="line_length"/>
+    <field editable="0" name="modified"/>
+    <field editable="1" name="source"/>
+    <field editable="1" name="typical_duration"/>
+    <field editable="0" name="uuid"/>
   </editable>
   <labelOnTop>
     <field labelOnTop="0" name="created"/>
