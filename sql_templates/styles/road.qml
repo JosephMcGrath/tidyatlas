@@ -1,20 +1,20 @@
 <!DOCTYPE qgis PUBLIC ''http://mrcc.com/qgis.dtd'' ''SYSTEM''>
-<qgis styleCategories="AllStyleCategories" minScale="1e+08" simplifyAlgorithm="0" version="3.4.9-Madeira" simplifyLocal="1" simplifyDrawingTol="1" simplifyDrawingHints="1" hasScaleBasedVisibilityFlag="0" maxScale="0" labelsEnabled="0" readOnly="0" simplifyMaxScale="1">
+<qgis version="3.4.9-Madeira" maxScale="0" labelsEnabled="0" simplifyDrawingTol="1" readOnly="0" styleCategories="AllStyleCategories" hasScaleBasedVisibilityFlag="0" simplifyAlgorithm="0" simplifyLocal="1" minScale="1e+08" simplifyDrawingHints="1" simplifyMaxScale="1">
   <flags>
     <Identifiable>1</Identifiable>
     <Removable>1</Removable>
     <Searchable>1</Searchable>
   </flags>
-  <renderer-v2 enableorderby="0" type="categorizedSymbol" attr="size" forceraster="0" symbollevels="0">
+  <renderer-v2 symbollevels="0" forceraster="0" attr="size" enableorderby="0" type="categorizedSymbol">
     <categories>
-      <category value="Highway" symbol="0" label="Highway" render="true"/>
-      <category value="Road" symbol="1" label="Road" render="true"/>
-      <category value="Street" symbol="2" label="Street" render="true"/>
-      <category value="Track" symbol="3" label="Track" render="true"/>
+      <category render="true" symbol="0" value="Highway" label="Highway"/>
+      <category render="true" symbol="1" value="Road" label="Road"/>
+      <category render="true" symbol="2" value="Street" label="Street"/>
+      <category render="true" symbol="3" value="Track" label="Track"/>
     </categories>
     <symbols>
-      <symbol clip_to_extent="1" name="0" force_rhr="0" alpha="1" type="line">
-        <layer locked="0" enabled="1" class="SimpleLine" pass="0">
+      <symbol name="0" force_rhr="0" type="line" alpha="1" clip_to_extent="1">
+        <layer locked="0" class="SimpleLine" enabled="1" pass="0">
           <prop k="capstyle" v="square"/>
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="3x:0,0,0,0,0,0"/>
@@ -33,19 +33,19 @@
           <prop k="width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option value="" name="name" type="QString"/>
+              <Option name="name" value="" type="QString"/>
               <Option name="properties"/>
-              <Option value="collection" name="type" type="QString"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
           </data_defined_properties>
         </layer>
-        <layer locked="0" enabled="1" class="SimpleLine" pass="0">
-          <prop k="capstyle" v="square"/>
+        <layer locked="0" class="SimpleLine" enabled="1" pass="0">
+          <prop k="capstyle" v="round"/>
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="3x:0,0,0,0,0,0"/>
           <prop k="customdash_unit" v="MM"/>
           <prop k="draw_inside_polygon" v="0"/>
-          <prop k="joinstyle" v="bevel"/>
+          <prop k="joinstyle" v="round"/>
           <prop k="line_color" v="255,255,255,255"/>
           <prop k="line_style" v="solid"/>
           <prop k="line_width" v="0.7"/>
@@ -58,21 +58,21 @@
           <prop k="width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option value="" name="name" type="QString"/>
+              <Option name="name" value="" type="QString"/>
               <Option name="properties"/>
-              <Option value="collection" name="type" type="QString"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
           </data_defined_properties>
         </layer>
       </symbol>
-      <symbol clip_to_extent="1" name="1" force_rhr="0" alpha="1" type="line">
-        <layer locked="0" enabled="1" class="SimpleLine" pass="0">
-          <prop k="capstyle" v="square"/>
+      <symbol name="1" force_rhr="0" type="line" alpha="1" clip_to_extent="1">
+        <layer locked="0" class="SimpleLine" enabled="1" pass="0">
+          <prop k="capstyle" v="round"/>
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="3x:0,0,0,0,0,0"/>
           <prop k="customdash_unit" v="MM"/>
           <prop k="draw_inside_polygon" v="0"/>
-          <prop k="joinstyle" v="bevel"/>
+          <prop k="joinstyle" v="round"/>
           <prop k="line_color" v="227,26,28,255"/>
           <prop k="line_style" v="solid"/>
           <prop k="line_width" v="1"/>
@@ -85,21 +85,21 @@
           <prop k="width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option value="" name="name" type="QString"/>
+              <Option name="name" value="" type="QString"/>
               <Option name="properties"/>
-              <Option value="collection" name="type" type="QString"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
           </data_defined_properties>
         </layer>
       </symbol>
-      <symbol clip_to_extent="1" name="2" force_rhr="0" alpha="1" type="line">
-        <layer locked="0" enabled="1" class="SimpleLine" pass="0">
-          <prop k="capstyle" v="square"/>
+      <symbol name="2" force_rhr="0" type="line" alpha="1" clip_to_extent="1">
+        <layer locked="0" class="SimpleLine" enabled="1" pass="0">
+          <prop k="capstyle" v="round"/>
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="3x:0,0,0,0,0,0"/>
           <prop k="customdash_unit" v="MM"/>
           <prop k="draw_inside_polygon" v="0"/>
-          <prop k="joinstyle" v="bevel"/>
+          <prop k="joinstyle" v="round"/>
           <prop k="line_color" v="227,26,28,255"/>
           <prop k="line_style" v="solid"/>
           <prop k="line_width" v="0.5"/>
@@ -112,21 +112,21 @@
           <prop k="width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option value="" name="name" type="QString"/>
+              <Option name="name" value="" type="QString"/>
               <Option name="properties"/>
-              <Option value="collection" name="type" type="QString"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
           </data_defined_properties>
         </layer>
       </symbol>
-      <symbol clip_to_extent="1" name="3" force_rhr="0" alpha="1" type="line">
-        <layer locked="0" enabled="1" class="SimpleLine" pass="0">
-          <prop k="capstyle" v="square"/>
+      <symbol name="3" force_rhr="0" type="line" alpha="1" clip_to_extent="1">
+        <layer locked="0" class="SimpleLine" enabled="1" pass="0">
+          <prop k="capstyle" v="round"/>
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="3x:0,0,0,0,0,0"/>
           <prop k="customdash_unit" v="MM"/>
           <prop k="draw_inside_polygon" v="0"/>
-          <prop k="joinstyle" v="bevel"/>
+          <prop k="joinstyle" v="round"/>
           <prop k="line_color" v="227,26,28,255"/>
           <prop k="line_style" v="dash"/>
           <prop k="line_width" v="0.4"/>
@@ -139,17 +139,17 @@
           <prop k="width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option value="" name="name" type="QString"/>
+              <Option name="name" value="" type="QString"/>
               <Option name="properties"/>
-              <Option value="collection" name="type" type="QString"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
           </data_defined_properties>
         </layer>
       </symbol>
     </symbols>
     <source-symbol>
-      <symbol clip_to_extent="1" name="0" force_rhr="0" alpha="1" type="line">
-        <layer locked="0" enabled="1" class="SimpleLine" pass="0">
+      <symbol name="0" force_rhr="0" type="line" alpha="1" clip_to_extent="1">
+        <layer locked="0" class="SimpleLine" enabled="1" pass="0">
           <prop k="capstyle" v="square"/>
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="3x:0,0,0,0,0,0"/>
@@ -168,9 +168,9 @@
           <prop k="width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option value="" name="name" type="QString"/>
+              <Option name="name" value="" type="QString"/>
               <Option name="properties"/>
-              <Option value="collection" name="type" type="QString"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
           </data_defined_properties>
         </layer>
@@ -185,19 +185,19 @@
     <property key="variableValues"/>
   </customproperties>
   <blendMode>0</blendMode>
-  <featureBlendMode>0</featureBlendMode>
+  <featureBlendMode>1</featureBlendMode>
   <layerOpacity>1</layerOpacity>
-  <SingleCategoryDiagramRenderer diagramType="Histogram" attributeLegend="1">
-    <DiagramCategory penWidth="0" lineSizeScale="3x:0,0,0,0,0,0" height="15" labelPlacementMethod="XHeight" minimumSize="0" maxScaleDenominator="1e+08" scaleBasedVisibility="0" sizeType="MM" minScaleDenominator="0" rotationOffset="270" lineSizeType="MM" scaleDependency="Area" enabled="0" width="15" backgroundAlpha="255" diagramOrientation="Up" opacity="1" sizeScale="3x:0,0,0,0,0,0" penColor="#000000" barWidth="5" penAlpha="255" backgroundColor="#ffffff">
+  <SingleCategoryDiagramRenderer attributeLegend="1" diagramType="Histogram">
+    <DiagramCategory backgroundAlpha="255" labelPlacementMethod="XHeight" backgroundColor="#ffffff" rotationOffset="270" height="15" sizeScale="3x:0,0,0,0,0,0" scaleDependency="Area" maxScaleDenominator="1e+08" lineSizeScale="3x:0,0,0,0,0,0" barWidth="5" penWidth="0" penAlpha="255" sizeType="MM" lineSizeType="MM" enabled="0" scaleBasedVisibility="0" minimumSize="0" opacity="1" minScaleDenominator="0" penColor="#000000" width="15" diagramOrientation="Up">
       <fontProperties description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0" style=""/>
     </DiagramCategory>
   </SingleCategoryDiagramRenderer>
-  <DiagramLayerSettings obstacle="0" placement="2" dist="0" zIndex="0" showAll="1" priority="0" linePlacementFlags="18">
+  <DiagramLayerSettings linePlacementFlags="18" priority="0" obstacle="0" placement="2" showAll="1" dist="0" zIndex="0">
     <properties>
       <Option type="Map">
-        <Option value="" name="name" type="QString"/>
+        <Option name="name" value="" type="QString"/>
         <Option name="properties"/>
-        <Option value="collection" name="type" type="QString"/>
+        <Option name="type" value="collection" type="QString"/>
       </Option>
     </properties>
   </DiagramLayerSettings>
@@ -210,8 +210,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option name="IsMultiline" value="false" type="bool"/>
+            <Option name="UseHtml" value="false" type="bool"/>
           </Option>
         </config>
       </editWidget>
@@ -220,8 +220,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option name="IsMultiline" value="false" type="bool"/>
+            <Option name="UseHtml" value="false" type="bool"/>
           </Option>
         </config>
       </editWidget>
@@ -237,8 +237,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option name="IsMultiline" value="false" type="bool"/>
+            <Option name="UseHtml" value="false" type="bool"/>
           </Option>
         </config>
       </editWidget>
@@ -247,8 +247,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option name="IsMultiline" value="false" type="bool"/>
+            <Option name="UseHtml" value="false" type="bool"/>
           </Option>
         </config>
       </editWidget>
@@ -257,8 +257,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option name="IsMultiline" value="false" type="bool"/>
+            <Option name="UseHtml" value="false" type="bool"/>
           </Option>
         </config>
       </editWidget>
@@ -267,65 +267,65 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option name="IsMultiline" value="false" type="bool"/>
+            <Option name="UseHtml" value="false" type="bool"/>
           </Option>
         </config>
       </editWidget>
     </field>
   </fieldConfiguration>
   <aliases>
-    <alias name="" field="fid" index="0"/>
-    <alias name="" field="name" index="1"/>
-    <alias name="" field="size" index="2"/>
-    <alias name="" field="uuid" index="3"/>
-    <alias name="" field="line_length" index="4"/>
-    <alias name="" field="created" index="5"/>
-    <alias name="" field="modified" index="6"/>
+    <alias index="0" name="" field="fid"/>
+    <alias index="1" name="" field="name"/>
+    <alias index="2" name="" field="size"/>
+    <alias index="3" name="" field="uuid"/>
+    <alias index="4" name="" field="line_length"/>
+    <alias index="5" name="" field="created"/>
+    <alias index="6" name="" field="modified"/>
   </aliases>
   <excludeAttributesWMS/>
   <excludeAttributesWFS/>
   <defaults>
-    <default expression="" applyOnUpdate="0" field="fid"/>
-    <default expression="''''" applyOnUpdate="0" field="name"/>
-    <default expression="" applyOnUpdate="0" field="size"/>
-    <default expression="regexp_replace( uuid() , ''\\{|\\}'', '''' )" applyOnUpdate="0" field="uuid"/>
-    <default expression="" applyOnUpdate="0" field="line_length"/>
-    <default expression="format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )" applyOnUpdate="0" field="created"/>
-    <default expression="format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )" applyOnUpdate="1" field="modified"/>
+    <default applyOnUpdate="0" field="fid" expression=""/>
+    <default applyOnUpdate="0" field="name" expression="''''"/>
+    <default applyOnUpdate="0" field="size" expression=""/>
+    <default applyOnUpdate="0" field="uuid" expression="regexp_replace( uuid() , ''\\{|\\}'', '''' )"/>
+    <default applyOnUpdate="0" field="line_length" expression=""/>
+    <default applyOnUpdate="0" field="created" expression="format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )"/>
+    <default applyOnUpdate="1" field="modified" expression="format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )"/>
   </defaults>
   <constraints>
-    <constraint exp_strength="0" constraints="3" field="fid" unique_strength="1" notnull_strength="1"/>
-    <constraint exp_strength="0" constraints="0" field="name" unique_strength="0" notnull_strength="0"/>
-    <constraint exp_strength="0" constraints="1" field="size" unique_strength="0" notnull_strength="1"/>
-    <constraint exp_strength="0" constraints="1" field="uuid" unique_strength="0" notnull_strength="1"/>
-    <constraint exp_strength="0" constraints="0" field="line_length" unique_strength="0" notnull_strength="0"/>
-    <constraint exp_strength="0" constraints="1" field="created" unique_strength="0" notnull_strength="1"/>
-    <constraint exp_strength="0" constraints="1" field="modified" unique_strength="0" notnull_strength="1"/>
+    <constraint unique_strength="1" field="fid" notnull_strength="1" constraints="3" exp_strength="0"/>
+    <constraint unique_strength="0" field="name" notnull_strength="0" constraints="0" exp_strength="0"/>
+    <constraint unique_strength="0" field="size" notnull_strength="1" constraints="1" exp_strength="0"/>
+    <constraint unique_strength="0" field="uuid" notnull_strength="1" constraints="1" exp_strength="0"/>
+    <constraint unique_strength="0" field="line_length" notnull_strength="0" constraints="0" exp_strength="0"/>
+    <constraint unique_strength="0" field="created" notnull_strength="1" constraints="1" exp_strength="0"/>
+    <constraint unique_strength="0" field="modified" notnull_strength="1" constraints="1" exp_strength="0"/>
   </constraints>
   <constraintExpressions>
-    <constraint field="fid" exp="" desc=""/>
-    <constraint field="name" exp="" desc=""/>
-    <constraint field="size" exp="" desc=""/>
-    <constraint field="uuid" exp="" desc=""/>
-    <constraint field="line_length" exp="" desc=""/>
-    <constraint field="created" exp="" desc=""/>
-    <constraint field="modified" exp="" desc=""/>
+    <constraint exp="" field="fid" desc=""/>
+    <constraint exp="" field="name" desc=""/>
+    <constraint exp="" field="size" desc=""/>
+    <constraint exp="" field="uuid" desc=""/>
+    <constraint exp="" field="line_length" desc=""/>
+    <constraint exp="" field="created" desc=""/>
+    <constraint exp="" field="modified" desc=""/>
   </constraintExpressions>
   <expressionfields/>
   <attributeactions>
     <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
   </attributeactions>
-  <attributetableconfig sortOrder="0" actionWidgetStyle="dropDown" sortExpression="">
+  <attributetableconfig sortExpression="" sortOrder="0" actionWidgetStyle="dropDown">
     <columns>
-      <column name="fid" hidden="0" type="field" width="-1"/>
-      <column name="name" hidden="0" type="field" width="-1"/>
-      <column name="size" hidden="0" type="field" width="-1"/>
-      <column name="uuid" hidden="0" type="field" width="-1"/>
-      <column name="line_length" hidden="0" type="field" width="-1"/>
-      <column name="created" hidden="0" type="field" width="-1"/>
-      <column name="modified" hidden="0" type="field" width="-1"/>
-      <column hidden="1" type="actions" width="-1"/>
+      <column name="fid" width="-1" type="field" hidden="0"/>
+      <column name="name" width="-1" type="field" hidden="0"/>
+      <column name="size" width="-1" type="field" hidden="0"/>
+      <column name="uuid" width="-1" type="field" hidden="0"/>
+      <column name="line_length" width="-1" type="field" hidden="0"/>
+      <column name="created" width="-1" type="field" hidden="0"/>
+      <column name="modified" width="-1" type="field" hidden="0"/>
+      <column width="-1" type="actions" hidden="1"/>
     </columns>
   </attributetableconfig>
   <conditionalstyles>
@@ -356,14 +356,14 @@ def my_form_open(dialog, layer, feature):
   <featformsuppress>0</featformsuppress>
   <editorlayout>tablayout</editorlayout>
   <attributeEditorForm>
-    <attributeEditorContainer visibilityExpressionEnabled="0" name="" showLabel="1" columnCount="1" visibilityExpression="" groupBox="1">
-      <attributeEditorField name="size" showLabel="1" index="2"/>
-      <attributeEditorField name="name" showLabel="1" index="1"/>
-      <attributeEditorField name="uuid" showLabel="1" index="3"/>
-      <attributeEditorField name="fid" showLabel="1" index="0"/>
-      <attributeEditorField name="line_length" showLabel="1" index="4"/>
-      <attributeEditorField name="created" showLabel="1" index="5"/>
-      <attributeEditorField name="modified" showLabel="1" index="6"/>
+    <attributeEditorContainer visibilityExpression="" columnCount="1" showLabel="1" name="" groupBox="1" visibilityExpressionEnabled="0">
+      <attributeEditorField index="2" showLabel="1" name="size"/>
+      <attributeEditorField index="1" showLabel="1" name="name"/>
+      <attributeEditorField index="3" showLabel="1" name="uuid"/>
+      <attributeEditorField index="0" showLabel="1" name="fid"/>
+      <attributeEditorField index="4" showLabel="1" name="line_length"/>
+      <attributeEditorField index="5" showLabel="1" name="created"/>
+      <attributeEditorField index="6" showLabel="1" name="modified"/>
     </attributeEditorContainer>
   </attributeEditorForm>
   <editable>
@@ -376,13 +376,13 @@ def my_form_open(dialog, layer, feature):
     <field editable="0" name="uuid"/>
   </editable>
   <labelOnTop>
-    <field name="created" labelOnTop="0"/>
-    <field name="fid" labelOnTop="0"/>
-    <field name="line_length" labelOnTop="0"/>
-    <field name="modified" labelOnTop="0"/>
-    <field name="name" labelOnTop="0"/>
-    <field name="size" labelOnTop="0"/>
-    <field name="uuid" labelOnTop="0"/>
+    <field labelOnTop="0" name="created"/>
+    <field labelOnTop="0" name="fid"/>
+    <field labelOnTop="0" name="line_length"/>
+    <field labelOnTop="0" name="modified"/>
+    <field labelOnTop="0" name="name"/>
+    <field labelOnTop="0" name="size"/>
+    <field labelOnTop="0" name="uuid"/>
   </labelOnTop>
   <widgets/>
   <previewExpression>fid</previewExpression>
