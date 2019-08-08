@@ -10,6 +10,7 @@
     "name" : "Local",
     "global" : false,
     "local" : true,
+    "city" : true,
     "style" : true,
     "qgis_version" : "3.6.0-Noosa",
     "local_datum" : 32637
