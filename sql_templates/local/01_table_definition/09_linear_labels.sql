@@ -1,22 +1,20 @@
 {% if local %}
 BEGIN;
-    CREATE TABLE road_size (
-        size TEXT PRIMARY KEY
+    /*Linear Labels*/
+    CREATE TABLE linear_label_style (
+        label_style TEXT PRIMARY KEY
     );
 
-    INSERT INTO road_size (size)
+    INSERT INTO linear_label_style (label_style)
     VALUES
-        ('Highway')
-      , ('Road')
-      , ('Street')
-      , ('Track')
+        ('Main')
+      , ('Other')
     ;
 
-    CREATE TABLE IF NOT EXISTS road (
+    CREATE TABLE IF NOT EXISTS linear_label (
         fid INTEGER PRIMARY KEY AUTOINCREMENT
-      , name TEXT
-      , size TEXT NOT NULL REFERENCES road_size(size)
-      /*, width REAL*/
+      , label TEXT NOT NULL
+      , style TEXT NOT NULL DEFAULT 'Other' REFERENCES linear_label_style(label_style)
       , uuid TEXT NOT NULL UNIQUE
       , line_length REAL
       , created TEXT NOT NULL
@@ -25,27 +23,26 @@ BEGIN;
     );
 
     SELECT
-      RecoverGeometryColumn('road',
+      RecoverGeometryColumn('linear_label',
                             'the_geom',
                             {{local_datum}},
                             'LINESTRING',
                             'XY'
                             )
-    , CreateSpatialIndex('road', 'the_geom');
+    , CreateSpatialIndex('linear_label', 'the_geom');
 
-    CREATE TRIGGER road_insert AFTER INSERT ON road
+    CREATE TRIGGER linear_label_insert AFTER INSERT ON linear_label
     BEGIN
-      UPDATE road
+      UPDATE linear_label
       SET line_length = ST_Length(the_geom)
       WHERE fid = NEW.fid;
     END;
 
-    CREATE TRIGGER road_update AFTER UPDATE ON road
+    CREATE TRIGGER linear_label_update AFTER UPDATE ON linear_label
     BEGIN
-      UPDATE road
+      UPDATE linear_label
       SET line_length = ST_Length(the_geom)
       WHERE fid = NEW.fid;
     END;
-
 COMMIT;
 {% endif %}

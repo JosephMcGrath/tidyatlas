@@ -41,7 +41,7 @@ SELECT
 FROM previous.settlement;
 
 
-/*Settlement*/
+/*Roads*/
 INSERT INTO road
     (name, size, uuid, line_length, created, modified, the_geom)
 SELECT
