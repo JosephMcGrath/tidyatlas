@@ -41,14 +41,14 @@ BEGIN;
     BEGIN
         UPDATE land_cover
         SET area = ST_Area(the_geom)
-        WHERE row_id = NEW.fid;
+        WHERE fid = NEW.fid;
     END;
 
     CREATE TRIGGER land_cover_update AFTER UPDATE ON land_cover
     BEGIN
         UPDATE land_cover
         SET area = ST_Area(the_geom)
-        WHERE row_id = NEW.fid;
+        WHERE fid = NEW.fid;
     END;
 COMMIT;
 {% endif %}
