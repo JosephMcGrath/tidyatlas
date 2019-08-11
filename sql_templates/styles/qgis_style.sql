@@ -45,6 +45,7 @@ BEGIN;
       , ('', '', '', 'shipping', 'shipping', 'shipping', 'the_geom', 1, '{% include 'styles/shipping.qml' %}')
       , ('', '', '', 'bathymetry_contour', 'bathymetry_contour', 'bathymetry_contour', 'the_geom', 1, '{% include 'styles/bathymetry_contour.qml' %}')
       , ('', '', '', 'bathymetry_point', 'bathymetry_point', 'bathymetry_point', 'the_geom', 1, '{% include 'styles/bathymetry_point.qml' %}')
+      , ('', '', '', 'land_cover', 'land_cover', 'land_cover', 'the_geom', 1, '{% include 'styles/land_cover.qml' %}')
     ;
 COMMIT;
 {% endif %}
