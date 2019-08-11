@@ -67,5 +67,22 @@ BEGIN;
         WHERE fid = NEW.fid;
     END;
 
+    /*Filled in contours*/
+    CREATE VIEW elevation_polygon_intermediate AS
+    SELECT fid, elevation, ST_Multi(ST_MakePolygon(the_geom)) AS the_geom
+    FROM elevation_polygon
+    WHERE ST_Multi(ST_MakePolygon(the_geom)) IS NOT NULL;
+
+    CREATE VIEW elevation_polygon AS
+    SELECT DISTINCT a.fid, a.elevation, a.the_geom
+    FROM elevation_polygon_intermediate AS a
+        LEFT OUTER JOIN elevation_polygon_intermediate AS b
+            ON ST_Contains(a.the_geom, b.the_geom) AND a.fid != b.fid;
+
+    INSERT INTO views_geometry_columns
+        (view_name, view_geometry, view_rowid, f_table_name, f_geometry_column, read_only)
+    VALUES
+        ('elevation_polygon', 'the_geom', 'fid', 'coastline', 'the_geom', 1);
+
 COMMIT;
 {% endif %}
