@@ -19,9 +19,9 @@ FROM previous.city_location;
 
 /*City Wall*/
 INSERT INTO city_wall
-    (name, class, uuid, created, modified, the_geom)
+    (class, uuid, created, modified, the_geom)
 SELECT
-    name, class, uuid, created, modified, the_geom
+    class, uuid, created, modified, the_geom
 FROM previous.city_wall;
 
 COMMIT;

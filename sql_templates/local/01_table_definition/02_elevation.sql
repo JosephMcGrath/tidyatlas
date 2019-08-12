@@ -70,7 +70,7 @@ BEGIN;
     /*Filled in contours*/
     CREATE VIEW elevation_polygon_intermediate AS
     SELECT fid, elevation, ST_Multi(ST_MakePolygon(the_geom)) AS the_geom
-    FROM elevation_polygon
+    FROM elevation_contour
     WHERE ST_Multi(ST_MakePolygon(the_geom)) IS NOT NULL;
 
     CREATE VIEW elevation_polygon AS
