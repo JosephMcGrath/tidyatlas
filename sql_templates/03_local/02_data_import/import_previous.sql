@@ -63,6 +63,14 @@ SELECT
 FROM previous.bathymetry_point;
 
 
+/*Land Cover*/
+INSERT INTO land_cover
+    (cover, uuid, area, created, modified, the_geom)
+SELECT
+    cover, uuid, area, created, modified, the_geom
+FROM previous.land_cover;
+
+
 /*Shipping Lanes*/
 INSERT INTO shipping
     (source, destination, typical_duration, uuid, line_length, created, modified, the_geom)
