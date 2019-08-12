@@ -18,14 +18,14 @@ BEGIN;
       , uuid TEXT NOT NULL UNIQUE
       , created TEXT NOT NULL
       , modified TEXT NOT NULL
-      , the_geom POINT
+      , the_geom LINESTRING
     );
 
     SELECT
       RecoverGeometryColumn('city_wall',
                             'the_geom',
                             {{local_datum}},
-                            'POINT',
+                            'LINESTRING',
                             'XY'
                             )
     , CreateSpatialIndex('city_wall', 'the_geom');
