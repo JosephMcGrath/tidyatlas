@@ -117,6 +117,7 @@ dmypy.json
 # Compiled
 compiled/
 qml_raw/
+svg/qgis/
 
 # Local scripts
 *.bat
