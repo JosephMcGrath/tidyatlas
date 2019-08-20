@@ -24,6 +24,13 @@ SELECT
     class, uuid, created, modified, the_geom
 FROM previous.city_wall;
 
+/*City Streets*/
+INSERT INTO city_street
+    (name, width, uuid, line_length, created, modified, the_geom)
+SELECT
+    name, width, uuid, line_length, created, modified, the_geom
+FROM previous.city_wall;
+
 COMMIT;
 
 DETACH previous;
