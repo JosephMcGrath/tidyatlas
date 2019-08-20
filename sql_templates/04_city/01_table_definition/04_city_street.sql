@@ -1,21 +1,10 @@
-{% if local %}
+{% if city %}
 BEGIN;
-    CREATE TABLE road_size (
-        size TEXT PRIMARY KEY
-    );
 
-    INSERT INTO road_size (size)
-    VALUES
-        ('Highway')
-      , ('Road')
-      , ('Street')
-      , ('Track')
-    ;
-
-    CREATE TABLE IF NOT EXISTS road (
+    CREATE TABLE IF NOT EXISTS city_street (
         fid INTEGER PRIMARY KEY AUTOINCREMENT
       , name TEXT
-      , size TEXT NOT NULL REFERENCES road_size(size)
+      , width REAL
       , uuid TEXT NOT NULL UNIQUE
       , line_length REAL
       , created TEXT NOT NULL
@@ -24,24 +13,24 @@ BEGIN;
     );
 
     SELECT
-      RecoverGeometryColumn('road',
+      RecoverGeometryColumn('city_street',
                             'the_geom',
                             {{local_datum}},
                             'LINESTRING',
                             'XY'
                             )
-    , CreateSpatialIndex('road', 'the_geom');
+    , CreateSpatialIndex('city_street', 'the_geom');
 
-    CREATE TRIGGER road_insert AFTER INSERT ON road
+    CREATE TRIGGER city_street_insert AFTER INSERT ON city_street
     BEGIN
-      UPDATE road
+      UPDATE city_street
       SET line_length = ST_Length(the_geom)
       WHERE fid = NEW.fid;
     END;
 
-    CREATE TRIGGER road_update AFTER UPDATE ON road
+    CREATE TRIGGER city_street_update AFTER UPDATE ON city_street
     BEGIN
-      UPDATE road
+      UPDATE city_street
       SET line_length = ST_Length(the_geom)
       WHERE fid = NEW.fid;
     END;
