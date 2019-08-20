@@ -59,6 +59,7 @@ BEGIN;
         ('', '', '', 'city_location', 'city_location', 'city_location', 'the_geom', 1, '{% include 'styles/city_location.qml' %}')
       , ('', '', '', 'city_region', 'city_region', 'city_region', 'the_geom', 1, '{% include 'styles/city_region.qml' %}')
       , ('', '', '', 'city_wall', 'city_wall', 'city_wall', 'the_geom', 1, '{% include 'styles/city_wall.qml' %}')
+      , ('', '', '', 'city_street', 'city_street', 'city_street', 'the_geom', 1, '{% include 'styles/city_street.qml' %}')
     ;
 COMMIT;
 {% endif %}
