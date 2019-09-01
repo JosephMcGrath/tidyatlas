@@ -13,24 +13,24 @@ BEGIN;
       , ('Urban Environment')
       , ('Structure')
       , ('Road')
-      , ('Track')
       , ('Vegetation')
       , ('Wall')
-      , ('Water (Tidal)')
-      , ('Water (Inland)')
+      , ('Water')
       , ('Unclassified')
     ;
 
     CREATE TABLE IF NOT EXISTS detail (
-        class TEXT NOT NULL DEFAULT 'Unclassified' REFERENCES detail_class(detail_class)
+        fid INTEGER PRIMARY KEY AUTOINCREMENT
+      , class TEXT NOT NULL DEFAULT 'Unclassified' REFERENCES detail_class(detail_class)
       , name TEXT
       , description TEXT
       , colour_name TEXT
-      , colour_hex TEXT
+      , colour_primary_hex TEXT
+      , colour_primary_override TEXT
+      , colour_secondary_hex TEXT
+      , colour_secondary_override TEXT
       , colour_lightness REAL DEFAULT 0
-      , colour_override TEXT
-      , fid INTEGER PRIMARY KEY AUTOINCREMENT
-      , wid TEXT NOT NULL UNIQUE
+      , uuid TEXT NOT NULL UNIQUE
       , area REAL
       , created TEXT NOT NULL
       , modified TEXT NOT NULL
@@ -40,7 +40,7 @@ BEGIN;
     SELECT
       RecoverGeometryColumn('detail',
                             'the_geom',
-                            4326,
+                            {{local_datum}},
                             'MULTIPOLYGON',
                             'XY'
                             )
@@ -53,7 +53,8 @@ BEGIN;
         WHERE fid = NEW.fid;
 
         UPDATE detail
-        SET colour_hex = (SELECT colour_hex FROM colour_pallete WHERE colour_name = NEW.colour_name)
+        SET colour_primary_hex = (SELECT primary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
+          , colour_secondary_hex = (SELECT secondary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
         WHERE fid = NEW.fid
           AND NEW.colour_name IS NOT NULL;
     END;
@@ -65,7 +66,8 @@ BEGIN;
         WHERE fid = NEW.fid;
 
         UPDATE detail
-        SET colour_hex = (SELECT colour_hex FROM colour_pallete WHERE colour_name = NEW.colour_name)
+        SET colour_primary_hex = (SELECT primary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
+          , colour_secondary_hex = (SELECT secondary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
         WHERE fid = NEW.fid
           AND NEW.colour_name IS NOT NULL;
     END;
