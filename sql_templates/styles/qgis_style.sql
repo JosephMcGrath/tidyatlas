@@ -64,4 +64,14 @@ BEGIN;
 COMMIT;
 {% endif %}
 
+{% if detail %}
+BEGIN;
+    INSERT INTO layer_styles (f_table_catalog, f_table_schema, owner, f_table_name, stylename, description, f_geometry_column, useasdefault, styleqml)
+    VALUES
+        ('', '', '', 'detail_area', 'detail_area', 'detail_area', 'the_geom', 1, '{% include 'styles/detail_area.qml' %}')
+      , ('', '', '', 'detail_grid', 'detail_grid', 'detail_grid', 'the_geom', 1, '{% include 'styles/detail_grid.qml' %}')
+    ;
+COMMIT;
+{% endif %}
+
 {% endif %}
