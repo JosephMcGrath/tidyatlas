@@ -46,6 +46,22 @@ BEGIN;
                             )
     , CreateSpatialIndex('detail', 'the_geom');
 
+    CREATE TRIGGER colour_pallete_insert_detail AFTER INSERT ON colour_pallete
+    BEGIN
+        UPDATE detail
+        SET colour_primary_hex = NEW.primary_colour
+          , colour_secondary_hex = NEW.secondary_colour
+        WHERE colour_name = NEW.colour_name;
+    END;
+
+    CREATE TRIGGER colour_pallete_update_detail AFTER UPDATE ON colour_pallete
+    BEGIN
+        UPDATE detail
+        SET colour_primary_hex = NEW.primary_colour
+          , colour_secondary_hex = NEW.secondary_colour
+        WHERE colour_name = NEW.colour_name;
+    END;
+
     CREATE TRIGGER detail_insert AFTER INSERT ON detail
     BEGIN
         UPDATE detail

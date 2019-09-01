@@ -16,20 +16,5 @@ BEGIN;
       , ('Wood (Dark)', '#593515', '#593515')
       , ('Wood (Medium)', '#a66227', '#a66227')
     ;
-
-    {% if detail %}
-    CREATE TRIGGER colour_pallete_insert AFTER INSERT ON colour_pallete
-    BEGIN
-        UPDATE detail
-        SET colour_hex = NEW.colour_hex
-        WHERE colour_name = NEW.colour_name;
-    END;
-
-    CREATE TRIGGER colour_pallete_update AFTER UPDATE ON colour_pallete
-    BEGIN
-        UPDATE detail
-        SET colour_hex = NEW.colour_hex
-        WHERE colour_name = NEW.colour_name;
-    END;
-    {% endif %}
+    
 COMMIT;
