@@ -28,6 +28,7 @@ BEGIN;
       , ('', '', '', 'tectonic_plate_movement', 'tectonic_plate_movement', 'tectonic_plate_movement', 'the_geom', 1, '{% include 'styles/tectonic_plate_movement.qml' %}')
       , ('', '', '', 'tectonic_boundary', 'tectonic_boundary', 'tectonic_boundary', 'the_geom', 1, '{% include 'styles/tectonic_boundary.qml' %}')
       , ('', '', '', 'continental_shelf', 'continental_shelf', 'continental_shelf', 'the_geom', 1, '{% include 'styles/continental_shelf.qml' %}')
+      , ('', '', '', 'global_coastline', 'global_coastline', 'global_coastline', 'the_geom', 1, '{% include 'styles/global_coastline.qml' %}')
     ;
 COMMIT;
 {% endif %}
