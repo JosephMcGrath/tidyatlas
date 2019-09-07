@@ -6,7 +6,7 @@ BEGIN;
         fid INTEGER PRIMARY KEY AUTOINCREMENT
       , name TEXT
       , notes TEXT
-      , wid TEXT NOT NULL UNIQUE
+      , uuid TEXT NOT NULL UNIQUE
       , area REAL
       , created TEXT NOT NULL
       , modified TEXT NOT NULL
