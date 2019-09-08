@@ -22,9 +22,11 @@ BEGIN;
       , name TEXT
       , floor_pattern TEXT /*REFERENCES tile_types(type)*/
       , colour_name TEXT
-      , colour_hex TEXT
+      , colour_primary_hex TEXT
+      , colour_primary_override TEXT
+      , colour_secondary_hex TEXT
+      , colour_secondary_override TEXT
       , colour_lightness REAL DEFAULT 0
-      , colour_override TEXT
       , area REAL
       , uuid TEXT NOT NULL UNIQUE
       , created TEXT NOT NULL
@@ -49,7 +51,8 @@ BEGIN;
         WHERE fid = NEW.fid;
 
         UPDATE interior_space_f_{{floor.label}}
-        SET colour_hex = (SELECT colour_hex FROM colour_pallete WHERE colour_name = NEW.colour_name)
+        SET colour_primary_hex = (SELECT primary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
+          , colour_secondary_hex = (SELECT secondary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
         WHERE fid = NEW.fid
           AND NEW.colour_name IS NOT NULL;
     END;
@@ -62,7 +65,8 @@ BEGIN;
         WHERE fid = NEW.fid;
 
         UPDATE interior_space_f_{{floor.label}}
-        SET colour_hex = (SELECT colour_hex FROM colour_pallete WHERE colour_name = NEW.colour_name)
+        SET colour_primary_hex = (SELECT primary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
+          , colour_secondary_hex = (SELECT secondary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
         WHERE fid = NEW.fid
           AND NEW.colour_name IS NOT NULL;
     END;
