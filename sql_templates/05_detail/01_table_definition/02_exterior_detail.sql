@@ -23,7 +23,6 @@ BEGIN;
         fid INTEGER PRIMARY KEY AUTOINCREMENT
       , class TEXT NOT NULL DEFAULT 'Unclassified' REFERENCES detail_class(detail_class)
       , name TEXT
-      , description TEXT
       , colour_name TEXT
       , colour_primary_hex TEXT
       , colour_primary_override TEXT
