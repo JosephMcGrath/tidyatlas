@@ -1,7 +1,7 @@
 {% if global %}
 BEGIN;
 
-    /*Coastlines*/
+    /*Boundaries (Political)*/
     CREATE TABLE global_boundary (
         fid INTEGER PRIMARY KEY
       , name TEXT

@@ -1,7 +1,7 @@
 {% if global %}
 BEGIN;
 
-    /*World bounding box.*/
+    /*Continental Shelfs*/
     CREATE TABLE continental_shelf (
         fid INTEGER PRIMARY KEY
       , uuid TEXT NOT NULL

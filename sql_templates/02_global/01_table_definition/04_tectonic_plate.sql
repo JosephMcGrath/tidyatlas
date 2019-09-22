@@ -12,7 +12,7 @@ BEGIN;
     ;
 
 
-    /*World bounding box.*/
+    /*Tectonic Plate Extents*/
     CREATE TABLE tectonic_plate (
         fid INTEGER PRIMARY KEY
       , category TEXT REFERENCES tectonic_plate_category (category)

@@ -13,7 +13,7 @@ BEGIN;
       , ('Transform (Dextral)')
     ;
 
-    /*World bounding box.*/
+    /*Tectonic Boundaries*/
     CREATE TABLE tectonic_boundary (
         fid INTEGER PRIMARY KEY
       , category TEXT REFERENCES tectonic_boundary_category (category)

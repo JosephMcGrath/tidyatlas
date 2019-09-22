@@ -10,7 +10,7 @@
       <symbol alpha="1" clip_to_extent="1" name="0" force_rhr="0" type="fill">
         <layer enabled="1" class="SimpleFill" locked="0" pass="0">
           <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
-          <prop v="230,255,204,255" k="color"/>
+          <prop v="136,191,76,255" k="color"/>
           <prop v="bevel" k="joinstyle"/>
           <prop v="0,0" k="offset"/>
           <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
@@ -84,7 +84,6 @@
   <SingleCategoryDiagramRenderer diagramType="Histogram" attributeLegend="1">
     <DiagramCategory scaleBasedVisibility="0" width="15" enabled="0" backgroundAlpha="255" minimumSize="0" sizeScale="3x:0,0,0,0,0,0" lineSizeType="MM" labelPlacementMethod="XHeight" minScaleDenominator="0" maxScaleDenominator="1e+08" rotationOffset="270" opacity="1" sizeType="MM" penWidth="0" diagramOrientation="Up" lineSizeScale="3x:0,0,0,0,0,0" barWidth="5" height="15" backgroundColor="#ffffff" penAlpha="255" scaleDependency="Area" penColor="#000000">
       <fontProperties style="" description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0"/>
-      <attribute color="#000000" label="" field=""/>
     </DiagramCategory>
   </SingleCategoryDiagramRenderer>
   <DiagramLayerSettings linePlacementFlags="18" priority="0" dist="0" showAll="1" obstacle="0" placement="1" zIndex="0">

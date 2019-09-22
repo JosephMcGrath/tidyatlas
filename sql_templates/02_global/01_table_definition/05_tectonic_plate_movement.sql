@@ -1,7 +1,7 @@
 {% if global %}
 BEGIN;
 
-    /*World bounding box.*/
+    /*Tectonic Plate Movement*/
     CREATE TABLE tectonic_plate_movement (
         fid INTEGER PRIMARY KEY
       , direction REAL
