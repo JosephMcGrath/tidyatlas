@@ -1,4 +1,4 @@
-{% if local and previous_db is defined %}
+{% if global and previous_db is defined %}
 ATTACH "{{previous_db}}" AS previous;
 
 BEGIN;
