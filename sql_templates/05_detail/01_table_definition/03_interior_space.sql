@@ -7,14 +7,15 @@ BEGIN;
 
     INSERT INTO tile_types (type)
     VALUES
-        ("Plain")
+        ("Furniture")
+      , ("Plain")
+      , ("Planks")
+      , ("Structure")
+      , ('Tiles')
       , ("Wall")
       , ("Open Air")
       , ("Water")
-      , ("Planks")
-      , ("Structure")
-      , ("Furniture")
-      , ('Tiles');
+    ;
 
 {% for floor in floors %}
     CREATE TABLE IF NOT EXISTS interior_space_f_{{floor.label}} (
