@@ -21,7 +21,7 @@ BEGIN;
     CREATE TABLE IF NOT EXISTS interior_space_f_{{floor.label}} (
         fid INTEGER PRIMARY KEY AUTOINCREMENT
       , name TEXT
-      , floor_pattern TEXT /*REFERENCES tile_types(type)*/
+      , floor_pattern TEXT NOT NULL REFERENCES tile_types(type)
       , colour_name TEXT
       , colour_primary_hex TEXT
       , colour_primary_override TEXT

@@ -16,7 +16,7 @@ BEGIN;
 {% for floor in floors %}
     CREATE TABLE IF NOT EXISTS interior_feature_f_{{floor.label}} (
         fid INTEGER PRIMARY KEY AUTOINCREMENT
-      , type TEXT /*REFERENCES interior_feature_f_{{floor.label}}_type(type)*/
+      , type TEXT NOT NULL REFERENCES interior_feature_type(type)
       , length REAL
       , uuid TEXT NOT NULL UNIQUE
       , created TEXT NOT NULL
