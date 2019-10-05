@@ -8,13 +8,13 @@ BEGIN;
     INSERT INTO colour_pallete
         (colour_name, primary_colour, secondary_colour)
     VALUES
-        ('Default Roof', '#ffcc99', '#ffcc99')
-      , ('Ruined Town (Interior)', '#ccc2ae', '#ccc2ae')
-      , ('Ruined Town (open)', '#bfcc99', '#bfcc99')
-      , ('Stone (Grey)', '#a5a5a5', '#a5a5a5')
-      , ('Wheat', '#e6cb5c', '#e6cb5c')
-      , ('Wood (Dark)', '#593515', '#593515')
-      , ('Wood (Medium)', '#a66227', '#a66227')
+        ('Default Roof', '#ffcc99', '#000000')
+      , ('Ruined Town (Interior)', '#ccc2ae', '#332d14')
+      , ('Ruined Town (open)', '#bfcc99', '#13190c')
+      , ('Stone (Grey)', '#a5a5a5', '#595959')
+      , ('Wheat', '#e6cb5c', '#bfa84c')
+      , ('Wood (Dark)', '#593515', '#261507')
+      , ('Wood (Medium)', '#a66227', '#40260f')
     ;
-    
+
 COMMIT;
