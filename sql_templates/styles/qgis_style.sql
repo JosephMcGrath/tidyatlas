@@ -71,6 +71,7 @@ BEGIN;
     VALUES
         ('', '', '', 'detail_area', 'detail_area', 'detail_area', 'the_geom', 1, '{% include 'styles/detail_area.qml' %}')
       , ('', '', '', 'detail_grid', 'detail_grid', 'detail_grid', 'the_geom', 1, '{% include 'styles/detail_grid.qml' %}')
+      , ('', '', '', 'detail', 'detail', 'detail', 'the_geom', 1, '{% include 'styles/detail.qml' %}')
     ;
 COMMIT;
 {% endif %}
