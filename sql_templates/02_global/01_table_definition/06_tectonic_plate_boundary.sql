@@ -14,21 +14,20 @@ BEGIN;
     ;
 
     /*Tectonic Boundaries*/
-    CREATE TABLE tectonic_boundary (
+    CREATE TABLE tectonic_plate_boundary (
         fid INTEGER PRIMARY KEY
       , category TEXT REFERENCES tectonic_boundary_category (category)
-      , direction REAL
       , uuid TEXT NOT NULL
       , created TEXT
       , modified TEXT
-      , the_geom POINT UNIQUE
+      , the_geom LINESTRING
     );
 
     SELECT
         RecoverGeometryColumn('tectonic_boundary',
                               'the_geom',
                               4326,
-                              'POINT',
+                              'LINESTRING',
                               'XY'
                               );
 

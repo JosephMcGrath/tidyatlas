@@ -1,21 +1,21 @@
 {% if global %}
 BEGIN;
 
-    /*Boundaries (Political)*/
-    CREATE TABLE global_boundary (
+    /*Ocean Currents*/
+    CREATE TABLE ocean_current (
         fid INTEGER PRIMARY KEY
-      , name TEXT
+      , temperature TEXT
       , uuid TEXT NOT NULL
       , created TEXT
       , modified TEXT
-      , the_geom MULTIPOLYGON
+      , the_geom LINESTRING
     );
 
     SELECT
-        RecoverGeometryColumn('global_boundary',
+        RecoverGeometryColumn('ocean_current',
                               'the_geom',
                               4326,
-                              'MULTIPOLYGON',
+                              'LINESTRING',
                               'XY'
                               );
 
