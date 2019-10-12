@@ -42,7 +42,6 @@ CREATE TABLE template_point (
   , angle REAL NOT NULL DEFAULT 0
   , scale REAL NOT NULL DEFAULT 1
   , template TEXT NOT NULL REFERENCES template_geometry(name)
-  , wid TEXT
   , the_geom POINT
 );
 
@@ -62,7 +61,6 @@ CREATE TABLE templated (
   , angle REAL
   , scale REAL NOT NULL DEFAULT 1
   , template TEXT NOT NULL REFERENCES template_geometry(name)
-  , wid TEXT
   , the_geom MULTIPOLYGON
 );
 
@@ -76,8 +74,8 @@ SELECT
 
 CREATE TRIGGER template_point_insert AFTER INSERT ON template_point
 BEGIN
-    INSERT INTO templated (fid, angle, template, wid, the_geom)
-    SELECT p.fid, p.angle, p.template, CreateUUID()
+    INSERT INTO templated (fid, angle, template, the_geom)
+    SELECT p.fid, p.angle, p.template
       , ST_Translate(RotateCoords(ScaleCoords(t.the_geom, p.scale), p.angle), ST_X(p.the_geom), ST_Y(p.the_geom), 0)
     FROM template_point AS p
         INNER JOIN template_geometry AS t ON p.template = t.name
