@@ -1,10 +1,10 @@
 {% if detail %}
 BEGIN;
-    CREATE TABLE detail_class (
-        detail_class TEXT PRIMARY KEY
+    CREATE TABLE exterior_space_class (
+        exterior_space_class TEXT PRIMARY KEY
     );
 
-    INSERT INTO detail_class (detail_class)
+    INSERT INTO exterior_space_class (exterior_space_class)
     VALUES
         ('Building')
       , ('Bare Soil')
@@ -19,9 +19,9 @@ BEGIN;
       , ('Unclassified')
     ;
 
-    CREATE TABLE IF NOT EXISTS detail (
+    CREATE TABLE IF NOT EXISTS exterior_space (
         fid INTEGER PRIMARY KEY AUTOINCREMENT
-      , class TEXT NOT NULL DEFAULT 'Unclassified' REFERENCES detail_class(detail_class)
+      , class TEXT NOT NULL DEFAULT 'Unclassified' REFERENCES exterior_space_class(exterior_space_class)
       , name TEXT
       , colour_name TEXT
       , colour_primary_hex TEXT
@@ -37,50 +37,50 @@ BEGIN;
     );
 
     SELECT
-      RecoverGeometryColumn('detail',
+      RecoverGeometryColumn('exterior_space',
                             'the_geom',
                             {{local_datum}},
                             'MULTIPOLYGON',
                             'XY'
                             )
-    , CreateSpatialIndex('detail', 'the_geom');
+    , CreateSpatialIndex('exterior_space', 'the_geom');
 
-    CREATE TRIGGER colour_pallete_insert_detail AFTER INSERT ON colour_pallete
+    CREATE TRIGGER colour_pallete_insert_exterior_space AFTER INSERT ON colour_pallete
     BEGIN
-        UPDATE detail
+        UPDATE exterior_space
         SET colour_primary_hex = NEW.primary_colour
           , colour_secondary_hex = NEW.secondary_colour
         WHERE colour_name = NEW.colour_name;
     END;
 
-    CREATE TRIGGER colour_pallete_update_detail AFTER UPDATE ON colour_pallete
+    CREATE TRIGGER colour_pallete_update_exterior_space AFTER UPDATE ON colour_pallete
     BEGIN
-        UPDATE detail
+        UPDATE exterior_space
         SET colour_primary_hex = NEW.primary_colour
           , colour_secondary_hex = NEW.secondary_colour
         WHERE colour_name = NEW.colour_name;
     END;
 
-    CREATE TRIGGER detail_insert AFTER INSERT ON detail
+    CREATE TRIGGER exterior_space_insert AFTER INSERT ON exterior_space
     BEGIN
-        UPDATE detail
+        UPDATE exterior_space
         SET area = ST_Area(the_geom)
         WHERE fid = NEW.fid;
 
-        UPDATE detail
+        UPDATE exterior_space
         SET colour_primary_hex = (SELECT primary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
           , colour_secondary_hex = (SELECT secondary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
         WHERE fid = NEW.fid
           AND NEW.colour_name IS NOT NULL;
     END;
 
-    CREATE TRIGGER detail_update AFTER UPDATE ON detail
+    CREATE TRIGGER exterior_space_update AFTER UPDATE ON exterior_space
     BEGIN
-        UPDATE detail
+        UPDATE exterior_space
         SET area = ST_Area(the_geom)
         WHERE fid = NEW.fid;
 
-        UPDATE detail
+        UPDATE exterior_space
         SET colour_primary_hex = (SELECT primary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
           , colour_secondary_hex = (SELECT secondary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
         WHERE fid = NEW.fid
