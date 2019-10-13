@@ -82,6 +82,7 @@ BEGIN;
       , ('', '', '', 'detail', 'detail', 'detail', 'the_geom', 1, '{% include 'styles/detail.qml' %}')
       {% for floor in floors %}
       , ('', '', '', 'interior_space_f_{{floor.label}}', 'interior_space_f_{{floor.label}}', 'interior_space_f_{{floor.label}}', 'the_geom', 1, '{% include 'styles/interior_space.qml' %}')
+      , ('', '', '', 'interior_feature_f_{{floor.label}}', 'interior_feature_f_{{floor.label}}', 'interior_feature_f_{{floor.label}}', 'the_geom', 1, '{% include 'styles/interior_feature.qml' %}')
       {% endfor %}
     ;
 COMMIT;
