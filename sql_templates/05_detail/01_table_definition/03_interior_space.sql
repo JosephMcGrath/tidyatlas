@@ -70,6 +70,22 @@ BEGIN;
         WHERE fid = NEW.fid
           AND NEW.colour_name IS NOT NULL;
     END;
+
+    CREATE TRIGGER colour_pallete_insert_interior_space_f_{{floor.label}} AFTER INSERT ON colour_pallete
+    BEGIN
+        UPDATE interior_space_f_{{floor.label}}
+        SET colour_primary_hex = NEW.primary_colour
+          , colour_secondary_hex = NEW.secondary_colour
+        WHERE colour_name = NEW.colour_name;
+    END;
+
+    CREATE TRIGGER colour_pallete_update_interior_space_f_{{floor.label}} AFTER UPDATE ON colour_pallete
+    BEGIN
+        UPDATE interior_space_f_{{floor.label}}
+        SET colour_primary_hex = NEW.primary_colour
+          , colour_secondary_hex = NEW.secondary_colour
+        WHERE colour_name = NEW.colour_name;
+    END;
 {% endfor %}
 
 COMMIT;
