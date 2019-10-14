@@ -80,6 +80,7 @@ BEGIN;
         ('', '', '', 'detail_area', 'detail_area', 'detail_area', 'the_geom', 1, '{% include 'styles/detail_area.qml' %}')
       , ('', '', '', 'detail_grid', 'detail_grid', 'detail_grid', 'the_geom', 1, '{% include 'styles/detail_grid.qml' %}')
       , ('', '', '', 'exterior_space', 'exterior_space', 'exterior_space', 'the_geom', 1, '{% include 'styles/exterior_space.qml' %}')
+      , ('', '', '', 'exterior_feature', 'exterior_feature', 'exterior_feature', 'the_geom', 1, '{% include 'styles/exterior_feature.qml' %}')
       {% for floor in floors %}
       , ('', '', '', 'interior_space_f_{{floor.label}}', 'interior_space_f_{{floor.label}}', 'interior_space_f_{{floor.label}}', 'the_geom', 1, '{% include 'styles/interior_space.qml' %}')
       , ('', '', '', 'interior_feature_f_{{floor.label}}', 'interior_feature_f_{{floor.label}}', 'interior_feature_f_{{floor.label}}', 'the_geom', 1, '{% include 'styles/interior_feature.qml' %}')
