@@ -485,7 +485,7 @@ END</orderByClause>
         </config>
       </editWidget>
     </field>
-    <field name="edited">
+    <field name="modified">
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
@@ -508,7 +508,7 @@ END</orderByClause>
     <alias name="" field="length" index="8"/>
     <alias name="" field="uuid" index="9"/>
     <alias name="" field="created" index="10"/>
-    <alias name="" field="edited" index="11"/>
+    <alias name="" field="modified" index="11"/>
   </aliases>
   <excludeAttributesWMS/>
   <excludeAttributesWFS/>
@@ -524,7 +524,7 @@ END</orderByClause>
     <default field="length" expression="$length" applyOnUpdate="1"/>
     <default field="uuid" expression=" regexp_replace( uuid() , ''\\{|\\}'', '''')" applyOnUpdate="0"/>
     <default field="created" expression=" format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )" applyOnUpdate="0"/>
-    <default field="edited" expression=" format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )" applyOnUpdate="1"/>
+    <default field="modified" expression=" format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )" applyOnUpdate="1"/>
   </defaults>
   <constraints>
     <constraint constraints="3" notnull_strength="1" field="fid" unique_strength="1" exp_strength="0"/>
@@ -538,7 +538,7 @@ END</orderByClause>
     <constraint constraints="0" notnull_strength="0" field="length" unique_strength="0" exp_strength="0"/>
     <constraint constraints="1" notnull_strength="1" field="uuid" unique_strength="0" exp_strength="0"/>
     <constraint constraints="1" notnull_strength="1" field="created" unique_strength="0" exp_strength="0"/>
-    <constraint constraints="1" notnull_strength="1" field="edited" unique_strength="0" exp_strength="0"/>
+    <constraint constraints="1" notnull_strength="1" field="modified" unique_strength="0" exp_strength="0"/>
   </constraints>
   <constraintExpressions>
     <constraint field="fid" exp="" desc=""/>
@@ -552,7 +552,7 @@ END</orderByClause>
     <constraint field="length" exp="" desc=""/>
     <constraint field="uuid" exp="" desc=""/>
     <constraint field="created" exp="" desc=""/>
-    <constraint field="edited" exp="" desc=""/>
+    <constraint field="modified" exp="" desc=""/>
   </constraintExpressions>
   <expressionfields/>
   <attributeactions>
@@ -571,7 +571,7 @@ END</orderByClause>
       <column type="field" name="length" hidden="0" width="-1"/>
       <column type="field" name="uuid" hidden="0" width="-1"/>
       <column type="field" name="created" hidden="0" width="-1"/>
-      <column type="field" name="edited" hidden="0" width="-1"/>
+      <column type="field" name="modified" hidden="0" width="-1"/>
       <column type="actions" hidden="1" width="-1"/>
     </columns>
   </attributetableconfig>
@@ -615,7 +615,7 @@ def my_form_open(dialog, layer, feature):
       <attributeEditorField name="length" index="8" showLabel="1"/>
       <attributeEditorField name="uuid" index="9" showLabel="1"/>
       <attributeEditorField name="created" index="10" showLabel="1"/>
-      <attributeEditorField name="edited" index="11" showLabel="1"/>
+      <attributeEditorField name="modified" index="11" showLabel="1"/>
     </attributeEditorContainer>
   </attributeEditorForm>
   <editable>
@@ -626,7 +626,7 @@ def my_form_open(dialog, layer, feature):
     <field name="colour_secondary_hex" editable="1"/>
     <field name="colour_secondary_override" editable="1"/>
     <field name="created" editable="1"/>
-    <field name="edited" editable="1"/>
+    <field name="modified" editable="1"/>
     <field name="fid" editable="1"/>
     <field name="length" editable="1"/>
     <field name="type" editable="1"/>
@@ -640,7 +640,7 @@ def my_form_open(dialog, layer, feature):
     <field name="colour_secondary_hex" labelOnTop="0"/>
     <field name="colour_secondary_override" labelOnTop="0"/>
     <field name="created" labelOnTop="0"/>
-    <field name="edited" labelOnTop="0"/>
+    <field name="modified" labelOnTop="0"/>
     <field name="fid" labelOnTop="0"/>
     <field name="length" labelOnTop="0"/>
     <field name="type" labelOnTop="0"/>
