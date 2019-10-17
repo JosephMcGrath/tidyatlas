@@ -37,6 +37,8 @@ BEGIN;
       , ('', '', '', 'continental_shelf', 'continental_shelf', 'continental_shelf', 'the_geom', 1, '{% include 'styles/continental_shelf.qml' %}')
       , ('', '', '', 'global_coastline', 'global_coastline', 'global_coastline', 'the_geom', 1, '{% include 'styles/global_coastline.qml' %}')
       , ('', '', '', 'ocean_current', 'ocean_current', 'ocean_current', 'the_geom', 1, '{% include 'styles/ocean_current.qml' %}')
+      , ('', '', '', 'political_nation', 'political_nation', 'political_nation', 'the_geom', 1, '{% include 'styles/political_nation.qml' %}')
+      , ('', '', '', 'political_region', 'political_region', 'political_region', 'the_geom', 1, '{% include 'styles/political_region.qml' %}')
     ;
 COMMIT;
 {% endif %}
