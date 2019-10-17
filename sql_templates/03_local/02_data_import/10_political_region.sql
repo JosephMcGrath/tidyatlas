@@ -3,11 +3,18 @@ ATTACH "{{previous_db}}" AS previous;
 
 BEGIN;
 
-/*Linear Labels*/
-INSERT INTO political_region
-    (name, notes, uuid, area, created, modified, the_geom)
+/*Nation-scale regions.*/
+INSERT INTO political_nation
+    (name, notes, colour, uuid, area, created, modified, the_geom)
 SELECT
-    name, notes, uuid, area, created, modified, the_geom
+    name, notes, colour, uuid, area, created, modified, the_geom
+FROM previous.political_nation;
+
+/*Political regions.*/
+INSERT INTO political_region
+    (name, notes, colour, uuid, area, created, modified, the_geom)
+SELECT
+    name, notes, colour, uuid, area, created, modified, the_geom
 FROM previous.political_region;
 
 COMMIT;
