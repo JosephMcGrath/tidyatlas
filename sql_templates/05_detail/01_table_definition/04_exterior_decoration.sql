@@ -7,6 +7,7 @@ BEGIN;
       , rotation REAL NOT NULL DEFAULT 0
       , draw_order REAL NOT NULL DEFAULT 0
       , opacity REAL
+      , uuid TEXT NOT NULL UNIQUE
       , created TEXT NOT NULL
       , modified TEXT NOT NULL
       , the_geom POINT
