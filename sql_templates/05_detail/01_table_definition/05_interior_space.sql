@@ -1,11 +1,11 @@
 {% if detail %}
 BEGIN;
 
-    CREATE TABLE tile_types (
-        type TEXT
+    CREATE TABLE tile_type (
+        type TEXT PRIMARY KEY
     );
 
-    INSERT INTO tile_types (type)
+    INSERT INTO tile_type (type)
     VALUES
         ("Furniture")
       , ("Plain")
@@ -20,7 +20,7 @@ BEGIN;
 {% for floor in floors %}
     CREATE TABLE IF NOT EXISTS interior_space_f_{{floor.label}} (
         fid INTEGER PRIMARY KEY AUTOINCREMENT
-      , floor_pattern TEXT NOT NULL REFERENCES tile_types(type)
+      , floor_pattern TEXT NOT NULL REFERENCES tile_type (type)
       , colour_name TEXT
       , colour_primary_hex TEXT
       , colour_primary_override TEXT
