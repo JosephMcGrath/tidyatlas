@@ -2,7 +2,7 @@
 BEGIN;
 
     CREATE TABLE exterior_feature_type (
-        type TEXT
+        type TEXT PRIMARY KEY
     );
 
     INSERT INTO exterior_feature_type (type)

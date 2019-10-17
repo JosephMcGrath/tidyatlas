@@ -2,7 +2,7 @@
 BEGIN;
 
     CREATE TABLE interior_feature_type (
-        type TEXT
+        type TEXT PRIMARY KEY
     );
 
     INSERT INTO interior_feature_type (type)
