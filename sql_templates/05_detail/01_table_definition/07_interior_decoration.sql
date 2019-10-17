@@ -7,6 +7,9 @@ BEGIN;
       , size REAL NOT NULL
       , rotation REAL NOT NULL DEFAULT 0
       , draw_order REAL NOT NULL DEFAULT 0
+      , opacity REAL
+      , created TEXT NOT NULL
+      , modified TEXT NOT NULL
       , the_geom POINT
     );
 
