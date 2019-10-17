@@ -1,7 +1,7 @@
 {% if detail %}
 BEGIN;
 {% for floor in floors %}
-    CREATE TABLE IF NOT EXISTS interior_decoration_{{floor.label}} (
+    CREATE TABLE IF NOT EXISTS interior_decoration_f_f_{{floor.label}} (
         fid INTEGER PRIMARY KEY AUTOINCREMENT
       , asset_path TEXT NOT NULL
       , size REAL NOT NULL
@@ -14,13 +14,13 @@ BEGIN;
     );
 
     SELECT
-        RecoverGeometryColumn('interior_decoration_{{floor.label}}',
+        RecoverGeometryColumn('interior_decoration_f_{{floor.label}}',
                               'the_geom',
                               {{local_datum}},
                               'POINT',
                               'XY'
                               )
-      , CreateSpatialIndex('interior_decoration_{{floor.label}}', 'the_geom');
+      , CreateSpatialIndex('interior_decoration_f_{{floor.label}}', 'the_geom');
 {% endfor %}
 COMMIT;
 {% endif %}
