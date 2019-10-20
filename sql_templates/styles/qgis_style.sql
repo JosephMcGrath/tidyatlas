@@ -37,8 +37,6 @@ BEGIN;
       , ('', '', '', 'continental_shelf', 'continental_shelf', 'continental_shelf', 'the_geom', 1, '{% include 'styles/continental_shelf.qml' %}')
       , ('', '', '', 'global_coastline', 'global_coastline', 'global_coastline', 'the_geom', 1, '{% include 'styles/global_coastline.qml' %}')
       , ('', '', '', 'ocean_current', 'ocean_current', 'ocean_current', 'the_geom', 1, '{% include 'styles/ocean_current.qml' %}')
-      , ('', '', '', 'political_nation', 'political_nation', 'political_nation', 'the_geom', 1, '{% include 'styles/political_nation.qml' %}')
-      , ('', '', '', 'political_region', 'political_region', 'political_region', 'the_geom', 1, '{% include 'styles/political_region.qml' %}')
     ;
 COMMIT;
 {% endif %}
@@ -59,6 +57,9 @@ BEGIN;
       , ('', '', '', 'bathymetry_point', 'bathymetry_point', 'bathymetry_point', 'the_geom', 1, '{% include 'styles/bathymetry_point.qml' %}')
       , ('', '', '', 'bathymetry_polygon', 'bathymetry_polygon', 'bathymetry_polygon', 'the_geom', 1, '{% include 'styles/bathymetry_polygon.qml' %}')
       , ('', '', '', 'land_cover', 'land_cover', 'land_cover', 'the_geom', 1, '{% include 'styles/land_cover.qml' %}')
+      , ('', '', '', 'linear_label', 'linear_label', 'linear_label', 'the_geom', 1, '{% include 'styles/linear_label.qml' %}')
+      , ('', '', '', 'political_nation', 'political_nation', 'political_nation', 'the_geom', 1, '{% include 'styles/political_nation.qml' %}')
+      , ('', '', '', 'political_region', 'political_region', 'political_region', 'the_geom', 1, '{% include 'styles/political_region.qml' %}')
     ;
 COMMIT;
 {% endif %}
