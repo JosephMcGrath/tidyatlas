@@ -92,5 +92,11 @@ BEGIN
     WHERE fid = NEW.fid;
 END;
 
+CREATE TRIGGER template_point_delete AFTER UPDATE ON template_point
+BEGIN
+    DELETE FROM templated
+    WHERE fid = NEW.fid;
+END;
+
 COMMIT;
 {% endif %}
