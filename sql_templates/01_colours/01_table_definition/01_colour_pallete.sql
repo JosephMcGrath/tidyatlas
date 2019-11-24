@@ -16,6 +16,8 @@ BEGIN;
       , ('Wheat', '#e6cb5c', '#bfa84c')
       , ('Wood (Dark)', '#593515', '#261507')
       , ('Wood (Medium)', '#a66227', '#40260f')
+      , ('Water (Shallow)', '#3865be', '#142929')
+      , ('Water (Deep)', '#143166', '#101e38')
     ;
 
 COMMIT;
