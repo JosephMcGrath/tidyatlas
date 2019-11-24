@@ -15,7 +15,7 @@ BEGIN;
       , area REAL
       , created TEXT NOT NULL
       , modified TEXT NOT NULL
-      , the_geom POLYGON
+      , the_geom POLYGON NOT NULL
     );
 
     SELECT

@@ -20,7 +20,7 @@ BEGIN;
       , uuid TEXT NOT NULL
       , created TEXT
       , modified TEXT
-      , the_geom LINESTRING
+      , the_geom LINESTRING NOT NULL
     );
 
     SELECT

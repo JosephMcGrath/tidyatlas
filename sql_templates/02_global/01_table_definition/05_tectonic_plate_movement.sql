@@ -8,7 +8,7 @@ BEGIN;
       , uuid TEXT NOT NULL
       , created TEXT
       , modified TEXT
-      , the_geom POINT
+      , the_geom POINT NOT NULL
     );
 
     SELECT

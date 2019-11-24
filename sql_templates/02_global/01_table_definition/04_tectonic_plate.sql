@@ -19,7 +19,7 @@ BEGIN;
       , uuid TEXT NOT NULL
       , created TEXT
       , modified TEXT
-      , the_geom POLYGON
+      , the_geom POLYGON NOT NULL
     );
 
     SELECT

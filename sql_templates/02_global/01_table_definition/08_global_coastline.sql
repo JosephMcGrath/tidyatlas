@@ -10,7 +10,7 @@ BEGIN;
       , minor_political_colour TEXT
       , created TEXT
       , modified TEXT
-      , the_geom MULTIPOLYGON
+      , the_geom MULTIPOLYGON NOT NULL
     );
 
     SELECT

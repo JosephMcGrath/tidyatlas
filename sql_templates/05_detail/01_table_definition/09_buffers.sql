@@ -2,7 +2,7 @@
 CREATE TABLE buffer_point_in (
     fid INTEGER PRIMARY KEY
   , distance REAL NOT NULL DEFAULT 5
-  , the_geom MULTIPOINT
+  , the_geom MULTIPOINT NOT NULL
 );
 
 SELECT
@@ -18,7 +18,7 @@ SELECT
 CREATE TABLE buffer_line_in (
     fid INTEGER PRIMARY KEY
   , distance REAL NOT NULL DEFAULT 5
-  , the_geom MULTILINESTRING
+  , the_geom MULTILINESTRING NOT NULL
 );
 
 SELECT

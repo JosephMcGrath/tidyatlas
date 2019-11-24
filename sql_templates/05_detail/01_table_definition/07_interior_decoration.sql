@@ -11,7 +11,7 @@ BEGIN;
       , uuid TEXT NOT NULL UNIQUE
       , created TEXT NOT NULL
       , modified TEXT NOT NULL
-      , the_geom POINT
+      , the_geom POINT NOT NULL
     );
 
     SELECT

@@ -8,7 +8,7 @@ BEGIN;
       , uuid TEXT NOT NULL
       , created TEXT
       , modified TEXT
-      , the_geom LINESTRINGZ
+      , the_geom LINESTRINGZ NOT NULL
     );
 
     SELECT
@@ -41,7 +41,7 @@ BEGIN;
       , uuid TEXT NOT NULL
       , created TEXT
       , modified TEXT
-      , the_geom POINT
+      , the_geom POINT NOT NULL
     );
 
     SELECT

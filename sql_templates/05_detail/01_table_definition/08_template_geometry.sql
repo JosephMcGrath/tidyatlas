@@ -6,7 +6,7 @@ BEGIN;
 CREATE TABLE IF NOT EXISTS template_geometry (
     fid INTEGER PRIMARY KEY
   , name TEXT UNIQUE NOT NULL
-  , the_geom MULTIPOLYGON UNIQUE
+  , the_geom MULTIPOLYGON UNIQUE NOT NULL
 );
 
 SELECT
@@ -42,7 +42,7 @@ CREATE TABLE template_point (
   , angle REAL NOT NULL DEFAULT 0
   , scale REAL NOT NULL DEFAULT 1
   , template TEXT NOT NULL REFERENCES template_geometry(name)
-  , the_geom POINT
+  , the_geom POINT NOT NULL
 );
 
 SELECT
@@ -61,7 +61,7 @@ CREATE TABLE templated (
   , angle REAL
   , scale REAL NOT NULL DEFAULT 1
   , template TEXT NOT NULL REFERENCES template_geometry(name)
-  , the_geom MULTIPOLYGON
+  , the_geom MULTIPOLYGON NOT NULL
 );
 
 SELECT

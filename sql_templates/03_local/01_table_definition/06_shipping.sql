@@ -9,7 +9,7 @@ BEGIN;
       , line_length REAL
       , created TEXT NOT NULL
       , modified TEXT NOT NULL
-      , the_geom LINESTRING
+      , the_geom LINESTRING NOT NULL
     );
 
     SELECT

@@ -16,7 +16,7 @@ BEGIN;
       , label TEXT
       , category TEXT
       , uuid TEXT NOT NULL
-      , the_geom LINESTRING
+      , the_geom LINESTRING NOT NULL
     );
 
     SELECT

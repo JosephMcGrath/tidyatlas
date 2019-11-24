@@ -8,7 +8,7 @@ BEGIN;
       , uuid TEXT NOT NULL
       , created TEXT
       , modified TEXT
-      , the_geom MULTIPOLYGON
+      , the_geom MULTIPOLYGON NOT NULL
     );
 
     SELECT

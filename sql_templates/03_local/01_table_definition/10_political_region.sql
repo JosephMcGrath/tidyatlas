@@ -11,7 +11,7 @@ BEGIN;
       , area REAL
       , created TEXT NOT NULL
       , modified TEXT NOT NULL
-      , the_geom MULTIPOLYGON
+      , the_geom MULTIPOLYGON NOT NULL
     );
 
     SELECT
@@ -47,7 +47,7 @@ BEGIN;
       , area REAL
       , created TEXT NOT NULL
       , modified TEXT NOT NULL
-      , the_geom MULTIPOLYGON
+      , the_geom MULTIPOLYGON NOT NULL
     );
 
     SELECT
