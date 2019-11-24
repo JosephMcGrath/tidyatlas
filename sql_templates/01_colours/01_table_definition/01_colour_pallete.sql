@@ -1,4 +1,5 @@
 BEGIN;
+    /*TODO - Make this table spatial for easier use in QGIS. Colour boxes?*/
     CREATE TABLE colour_pallete (
         colour_name TEXT PRIMARY KEY
       , primary_colour TEXT NOT NULL
