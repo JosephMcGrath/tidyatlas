@@ -11,10 +11,10 @@ BEGIN;
     CREATE TRIGGER colour_pallete_insert AFTER INSERT ON colour_pallete
     BEGIN
       UPDATE colour_pallete
-      SET the_geom = BuildMbr((colour_no % 10),
-                              CAST(colour_no / 10 AS INTEGER),
-                              (colour_no % 10) + 1,
-                              CAST(colour_no / 10 AS INTEGER) + 1
+      SET the_geom = BuildMbr((colour_no % 10) + 0.05,
+                              CAST(colour_no / 10 AS INTEGER) + 0.05,
+                              (colour_no % 10) + 0.95,
+                              CAST(colour_no / 10 AS INTEGER) + 0.95
                               )
       WHERE colour_no = NEW.colour_no;
     END;
