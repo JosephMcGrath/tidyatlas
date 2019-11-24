@@ -1,10 +1,28 @@
 BEGIN;
     /*TODO - Make this table spatial for easier use in QGIS. Colour boxes?*/
     CREATE TABLE colour_pallete (
-        colour_name TEXT PRIMARY KEY
+        colour_name TEXT UNIQUE
       , primary_colour TEXT NOT NULL
       , secondary_colour TEXT NOT NULL
+      , colour_no INTEGER PRIMARY KEY
+      , the_geom POLYGON
     );
+
+    CREATE TRIGGER colour_pallete_insert AFTER INSERT ON colour_pallete
+    BEGIN
+      UPDATE colour_pallete
+      SET the_geom = BuildMbr(colour_no, 0, colour_no + 1, 1)
+      WHERE colour_no = NEW.colour_no;
+    END;
+
+    SELECT
+      RecoverGeometryColumn('colour_pallete',
+                            'the_geom',
+                            -1,
+                            'POLYGON',
+                            'XY'
+                            )
+    , CreateSpatialIndex('political_nation', 'the_geom');
 
     INSERT INTO colour_pallete
         (colour_name, primary_colour, secondary_colour)
