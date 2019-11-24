@@ -19,6 +19,7 @@ BEGIN;
       , name TEXT
       , purpose TEXT NOT NULL DEFAULT 'Other' REFERENCES city_region_purpose(purpose)
       , notes TEXT
+      , colour TEXT /*Custom colour for the polygon.*/
       , uuid TEXT NOT NULL UNIQUE
       , area REAL
       , created TEXT NOT NULL
