@@ -22,7 +22,7 @@ BEGIN;
     SELECT
       RecoverGeometryColumn('colour_pallete',
                             'the_geom',
-                            -1,
+                            {{ local_datum if local_datum is defined else -1 }},
                             'POLYGON',
                             'XY'
                             )
