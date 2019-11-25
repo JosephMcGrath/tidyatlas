@@ -1,594 +1,594 @@
 <!DOCTYPE qgis PUBLIC ''http://mrcc.com/qgis.dtd'' ''SYSTEM''>
-<qgis version="3.8.3-Zanzibar" simplifyDrawingHints="1" simplifyDrawingTol="1" readOnly="0" simplifyAlgorithm="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" minScale="1e+08" labelsEnabled="0" simplifyLocal="1" maxScale="0" styleCategories="AllStyleCategories">
+<qgis hasScaleBasedVisibilityFlag="0" labelsEnabled="0" simplifyMaxScale="1" minScale="1e+08" simplifyDrawingHints="1" maxScale="0" readOnly="0" simplifyLocal="1" simplifyAlgorithm="0" version="3.8.3-Zanzibar" styleCategories="AllStyleCategories" simplifyDrawingTol="1">
   <flags>
     <Identifiable>1</Identifiable>
     <Removable>1</Removable>
     <Searchable>1</Searchable>
   </flags>
-  <renderer-v2 type="categorizedSymbol" forceraster="0" enableorderby="0" attr="class" symbollevels="0">
+  <renderer-v2 enableorderby="0" symbollevels="0" type="categorizedSymbol" forceraster="0" attr="class">
     <categories>
-      <category label="Building" value="Building" symbol="0" render="true"/>
-      <category label="Bare Soil" value="Bare Soil" symbol="1" render="true"/>
-      <category label="Garden" value="Garden" symbol="2" render="true"/>
-      <category label="Natural Environment" value="Natural Environment" symbol="3" render="true"/>
-      <category label="Road" value="Road" symbol="4" render="true"/>
-      <category label="Structure" value="Structure" symbol="5" render="true"/>
-      <category label="Urban Environment" value="Urban Environment" symbol="6" render="true"/>
-      <category label="Vegetation" value="Vegetation" symbol="7" render="true"/>
-      <category label="Wall" value="Wall" symbol="8" render="true"/>
-      <category label="Water" value="Water" symbol="9" render="true"/>
-      <category label="Unclassified" value="Unclassified" symbol="10" render="true"/>
+      <category symbol="0" label="Building" value="Building" render="true"/>
+      <category symbol="1" label="Bare Soil" value="Bare Soil" render="true"/>
+      <category symbol="2" label="Garden" value="Garden" render="true"/>
+      <category symbol="3" label="Natural Environment" value="Natural Environment" render="true"/>
+      <category symbol="4" label="Road" value="Road" render="true"/>
+      <category symbol="5" label="Structure" value="Structure" render="true"/>
+      <category symbol="6" label="Urban Environment" value="Urban Environment" render="true"/>
+      <category symbol="7" label="Vegetation" value="Vegetation" render="true"/>
+      <category symbol="8" label="Wall" value="Wall" render="true"/>
+      <category symbol="9" label="Water" value="Water" render="true"/>
+      <category symbol="10" label="Unclassified" value="Unclassified" render="true"/>
     </categories>
     <symbols>
-      <symbol force_rhr="0" type="fill" name="0" clip_to_extent="1" alpha="1">
-        <layer locked="0" enabled="1" class="SimpleFill" pass="0">
-          <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="color" v="255,204,153,255"/>
-          <prop k="joinstyle" v="bevel"/>
-          <prop k="offset" v="0,0"/>
-          <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="outline_color" v="0,0,0,255"/>
-          <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.25"/>
-          <prop k="outline_width_unit" v="MM"/>
-          <prop k="style" v="solid"/>
+      <symbol name="0" force_rhr="0" clip_to_extent="1" type="fill" alpha="1">
+        <layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+          <prop v="255,204,153,255" k="color"/>
+          <prop v="bevel" k="joinstyle"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="0,0,0,255" k="outline_color"/>
+          <prop v="solid" k="outline_style"/>
+          <prop v="0.1" k="outline_width"/>
+          <prop v="RenderMetersInMapUnits" k="outline_width_unit"/>
+          <prop v="solid" k="style"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" name="name" value=""/>
-              <Option type="Map" name="properties">
-                <Option type="Map" name="fillColor">
-                  <Option type="bool" name="active" value="true"/>
-                  <Option type="QString" name="expression" value="coalesce(&quot;colour_primary_override&quot;,lighter(&quot;colour_primary_hex&quot;,&quot;colour_lightness&quot;))"/>
-                  <Option type="int" name="type" value="3"/>
+              <Option name="name" value="" type="QString"/>
+              <Option name="properties" type="Map">
+                <Option name="fillColor" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="coalesce(&quot;colour_primary_override&quot;,lighter(&quot;colour_primary_hex&quot;,&quot;colour_lightness&quot;))" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
                 </Option>
-                <Option type="Map" name="outlineColor">
-                  <Option type="bool" name="active" value="true"/>
-                  <Option type="QString" name="expression" value="coalesce(&quot;colour_secondary_override&quot;,lighter(&quot;colour_secondary_hex&quot;,&quot;colour_lightness&quot;))"/>
-                  <Option type="int" name="type" value="3"/>
+                <Option name="outlineColor" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="coalesce(&quot;colour_secondary_override&quot;,lighter(&quot;colour_secondary_hex&quot;,&quot;colour_lightness&quot;))" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
                 </Option>
               </Option>
-              <Option type="QString" name="type" value="collection"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
           </data_defined_properties>
         </layer>
       </symbol>
-      <symbol force_rhr="0" type="fill" name="1" clip_to_extent="1" alpha="1">
-        <layer locked="0" enabled="1" class="SimpleFill" pass="0">
-          <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="color" v="204,180,112,255"/>
-          <prop k="joinstyle" v="bevel"/>
-          <prop k="offset" v="0,0"/>
-          <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="outline_color" v="0,0,0,255"/>
-          <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.25"/>
-          <prop k="outline_width_unit" v="MM"/>
-          <prop k="style" v="solid"/>
+      <symbol name="1" force_rhr="0" clip_to_extent="1" type="fill" alpha="1">
+        <layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+          <prop v="204,180,112,255" k="color"/>
+          <prop v="bevel" k="joinstyle"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="0,0,0,255" k="outline_color"/>
+          <prop v="solid" k="outline_style"/>
+          <prop v="0.1" k="outline_width"/>
+          <prop v="RenderMetersInMapUnits" k="outline_width_unit"/>
+          <prop v="solid" k="style"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" name="name" value=""/>
-              <Option type="Map" name="properties">
-                <Option type="Map" name="fillColor">
-                  <Option type="bool" name="active" value="true"/>
-                  <Option type="QString" name="expression" value="coalesce(&quot;colour_primary_override&quot;,lighter(&quot;colour_primary_hex&quot;,&quot;colour_lightness&quot;))"/>
-                  <Option type="int" name="type" value="3"/>
+              <Option name="name" value="" type="QString"/>
+              <Option name="properties" type="Map">
+                <Option name="fillColor" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="coalesce(&quot;colour_primary_override&quot;,lighter(&quot;colour_primary_hex&quot;,&quot;colour_lightness&quot;))" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
                 </Option>
-                <Option type="Map" name="outlineStyle">
-                  <Option type="bool" name="active" value="true"/>
-                  <Option type="QString" name="expression" value="coalesce(&quot;colour_secondary_override&quot;,lighter(&quot;colour_secondary_hex&quot;,&quot;colour_lightness&quot;))"/>
-                  <Option type="int" name="type" value="3"/>
+                <Option name="outlineStyle" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="coalesce(&quot;colour_secondary_override&quot;,lighter(&quot;colour_secondary_hex&quot;,&quot;colour_lightness&quot;))" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
                 </Option>
               </Option>
-              <Option type="QString" name="type" value="collection"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
           </data_defined_properties>
         </layer>
-        <layer locked="0" enabled="1" class="SimpleFill" pass="0">
-          <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="color" v="168,168,168,255"/>
-          <prop k="joinstyle" v="bevel"/>
-          <prop k="offset" v="0,0"/>
-          <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="outline_color" v="0,0,0,255"/>
-          <prop k="outline_style" v="no"/>
-          <prop k="outline_width" v="0.25"/>
-          <prop k="outline_width_unit" v="MM"/>
-          <prop k="style" v="dense6"/>
+        <layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+          <prop v="168,168,168,255" k="color"/>
+          <prop v="bevel" k="joinstyle"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="0,0,0,255" k="outline_color"/>
+          <prop v="no" k="outline_style"/>
+          <prop v="0.25" k="outline_width"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="dense6" k="style"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" name="name" value=""/>
+              <Option name="name" value="" type="QString"/>
               <Option name="properties"/>
-              <Option type="QString" name="type" value="collection"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
           </data_defined_properties>
         </layer>
-        <layer locked="0" enabled="1" class="ShapeburstFill" pass="0">
-          <prop k="blur_radius" v="8"/>
-          <prop k="color" v="0,0,0,26"/>
-          <prop k="color1" v="0,0,255,255"/>
-          <prop k="color2" v="0,255,0,255"/>
-          <prop k="color_type" v="0"/>
-          <prop k="discrete" v="0"/>
-          <prop k="distance_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="distance_unit" v="MM"/>
-          <prop k="gradient_color2" v="0,0,0,0"/>
-          <prop k="ignore_rings" v="0"/>
-          <prop k="max_distance" v="2"/>
-          <prop k="offset" v="0,0"/>
-          <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="rampType" v="gradient"/>
-          <prop k="use_whole_shape" v="0"/>
+        <layer enabled="1" locked="0" class="ShapeburstFill" pass="0">
+          <prop v="8" k="blur_radius"/>
+          <prop v="0,0,0,26" k="color"/>
+          <prop v="0,0,255,255" k="color1"/>
+          <prop v="0,255,0,255" k="color2"/>
+          <prop v="0" k="color_type"/>
+          <prop v="0" k="discrete"/>
+          <prop v="3x:0,0,0,0,0,0" k="distance_map_unit_scale"/>
+          <prop v="MM" k="distance_unit"/>
+          <prop v="0,0,0,0" k="gradient_color2"/>
+          <prop v="0" k="ignore_rings"/>
+          <prop v="2" k="max_distance"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="gradient" k="rampType"/>
+          <prop v="0" k="use_whole_shape"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" name="name" value=""/>
+              <Option name="name" value="" type="QString"/>
               <Option name="properties"/>
-              <Option type="QString" name="type" value="collection"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
           </data_defined_properties>
         </layer>
       </symbol>
-      <symbol force_rhr="0" type="fill" name="10" clip_to_extent="1" alpha="1">
-        <layer locked="0" enabled="1" class="SimpleFill" pass="0">
-          <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="color" v="234,205,73,255"/>
-          <prop k="joinstyle" v="bevel"/>
-          <prop k="offset" v="0,0"/>
-          <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="outline_color" v="0,0,0,255"/>
-          <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.25"/>
-          <prop k="outline_width_unit" v="MM"/>
-          <prop k="style" v="solid"/>
+      <symbol name="10" force_rhr="0" clip_to_extent="1" type="fill" alpha="1">
+        <layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+          <prop v="234,205,73,255" k="color"/>
+          <prop v="bevel" k="joinstyle"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="0,0,0,255" k="outline_color"/>
+          <prop v="solid" k="outline_style"/>
+          <prop v="0.1" k="outline_width"/>
+          <prop v="RenderMetersInMapUnits" k="outline_width_unit"/>
+          <prop v="solid" k="style"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" name="name" value=""/>
-              <Option type="Map" name="properties">
-                <Option type="Map" name="fillColor">
-                  <Option type="bool" name="active" value="true"/>
-                  <Option type="QString" name="expression" value="coalesce(&quot;colour_primary_override&quot;,lighter(&quot;colour_primary_hex&quot;,&quot;colour_lightness&quot;))"/>
-                  <Option type="int" name="type" value="3"/>
+              <Option name="name" value="" type="QString"/>
+              <Option name="properties" type="Map">
+                <Option name="fillColor" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="coalesce(&quot;colour_primary_override&quot;,lighter(&quot;colour_primary_hex&quot;,&quot;colour_lightness&quot;))" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
                 </Option>
-                <Option type="Map" name="outlineWidth">
-                  <Option type="bool" name="active" value="true"/>
-                  <Option type="QString" name="expression" value="coalesce(&quot;colour_secondary_override&quot;,lighter(&quot;colour_secondary_hex&quot;,&quot;colour_lightness&quot;))"/>
-                  <Option type="int" name="type" value="3"/>
+                <Option name="outlineWidth" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="coalesce(&quot;colour_secondary_override&quot;,lighter(&quot;colour_secondary_hex&quot;,&quot;colour_lightness&quot;))" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
                 </Option>
               </Option>
-              <Option type="QString" name="type" value="collection"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
           </data_defined_properties>
         </layer>
       </symbol>
-      <symbol force_rhr="0" type="fill" name="2" clip_to_extent="1" alpha="1">
-        <layer locked="0" enabled="1" class="SimpleFill" pass="0">
-          <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="color" v="112,204,120,255"/>
-          <prop k="joinstyle" v="bevel"/>
-          <prop k="offset" v="0,0"/>
-          <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="outline_color" v="0,0,0,255"/>
-          <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.25"/>
-          <prop k="outline_width_unit" v="MM"/>
-          <prop k="style" v="solid"/>
+      <symbol name="2" force_rhr="0" clip_to_extent="1" type="fill" alpha="1">
+        <layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+          <prop v="112,204,120,255" k="color"/>
+          <prop v="bevel" k="joinstyle"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="0,0,0,255" k="outline_color"/>
+          <prop v="solid" k="outline_style"/>
+          <prop v="0.1" k="outline_width"/>
+          <prop v="RenderMetersInMapUnits" k="outline_width_unit"/>
+          <prop v="solid" k="style"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" name="name" value=""/>
-              <Option type="Map" name="properties">
-                <Option type="Map" name="fillColor">
-                  <Option type="bool" name="active" value="true"/>
-                  <Option type="QString" name="expression" value="coalesce(&quot;colour_primary_override&quot;,lighter(&quot;colour_primary_hex&quot;,&quot;colour_lightness&quot;))"/>
-                  <Option type="int" name="type" value="3"/>
+              <Option name="name" value="" type="QString"/>
+              <Option name="properties" type="Map">
+                <Option name="fillColor" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="coalesce(&quot;colour_primary_override&quot;,lighter(&quot;colour_primary_hex&quot;,&quot;colour_lightness&quot;))" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
                 </Option>
-                <Option type="Map" name="outlineWidth">
-                  <Option type="bool" name="active" value="true"/>
-                  <Option type="QString" name="expression" value="coalesce(&quot;colour_secondary_override&quot;,lighter(&quot;colour_secondary_hex&quot;,&quot;colour_lightness&quot;))"/>
-                  <Option type="int" name="type" value="3"/>
+                <Option name="outlineWidth" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="coalesce(&quot;colour_secondary_override&quot;,lighter(&quot;colour_secondary_hex&quot;,&quot;colour_lightness&quot;))" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
                 </Option>
               </Option>
-              <Option type="QString" name="type" value="collection"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
           </data_defined_properties>
         </layer>
-        <layer locked="0" enabled="1" class="GradientFill" pass="0">
-          <prop k="angle" v="0"/>
-          <prop k="color" v="0,0,0,26"/>
-          <prop k="color1" v="0,0,255,255"/>
-          <prop k="color2" v="0,255,0,255"/>
-          <prop k="color_type" v="0"/>
-          <prop k="coordinate_mode" v="0"/>
-          <prop k="discrete" v="0"/>
-          <prop k="gradient_color2" v="255,255,255,0"/>
-          <prop k="offset" v="0,0"/>
-          <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="rampType" v="gradient"/>
-          <prop k="reference_point1" v="0,0"/>
-          <prop k="reference_point1_iscentroid" v="0"/>
-          <prop k="reference_point2" v="1,1"/>
-          <prop k="reference_point2_iscentroid" v="0"/>
-          <prop k="spread" v="1"/>
-          <prop k="type" v="1"/>
+        <layer enabled="1" locked="0" class="GradientFill" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="0,0,0,26" k="color"/>
+          <prop v="0,0,255,255" k="color1"/>
+          <prop v="0,255,0,255" k="color2"/>
+          <prop v="0" k="color_type"/>
+          <prop v="0" k="coordinate_mode"/>
+          <prop v="0" k="discrete"/>
+          <prop v="255,255,255,0" k="gradient_color2"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="gradient" k="rampType"/>
+          <prop v="0,0" k="reference_point1"/>
+          <prop v="0" k="reference_point1_iscentroid"/>
+          <prop v="1,1" k="reference_point2"/>
+          <prop v="0" k="reference_point2_iscentroid"/>
+          <prop v="1" k="spread"/>
+          <prop v="1" k="type"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" name="name" value=""/>
+              <Option name="name" value="" type="QString"/>
               <Option name="properties"/>
-              <Option type="QString" name="type" value="collection"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
           </data_defined_properties>
         </layer>
       </symbol>
-      <symbol force_rhr="0" type="fill" name="3" clip_to_extent="1" alpha="1">
-        <layer locked="0" enabled="1" class="SimpleFill" pass="0">
-          <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="color" v="211,253,179,255"/>
-          <prop k="joinstyle" v="bevel"/>
-          <prop k="offset" v="0,0"/>
-          <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="outline_color" v="0,0,0,255"/>
-          <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.25"/>
-          <prop k="outline_width_unit" v="MM"/>
-          <prop k="style" v="solid"/>
+      <symbol name="3" force_rhr="0" clip_to_extent="1" type="fill" alpha="1">
+        <layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+          <prop v="211,253,179,255" k="color"/>
+          <prop v="bevel" k="joinstyle"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="0,0,0,255" k="outline_color"/>
+          <prop v="solid" k="outline_style"/>
+          <prop v="0.1" k="outline_width"/>
+          <prop v="RenderMetersInMapUnits" k="outline_width_unit"/>
+          <prop v="solid" k="style"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" name="name" value=""/>
-              <Option type="Map" name="properties">
-                <Option type="Map" name="fillColor">
-                  <Option type="bool" name="active" value="true"/>
-                  <Option type="QString" name="expression" value="coalesce(&quot;colour_primary_override&quot;,lighter(&quot;colour_primary_hex&quot;,&quot;colour_lightness&quot;))"/>
-                  <Option type="int" name="type" value="3"/>
+              <Option name="name" value="" type="QString"/>
+              <Option name="properties" type="Map">
+                <Option name="fillColor" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="coalesce(&quot;colour_primary_override&quot;,lighter(&quot;colour_primary_hex&quot;,&quot;colour_lightness&quot;))" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
                 </Option>
-                <Option type="Map" name="outlineColor">
-                  <Option type="bool" name="active" value="true"/>
-                  <Option type="QString" name="expression" value="coalesce(&quot;colour_secondary_override&quot;,lighter(&quot;colour_secondary_hex&quot;,&quot;colour_lightness&quot;))"/>
-                  <Option type="int" name="type" value="3"/>
+                <Option name="outlineColor" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="coalesce(&quot;colour_secondary_override&quot;,lighter(&quot;colour_secondary_hex&quot;,&quot;colour_lightness&quot;))" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
                 </Option>
               </Option>
-              <Option type="QString" name="type" value="collection"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
           </data_defined_properties>
         </layer>
-        <layer locked="0" enabled="1" class="ShapeburstFill" pass="0">
-          <prop k="blur_radius" v="8"/>
-          <prop k="color" v="0,0,0,26"/>
-          <prop k="color1" v="0,0,255,255"/>
-          <prop k="color2" v="0,255,0,255"/>
-          <prop k="color_type" v="0"/>
-          <prop k="discrete" v="0"/>
-          <prop k="distance_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="distance_unit" v="MM"/>
-          <prop k="gradient_color2" v="0,0,0,0"/>
-          <prop k="ignore_rings" v="0"/>
-          <prop k="max_distance" v="2"/>
-          <prop k="offset" v="0,0"/>
-          <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="rampType" v="gradient"/>
-          <prop k="use_whole_shape" v="0"/>
+        <layer enabled="1" locked="0" class="ShapeburstFill" pass="0">
+          <prop v="8" k="blur_radius"/>
+          <prop v="0,0,0,26" k="color"/>
+          <prop v="0,0,255,255" k="color1"/>
+          <prop v="0,255,0,255" k="color2"/>
+          <prop v="0" k="color_type"/>
+          <prop v="0" k="discrete"/>
+          <prop v="3x:0,0,0,0,0,0" k="distance_map_unit_scale"/>
+          <prop v="MM" k="distance_unit"/>
+          <prop v="0,0,0,0" k="gradient_color2"/>
+          <prop v="0" k="ignore_rings"/>
+          <prop v="2" k="max_distance"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="gradient" k="rampType"/>
+          <prop v="0" k="use_whole_shape"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" name="name" value=""/>
-              <Option type="Map" name="properties">
-                <Option type="Map" name="color2">
-                  <Option type="bool" name="active" value="false"/>
-                  <Option type="QString" name="field" value=""/>
-                  <Option type="int" name="type" value="2"/>
+              <Option name="name" value="" type="QString"/>
+              <Option name="properties" type="Map">
+                <Option name="color2" type="Map">
+                  <Option name="active" value="false" type="bool"/>
+                  <Option name="field" value="" type="QString"/>
+                  <Option name="type" value="2" type="int"/>
                 </Option>
               </Option>
-              <Option type="QString" name="type" value="collection"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
           </data_defined_properties>
         </layer>
       </symbol>
-      <symbol force_rhr="0" type="fill" name="4" clip_to_extent="1" alpha="1">
-        <layer locked="0" enabled="1" class="SimpleFill" pass="0">
-          <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="color" v="204,204,204,255"/>
-          <prop k="joinstyle" v="bevel"/>
-          <prop k="offset" v="0,0"/>
-          <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="outline_color" v="0,0,0,255"/>
-          <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.25"/>
-          <prop k="outline_width_unit" v="MM"/>
-          <prop k="style" v="solid"/>
+      <symbol name="4" force_rhr="0" clip_to_extent="1" type="fill" alpha="1">
+        <layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+          <prop v="204,204,204,255" k="color"/>
+          <prop v="bevel" k="joinstyle"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="0,0,0,255" k="outline_color"/>
+          <prop v="solid" k="outline_style"/>
+          <prop v="0.1" k="outline_width"/>
+          <prop v="RenderMetersInMapUnits" k="outline_width_unit"/>
+          <prop v="solid" k="style"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" name="name" value=""/>
-              <Option type="Map" name="properties">
-                <Option type="Map" name="fillColor">
-                  <Option type="bool" name="active" value="true"/>
-                  <Option type="QString" name="expression" value="coalesce(&quot;colour_primary_override&quot;,lighter(&quot;colour_primary_hex&quot;,&quot;colour_lightness&quot;))"/>
-                  <Option type="int" name="type" value="3"/>
+              <Option name="name" value="" type="QString"/>
+              <Option name="properties" type="Map">
+                <Option name="fillColor" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="coalesce(&quot;colour_primary_override&quot;,lighter(&quot;colour_primary_hex&quot;,&quot;colour_lightness&quot;))" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
                 </Option>
-                <Option type="Map" name="outlineColor">
-                  <Option type="bool" name="active" value="true"/>
-                  <Option type="QString" name="expression" value="coalesce(&quot;colour_secondary_override&quot;,lighter(&quot;colour_secondary_hex&quot;,&quot;colour_lightness&quot;))"/>
-                  <Option type="int" name="type" value="3"/>
+                <Option name="outlineColor" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="coalesce(&quot;colour_secondary_override&quot;,lighter(&quot;colour_secondary_hex&quot;,&quot;colour_lightness&quot;))" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
                 </Option>
               </Option>
-              <Option type="QString" name="type" value="collection"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
           </data_defined_properties>
         </layer>
-        <layer locked="0" enabled="1" class="ShapeburstFill" pass="0">
-          <prop k="blur_radius" v="8"/>
-          <prop k="color" v="0,0,0,26"/>
-          <prop k="color1" v="0,0,255,255"/>
-          <prop k="color2" v="0,255,0,255"/>
-          <prop k="color_type" v="0"/>
-          <prop k="discrete" v="0"/>
-          <prop k="distance_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="distance_unit" v="MM"/>
-          <prop k="gradient_color2" v="0,0,0,0"/>
-          <prop k="ignore_rings" v="0"/>
-          <prop k="max_distance" v="2"/>
-          <prop k="offset" v="0,0"/>
-          <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="rampType" v="gradient"/>
-          <prop k="use_whole_shape" v="0"/>
+        <layer enabled="1" locked="0" class="ShapeburstFill" pass="0">
+          <prop v="8" k="blur_radius"/>
+          <prop v="0,0,0,26" k="color"/>
+          <prop v="0,0,255,255" k="color1"/>
+          <prop v="0,255,0,255" k="color2"/>
+          <prop v="0" k="color_type"/>
+          <prop v="0" k="discrete"/>
+          <prop v="3x:0,0,0,0,0,0" k="distance_map_unit_scale"/>
+          <prop v="MM" k="distance_unit"/>
+          <prop v="0,0,0,0" k="gradient_color2"/>
+          <prop v="0" k="ignore_rings"/>
+          <prop v="2" k="max_distance"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="gradient" k="rampType"/>
+          <prop v="0" k="use_whole_shape"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" name="name" value=""/>
+              <Option name="name" value="" type="QString"/>
               <Option name="properties"/>
-              <Option type="QString" name="type" value="collection"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
           </data_defined_properties>
         </layer>
       </symbol>
-      <symbol force_rhr="0" type="fill" name="5" clip_to_extent="1" alpha="1">
-        <layer locked="0" enabled="1" class="SimpleFill" pass="0">
-          <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="color" v="242,181,199,255"/>
-          <prop k="joinstyle" v="bevel"/>
-          <prop k="offset" v="0,0"/>
-          <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="outline_color" v="0,0,0,255"/>
-          <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.25"/>
-          <prop k="outline_width_unit" v="MM"/>
-          <prop k="style" v="solid"/>
+      <symbol name="5" force_rhr="0" clip_to_extent="1" type="fill" alpha="1">
+        <layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+          <prop v="242,181,199,255" k="color"/>
+          <prop v="bevel" k="joinstyle"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="0,0,0,255" k="outline_color"/>
+          <prop v="solid" k="outline_style"/>
+          <prop v="0.1" k="outline_width"/>
+          <prop v="RenderMetersInMapUnits" k="outline_width_unit"/>
+          <prop v="solid" k="style"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" name="name" value=""/>
-              <Option type="Map" name="properties">
-                <Option type="Map" name="fillColor">
-                  <Option type="bool" name="active" value="true"/>
-                  <Option type="QString" name="expression" value="coalesce(&quot;colour_primary_override&quot;,lighter(&quot;colour_primary_hex&quot;,&quot;colour_lightness&quot;))"/>
-                  <Option type="int" name="type" value="3"/>
+              <Option name="name" value="" type="QString"/>
+              <Option name="properties" type="Map">
+                <Option name="fillColor" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="coalesce(&quot;colour_primary_override&quot;,lighter(&quot;colour_primary_hex&quot;,&quot;colour_lightness&quot;))" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
                 </Option>
-                <Option type="Map" name="outlineColor">
-                  <Option type="bool" name="active" value="true"/>
-                  <Option type="QString" name="expression" value="coalesce(&quot;colour_secondary_override&quot;,lighter(&quot;colour_secondary_hex&quot;,&quot;colour_lightness&quot;))"/>
-                  <Option type="int" name="type" value="3"/>
+                <Option name="outlineColor" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="coalesce(&quot;colour_secondary_override&quot;,lighter(&quot;colour_secondary_hex&quot;,&quot;colour_lightness&quot;))" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
                 </Option>
               </Option>
-              <Option type="QString" name="type" value="collection"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
           </data_defined_properties>
         </layer>
       </symbol>
-      <symbol force_rhr="0" type="fill" name="6" clip_to_extent="1" alpha="1">
-        <layer locked="0" enabled="1" class="SimpleFill" pass="0">
-          <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="color" v="89,89,89,255"/>
-          <prop k="joinstyle" v="bevel"/>
-          <prop k="offset" v="0,0"/>
-          <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="outline_color" v="0,0,0,255"/>
-          <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.25"/>
-          <prop k="outline_width_unit" v="MM"/>
-          <prop k="style" v="solid"/>
+      <symbol name="6" force_rhr="0" clip_to_extent="1" type="fill" alpha="1">
+        <layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+          <prop v="89,89,89,255" k="color"/>
+          <prop v="bevel" k="joinstyle"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="0,0,0,255" k="outline_color"/>
+          <prop v="solid" k="outline_style"/>
+          <prop v="0.1" k="outline_width"/>
+          <prop v="RenderMetersInMapUnits" k="outline_width_unit"/>
+          <prop v="solid" k="style"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" name="name" value=""/>
-              <Option type="Map" name="properties">
-                <Option type="Map" name="fillColor">
-                  <Option type="bool" name="active" value="true"/>
-                  <Option type="QString" name="expression" value="coalesce(&quot;colour_primary_override&quot;,lighter(&quot;colour_primary_hex&quot;,&quot;colour_lightness&quot;))"/>
-                  <Option type="int" name="type" value="3"/>
+              <Option name="name" value="" type="QString"/>
+              <Option name="properties" type="Map">
+                <Option name="fillColor" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="coalesce(&quot;colour_primary_override&quot;,lighter(&quot;colour_primary_hex&quot;,&quot;colour_lightness&quot;))" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
                 </Option>
-                <Option type="Map" name="outlineColor">
-                  <Option type="bool" name="active" value="true"/>
-                  <Option type="QString" name="expression" value="coalesce(&quot;colour_secondary_override&quot;,lighter(&quot;colour_secondary_hex&quot;,&quot;colour_lightness&quot;))"/>
-                  <Option type="int" name="type" value="3"/>
+                <Option name="outlineColor" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="coalesce(&quot;colour_secondary_override&quot;,lighter(&quot;colour_secondary_hex&quot;,&quot;colour_lightness&quot;))" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
                 </Option>
               </Option>
-              <Option type="QString" name="type" value="collection"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
           </data_defined_properties>
         </layer>
       </symbol>
-      <symbol force_rhr="0" type="fill" name="7" clip_to_extent="1" alpha="1">
-        <layer locked="0" enabled="1" class="SimpleFill" pass="0">
-          <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="color" v="112,204,120,255"/>
-          <prop k="joinstyle" v="bevel"/>
-          <prop k="offset" v="0,0"/>
-          <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="outline_color" v="0,0,0,255"/>
-          <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.25"/>
-          <prop k="outline_width_unit" v="MM"/>
-          <prop k="style" v="solid"/>
+      <symbol name="7" force_rhr="0" clip_to_extent="1" type="fill" alpha="1">
+        <layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+          <prop v="112,204,120,255" k="color"/>
+          <prop v="bevel" k="joinstyle"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="0,0,0,255" k="outline_color"/>
+          <prop v="solid" k="outline_style"/>
+          <prop v="0.1" k="outline_width"/>
+          <prop v="RenderMetersInMapUnits" k="outline_width_unit"/>
+          <prop v="solid" k="style"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" name="name" value=""/>
-              <Option type="Map" name="properties">
-                <Option type="Map" name="fillColor">
-                  <Option type="bool" name="active" value="true"/>
-                  <Option type="QString" name="expression" value="coalesce(&quot;colour_primary_override&quot;,lighter(&quot;colour_primary_hex&quot;,&quot;colour_lightness&quot;))"/>
-                  <Option type="int" name="type" value="3"/>
+              <Option name="name" value="" type="QString"/>
+              <Option name="properties" type="Map">
+                <Option name="fillColor" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="coalesce(&quot;colour_primary_override&quot;,lighter(&quot;colour_primary_hex&quot;,&quot;colour_lightness&quot;))" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
                 </Option>
-                <Option type="Map" name="outlineWidth">
-                  <Option type="bool" name="active" value="true"/>
-                  <Option type="QString" name="expression" value="coalesce(&quot;colour_secondary_override&quot;,lighter(&quot;colour_secondary_hex&quot;,&quot;colour_lightness&quot;))"/>
-                  <Option type="int" name="type" value="3"/>
+                <Option name="outlineWidth" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="coalesce(&quot;colour_secondary_override&quot;,lighter(&quot;colour_secondary_hex&quot;,&quot;colour_lightness&quot;))" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
                 </Option>
               </Option>
-              <Option type="QString" name="type" value="collection"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
           </data_defined_properties>
         </layer>
-        <layer locked="0" enabled="1" class="ShapeburstFill" pass="0">
-          <prop k="blur_radius" v="10"/>
-          <prop k="color" v="89,89,89,77"/>
-          <prop k="color1" v="0,0,255,255"/>
-          <prop k="color2" v="0,255,0,255"/>
-          <prop k="color_type" v="0"/>
-          <prop k="discrete" v="0"/>
-          <prop k="distance_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="distance_unit" v="MM"/>
-          <prop k="gradient_color2" v="89,89,89,128"/>
-          <prop k="ignore_rings" v="0"/>
-          <prop k="max_distance" v="5"/>
-          <prop k="offset" v="0,0"/>
-          <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="rampType" v="gradient"/>
-          <prop k="use_whole_shape" v="1"/>
+        <layer enabled="1" locked="0" class="ShapeburstFill" pass="0">
+          <prop v="10" k="blur_radius"/>
+          <prop v="89,89,89,77" k="color"/>
+          <prop v="0,0,255,255" k="color1"/>
+          <prop v="0,255,0,255" k="color2"/>
+          <prop v="0" k="color_type"/>
+          <prop v="0" k="discrete"/>
+          <prop v="3x:0,0,0,0,0,0" k="distance_map_unit_scale"/>
+          <prop v="MM" k="distance_unit"/>
+          <prop v="89,89,89,128" k="gradient_color2"/>
+          <prop v="0" k="ignore_rings"/>
+          <prop v="5" k="max_distance"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="gradient" k="rampType"/>
+          <prop v="1" k="use_whole_shape"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" name="name" value=""/>
+              <Option name="name" value="" type="QString"/>
               <Option name="properties"/>
-              <Option type="QString" name="type" value="collection"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
           </data_defined_properties>
         </layer>
       </symbol>
-      <symbol force_rhr="0" type="fill" name="8" clip_to_extent="1" alpha="1">
-        <layer locked="0" enabled="1" class="SimpleFill" pass="0">
-          <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="color" v="64,64,64,255"/>
-          <prop k="joinstyle" v="bevel"/>
-          <prop k="offset" v="0,0"/>
-          <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="outline_color" v="0,0,0,255"/>
-          <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.25"/>
-          <prop k="outline_width_unit" v="MM"/>
-          <prop k="style" v="solid"/>
+      <symbol name="8" force_rhr="0" clip_to_extent="1" type="fill" alpha="1">
+        <layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+          <prop v="64,64,64,255" k="color"/>
+          <prop v="bevel" k="joinstyle"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="0,0,0,255" k="outline_color"/>
+          <prop v="solid" k="outline_style"/>
+          <prop v="0.1" k="outline_width"/>
+          <prop v="RenderMetersInMapUnits" k="outline_width_unit"/>
+          <prop v="solid" k="style"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" name="name" value=""/>
-              <Option type="Map" name="properties">
-                <Option type="Map" name="fillColor">
-                  <Option type="bool" name="active" value="true"/>
-                  <Option type="QString" name="expression" value="coalesce(&quot;colour_primary_override&quot;,lighter(&quot;colour_primary_hex&quot;,&quot;colour_lightness&quot;))"/>
-                  <Option type="int" name="type" value="3"/>
+              <Option name="name" value="" type="QString"/>
+              <Option name="properties" type="Map">
+                <Option name="fillColor" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="coalesce(&quot;colour_primary_override&quot;,lighter(&quot;colour_primary_hex&quot;,&quot;colour_lightness&quot;))" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
                 </Option>
-                <Option type="Map" name="outlineWidth">
-                  <Option type="bool" name="active" value="true"/>
-                  <Option type="QString" name="expression" value="coalesce(&quot;colour_secondary_override&quot;,lighter(&quot;colour_secondary_hex&quot;,&quot;colour_lightness&quot;))"/>
-                  <Option type="int" name="type" value="3"/>
+                <Option name="outlineWidth" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="coalesce(&quot;colour_secondary_override&quot;,lighter(&quot;colour_secondary_hex&quot;,&quot;colour_lightness&quot;))" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
                 </Option>
               </Option>
-              <Option type="QString" name="type" value="collection"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
           </data_defined_properties>
         </layer>
       </symbol>
-      <symbol force_rhr="0" type="fill" name="9" clip_to_extent="1" alpha="1">
-        <layer locked="0" enabled="1" class="SimpleFill" pass="0">
-          <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="color" v="127,255,255,255"/>
-          <prop k="joinstyle" v="bevel"/>
-          <prop k="offset" v="0,0"/>
-          <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="outline_color" v="0,0,0,255"/>
-          <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.25"/>
-          <prop k="outline_width_unit" v="MM"/>
-          <prop k="style" v="solid"/>
+      <symbol name="9" force_rhr="0" clip_to_extent="1" type="fill" alpha="1">
+        <layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+          <prop v="127,255,255,255" k="color"/>
+          <prop v="bevel" k="joinstyle"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="0,0,0,255" k="outline_color"/>
+          <prop v="solid" k="outline_style"/>
+          <prop v="0.1" k="outline_width"/>
+          <prop v="RenderMetersInMapUnits" k="outline_width_unit"/>
+          <prop v="solid" k="style"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" name="name" value=""/>
-              <Option type="Map" name="properties">
-                <Option type="Map" name="fillColor">
-                  <Option type="bool" name="active" value="true"/>
-                  <Option type="QString" name="expression" value="coalesce(&quot;colour_primary_override&quot;,lighter(&quot;colour_primary_hex&quot;,&quot;colour_lightness&quot;))"/>
-                  <Option type="int" name="type" value="3"/>
+              <Option name="name" value="" type="QString"/>
+              <Option name="properties" type="Map">
+                <Option name="fillColor" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="coalesce(&quot;colour_primary_override&quot;,lighter(&quot;colour_primary_hex&quot;,&quot;colour_lightness&quot;))" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
                 </Option>
-                <Option type="Map" name="outlineColor">
-                  <Option type="bool" name="active" value="true"/>
-                  <Option type="QString" name="expression" value="coalesce(&quot;colour_secondary_override&quot;,lighter(&quot;colour_secondary_hex&quot;,&quot;colour_lightness&quot;))"/>
-                  <Option type="int" name="type" value="3"/>
+                <Option name="outlineColor" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="coalesce(&quot;colour_secondary_override&quot;,lighter(&quot;colour_secondary_hex&quot;,&quot;colour_lightness&quot;))" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
                 </Option>
               </Option>
-              <Option type="QString" name="type" value="collection"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
           </data_defined_properties>
         </layer>
-        <layer locked="0" enabled="1" class="GradientFill" pass="0">
-          <prop k="angle" v="270"/>
-          <prop k="color" v="255,255,255,0"/>
-          <prop k="color1" v="0,0,255,255"/>
-          <prop k="color2" v="0,255,0,255"/>
-          <prop k="color_type" v="0"/>
-          <prop k="coordinate_mode" v="0"/>
-          <prop k="discrete" v="0"/>
-          <prop k="gradient_color2" v="255,255,255,64"/>
-          <prop k="offset" v="0,0"/>
-          <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="rampType" v="gradient"/>
-          <prop k="reference_point1" v="0,0"/>
-          <prop k="reference_point1_iscentroid" v="0"/>
-          <prop k="reference_point2" v="1,1"/>
-          <prop k="reference_point2_iscentroid" v="1"/>
-          <prop k="spread" v="0"/>
-          <prop k="type" v="1"/>
+        <layer enabled="1" locked="0" class="GradientFill" pass="0">
+          <prop v="270" k="angle"/>
+          <prop v="255,255,255,0" k="color"/>
+          <prop v="0,0,255,255" k="color1"/>
+          <prop v="0,255,0,255" k="color2"/>
+          <prop v="0" k="color_type"/>
+          <prop v="0" k="coordinate_mode"/>
+          <prop v="0" k="discrete"/>
+          <prop v="255,255,255,64" k="gradient_color2"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="gradient" k="rampType"/>
+          <prop v="0,0" k="reference_point1"/>
+          <prop v="0" k="reference_point1_iscentroid"/>
+          <prop v="1,1" k="reference_point2"/>
+          <prop v="1" k="reference_point2_iscentroid"/>
+          <prop v="0" k="spread"/>
+          <prop v="1" k="type"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" name="name" value=""/>
-              <Option type="Map" name="properties">
-                <Option type="Map" name="angle">
-                  <Option type="bool" name="active" value="false"/>
-                  <Option type="QString" name="field" value=""/>
-                  <Option type="int" name="type" value="2"/>
+              <Option name="name" value="" type="QString"/>
+              <Option name="properties" type="Map">
+                <Option name="angle" type="Map">
+                  <Option name="active" value="false" type="bool"/>
+                  <Option name="field" value="" type="QString"/>
+                  <Option name="type" value="2" type="int"/>
                 </Option>
               </Option>
-              <Option type="QString" name="type" value="collection"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
           </data_defined_properties>
         </layer>
       </symbol>
     </symbols>
     <source-symbol>
-      <symbol force_rhr="0" type="fill" name="0" clip_to_extent="1" alpha="1">
-        <layer locked="0" enabled="1" class="SimpleFill" pass="0">
-          <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="color" v="12,195,140,255"/>
-          <prop k="joinstyle" v="bevel"/>
-          <prop k="offset" v="0,0"/>
-          <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="outline_color" v="0,0,0,255"/>
-          <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.26"/>
-          <prop k="outline_width_unit" v="MM"/>
-          <prop k="style" v="solid"/>
+      <symbol name="0" force_rhr="0" clip_to_extent="1" type="fill" alpha="1">
+        <layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+          <prop v="12,195,140,255" k="color"/>
+          <prop v="bevel" k="joinstyle"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="0,0,0,255" k="outline_color"/>
+          <prop v="solid" k="outline_style"/>
+          <prop v="0.26" k="outline_width"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="solid" k="style"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" name="name" value=""/>
+              <Option name="name" value="" type="QString"/>
               <Option name="properties"/>
-              <Option type="QString" name="type" value="collection"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
           </data_defined_properties>
         </layer>
@@ -597,12 +597,12 @@
     <rotation/>
     <sizescale/>
     <orderby>
-      <orderByClause asc="0" nullsFirst="0">$area</orderByClause>
+      <orderByClause nullsFirst="0" asc="0">$area</orderByClause>
     </orderby>
   </renderer-v2>
   <customproperties>
-    <property key="dualview/previewExpressions" value="fid"/>
-    <property key="embeddedWidgets/count" value="0"/>
+    <property value="fid" key="dualview/previewExpressions"/>
+    <property value="0" key="embeddedWidgets/count"/>
     <property key="variableNames"/>
     <property key="variableValues"/>
   </customproperties>
@@ -610,21 +610,21 @@
   <featureBlendMode>0</featureBlendMode>
   <layerOpacity>1</layerOpacity>
   <SingleCategoryDiagramRenderer attributeLegend="1" diagramType="Histogram">
-    <DiagramCategory backgroundColor="#ffffff" penWidth="0" rotationOffset="270" scaleBasedVisibility="0" lineSizeType="MM" penAlpha="255" diagramOrientation="Up" width="15" scaleDependency="Area" penColor="#000000" minimumSize="0" lineSizeScale="3x:0,0,0,0,0,0" labelPlacementMethod="XHeight" backgroundAlpha="255" barWidth="5" maxScaleDenominator="1e+08" sizeType="MM" opacity="1" sizeScale="3x:0,0,0,0,0,0" enabled="0" minScaleDenominator="0" height="15">
+    <DiagramCategory penAlpha="255" backgroundColor="#ffffff" sizeScale="3x:0,0,0,0,0,0" height="15" backgroundAlpha="255" maxScaleDenominator="1e+08" barWidth="5" labelPlacementMethod="XHeight" rotationOffset="270" lineSizeType="MM" diagramOrientation="Up" scaleDependency="Area" width="15" minimumSize="0" penWidth="0" scaleBasedVisibility="0" penColor="#000000" lineSizeScale="3x:0,0,0,0,0,0" minScaleDenominator="0" enabled="0" sizeType="MM" opacity="1">
       <fontProperties style="" description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0"/>
-      <attribute label="" color="#000000" field=""/>
+      <attribute color="#000000" label="" field=""/>
     </DiagramCategory>
   </SingleCategoryDiagramRenderer>
-  <DiagramLayerSettings obstacle="0" showAll="1" linePlacementFlags="18" dist="0" priority="0" zIndex="0" placement="1">
+  <DiagramLayerSettings dist="0" obstacle="0" linePlacementFlags="18" placement="1" zIndex="0" priority="0" showAll="1">
     <properties>
       <Option type="Map">
-        <Option type="QString" name="name" value=""/>
+        <Option name="name" value="" type="QString"/>
         <Option name="properties"/>
-        <Option type="QString" name="type" value="collection"/>
+        <Option name="type" value="collection" type="QString"/>
       </Option>
     </properties>
   </DiagramLayerSettings>
-  <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
+  <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
     <activeChecks/>
     <checkConfiguration/>
   </geometryOptions>
@@ -633,8 +633,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option type="bool" name="IsMultiline" value="false"/>
-            <Option type="bool" name="UseHtml" value="false"/>
+            <Option name="IsMultiline" value="false" type="bool"/>
+            <Option name="UseHtml" value="false" type="bool"/>
           </Option>
         </config>
       </editWidget>
@@ -650,8 +650,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option type="bool" name="IsMultiline" value="false"/>
-            <Option type="bool" name="UseHtml" value="false"/>
+            <Option name="IsMultiline" value="false" type="bool"/>
+            <Option name="UseHtml" value="false" type="bool"/>
           </Option>
         </config>
       </editWidget>
@@ -660,7 +660,7 @@
       <editWidget type="UniqueValues">
         <config>
           <Option type="Map">
-            <Option type="bool" name="Editable" value="true"/>
+            <Option name="Editable" value="true" type="bool"/>
           </Option>
         </config>
       </editWidget>
@@ -697,10 +697,10 @@
       <editWidget type="Range">
         <config>
           <Option type="Map">
-            <Option type="bool" name="AllowNull" value="false"/>
-            <Option type="int" name="Precision" value="0"/>
-            <Option type="QString" name="Style" value=""/>
-            <Option type="QString" name="Suffix" value="%"/>
+            <Option name="AllowNull" value="false" type="bool"/>
+            <Option name="Precision" value="0" type="int"/>
+            <Option name="Style" value="" type="QString"/>
+            <Option name="Suffix" value="%" type="QString"/>
           </Option>
         </config>
       </editWidget>
@@ -709,8 +709,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option type="bool" name="IsMultiline" value="false"/>
-            <Option type="bool" name="UseHtml" value="false"/>
+            <Option name="IsMultiline" value="false" type="bool"/>
+            <Option name="UseHtml" value="false" type="bool"/>
           </Option>
         </config>
       </editWidget>
@@ -719,8 +719,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option type="bool" name="IsMultiline" value="false"/>
-            <Option type="bool" name="UseHtml" value="false"/>
+            <Option name="IsMultiline" value="false" type="bool"/>
+            <Option name="UseHtml" value="false" type="bool"/>
           </Option>
         </config>
       </editWidget>
@@ -729,8 +729,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option type="bool" name="IsMultiline" value="false"/>
-            <Option type="bool" name="UseHtml" value="false"/>
+            <Option name="IsMultiline" value="false" type="bool"/>
+            <Option name="UseHtml" value="false" type="bool"/>
           </Option>
         </config>
       </editWidget>
@@ -739,94 +739,94 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option type="bool" name="IsMultiline" value="false"/>
-            <Option type="bool" name="UseHtml" value="false"/>
+            <Option name="IsMultiline" value="false" type="bool"/>
+            <Option name="UseHtml" value="false" type="bool"/>
           </Option>
         </config>
       </editWidget>
     </field>
   </fieldConfiguration>
   <aliases>
-    <alias name="" field="fid" index="0"/>
-    <alias name="" field="class" index="1"/>
-    <alias name="" field="name" index="2"/>
-    <alias name="" field="colour_name" index="3"/>
-    <alias name="" field="colour_primary_hex" index="4"/>
-    <alias name="" field="colour_primary_override" index="5"/>
-    <alias name="" field="colour_secondary_hex" index="6"/>
-    <alias name="" field="colour_secondary_override" index="7"/>
-    <alias name="" field="colour_lightness" index="8"/>
-    <alias name="" field="uuid" index="9"/>
-    <alias name="" field="area" index="10"/>
-    <alias name="" field="created" index="11"/>
-    <alias name="" field="modified" index="12"/>
+    <alias name="" index="0" field="fid"/>
+    <alias name="" index="1" field="class"/>
+    <alias name="" index="2" field="name"/>
+    <alias name="" index="3" field="colour_name"/>
+    <alias name="" index="4" field="colour_primary_hex"/>
+    <alias name="" index="5" field="colour_primary_override"/>
+    <alias name="" index="6" field="colour_secondary_hex"/>
+    <alias name="" index="7" field="colour_secondary_override"/>
+    <alias name="" index="8" field="colour_lightness"/>
+    <alias name="" index="9" field="uuid"/>
+    <alias name="" index="10" field="area"/>
+    <alias name="" index="11" field="created"/>
+    <alias name="" index="12" field="modified"/>
   </aliases>
   <excludeAttributesWMS/>
   <excludeAttributesWFS/>
   <defaults>
-    <default field="fid" expression="" applyOnUpdate="0"/>
-    <default field="class" expression="''Unclassified''" applyOnUpdate="0"/>
-    <default field="name" expression="" applyOnUpdate="0"/>
-    <default field="colour_name" expression="" applyOnUpdate="0"/>
-    <default field="colour_primary_hex" expression="" applyOnUpdate="0"/>
-    <default field="colour_primary_override" expression="" applyOnUpdate="0"/>
-    <default field="colour_secondary_hex" expression="" applyOnUpdate="0"/>
-    <default field="colour_secondary_override" expression="" applyOnUpdate="0"/>
-    <default field="colour_lightness" expression=" rand( 85, 115 )" applyOnUpdate="0"/>
-    <default field="uuid" expression=" regexp_replace( uuid() , ''\\{|\\}'', '''')" applyOnUpdate="0"/>
-    <default field="area" expression="$area" applyOnUpdate="0"/>
-    <default field="created" expression=" format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )" applyOnUpdate="0"/>
-    <default field="modified" expression=" format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )" applyOnUpdate="1"/>
+    <default applyOnUpdate="0" expression="" field="fid"/>
+    <default applyOnUpdate="0" expression="''Unclassified''" field="class"/>
+    <default applyOnUpdate="0" expression="" field="name"/>
+    <default applyOnUpdate="0" expression="" field="colour_name"/>
+    <default applyOnUpdate="0" expression="" field="colour_primary_hex"/>
+    <default applyOnUpdate="0" expression="" field="colour_primary_override"/>
+    <default applyOnUpdate="0" expression="" field="colour_secondary_hex"/>
+    <default applyOnUpdate="0" expression="" field="colour_secondary_override"/>
+    <default applyOnUpdate="0" expression=" rand( 85, 115 )" field="colour_lightness"/>
+    <default applyOnUpdate="0" expression=" regexp_replace( uuid() , ''\\{|\\}'', '''')" field="uuid"/>
+    <default applyOnUpdate="0" expression="$area" field="area"/>
+    <default applyOnUpdate="0" expression=" format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )" field="created"/>
+    <default applyOnUpdate="1" expression=" format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )" field="modified"/>
   </defaults>
   <constraints>
-    <constraint constraints="3" notnull_strength="1" field="fid" unique_strength="1" exp_strength="0"/>
-    <constraint constraints="1" notnull_strength="1" field="class" unique_strength="0" exp_strength="0"/>
-    <constraint constraints="0" notnull_strength="0" field="name" unique_strength="0" exp_strength="0"/>
-    <constraint constraints="0" notnull_strength="0" field="colour_name" unique_strength="0" exp_strength="0"/>
-    <constraint constraints="0" notnull_strength="0" field="colour_primary_hex" unique_strength="0" exp_strength="0"/>
-    <constraint constraints="0" notnull_strength="0" field="colour_primary_override" unique_strength="0" exp_strength="0"/>
-    <constraint constraints="0" notnull_strength="0" field="colour_secondary_hex" unique_strength="0" exp_strength="0"/>
-    <constraint constraints="0" notnull_strength="0" field="colour_secondary_override" unique_strength="0" exp_strength="0"/>
-    <constraint constraints="0" notnull_strength="0" field="colour_lightness" unique_strength="0" exp_strength="0"/>
-    <constraint constraints="1" notnull_strength="1" field="uuid" unique_strength="0" exp_strength="0"/>
-    <constraint constraints="0" notnull_strength="0" field="area" unique_strength="0" exp_strength="0"/>
-    <constraint constraints="1" notnull_strength="1" field="created" unique_strength="0" exp_strength="0"/>
-    <constraint constraints="1" notnull_strength="1" field="modified" unique_strength="0" exp_strength="0"/>
+    <constraint exp_strength="0" unique_strength="1" constraints="3" notnull_strength="1" field="fid"/>
+    <constraint exp_strength="0" unique_strength="0" constraints="1" notnull_strength="1" field="class"/>
+    <constraint exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0" field="name"/>
+    <constraint exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0" field="colour_name"/>
+    <constraint exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0" field="colour_primary_hex"/>
+    <constraint exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0" field="colour_primary_override"/>
+    <constraint exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0" field="colour_secondary_hex"/>
+    <constraint exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0" field="colour_secondary_override"/>
+    <constraint exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0" field="colour_lightness"/>
+    <constraint exp_strength="0" unique_strength="0" constraints="1" notnull_strength="1" field="uuid"/>
+    <constraint exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0" field="area"/>
+    <constraint exp_strength="0" unique_strength="0" constraints="1" notnull_strength="1" field="created"/>
+    <constraint exp_strength="0" unique_strength="0" constraints="1" notnull_strength="1" field="modified"/>
   </constraints>
   <constraintExpressions>
-    <constraint field="fid" exp="" desc=""/>
-    <constraint field="class" exp="" desc=""/>
-    <constraint field="name" exp="" desc=""/>
-    <constraint field="colour_name" exp="" desc=""/>
-    <constraint field="colour_primary_hex" exp="" desc=""/>
-    <constraint field="colour_primary_override" exp="" desc=""/>
-    <constraint field="colour_secondary_hex" exp="" desc=""/>
-    <constraint field="colour_secondary_override" exp="" desc=""/>
-    <constraint field="colour_lightness" exp="" desc=""/>
-    <constraint field="uuid" exp="" desc=""/>
-    <constraint field="area" exp="" desc=""/>
-    <constraint field="created" exp="" desc=""/>
-    <constraint field="modified" exp="" desc=""/>
+    <constraint exp="" desc="" field="fid"/>
+    <constraint exp="" desc="" field="class"/>
+    <constraint exp="" desc="" field="name"/>
+    <constraint exp="" desc="" field="colour_name"/>
+    <constraint exp="" desc="" field="colour_primary_hex"/>
+    <constraint exp="" desc="" field="colour_primary_override"/>
+    <constraint exp="" desc="" field="colour_secondary_hex"/>
+    <constraint exp="" desc="" field="colour_secondary_override"/>
+    <constraint exp="" desc="" field="colour_lightness"/>
+    <constraint exp="" desc="" field="uuid"/>
+    <constraint exp="" desc="" field="area"/>
+    <constraint exp="" desc="" field="created"/>
+    <constraint exp="" desc="" field="modified"/>
   </constraintExpressions>
   <expressionfields/>
   <attributeactions>
-    <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
+    <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
   </attributeactions>
-  <attributetableconfig sortOrder="0" sortExpression="" actionWidgetStyle="dropDown">
+  <attributetableconfig actionWidgetStyle="dropDown" sortOrder="0" sortExpression="">
     <columns>
-      <column type="field" name="fid" hidden="0" width="-1"/>
-      <column type="field" name="class" hidden="0" width="-1"/>
-      <column type="field" name="name" hidden="0" width="-1"/>
-      <column type="field" name="colour_name" hidden="0" width="-1"/>
-      <column type="field" name="colour_primary_hex" hidden="0" width="-1"/>
-      <column type="field" name="colour_primary_override" hidden="0" width="-1"/>
-      <column type="field" name="colour_secondary_hex" hidden="0" width="-1"/>
-      <column type="field" name="colour_secondary_override" hidden="0" width="-1"/>
-      <column type="field" name="colour_lightness" hidden="0" width="-1"/>
-      <column type="field" name="uuid" hidden="0" width="-1"/>
-      <column type="field" name="area" hidden="0" width="-1"/>
-      <column type="field" name="created" hidden="0" width="-1"/>
-      <column type="field" name="modified" hidden="0" width="-1"/>
+      <column name="fid" type="field" hidden="0" width="-1"/>
+      <column name="class" type="field" hidden="0" width="-1"/>
+      <column name="name" type="field" hidden="0" width="-1"/>
+      <column name="colour_name" type="field" hidden="0" width="-1"/>
+      <column name="colour_primary_hex" type="field" hidden="0" width="-1"/>
+      <column name="colour_primary_override" type="field" hidden="0" width="-1"/>
+      <column name="colour_secondary_hex" type="field" hidden="0" width="-1"/>
+      <column name="colour_secondary_override" type="field" hidden="0" width="-1"/>
+      <column name="colour_lightness" type="field" hidden="0" width="-1"/>
+      <column name="uuid" type="field" hidden="0" width="-1"/>
+      <column name="area" type="field" hidden="0" width="-1"/>
+      <column name="created" type="field" hidden="0" width="-1"/>
+      <column name="modified" type="field" hidden="0" width="-1"/>
       <column type="actions" hidden="1" width="-1"/>
     </columns>
   </attributetableconfig>
@@ -858,7 +858,7 @@ def my_form_open(dialog, layer, feature):
   <featformsuppress>0</featformsuppress>
   <editorlayout>tablayout</editorlayout>
   <attributeEditorForm>
-    <attributeEditorContainer visibilityExpression="" name="" columnCount="1" showLabel="1" groupBox="1" visibilityExpressionEnabled="0">
+    <attributeEditorContainer name="" visibilityExpression="" visibilityExpressionEnabled="0" showLabel="1" groupBox="1" columnCount="1">
       <attributeEditorField name="class" index="1" showLabel="1"/>
       <attributeEditorField name="colour_name" index="3" showLabel="1"/>
       <attributeEditorField name="name" index="2" showLabel="1"/>
