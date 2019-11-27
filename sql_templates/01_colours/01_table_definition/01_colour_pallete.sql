@@ -14,7 +14,8 @@ BEGIN;
       SET the_geom = BuildMbr((colour_no % 10) + 0.05,
                               CAST(colour_no / 10 AS INTEGER) + 0.05,
                               (colour_no % 10) + 0.95,
-                              CAST(colour_no / 10 AS INTEGER) + 0.95
+                              CAST(colour_no / 10 AS INTEGER) + 0.95,
+                              {{ local_datum if local_datum is defined else -1 }}
                               )
       WHERE colour_no = NEW.colour_no;
     END;
