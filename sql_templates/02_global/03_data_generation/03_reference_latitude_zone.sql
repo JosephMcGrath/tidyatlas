@@ -1,7 +1,7 @@
 {% if global %}
 BEGIN;
-    /*World bounding box*/
-    INSERT OR IGNORE INTO reference_latitude_zone_input (category, label, min_latitude, max_latitude)
+    /*Reference Latitude Zones*/
+    INSERT OR IGNORE INTO circulation_cell_input (category, label, min_latitude, max_latitude)
     VALUES
         ('Circulation Cell', 'Hadley Cell (North)', 0, 30)
       , ('Circulation Cell', 'Hadley Cell (South)', 0, -30)
@@ -9,8 +9,11 @@ BEGIN;
       , ('Circulation Cell', 'Ferrel Cell (South)', -30, -60)
       , ('Circulation Cell', 'Polar Cell (North)', 60, 90)
       , ('Circulation Cell', 'Polar Cell (South)', -60, -90)
+    ;
 
-      , ('Climate Lattitude', 'Tropical Rainforest (North)', 0, 10)
+    INSERT OR IGNORE INTO climate_zone_input (category, label, min_latitude, max_latitude)
+    VALUES
+        ('Climate Lattitude', 'Tropical Rainforest (North)', 0, 10)
       , ('Climate Lattitude', 'Tropical Rainforest (South)', 0, -10)
       , ('Climate Lattitude', 'Tropical Monsoon (North)', 5, 20)
       , ('Climate Lattitude', 'Tropical Monsoon (South)', -5, -20)

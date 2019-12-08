@@ -5,7 +5,7 @@ BEGIN;
         category TEXT PRIMARY KEY
     );
 
-    INSERT INTO tectonic_plate_category
+    INSERT INTO tectonic_boundary_category
     VALUES
         ('Convergant')
       , ('Divergent')
@@ -24,7 +24,7 @@ BEGIN;
     );
 
     SELECT
-        RecoverGeometryColumn('tectonic_boundary',
+        RecoverGeometryColumn('tectonic_plate_boundary',
                               'the_geom',
                               4326,
                               'LINESTRING',

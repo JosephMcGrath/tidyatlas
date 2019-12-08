@@ -30,7 +30,7 @@ BEGIN;
     VALUES
         ('', '', '', 'tectonic_plate', 'tectonic_plate', 'tectonic_plate', 'the_geom', 1, '{% include 'styles/tectonic_plate.qml' %}')
       , ('', '', '', 'world_boundary', 'world_boundary', 'world_boundary', 'the_geom', 1, '{% include 'styles/world_boundary.qml' %}')
-      , ('', '', '', 'reference_latitude_zone', 'reference_latitude_zone', 'reference_latitude_zone', 'the_geom', 1, '{% include 'styles/reference_latitude_zone.qml' %}')
+      , ('', '', '', 'circulation_cell', 'circulation_cell', 'circulation_cell', 'the_geom', 1, '{% include 'styles/reference_latitude_zone.qml' %}')
       , ('', '', '', 'reference_latitude', 'reference_latitude', 'reference_latitude', 'the_geom', 1, '{% include 'styles/reference_latitude.qml' %}')
       , ('', '', '', 'tectonic_plate_movement', 'tectonic_plate_movement', 'tectonic_plate_movement', 'the_geom', 1, '{% include 'styles/tectonic_plate_movement.qml' %}')
       , ('', '', '', 'tectonic_boundary', 'tectonic_boundary', 'tectonic_boundary', 'the_geom', 1, '{% include 'styles/tectonic_boundary.qml' %}')

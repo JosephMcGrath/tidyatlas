@@ -1,7 +1,8 @@
 {% if global %}
 BEGIN;
 
-    CREATE TABLE reference_latitude_zone_input (
+{% for table_name in ["circulation_cell", "climate_zone"] %}
+    CREATE TABLE {{ table_name }}_input (
         fid INTEGER PRIMARY KEY
       , min_latitude REAL
       , max_latitude REAL
@@ -9,7 +10,7 @@ BEGIN;
       , category TEXT
     );
 
-    CREATE TABLE reference_latitude_zone (
+    CREATE TABLE {{ table_name }} (
         fid INTEGER PRIMARY KEY
       , min_latitude REAL
       , max_latitude REAL
@@ -20,7 +21,7 @@ BEGIN;
     );
 
     SELECT
-        RecoverGeometryColumn('reference_latitude_zone',
+        RecoverGeometryColumn('{{ table_name }}',
                               'the_geom',
                               4326,
                               'POLYGON',
@@ -28,10 +29,10 @@ BEGIN;
                               );
 
     /*Geometry creation SQL*/
-    CREATE TRIGGER reference_latitude_zone_input_insert
-    AFTER INSERT ON reference_latitude_zone_input
+    CREATE TRIGGER {{ table_name }}_input_insert
+    AFTER INSERT ON {{ table_name }}_input
     BEGIN
-        INSERT INTO reference_latitude_zone (fid, min_latitude, max_latitude, label, category, uuid, the_geom)
+        INSERT INTO {{ table_name }} (fid, min_latitude, max_latitude, label, category, uuid, the_geom)
         SELECT
             NEW.fid
           , NEW.min_latitude
@@ -44,10 +45,10 @@ BEGIN;
                  ));
     END;
 
-    CREATE TRIGGER reference_latitude_zone_input_update
-    AFTER UPDATE ON reference_latitude_zone_input
+    CREATE TRIGGER {{ table_name }}_input_update
+    AFTER UPDATE ON {{ table_name }}_input
     BEGIN
-        UPDATE reference_latitude_zone
+        UPDATE {{ table_name }}
         SET min_latitude = NEW.min_latitude
           , max_latitude = NEW.max_latitude
           , label = NEW.label
@@ -58,11 +59,12 @@ BEGIN;
         WHERE fid = OLD.fid;
     END;
 
-    CREATE TRIGGER reference_latitude_zone_input_delete
-    AFTER DELETE ON reference_latitude_zone_input
+    CREATE TRIGGER {{ table_name }}_input_delete
+    AFTER DELETE ON {{ table_name }}_input
     BEGIN
-        DELETE FROM reference_latitude_zone WHERE fid = OLD.fid;
+        DELETE FROM {{ table_name }} WHERE fid = OLD.fid;
     END;
+{% endfor %}
 
 COMMIT;
 {% endif %}
