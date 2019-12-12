@@ -1,14 +1,21 @@
 /*============================================================================*/
 /*----------------------------------------------------------------------------*/
-{% include '01_colours/01_table_definition/01_colour_pallete.sql' %}
+{% include '01_styles/01_table_definition/01_colour_pallete.sql' %}
+{% if style %}
+    {% include '01_styles/01_table_definition/02_qgis_style.sql' %}
+{% endif %}
 /*----------------------------------------------------------------------------*/
 {% if previous_db is defined %}
     ATTACH "{{previous_db}}" AS previous;
-    {% include '01_colours/02_data_import/01_colour_pallete.sql' %}
+    {% include '01_styles/02_data_import/01_colour_pallete.sql' %}
     DETACH previous;
 {% endif %}
 /*----------------------------------------------------------------------------*/
-{% include '01_colours/03_data_generation/01_colour_pallete.sql' %}
+{% include '01_styles/03_data_generation/01_colour_pallete.sql' %}
+/*----------------------------------------------------------------------------*/
+{% if style %}
+    {% include '01_styles/04_qgis_style.sql' %}
+{% endif %}
 
 
 {% if global %}
@@ -43,6 +50,11 @@
     {% include '02_global/03_data_generation/02_reference_latitude.sql' %}
     {% include '02_global/03_data_generation/03_reference_latitude_zone.sql' %}
 
+/*----------------------------------------------------------------------------*/
+    {% if style %}
+        {% include '02_global/04_qgis_style.sql' %}
+    {% endif %}
+
 {% endif %}
 
 
@@ -76,6 +88,11 @@
         DETACH previous;
     {% endif %}
 
+/*----------------------------------------------------------------------------*/
+    {% if style %}
+        {% include '03_local/04_qgis_style.sql' %}
+    {% endif %}
+
 {% endif %}
 
 
@@ -95,6 +112,11 @@
         {% include '04_city/02_data_import/03_city_wall.sql' %}
         {% include '04_city/02_data_import/04_city_street.sql' %}
         DETACH previous;
+    {% endif %}
+
+/*----------------------------------------------------------------------------*/
+    {% if style %}
+        {% include '04_city/04_qgis_style.sql' %}
     {% endif %}
 
 {% endif %}
@@ -128,5 +150,10 @@
 
 /*----------------------------------------------------------------------------*/
     {% include '05_detail/03_data_generation/05_template_geometry.sql' %}
+
+/*----------------------------------------------------------------------------*/
+    {% if style %}
+        {% include '05_detail/04_qgis_style.sql' %}
+    {% endif %}
 
 {% endif %}
