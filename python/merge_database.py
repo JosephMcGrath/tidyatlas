@@ -2,6 +2,7 @@ import jinja2
 import json
 import os
 import sys
+import zipfile
 
 
 def make_floor(n):
@@ -29,15 +30,6 @@ def build_db(config, template_dir, dst_dir):
     env = jinja2.Environment(loader=file_loader)
     output = []
 
-    templates = [x for x in sorted(env.list_templates()) if x[-4:].lower() == ".sql"]
-
-    """
-    for src in templates:
-        print(src)
-        template = env.get_template(src)
-        template.trim_blocks = True
-        output.append(template.render(**config))
-    """
     output.append(env.get_template("Main.sql").render(**config))
 
     dst_path = os.path.join(dst_dir, config["name"]) + ".sql"
@@ -46,9 +38,32 @@ def build_db(config, template_dir, dst_dir):
         f.write("\n\n".join(output))
 
 
-def build_from_config(config_path, template_dir, dst_dir):
+def build_from_config(config_path, template_dir, dst_dir, zip_dir):
     for item in load_config(config_path):
         build_db(item, template_dir, dst_dir)
+
+        if zip_dir is not None and "previous_db" in item.keys():
+            try:
+                backup_database(item["previous_db"], zip_dir)
+            except:
+                print(f"Couldn't backup '{item['previous_db']}'.")
+
+
+def backup_database(src_path, dst_dir):
+    arch_name = os.path.split(src_path)[-1]
+
+    dst_name = (
+        os.path.splitext(arch_name)[0]
+        + "_"
+        + str(int(os.stat(src_path).st_mtime))
+        + ".zip"
+    )
+    dst_path = os.path.join(dst_dir, dst_name)
+    if os.path.exists(dst_path):
+        return None
+
+    with zipfile.ZipFile(dst_path, "w", zipfile.ZIP_DEFLATED) as zf:
+        zf.write(src_path, arcname=arch_name)
 
 
 root_path = os.path.split(os.getcwd())[0]
@@ -59,4 +74,14 @@ os.makedirs(dst_dir, exist_ok=True)
 
 args = sys.argv
 
-build_from_config(args[1] if len(args) > 1 else "config.json", template_dir, dst_dir)
+if len(args) >= 2:
+    config_path = args[1]
+else:
+    config_path = "config.json"
+if len(args) >= 3:
+    zip_dir = args[2]
+else:
+    zip_dir = None
+
+
+build_from_config(config_path, template_dir, dst_dir, zip_dir=zip_dir)
