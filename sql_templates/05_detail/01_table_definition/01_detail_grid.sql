@@ -71,10 +71,10 @@
 
         /*Set up properties to rotate the grid.*/
         UPDATE detail_grid
-        SET t_out_x = ST_MinX(the_geom) * -1
-          , t_out_y = ST_MinY(the_geom) * -1
-          , t_in_x = ST_MinX(the_geom) - Cos(Radians(COALESCE(NEW.angle, 0))) * CvtFromFt(5)
-          , t_in_y = ST_MinY(the_geom) - Sin(Radians(COALESCE(NEW.angle, 0))) * CvtFromFt(5)
+        SET t_out_x = ST_X(ST_Centroid(the_geom)) * -1
+          , t_out_y = ST_Y(ST_Centroid(the_geom)) * -1
+          , t_in_x = ST_X(ST_Centroid(the_geom)) - Cos(Radians(COALESCE(NEW.angle, 0))) * CvtFromFt(5)
+          , t_in_y = ST_Y(ST_Centroid(the_geom)) - Sin(Radians(COALESCE(NEW.angle, 0))) * CvtFromFt(5)
           WHERE fid = NEW.fid;
 
         /*Rotate the grid.*/
@@ -121,10 +121,10 @@
 
         /*Set up properties to rotate the grid.*/
         UPDATE detail_grid
-        SET t_out_x = ST_MinX(the_geom) * -1
-          , t_out_y = ST_MinY(the_geom) * -1
-          , t_in_x = ST_MinX(the_geom) + (Cos(Radians(COALESCE(NEW.angle, 0))) - Cos(Radians(0))) * CvtFromFt(5)
-          , t_in_y = ST_MinY(the_geom) + (Sin(Radians(COALESCE(NEW.angle, 0))) - Sin(Radians(0))) * CvtFromFt(5)
+        SET t_out_x = ST_X(ST_Centroid(the_geom)) * -1
+          , t_out_y = ST_Y(ST_Centroid(the_geom)) * -1
+          , t_in_x = ST_X(ST_Centroid(the_geom)) + (Cos(Radians(COALESCE(NEW.angle, 0))) - Cos(Radians(0))) * CvtFromFt(5)
+          , t_in_y = ST_Y(ST_Centroid(the_geom)) + (Sin(Radians(COALESCE(NEW.angle, 0))) - Sin(Radians(0))) * CvtFromFt(5)
           WHERE fid = NEW.fid;
 
         /*Rotate the grid.*/
