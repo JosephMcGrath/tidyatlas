@@ -8,6 +8,7 @@ BEGIN;
     INSERT INTO land_cover_type (cover)
     VALUES
         ('Crops')
+      , ('Crystals')
       , ('Developed')
       , ('Forest')
       , ('Water')
