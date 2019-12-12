@@ -1,5 +1,5 @@
-{% if global %}
-BEGIN;
+{% extends "base.sql" %}
+{% block content %}
     /*Reference Latitude Zones*/
     INSERT OR IGNORE INTO circulation_cell_input (category, label, min_latitude, max_latitude)
     VALUES
@@ -41,4 +41,4 @@ BEGIN;
       , ('Climate Lattitude', 'Polar Icecaps (South)', -75, -90)
     ;
 COMMIT;
-{% endif %}
+{% endblock %}

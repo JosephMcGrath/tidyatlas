@@ -1,5 +1,5 @@
-{% if detail %}
-BEGIN;
+{% extends "base.sql" %}
+{% block content %}
     CREATE TABLE IF NOT EXISTS exterior_decoration (
         fid INTEGER PRIMARY KEY AUTOINCREMENT
       , asset_path TEXT NOT NULL
@@ -21,5 +21,4 @@ BEGIN;
                               'XY'
                               )
       , CreateSpatialIndex('exterior_decoration', 'the_geom');
-COMMIT;
-{% endif %}
+{% endblock %}

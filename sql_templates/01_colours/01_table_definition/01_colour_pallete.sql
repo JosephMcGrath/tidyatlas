@@ -1,5 +1,5 @@
-BEGIN;
-    /*TODO - Make this table spatial for easier use in QGIS. Colour boxes?*/
+{% extends "base.sql" %}
+{% block content %}
     CREATE TABLE colour_pallete (
         colour_name TEXT UNIQUE
       , primary_colour TEXT NOT NULL
@@ -28,5 +28,4 @@ BEGIN;
                             'XY'
                             )
     , CreateSpatialIndex('political_nation', 'the_geom');
-
-COMMIT;
+{% endblock %}

@@ -1,6 +1,5 @@
-{% if global %}
-BEGIN;
-
+{% extends "base.sql" %}
+{% block content %}
     CREATE TABLE tectonic_boundary_category (
         category TEXT PRIMARY KEY
     );
@@ -30,6 +29,4 @@ BEGIN;
                               'LINESTRING',
                               'XY'
                               );
-
-COMMIT;
-{% endif %}
+{% endblock %}

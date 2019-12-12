@@ -31,11 +31,14 @@ def build_db(config, template_dir, dst_dir):
 
     templates = [x for x in sorted(env.list_templates()) if x[-4:].lower() == ".sql"]
 
+    """
     for src in templates:
         print(src)
         template = env.get_template(src)
         template.trim_blocks = True
         output.append(template.render(**config))
+    """
+    output.append(env.get_template("Main.sql").render(**config))
 
     dst_path = os.path.join(dst_dir, config["name"]) + ".sql"
 

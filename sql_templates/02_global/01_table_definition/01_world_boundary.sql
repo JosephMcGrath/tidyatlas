@@ -1,6 +1,5 @@
-{% if global %}
-BEGIN;
-
+{% extends "base.sql" %}
+{% block content %}
     /*World bounding box.*/
     CREATE TABLE world_boundary (
         fid INTEGER PRIMARY KEY
@@ -15,6 +14,4 @@ BEGIN;
                               'POLYGON',
                               'XY'
                               );
-
-COMMIT;
-{% endif %}
+{% endblock %}

@@ -1,6 +1,5 @@
-{% if global %}
-BEGIN;
-
+{% extends "base.sql" %}
+{% block content %}
     /*Continental Shelfs*/
     CREATE TABLE continental_shelf (
         fid INTEGER PRIMARY KEY
@@ -17,6 +16,4 @@ BEGIN;
                               'POLYGON',
                               'XY'
                               );
-
-COMMIT;
-{% endif %}
+{% endblock %}

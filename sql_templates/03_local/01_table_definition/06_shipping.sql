@@ -1,5 +1,5 @@
-{% if local %}
-BEGIN;
+{% extends "base.sql" %}
+{% block content %}
     CREATE TABLE IF NOT EXISTS shipping (
         fid INTEGER PRIMARY KEY AUTOINCREMENT
       , source TEXT
@@ -34,6 +34,4 @@ BEGIN;
       SET line_length = ST_Length(the_geom)
       WHERE fid = NEW.fid;
     END;
-
-COMMIT;
-{% endif %}
+{% endblock %}

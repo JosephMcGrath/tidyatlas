@@ -1,5 +1,5 @@
-{% if local %}
-BEGIN;
+{% extends "base.sql" %}
+{% block content %}
     /*Landcover Polygons*/
     CREATE TABLE land_cover_type (
         cover TEXT PRIMARY KEY
@@ -51,5 +51,4 @@ BEGIN;
         SET area = ST_Area(the_geom)
         WHERE fid = NEW.fid;
     END;
-COMMIT;
-{% endif %}
+{% endblock %}

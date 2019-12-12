@@ -1,6 +1,5 @@
-{% if global %}
-BEGIN;
-
+{% extends "base.sql" %}
+{% block content %}
     /*Coastlines*/
     CREATE TABLE global_coastline (
         fid INTEGER PRIMARY KEY
@@ -20,6 +19,4 @@ BEGIN;
                               'MULTIPOLYGON',
                               'XY'
                               );
-
-COMMIT;
-{% endif %}
+{% endblock %}

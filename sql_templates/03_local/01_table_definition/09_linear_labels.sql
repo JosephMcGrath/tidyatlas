@@ -1,5 +1,5 @@
-{% if local %}
-BEGIN;
+{% extends "base.sql" %}
+{% block content %}
     /*Linear Labels*/
     CREATE TABLE linear_label_style (
         label_style TEXT PRIMARY KEY
@@ -44,5 +44,4 @@ BEGIN;
       SET line_length = ST_Length(the_geom)
       WHERE fid = NEW.fid;
     END;
-COMMIT;
-{% endif %}
+{% endblock %}

@@ -1,5 +1,5 @@
-{% if global %}
-BEGIN;
+{% extends "base.sql" %}
+{% block content %}
     /*World bounding box*/
     INSERT OR IGNORE INTO reference_latitude_input (category, label, latitude)
     VALUES
@@ -10,5 +10,4 @@ BEGIN;
       , ('Circulation Front', 'Polar Front (North)', 60)
       , ('Circulation Front', 'Polar Front (South)', -60)
     ;
-COMMIT;
-{% endif %}
+{% endblock %}

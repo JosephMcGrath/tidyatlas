@@ -1,6 +1,5 @@
-{% if local %}
-BEGIN;
-
+{% extends "base.sql" %}
+{% block content %}
     /*Contour Lines*/
     CREATE TABLE elevation_contour (
         fid INTEGER PRIMARY KEY
@@ -83,6 +82,4 @@ BEGIN;
         (view_name, view_geometry, view_rowid, f_table_name, f_geometry_column, read_only)
     VALUES
         ('elevation_polygon', 'the_geom', 'fid', 'coastline', 'the_geom', 1);
-
-COMMIT;
-{% endif %}
+{% endblock %}

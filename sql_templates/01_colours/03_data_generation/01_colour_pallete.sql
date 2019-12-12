@@ -1,4 +1,5 @@
-BEGIN;
+{% extends "base.sql" %}
+{% block content %}
     INSERT OR IGNORE INTO colour_pallete
         (colour_name, primary_colour, secondary_colour)
     VALUES
@@ -12,4 +13,4 @@ BEGIN;
       , ('Water (Shallow)', '#3865be', '#142929')
       , ('Water (Deep)', '#143166', '#101e38')
     ;
-COMMIT;
+{% endblock %}

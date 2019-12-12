@@ -1,6 +1,5 @@
-{% if global %}
-BEGIN;
-
+{% extends "base.sql" %}
+{% block content %}
 {% for table_name in ["circulation_cell", "climate_zone"] %}
     CREATE TABLE {{ table_name }}_input (
         fid INTEGER PRIMARY KEY
@@ -65,6 +64,4 @@ BEGIN;
         DELETE FROM {{ table_name }} WHERE fid = OLD.fid;
     END;
 {% endfor %}
-
-COMMIT;
-{% endif %}
+{% endblock %}

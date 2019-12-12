@@ -1,6 +1,5 @@
-{% if detail %}
-BEGIN;
-
+{% extends "base.sql" %}
+{% block content %}
     CREATE TABLE interior_feature_type (
         type TEXT PRIMARY KEY
     );
@@ -81,6 +80,4 @@ BEGIN;
         WHERE colour_name = NEW.colour_name;
     END;
 {% endfor %}
-
-COMMIT;
-{% endif %}
+{% endblock %}

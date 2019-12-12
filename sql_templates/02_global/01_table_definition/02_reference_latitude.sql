@@ -1,6 +1,5 @@
-{% if global %}
-BEGIN;
-
+{% extends "base.sql" %}
+{% block content %}
     CREATE TABLE reference_latitude_input (
         fid INTEGER PRIMARY KEY
       , latitude REAL
@@ -59,6 +58,4 @@ BEGIN;
     BEGIN
         DELETE FROM reference_latitude WHERE fid = OLD.fid;
     END;
-
-COMMIT;
-{% endif %}
+{% endblock %}

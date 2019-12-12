@@ -1,6 +1,5 @@
-{% if global %}
-BEGIN;
-
+{% extends "base.sql" %}
+{% block content %}
     /*Ocean Currents*/
     CREATE TABLE ocean_current (
         fid INTEGER PRIMARY KEY
@@ -18,6 +17,4 @@ BEGIN;
                               'LINESTRING',
                               'XY'
                               );
-
-COMMIT;
-{% endif %}
+{% endblock %}

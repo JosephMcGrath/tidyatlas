@@ -1,6 +1,5 @@
-{% if detail %}
-BEGIN;
-
+{% extends "base.sql" %}
+{% block content %}
     CREATE TABLE exterior_feature_type (
         type TEXT PRIMARY KEY
     );
@@ -79,6 +78,4 @@ BEGIN;
           , colour_secondary_hex = NEW.secondary_colour
         WHERE colour_name = NEW.colour_name;
     END;
-
-COMMIT;
-{% endif %}
+{% endblock %}

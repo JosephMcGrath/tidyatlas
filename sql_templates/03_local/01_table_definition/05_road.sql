@@ -1,5 +1,5 @@
-{% if local %}
-BEGIN;
+{% extends "base.sql" %}
+{% block content %}
     CREATE TABLE road_size (
         size TEXT PRIMARY KEY
     );
@@ -45,6 +45,4 @@ BEGIN;
       SET line_length = ST_Length(the_geom)
       WHERE fid = NEW.fid;
     END;
-
-COMMIT;
-{% endif %}
+{% endblock %}

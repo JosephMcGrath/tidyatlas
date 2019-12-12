@@ -1,6 +1,5 @@
-{% if global %}
-BEGIN;
-
+{% extends "base.sql" %}
+{% block content %}
     /*Boundaries (Political)*/
     CREATE TABLE major_political_boundary (
         fid INTEGER PRIMARY KEY
@@ -37,6 +36,4 @@ BEGIN;
                               'MULTIPOLYGON',
                               'XY'
                               );
-
-COMMIT;
-{% endif %}
+{% endblock %}

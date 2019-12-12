@@ -1,6 +1,5 @@
-{% if city %}
-BEGIN;
-
+{% extends "base.sql" %}
+{% block content %}
     CREATE TABLE IF NOT EXISTS city_street (
         fid INTEGER PRIMARY KEY AUTOINCREMENT
       , name TEXT
@@ -34,6 +33,4 @@ BEGIN;
       SET line_length = ST_Length(the_geom)
       WHERE fid = NEW.fid;
     END;
-
-COMMIT;
-{% endif %}
+{% endblock %}

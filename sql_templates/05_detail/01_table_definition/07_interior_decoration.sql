@@ -1,5 +1,5 @@
-{% if detail %}
-BEGIN;
+{% extends "base.sql" %}
+{% block content %}
 {% for floor in floors %}
     CREATE TABLE IF NOT EXISTS interior_decoration_f_f_{{floor.label}} (
         fid INTEGER PRIMARY KEY AUTOINCREMENT
@@ -23,5 +23,4 @@ BEGIN;
                               )
       , CreateSpatialIndex('interior_decoration_f_{{floor.label}}', 'the_geom');
 {% endfor %}
-COMMIT;
-{% endif %}
+{% endblock %}

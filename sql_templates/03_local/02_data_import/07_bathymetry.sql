@@ -1,8 +1,5 @@
-{% if local and previous_db is defined %}
-ATTACH "{{previous_db}}" AS previous;
-
-BEGIN;
-
+{% extends "base.sql" %}
+{% block content %}
 /*Bathymetry*/
 INSERT INTO bathymetry_contour
     (depth, uuid, created, modified, the_geom)
@@ -15,8 +12,4 @@ INSERT INTO bathymetry_point
 SELECT
     depth, uuid, created, modified, the_geom
 FROM previous.bathymetry_point;
-
-COMMIT;
-
-DETACH previous;
-{% endif %}
+{% endblock %}

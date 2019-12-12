@@ -1,4 +1,5 @@
-{% if detail %}
+{% extends "base.sql" %}
+{% block content %}
 CREATE TABLE buffer_point_in (
     fid INTEGER PRIMARY KEY
   , distance REAL NOT NULL DEFAULT 5
@@ -63,4 +64,4 @@ INSERT OR ABORT INTO views_geometry_columns
 (view_name, view_geometry, view_rowid, f_table_name, f_geometry_column, read_only)
 VALUES
 ('buffer_output', 'the_geom', 'fid', 'buffer_dummy', 'the_geom', 0);
-{% endif %}
+{% endblock %}

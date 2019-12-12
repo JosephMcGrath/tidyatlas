@@ -1,5 +1,5 @@
-{% if city %}
-BEGIN;
+{% extends "base.sql" %}
+{% block content %}
     CREATE TABLE city_region_purpose (
         purpose TEXT PRIMARY KEY
     );
@@ -49,6 +49,4 @@ BEGIN;
       SET area = ST_Area(the_geom)
       WHERE fid = NEW.fid;
     END;
-
-COMMIT;
-{% endif %}
+{% endblock %}

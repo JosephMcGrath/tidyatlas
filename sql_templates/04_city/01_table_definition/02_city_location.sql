@@ -1,6 +1,5 @@
-{% if city %}
-BEGIN;
-
+{% extends "base.sql" %}
+{% block content %}
     CREATE TABLE IF NOT EXISTS city_location_importance (
         label TEXT PRIMARY KEY
       , description TEXT NOT NULL
@@ -34,6 +33,4 @@ BEGIN;
                             'XY'
                             )
     , CreateSpatialIndex('city_location', 'the_geom');
-
-COMMIT;
-{% endif %}
+{% endblock %}

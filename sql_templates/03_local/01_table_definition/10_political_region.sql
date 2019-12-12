@@ -1,6 +1,5 @@
-{% if local %}
-BEGIN;
-
+{% extends "base.sql" %}
+{% block content %}
     /*Nation-scale regions.*/
     CREATE TABLE IF NOT EXISTS political_nation (
         fid INTEGER PRIMARY KEY AUTOINCREMENT
@@ -72,5 +71,4 @@ BEGIN;
       SET area = ST_Area(the_geom)
       WHERE fid = NEW.fid;
     END;
-COMMIT;
-{% endif %}
+{% endblock %}

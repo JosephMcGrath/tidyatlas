@@ -1,6 +1,5 @@
-{% if local %}
-BEGIN;
-
+{% extends "base.sql" %}
+{% block content %}
     CREATE TABLE settlement_size (
         size TEXT PRIMARY KEY
     );
@@ -33,6 +32,4 @@ BEGIN;
                             'XY'
                             )
     , CreateSpatialIndex('settlement', 'the_geom');
-
-COMMIT;
-{% endif %}
+{% endblock %}

@@ -1,5 +1,5 @@
-{% if detail %}
-BEGIN;
+{% extends "base.sql" %}
+{% block content %}
     CREATE TABLE exterior_space_class (
         exterior_space_class TEXT PRIMARY KEY
     );
@@ -86,5 +86,4 @@ BEGIN;
         WHERE fid = NEW.fid
           AND NEW.colour_name IS NOT NULL;
     END;
-COMMIT;
-{% endif %}
+{% endblock %}

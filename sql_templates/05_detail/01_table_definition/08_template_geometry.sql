@@ -1,5 +1,5 @@
-{% if detail %}
-BEGIN;
+{% extends "base.sql" %}
+{% block content %}
 /*Template geometries (to make detailed mapping easier).*/
 
 /*The templates themselves.*/
@@ -97,6 +97,4 @@ BEGIN
     DELETE FROM templated
     WHERE fid = NEW.fid;
 END;
-
-COMMIT;
-{% endif %}
+{% endblock %}

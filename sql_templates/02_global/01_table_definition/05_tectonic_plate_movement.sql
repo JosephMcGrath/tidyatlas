@@ -1,6 +1,5 @@
-{% if global %}
-BEGIN;
-
+{% extends "base.sql" %}
+{% block content %}
     /*Tectonic Plate Movement*/
     CREATE TABLE tectonic_plate_movement (
         fid INTEGER PRIMARY KEY
@@ -18,6 +17,4 @@ BEGIN;
                               'POINT',
                               'XY'
                               );
-
-COMMIT;
-{% endif %}
+{% endblock %}

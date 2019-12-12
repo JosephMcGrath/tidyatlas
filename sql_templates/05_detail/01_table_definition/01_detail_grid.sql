@@ -1,6 +1,6 @@
-{% if detail %}
+{% extends "base.sql" %}
+{% block content %}
 /*Todo: part-scale grids for details.*/
-BEGIN;
     CREATE TABLE detail_area (
         fid INTEGER PRIMARY KEY
       , name TEXT
@@ -151,6 +151,4 @@ BEGIN;
         DELETE FROM detail_grid
         WHERE fid = OLD.fid;
     END;
-
-COMMIT;
-{% endif %}
+{% endblock %}

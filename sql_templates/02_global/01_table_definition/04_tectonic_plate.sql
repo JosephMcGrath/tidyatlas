@@ -1,6 +1,5 @@
-{% if global %}
-BEGIN;
-
+{% extends "base.sql" %}
+{% block content %}
     CREATE TABLE tectonic_plate_category (
         category TEXT PRIMARY KEY
     );
@@ -30,5 +29,4 @@ BEGIN;
                               'XY'
                               );
 
-COMMIT;
-{% endif %}
+{% endblock %}

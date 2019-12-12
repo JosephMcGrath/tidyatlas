@@ -1,6 +1,5 @@
-{% if city %}
-BEGIN;
-
+{% extends "base.sql" %}
+{% block content %}
     CREATE TABLE IF NOT EXISTS city_wall_class (
         class TEXT PRIMARY KEY
     );
@@ -29,6 +28,4 @@ BEGIN;
                             'XY'
                             )
     , CreateSpatialIndex('city_wall', 'the_geom');
-
-COMMIT;
-{% endif %}
+{% endblock %}
