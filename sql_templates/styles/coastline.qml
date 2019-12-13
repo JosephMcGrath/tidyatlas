@@ -1,30 +1,30 @@
 <!DOCTYPE qgis PUBLIC ''http://mrcc.com/qgis.dtd'' ''SYSTEM''>
-<qgis version="3.4.9-Madeira" simplifyDrawingHints="1" labelsEnabled="0" readOnly="0" simplifyAlgorithm="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyDrawingTol="1" simplifyLocal="1" styleCategories="AllStyleCategories" maxScale="0" minScale="1e+08">
+<qgis version="3.8.3-Zanzibar" simplifyAlgorithm="0" simplifyDrawingTol="1" simplifyDrawingHints="1" styleCategories="AllStyleCategories" maxScale="0" readOnly="0" minScale="1e+08" hasScaleBasedVisibilityFlag="0" simplifyMaxScale="1" labelsEnabled="0" simplifyLocal="1">
   <flags>
     <Identifiable>1</Identifiable>
     <Removable>1</Removable>
     <Searchable>1</Searchable>
   </flags>
-  <renderer-v2 enableorderby="0" type="singleSymbol" symbollevels="0" forceraster="0">
+  <renderer-v2 type="singleSymbol" forceraster="0" enableorderby="0" symbollevels="0">
     <symbols>
-      <symbol clip_to_extent="1" alpha="1" type="fill" name="0" force_rhr="0">
-        <layer enabled="1" locked="0" class="SimpleFill" pass="0">
+      <symbol type="fill" name="0" force_rhr="0" alpha="1" clip_to_extent="1">
+        <layer pass="0" locked="0" enabled="1" class="SimpleFill">
           <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
           <prop k="color" v="230,255,204,255"/>
           <prop k="joinstyle" v="bevel"/>
           <prop k="offset" v="0,0"/>
           <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
           <prop k="offset_unit" v="MM"/>
-          <prop k="outline_color" v="35,35,35,255"/>
-          <prop k="outline_style" v="no"/>
+          <prop k="outline_color" v="109,128,89,255"/>
+          <prop k="outline_style" v="solid"/>
           <prop k="outline_width" v="0.26"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option value="" type="QString" name="name"/>
+              <Option type="QString" name="name" value=""/>
               <Option name="properties"/>
-              <Option value="collection" type="QString" name="type"/>
+              <Option type="QString" name="type" value="collection"/>
             </Option>
           </data_defined_properties>
         </layer>
@@ -32,7 +32,7 @@
     </symbols>
     <rotation/>
     <sizescale/>
-    <effect type="effectStack" enabled="1">
+    <effect type="effectStack" enabled="0">
       <effect type="outerGlow">
         <prop k="blend_mode" v="0"/>
         <prop k="blur_level" v="1.3225"/>
@@ -85,21 +85,22 @@
   <blendMode>0</blendMode>
   <featureBlendMode>0</featureBlendMode>
   <layerOpacity>1</layerOpacity>
-  <SingleCategoryDiagramRenderer attributeLegend="1" diagramType="Histogram">
-    <DiagramCategory labelPlacementMethod="XHeight" backgroundAlpha="255" scaleBasedVisibility="0" lineSizeScale="3x:0,0,0,0,0,0" diagramOrientation="Up" minScaleDenominator="0" barWidth="5" maxScaleDenominator="1e+08" rotationOffset="270" enabled="0" sizeScale="3x:0,0,0,0,0,0" height="15" minimumSize="0" lineSizeType="MM" opacity="1" penAlpha="255" penWidth="0" penColor="#000000" width="15" scaleDependency="Area" backgroundColor="#ffffff" sizeType="MM">
-      <fontProperties description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0" style=""/>
+  <SingleCategoryDiagramRenderer diagramType="Histogram" attributeLegend="1">
+    <DiagramCategory penAlpha="255" enabled="0" labelPlacementMethod="XHeight" opacity="1" minScaleDenominator="0" scaleBasedVisibility="0" sizeType="MM" lineSizeType="MM" maxScaleDenominator="1e+08" scaleDependency="Area" rotationOffset="270" penColor="#000000" minimumSize="0" backgroundAlpha="255" width="15" backgroundColor="#ffffff" sizeScale="3x:0,0,0,0,0,0" penWidth="0" barWidth="5" diagramOrientation="Up" lineSizeScale="3x:0,0,0,0,0,0" height="15">
+      <fontProperties style="" description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0"/>
+      <attribute color="#000000" label="" field=""/>
     </DiagramCategory>
   </SingleCategoryDiagramRenderer>
-  <DiagramLayerSettings obstacle="0" linePlacementFlags="18" dist="0" showAll="1" placement="1" zIndex="0" priority="0">
+  <DiagramLayerSettings dist="0" priority="0" showAll="1" zIndex="0" linePlacementFlags="18" obstacle="0" placement="1">
     <properties>
       <Option type="Map">
-        <Option value="" type="QString" name="name"/>
+        <Option type="QString" name="name" value=""/>
         <Option name="properties"/>
-        <Option value="collection" type="QString" name="type"/>
+        <Option type="QString" name="type" value="collection"/>
       </Option>
     </properties>
   </DiagramLayerSettings>
-  <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
+  <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
     <activeChecks/>
     <checkConfiguration/>
   </geometryOptions>
@@ -108,8 +109,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" type="bool" name="IsMultiline"/>
-            <Option value="false" type="bool" name="UseHtml"/>
+            <Option type="bool" name="IsMultiline" value="false"/>
+            <Option type="bool" name="UseHtml" value="false"/>
           </Option>
         </config>
       </editWidget>
@@ -118,8 +119,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" type="bool" name="IsMultiline"/>
-            <Option value="false" type="bool" name="UseHtml"/>
+            <Option type="bool" name="IsMultiline" value="false"/>
+            <Option type="bool" name="UseHtml" value="false"/>
           </Option>
         </config>
       </editWidget>
@@ -128,8 +129,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" type="bool" name="IsMultiline"/>
-            <Option value="false" type="bool" name="UseHtml"/>
+            <Option type="bool" name="IsMultiline" value="false"/>
+            <Option type="bool" name="UseHtml" value="false"/>
           </Option>
         </config>
       </editWidget>
@@ -138,8 +139,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" type="bool" name="IsMultiline"/>
-            <Option value="false" type="bool" name="UseHtml"/>
+            <Option type="bool" name="IsMultiline" value="false"/>
+            <Option type="bool" name="UseHtml" value="false"/>
           </Option>
         </config>
       </editWidget>
@@ -148,55 +149,55 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" type="bool" name="IsMultiline"/>
-            <Option value="false" type="bool" name="UseHtml"/>
+            <Option type="bool" name="IsMultiline" value="false"/>
+            <Option type="bool" name="UseHtml" value="false"/>
           </Option>
         </config>
       </editWidget>
     </field>
   </fieldConfiguration>
   <aliases>
-    <alias field="fid" index="0" name=""/>
-    <alias field="name" index="1" name=""/>
-    <alias field="uuid" index="2" name=""/>
-    <alias field="created" index="3" name=""/>
-    <alias field="modified" index="4" name=""/>
+    <alias name="" index="0" field="fid"/>
+    <alias name="" index="1" field="name"/>
+    <alias name="" index="2" field="uuid"/>
+    <alias name="" index="3" field="created"/>
+    <alias name="" index="4" field="modified"/>
   </aliases>
   <excludeAttributesWMS/>
   <excludeAttributesWFS/>
   <defaults>
-    <default expression="" field="fid" applyOnUpdate="0"/>
-    <default expression="" field="name" applyOnUpdate="0"/>
-    <default expression="regexp_replace( uuid() , ''\\{|\\}'', '''' )" field="uuid" applyOnUpdate="0"/>
-    <default expression="format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )" field="created" applyOnUpdate="0"/>
-    <default expression="format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )" field="modified" applyOnUpdate="1"/>
+    <default expression="" applyOnUpdate="0" field="fid"/>
+    <default expression="" applyOnUpdate="0" field="name"/>
+    <default expression="regexp_replace( uuid() , ''\\{|\\}'', '''' )" applyOnUpdate="0" field="uuid"/>
+    <default expression="format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )" applyOnUpdate="0" field="created"/>
+    <default expression="format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )" applyOnUpdate="1" field="modified"/>
   </defaults>
   <constraints>
-    <constraint constraints="3" field="fid" notnull_strength="1" unique_strength="1" exp_strength="0"/>
-    <constraint constraints="0" field="name" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint constraints="1" field="uuid" notnull_strength="1" unique_strength="0" exp_strength="0"/>
-    <constraint constraints="1" field="created" notnull_strength="1" unique_strength="0" exp_strength="0"/>
-    <constraint constraints="1" field="modified" notnull_strength="1" unique_strength="0" exp_strength="0"/>
+    <constraint constraints="3" exp_strength="0" notnull_strength="1" field="fid" unique_strength="1"/>
+    <constraint constraints="0" exp_strength="0" notnull_strength="0" field="name" unique_strength="0"/>
+    <constraint constraints="1" exp_strength="0" notnull_strength="1" field="uuid" unique_strength="0"/>
+    <constraint constraints="1" exp_strength="0" notnull_strength="1" field="created" unique_strength="0"/>
+    <constraint constraints="1" exp_strength="0" notnull_strength="1" field="modified" unique_strength="0"/>
   </constraints>
   <constraintExpressions>
-    <constraint field="fid" exp="" desc=""/>
-    <constraint field="name" exp="" desc=""/>
-    <constraint field="uuid" exp="" desc=""/>
-    <constraint field="created" exp="" desc=""/>
-    <constraint field="modified" exp="" desc=""/>
+    <constraint exp="" desc="" field="fid"/>
+    <constraint exp="" desc="" field="name"/>
+    <constraint exp="" desc="" field="uuid"/>
+    <constraint exp="" desc="" field="created"/>
+    <constraint exp="" desc="" field="modified"/>
   </constraintExpressions>
   <expressionfields/>
   <attributeactions>
     <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
   </attributeactions>
-  <attributetableconfig sortOrder="0" actionWidgetStyle="dropDown" sortExpression="">
+  <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
     <columns>
-      <column type="field" hidden="0" name="name" width="-1"/>
-      <column type="field" hidden="0" name="created" width="-1"/>
+      <column type="field" name="name" hidden="0" width="-1"/>
+      <column type="field" name="created" hidden="0" width="-1"/>
       <column type="actions" hidden="1" width="-1"/>
-      <column type="field" hidden="0" name="fid" width="-1"/>
-      <column type="field" hidden="0" name="uuid" width="-1"/>
-      <column type="field" hidden="0" name="modified" width="-1"/>
+      <column type="field" name="fid" hidden="0" width="-1"/>
+      <column type="field" name="uuid" hidden="0" width="-1"/>
+      <column type="field" name="modified" hidden="0" width="-1"/>
     </columns>
   </attributetableconfig>
   <conditionalstyles>
@@ -227,33 +228,33 @@ def my_form_open(dialog, layer, feature):
   <featformsuppress>0</featformsuppress>
   <editorlayout>tablayout</editorlayout>
   <attributeEditorForm>
-    <attributeEditorContainer columnCount="1" showLabel="1" visibilityExpression="" visibilityExpressionEnabled="0" name="" groupBox="1">
-      <attributeEditorField showLabel="1" index="1" name="name"/>
-      <attributeEditorField showLabel="1" index="0" name="fid"/>
-      <attributeEditorField showLabel="1" index="2" name="uuid"/>
-      <attributeEditorField showLabel="1" index="3" name="created"/>
-      <attributeEditorField showLabel="1" index="4" name="modified"/>
+    <attributeEditorContainer groupBox="1" name="" showLabel="1" visibilityExpressionEnabled="0" columnCount="1" visibilityExpression="">
+      <attributeEditorField name="name" showLabel="1" index="1"/>
+      <attributeEditorField name="fid" showLabel="1" index="0"/>
+      <attributeEditorField name="uuid" showLabel="1" index="2"/>
+      <attributeEditorField name="created" showLabel="1" index="3"/>
+      <attributeEditorField name="modified" showLabel="1" index="4"/>
     </attributeEditorContainer>
   </attributeEditorForm>
   <editable>
-    <field editable="0" name="area"/>
-    <field editable="0" name="created"/>
-    <field editable="1" name="fid"/>
-    <field editable="0" name="modified"/>
-    <field editable="1" name="name"/>
-    <field editable="0" name="row_id"/>
-    <field editable="0" name="uuid"/>
-    <field editable="0" name="wid"/>
+    <field name="area" editable="0"/>
+    <field name="created" editable="0"/>
+    <field name="fid" editable="1"/>
+    <field name="modified" editable="0"/>
+    <field name="name" editable="1"/>
+    <field name="row_id" editable="0"/>
+    <field name="uuid" editable="0"/>
+    <field name="wid" editable="0"/>
   </editable>
   <labelOnTop>
-    <field labelOnTop="0" name="area"/>
-    <field labelOnTop="0" name="created"/>
-    <field labelOnTop="0" name="fid"/>
-    <field labelOnTop="0" name="modified"/>
-    <field labelOnTop="0" name="name"/>
-    <field labelOnTop="0" name="row_id"/>
-    <field labelOnTop="0" name="uuid"/>
-    <field labelOnTop="0" name="wid"/>
+    <field name="area" labelOnTop="0"/>
+    <field name="created" labelOnTop="0"/>
+    <field name="fid" labelOnTop="0"/>
+    <field name="modified" labelOnTop="0"/>
+    <field name="name" labelOnTop="0"/>
+    <field name="row_id" labelOnTop="0"/>
+    <field name="uuid" labelOnTop="0"/>
+    <field name="wid" labelOnTop="0"/>
   </labelOnTop>
   <widgets/>
   <previewExpression>row_id</previewExpression>

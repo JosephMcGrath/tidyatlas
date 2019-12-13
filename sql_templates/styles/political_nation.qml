@@ -1,14 +1,14 @@
 <!DOCTYPE qgis PUBLIC ''http://mrcc.com/qgis.dtd'' ''SYSTEM''>
-<qgis hasScaleBasedVisibilityFlag="0" simplifyMaxScale="1" simplifyDrawingHints="1" simplifyDrawingTol="1" labelsEnabled="1" styleCategories="AllStyleCategories" simplifyLocal="1" version="3.8.3-Zanzibar" readOnly="0" simplifyAlgorithm="0" maxScale="0" minScale="1e+08">
+<qgis version="3.8.3-Zanzibar" simplifyAlgorithm="0" simplifyDrawingTol="1" simplifyDrawingHints="1" styleCategories="AllStyleCategories" maxScale="0" readOnly="0" minScale="1e+08" hasScaleBasedVisibilityFlag="0" simplifyMaxScale="1" labelsEnabled="1" simplifyLocal="1">
   <flags>
     <Identifiable>1</Identifiable>
     <Removable>1</Removable>
     <Searchable>1</Searchable>
   </flags>
-  <renderer-v2 enableorderby="0" symbollevels="0" forceraster="0" type="singleSymbol">
+  <renderer-v2 type="singleSymbol" forceraster="0" enableorderby="0" symbollevels="0">
     <symbols>
-      <symbol force_rhr="0" name="0" clip_to_extent="1" alpha="1" type="fill">
-        <layer pass="0" class="SimpleLine" enabled="1" locked="0">
+      <symbol type="fill" name="0" force_rhr="0" alpha="1" clip_to_extent="1">
+        <layer pass="0" locked="0" enabled="1" class="SimpleLine">
           <prop k="capstyle" v="square"/>
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="3x:0,0,0,0,0,0"/>
@@ -27,19 +27,19 @@
           <prop k="width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option value="" name="name" type="QString"/>
-              <Option name="properties" type="Map">
-                <Option name="outlineColor" type="Map">
-                  <Option value="true" name="active" type="bool"/>
-                  <Option value="colour" name="field" type="QString"/>
-                  <Option value="2" name="type" type="int"/>
+              <Option type="QString" name="name" value=""/>
+              <Option type="Map" name="properties">
+                <Option type="Map" name="outlineColor">
+                  <Option type="bool" name="active" value="true"/>
+                  <Option type="QString" name="field" value="colour"/>
+                  <Option type="int" name="type" value="2"/>
                 </Option>
               </Option>
-              <Option value="collection" name="type" type="QString"/>
+              <Option type="QString" name="type" value="collection"/>
             </Option>
           </data_defined_properties>
         </layer>
-        <layer pass="0" class="SimpleFill" enabled="1" locked="0">
+        <layer pass="0" locked="0" enabled="1" class="SimpleFill">
           <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
           <prop k="color" v="0,0,0,26"/>
           <prop k="joinstyle" v="bevel"/>
@@ -53,15 +53,15 @@
           <prop k="style" v="solid"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option value="" name="name" type="QString"/>
-              <Option name="properties" type="Map">
-                <Option name="fillColor" type="Map">
-                  <Option value="true" name="active" type="bool"/>
-                  <Option value="set_color_part(  &quot;colour&quot; ,  ''alpha'', 10 )" name="expression" type="QString"/>
-                  <Option value="3" name="type" type="int"/>
+              <Option type="QString" name="name" value=""/>
+              <Option type="Map" name="properties">
+                <Option type="Map" name="fillColor">
+                  <Option type="bool" name="active" value="true"/>
+                  <Option type="QString" name="expression" value="set_color_part(  &quot;colour&quot; ,  ''alpha'', 10 )"/>
+                  <Option type="int" name="type" value="3"/>
                 </Option>
               </Option>
-              <Option value="collection" name="type" type="QString"/>
+              <Option type="QString" name="type" value="collection"/>
             </Option>
           </data_defined_properties>
         </layer>
@@ -72,26 +72,26 @@
   </renderer-v2>
   <labeling type="simple">
     <settings>
-      <text-style fontStrikeout="0" fontLetterSpacing="0" previewBkgrdColor="#ffffff" namedStyle="Regular" blendMode="0" fontSize="10" fieldName="name" fontSizeUnit="Point" fontFamily="Arial" multilineHeight="1" fontUnderline="0" textOpacity="1" fontItalic="0" isExpression="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textColor="0,0,0,255" fontWordSpacing="0" useSubstitutions="0" fontCapitals="0" fontWeight="50">
-        <text-buffer bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferSize="1" bufferOpacity="1" bufferNoFill="1" bufferDraw="1" bufferJoinStyle="128" bufferBlendMode="0" bufferSizeUnits="MM" bufferColor="255,255,255,255"/>
-        <background shapeRadiiX="0" shapeSizeUnit="MM" shapeType="0" shapeSizeY="0" shapeOpacity="1" shapeOffsetY="0" shapeOffsetX="0" shapeBlendMode="0" shapeSizeMapUnitScale="3x:0,0,0,0,0,0" shapeBorderWidthUnit="MM" shapeSizeX="0" shapeSVGFile="" shapeOffsetMapUnitScale="3x:0,0,0,0,0,0" shapeSizeType="0" shapeJoinStyle="64" shapeRadiiUnit="MM" shapeBorderColor="128,128,128,255" shapeBorderWidth="0" shapeOffsetUnit="MM" shapeDraw="0" shapeBorderWidthMapUnitScale="3x:0,0,0,0,0,0" shapeRotation="0" shapeRadiiMapUnitScale="3x:0,0,0,0,0,0" shapeRadiiY="0" shapeFillColor="255,255,255,255" shapeRotationType="0"/>
-        <shadow shadowDraw="0" shadowOffsetUnit="MM" shadowOffsetGlobal="1" shadowRadiusAlphaOnly="0" shadowColor="0,0,0,255" shadowRadiusMapUnitScale="3x:0,0,0,0,0,0" shadowOffsetAngle="135" shadowUnder="0" shadowScale="100" shadowOffsetDist="1" shadowRadiusUnit="MM" shadowBlendMode="6" shadowRadius="1.5" shadowOffsetMapUnitScale="3x:0,0,0,0,0,0" shadowOpacity="0.7"/>
+      <text-style fontItalic="0" fontUnderline="0" blendMode="0" fontSize="10" fontSizeMapUnitScale="3x:0,0,0,0,0,0" fontStrikeout="0" fontWordSpacing="0" fontFamily="Arial" fieldName="name" textColor="0,0,0,255" isExpression="0" fontLetterSpacing="0" fontSizeUnit="Point" namedStyle="Regular" textOpacity="1" fontWeight="50" useSubstitutions="0" multilineHeight="1" previewBkgrdColor="#ffffff" fontCapitals="0">
+        <text-buffer bufferBlendMode="0" bufferJoinStyle="128" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferColor="255,255,255,255" bufferSizeUnits="MM" bufferOpacity="1" bufferNoFill="1" bufferDraw="1"/>
+        <background shapeOffsetY="0" shapeRadiiUnit="MM" shapeSizeY="0" shapeRadiiX="0" shapeBorderColor="128,128,128,255" shapeSizeX="0" shapeRadiiMapUnitScale="3x:0,0,0,0,0,0" shapeSizeType="0" shapeBlendMode="0" shapeSizeMapUnitScale="3x:0,0,0,0,0,0" shapeOffsetUnit="MM" shapeJoinStyle="64" shapeRadiiY="0" shapeOpacity="1" shapeOffsetX="0" shapeRotationType="0" shapeBorderWidth="0" shapeBorderWidthUnit="MM" shapeSizeUnit="MM" shapeDraw="0" shapeOffsetMapUnitScale="3x:0,0,0,0,0,0" shapeType="0" shapeFillColor="255,255,255,255" shapeRotation="0" shapeBorderWidthMapUnitScale="3x:0,0,0,0,0,0" shapeSVGFile=""/>
+        <shadow shadowUnder="0" shadowScale="100" shadowDraw="0" shadowColor="0,0,0,255" shadowOffsetGlobal="1" shadowOpacity="0.7" shadowRadiusUnit="MM" shadowRadiusMapUnitScale="3x:0,0,0,0,0,0" shadowOffsetDist="1" shadowOffsetUnit="MM" shadowRadius="1.5" shadowOffsetAngle="135" shadowRadiusAlphaOnly="0" shadowOffsetMapUnitScale="3x:0,0,0,0,0,0" shadowBlendMode="6"/>
         <substitutions/>
       </text-style>
-      <text-format autoWrapLength="15" addDirectionSymbol="0" formatNumbers="0" useMaxLineLengthForAutoWrap="1" reverseDirectionSymbol="0" rightDirectionSymbol=">" wrapChar="" placeDirectionSymbol="0" leftDirectionSymbol="&lt;" multilineAlign="1" decimals="3" plussign="0"/>
-      <placement centroidWhole="0" rotationAngle="0" repeatDistanceUnits="MM" labelOffsetMapUnitScale="3x:0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" dist="0" geometryGeneratorEnabled="0" distUnits="MM" placement="0" offsetType="0" maxCurvedCharAngleOut="-25" priority="5" geometryGenerator="" geometryGeneratorType="PointGeometry" quadOffset="4" xOffset="0" yOffset="0" preserveRotation="1" placementFlags="10" distMapUnitScale="3x:0,0,0,0,0,0" repeatDistance="0" fitInPolygonOnly="0" offsetUnits="MM" maxCurvedCharAngleIn="25" repeatDistanceMapUnitScale="3x:0,0,0,0,0,0" centroidInside="0"/>
-      <rendering obstacle="1" minFeatureSize="0" upsidedownLabels="0" mergeLines="0" scaleMax="0" zIndex="0" obstacleType="0" displayAll="1" scaleMin="0" fontMinPixelSize="3" limitNumLabels="0" fontMaxPixelSize="10000" maxNumLabels="2000" obstacleFactor="1" drawLabels="1" labelPerPart="0" scaleVisibility="0" fontLimitPixelSize="0"/>
+      <text-format useMaxLineLengthForAutoWrap="1" addDirectionSymbol="0" placeDirectionSymbol="0" plussign="0" reverseDirectionSymbol="0" leftDirectionSymbol="&lt;" autoWrapLength="15" rightDirectionSymbol=">" wrapChar="" multilineAlign="1" formatNumbers="0" decimals="3"/>
+      <placement quadOffset="4" repeatDistanceUnits="MM" distMapUnitScale="3x:0,0,0,0,0,0" preserveRotation="1" xOffset="0" distUnits="MM" offsetUnits="MM" dist="0" offsetType="0" geometryGenerator="" rotationAngle="0" yOffset="0" centroidWhole="0" geometryGeneratorEnabled="0" labelOffsetMapUnitScale="3x:0,0,0,0,0,0" placementFlags="10" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" centroidInside="0" placement="0" geometryGeneratorType="PointGeometry" maxCurvedCharAngleIn="25" maxCurvedCharAngleOut="-25" priority="5" fitInPolygonOnly="0" repeatDistance="0" repeatDistanceMapUnitScale="3x:0,0,0,0,0,0"/>
+      <rendering fontMinPixelSize="3" zIndex="0" displayAll="1" minFeatureSize="0" upsidedownLabels="0" fontMaxPixelSize="10000" obstacleType="0" mergeLines="0" obstacle="1" maxNumLabels="2000" fontLimitPixelSize="0" scaleMax="0" scaleMin="0" drawLabels="1" scaleVisibility="0" labelPerPart="0" limitNumLabels="0" obstacleFactor="1"/>
       <dd_properties>
         <Option type="Map">
-          <Option value="" name="name" type="QString"/>
-          <Option name="properties" type="Map">
-            <Option name="ShapeFillColor" type="Map">
-              <Option value="true" name="active" type="bool"/>
-              <Option value="colour" name="field" type="QString"/>
-              <Option value="2" name="type" type="int"/>
+          <Option type="QString" name="name" value=""/>
+          <Option type="Map" name="properties">
+            <Option type="Map" name="ShapeFillColor">
+              <Option type="bool" name="active" value="true"/>
+              <Option type="QString" name="field" value="colour"/>
+              <Option type="int" name="type" value="2"/>
             </Option>
           </Option>
-          <Option value="collection" name="type" type="QString"/>
+          <Option type="QString" name="type" value="collection"/>
         </Option>
       </dd_properties>
     </settings>
@@ -104,18 +104,18 @@
   <blendMode>0</blendMode>
   <featureBlendMode>0</featureBlendMode>
   <layerOpacity>1</layerOpacity>
-  <SingleCategoryDiagramRenderer attributeLegend="1" diagramType="Histogram">
-    <DiagramCategory backgroundAlpha="255" scaleDependency="Area" labelPlacementMethod="XHeight" opacity="1" penWidth="0" width="15" maxScaleDenominator="1e+08" penColor="#000000" penAlpha="255" lineSizeType="MM" sizeScale="3x:0,0,0,0,0,0" rotationOffset="270" scaleBasedVisibility="0" height="15" minimumSize="0" sizeType="MM" barWidth="5" enabled="0" lineSizeScale="3x:0,0,0,0,0,0" minScaleDenominator="0" backgroundColor="#ffffff" diagramOrientation="Up">
-      <fontProperties description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0" style=""/>
+  <SingleCategoryDiagramRenderer diagramType="Histogram" attributeLegend="1">
+    <DiagramCategory penAlpha="255" enabled="0" labelPlacementMethod="XHeight" opacity="1" minScaleDenominator="0" scaleBasedVisibility="0" sizeType="MM" lineSizeType="MM" maxScaleDenominator="1e+08" scaleDependency="Area" rotationOffset="270" penColor="#000000" minimumSize="0" backgroundAlpha="255" width="15" backgroundColor="#ffffff" sizeScale="3x:0,0,0,0,0,0" penWidth="0" barWidth="5" diagramOrientation="Up" lineSizeScale="3x:0,0,0,0,0,0" height="15">
+      <fontProperties style="" description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0"/>
       <attribute color="#000000" label="" field=""/>
     </DiagramCategory>
   </SingleCategoryDiagramRenderer>
-  <DiagramLayerSettings zIndex="0" linePlacementFlags="18" showAll="1" obstacle="0" priority="0" dist="0" placement="1">
+  <DiagramLayerSettings dist="0" priority="0" showAll="1" zIndex="0" linePlacementFlags="18" obstacle="0" placement="1">
     <properties>
       <Option type="Map">
-        <Option value="" name="name" type="QString"/>
+        <Option type="QString" name="name" value=""/>
         <Option name="properties"/>
-        <Option value="collection" name="type" type="QString"/>
+        <Option type="QString" name="type" value="collection"/>
       </Option>
     </properties>
   </DiagramLayerSettings>
@@ -141,7 +141,10 @@
     <field name="notes">
       <editWidget type="TextEdit">
         <config>
-          <Option/>
+          <Option type="Map">
+            <Option type="bool" name="IsMultiline" value="true"/>
+            <Option type="bool" name="UseHtml" value="false"/>
+          </Option>
         </config>
       </editWidget>
     </field>
@@ -156,8 +159,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option type="bool" name="IsMultiline" value="false"/>
+            <Option type="bool" name="UseHtml" value="false"/>
           </Option>
         </config>
       </editWidget>
@@ -166,8 +169,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option type="bool" name="IsMultiline" value="false"/>
+            <Option type="bool" name="UseHtml" value="false"/>
           </Option>
         </config>
       </editWidget>
@@ -176,8 +179,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option type="bool" name="IsMultiline" value="false"/>
+            <Option type="bool" name="UseHtml" value="false"/>
           </Option>
         </config>
       </editWidget>
@@ -186,8 +189,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option type="bool" name="IsMultiline" value="false"/>
+            <Option type="bool" name="UseHtml" value="false"/>
           </Option>
         </config>
       </editWidget>
@@ -216,14 +219,14 @@
     <default expression=" format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )" applyOnUpdate="1" field="modified"/>
   </defaults>
   <constraints>
-    <constraint exp_strength="0" notnull_strength="1" constraints="3" unique_strength="1" field="fid"/>
-    <constraint exp_strength="0" notnull_strength="0" constraints="0" unique_strength="0" field="name"/>
-    <constraint exp_strength="0" notnull_strength="0" constraints="0" unique_strength="0" field="notes"/>
-    <constraint exp_strength="0" notnull_strength="0" constraints="0" unique_strength="0" field="colour"/>
-    <constraint exp_strength="0" notnull_strength="1" constraints="1" unique_strength="0" field="uuid"/>
-    <constraint exp_strength="0" notnull_strength="0" constraints="0" unique_strength="0" field="area"/>
-    <constraint exp_strength="0" notnull_strength="1" constraints="1" unique_strength="0" field="created"/>
-    <constraint exp_strength="0" notnull_strength="1" constraints="1" unique_strength="0" field="modified"/>
+    <constraint constraints="3" exp_strength="0" notnull_strength="1" field="fid" unique_strength="1"/>
+    <constraint constraints="0" exp_strength="0" notnull_strength="0" field="name" unique_strength="0"/>
+    <constraint constraints="0" exp_strength="0" notnull_strength="0" field="notes" unique_strength="0"/>
+    <constraint constraints="0" exp_strength="0" notnull_strength="0" field="colour" unique_strength="0"/>
+    <constraint constraints="1" exp_strength="0" notnull_strength="1" field="uuid" unique_strength="0"/>
+    <constraint constraints="0" exp_strength="0" notnull_strength="0" field="area" unique_strength="0"/>
+    <constraint constraints="1" exp_strength="0" notnull_strength="1" field="created" unique_strength="0"/>
+    <constraint constraints="1" exp_strength="0" notnull_strength="1" field="modified" unique_strength="0"/>
   </constraints>
   <constraintExpressions>
     <constraint exp="" desc="" field="fid"/>
@@ -239,17 +242,17 @@
   <attributeactions>
     <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
   </attributeactions>
-  <attributetableconfig sortOrder="0" sortExpression="" actionWidgetStyle="dropDown">
+  <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
     <columns>
-      <column width="-1" name="fid" hidden="0" type="field"/>
-      <column width="-1" name="name" hidden="0" type="field"/>
-      <column width="-1" name="notes" hidden="0" type="field"/>
-      <column width="-1" name="colour" hidden="0" type="field"/>
-      <column width="-1" name="uuid" hidden="0" type="field"/>
-      <column width="-1" name="area" hidden="0" type="field"/>
-      <column width="-1" name="created" hidden="0" type="field"/>
-      <column width="-1" name="modified" hidden="0" type="field"/>
-      <column width="-1" hidden="1" type="actions"/>
+      <column type="field" name="fid" hidden="0" width="-1"/>
+      <column type="field" name="name" hidden="0" width="-1"/>
+      <column type="field" name="notes" hidden="0" width="-1"/>
+      <column type="field" name="colour" hidden="0" width="-1"/>
+      <column type="field" name="uuid" hidden="0" width="-1"/>
+      <column type="field" name="area" hidden="0" width="-1"/>
+      <column type="field" name="created" hidden="0" width="-1"/>
+      <column type="field" name="modified" hidden="0" width="-1"/>
+      <column type="actions" hidden="1" width="-1"/>
     </columns>
   </attributetableconfig>
   <conditionalstyles>
@@ -280,7 +283,7 @@ def my_form_open(dialog, layer, feature):
   <featformsuppress>0</featformsuppress>
   <editorlayout>tablayout</editorlayout>
   <attributeEditorForm>
-    <attributeEditorContainer visibilityExpression="" name="" columnCount="1" showLabel="1" groupBox="1" visibilityExpressionEnabled="0">
+    <attributeEditorContainer groupBox="1" name="" showLabel="1" visibilityExpressionEnabled="0" columnCount="1" visibilityExpression="">
       <attributeEditorField name="name" showLabel="1" index="1"/>
       <attributeEditorField name="notes" showLabel="1" index="2"/>
       <attributeEditorField name="colour" showLabel="1" index="3"/>
