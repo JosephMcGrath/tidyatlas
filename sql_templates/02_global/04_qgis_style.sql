@@ -11,5 +11,7 @@
       , ('', '', '', 'continental_shelf', 'continental_shelf', 'continental_shelf', 'the_geom', 1, '{% include 'styles/continental_shelf.qml' %}')
       , ('', '', '', 'global_coastline', 'global_coastline', 'global_coastline', 'the_geom', 1, '{% include 'styles/global_coastline.qml' %}')
       , ('', '', '', 'ocean_current', 'ocean_current', 'ocean_current', 'the_geom', 1, '{% include 'styles/ocean_current.qml' %}')
+      , ('', '', '', 'major_political_boundary', 'major_political_boundary', 'major_political_boundary', 'the_geom', 1, '{% include 'styles/politics_global.qml' %}')
+      , ('', '', '', 'minor_political_boundary', 'minor_political_boundary', 'minor_political_boundary', 'the_geom', 1, '{% include 'styles/politics_global.qml' %}')
     ;
 {% endblock %}
