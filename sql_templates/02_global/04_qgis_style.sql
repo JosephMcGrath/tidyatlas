@@ -13,5 +13,7 @@
       , ('', '', '', 'ocean_current', 'ocean_current', 'ocean_current', 'the_geom', 1, '{% include 'styles/ocean_current.qml' %}')
       , ('', '', '', 'major_political_boundary', 'major_political_boundary', 'major_political_boundary', 'the_geom', 1, '{% include 'styles/politics_global.qml' %}')
       , ('', '', '', 'minor_political_boundary', 'minor_political_boundary', 'minor_political_boundary', 'the_geom', 1, '{% include 'styles/politics_global.qml' %}')
+      , ('', '', '', 'climate', 'climate', 'climate', 'the_geom', 1, '{% include 'styles/climate.qml' %}')
+      , ('', '', '', 'climate_zone', 'climate_zone', 'climate_zone', 'the_geom', 1, '{% include 'styles/climate_zone.qml' %}')
     ;
 {% endblock %}
