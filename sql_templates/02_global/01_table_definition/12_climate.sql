@@ -29,7 +29,7 @@ VALUES
 
 CREATE TABLE climate (
     fid INTEGER PRIMARY KEY
-  , biome TEXT REFERENCES biome_class (name)
+  , climate TEXT REFERENCES climate_class (name)
   , uuid TEXT NOT NULL
   , created TEXT
   , modified TEXT
