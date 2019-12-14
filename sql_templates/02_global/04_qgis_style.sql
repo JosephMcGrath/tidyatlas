@@ -15,5 +15,6 @@
       , ('', '', '', 'minor_political_boundary', 'minor_political_boundary', 'minor_political_boundary', 'the_geom', 1, '{% include 'styles/politics_global.qml' %}')
       , ('', '', '', 'climate', 'climate', 'climate', 'the_geom', 1, '{% include 'styles/climate.qml' %}')
       , ('', '', '', 'climate_zone', 'climate_zone', 'climate_zone', 'the_geom', 1, '{% include 'styles/climate_zone.qml' %}')
+      , ('', '', '', 'prevailing_wind', 'prevailing_wind', 'prevailing_wind', 'the_geom', 1, '{% include 'styles/prevailing_wind.qml' %}')
     ;
 {% endblock %}
