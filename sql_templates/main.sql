@@ -71,6 +71,7 @@
     {% include '03_local/01_table_definition/08_land_cover.sql' %}
     {% include '03_local/01_table_definition/09_linear_labels.sql' %}
     {% include '03_local/01_table_definition/10_political_region.sql' %}
+    {% include '03_local/01_table_definition/11_hex_grid.sql' %}
 
 /*----------------------------------------------------------------------------*/
     {% if previous_db is defined %}
@@ -87,6 +88,9 @@
         {% include '03_local/02_data_import/10_political_region.sql' %}
         DETACH previous;
     {% endif %}
+
+/*----------------------------------------------------------------------------*/
+    {% include '03_local/03_data_generation/11_hex_grid.sql' %}
 
 /*----------------------------------------------------------------------------*/
     {% if style %}
