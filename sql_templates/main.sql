@@ -31,6 +31,7 @@
     {% include '02_global/01_table_definition/08_global_coastline.sql' %}
     {% include '02_global/01_table_definition/09_political_boundary.sql' %}
     {% include '02_global/01_table_definition/10_ocean_current.sql' %}
+    {% include '02_global/01_table_definition/11_prevailing_wind.sql' %}
 
 /*----------------------------------------------------------------------------*/
     {% if previous_db is defined %}
@@ -42,6 +43,7 @@
         {% include '02_global/02_data_import/08_global_coastline.sql' %}
         {% include '02_global/02_data_import/09_political_boundary.sql' %}
         {% include '02_global/02_data_import/10_ocean_current.sql' %}
+        {% include '02_global/02_data_import/11_prevailing_wind.sql' %}
         DETACH previous;
     {% endif %}
 
