@@ -1,9 +1,21 @@
 {% extends "base.sql" %}
 {% block content %}
     /*Ocean Currents*/
+    CREATE TABLE climate_temperature (
+        temperature TEXT PRIMARY KEY
+    );
+
+    INSERT INTO prevailing_wind_direction
+        (temperature)
+    VALUES
+        ('Warm')
+      , ('Neutral')
+      , ('Cool')
+    ;
+
     CREATE TABLE ocean_current (
         fid INTEGER PRIMARY KEY
-      , temperature TEXT
+      , temperature TEXT REFERENCES climate_temperature (temperature)
       , uuid TEXT NOT NULL
       , created TEXT
       , modified TEXT

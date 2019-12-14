@@ -1,19 +1,19 @@
 <!DOCTYPE qgis PUBLIC ''http://mrcc.com/qgis.dtd'' ''SYSTEM''>
-<qgis version="3.4.12-Madeira" readOnly="0" simplifyMaxScale="1" minScale="1e+08" hasScaleBasedVisibilityFlag="0" maxScale="0" simplifyDrawingHints="1" labelsEnabled="0" styleCategories="AllStyleCategories" simplifyDrawingTol="1" simplifyLocal="1" simplifyAlgorithm="0">
+<qgis simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" minScale="1e+08" simplifyAlgorithm="0" maxScale="0" version="3.8.3-Zanzibar" labelsEnabled="0" styleCategories="AllStyleCategories" simplifyLocal="1" simplifyDrawingTol="1" readOnly="0" simplifyDrawingHints="1">
   <flags>
     <Identifiable>1</Identifiable>
     <Removable>1</Removable>
     <Searchable>1</Searchable>
   </flags>
-  <renderer-v2 type="categorizedSymbol" symbollevels="0" attr="temperature" forceraster="0" enableorderby="0">
+  <renderer-v2 attr="temperature" type="categorizedSymbol" symbollevels="0" forceraster="0" enableorderby="0">
     <categories>
-      <category label="Cool" render="true" symbol="0" value="Cool"/>
-      <category label="Neutral" render="true" symbol="1" value="Neutral"/>
-      <category label="Warm" render="true" symbol="2" value="Warm"/>
+      <category label="Cool" render="true" value="Cool" symbol="0"/>
+      <category label="Neutral" render="true" value="Neutral" symbol="1"/>
+      <category label="Warm" render="true" value="Warm" symbol="2"/>
     </categories>
     <symbols>
-      <symbol name="0" type="line" clip_to_extent="1" force_rhr="0" alpha="1">
-        <layer enabled="1" locked="0" class="SimpleLine" pass="0">
+      <symbol name="0" force_rhr="0" type="line" alpha="1" clip_to_extent="1">
+        <layer class="SimpleLine" pass="0" enabled="1" locked="0">
           <prop k="capstyle" v="square"/>
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="3x:0,0,0,0,0,0"/>
@@ -38,7 +38,10 @@
             </Option>
           </data_defined_properties>
         </layer>
-        <layer enabled="1" locked="0" class="MarkerLine" pass="0">
+        <layer class="MarkerLine" pass="0" enabled="1" locked="0">
+          <prop k="average_angle_length" v="4"/>
+          <prop k="average_angle_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+          <prop k="average_angle_unit" v="MM"/>
           <prop k="interval" v="3"/>
           <prop k="interval_map_unit_scale" v="3x:0,0,0,0,0,0"/>
           <prop k="interval_unit" v="MM"/>
@@ -58,8 +61,8 @@
               <Option name="type" type="QString" value="collection"/>
             </Option>
           </data_defined_properties>
-          <symbol name="@0@1" type="marker" clip_to_extent="1" force_rhr="0" alpha="1">
-            <layer enabled="1" locked="0" class="SimpleMarker" pass="0">
+          <symbol name="@0@1" force_rhr="0" type="marker" alpha="1" clip_to_extent="1">
+            <layer class="SimpleMarker" pass="0" enabled="1" locked="0">
               <prop k="angle" v="90"/>
               <prop k="color" v="64,96,255,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
@@ -89,8 +92,8 @@
           </symbol>
         </layer>
       </symbol>
-      <symbol name="1" type="line" clip_to_extent="1" force_rhr="0" alpha="1">
-        <layer enabled="1" locked="0" class="SimpleLine" pass="0">
+      <symbol name="1" force_rhr="0" type="line" alpha="1" clip_to_extent="1">
+        <layer class="SimpleLine" pass="0" enabled="1" locked="0">
           <prop k="capstyle" v="square"/>
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="3x:0,0,0,0,0,0"/>
@@ -115,7 +118,10 @@
             </Option>
           </data_defined_properties>
         </layer>
-        <layer enabled="1" locked="0" class="MarkerLine" pass="0">
+        <layer class="MarkerLine" pass="0" enabled="1" locked="0">
+          <prop k="average_angle_length" v="4"/>
+          <prop k="average_angle_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+          <prop k="average_angle_unit" v="MM"/>
           <prop k="interval" v="3"/>
           <prop k="interval_map_unit_scale" v="3x:0,0,0,0,0,0"/>
           <prop k="interval_unit" v="MM"/>
@@ -135,8 +141,8 @@
               <Option name="type" type="QString" value="collection"/>
             </Option>
           </data_defined_properties>
-          <symbol name="@1@1" type="marker" clip_to_extent="1" force_rhr="0" alpha="1">
-            <layer enabled="1" locked="0" class="SimpleMarker" pass="0">
+          <symbol name="@1@1" force_rhr="0" type="marker" alpha="1" clip_to_extent="1">
+            <layer class="SimpleMarker" pass="0" enabled="1" locked="0">
               <prop k="angle" v="90"/>
               <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
@@ -166,8 +172,8 @@
           </symbol>
         </layer>
       </symbol>
-      <symbol name="2" type="line" clip_to_extent="1" force_rhr="0" alpha="1">
-        <layer enabled="1" locked="0" class="SimpleLine" pass="0">
+      <symbol name="2" force_rhr="0" type="line" alpha="1" clip_to_extent="1">
+        <layer class="SimpleLine" pass="0" enabled="1" locked="0">
           <prop k="capstyle" v="square"/>
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="3x:0,0,0,0,0,0"/>
@@ -192,7 +198,10 @@
             </Option>
           </data_defined_properties>
         </layer>
-        <layer enabled="1" locked="0" class="MarkerLine" pass="0">
+        <layer class="MarkerLine" pass="0" enabled="1" locked="0">
+          <prop k="average_angle_length" v="4"/>
+          <prop k="average_angle_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+          <prop k="average_angle_unit" v="MM"/>
           <prop k="interval" v="3"/>
           <prop k="interval_map_unit_scale" v="3x:0,0,0,0,0,0"/>
           <prop k="interval_unit" v="MM"/>
@@ -212,8 +221,8 @@
               <Option name="type" type="QString" value="collection"/>
             </Option>
           </data_defined_properties>
-          <symbol name="@2@1" type="marker" clip_to_extent="1" force_rhr="0" alpha="1">
-            <layer enabled="1" locked="0" class="SimpleMarker" pass="0">
+          <symbol name="@2@1" force_rhr="0" type="marker" alpha="1" clip_to_extent="1">
+            <layer class="SimpleMarker" pass="0" enabled="1" locked="0">
               <prop k="angle" v="90"/>
               <prop k="color" v="255,64,64,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
@@ -245,8 +254,8 @@
       </symbol>
     </symbols>
     <source-symbol>
-      <symbol name="0" type="line" clip_to_extent="1" force_rhr="0" alpha="1">
-        <layer enabled="1" locked="0" class="SimpleLine" pass="0">
+      <symbol name="0" force_rhr="0" type="line" alpha="1" clip_to_extent="1">
+        <layer class="SimpleLine" pass="0" enabled="1" locked="0">
           <prop k="capstyle" v="square"/>
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="3x:0,0,0,0,0,0"/>
@@ -271,7 +280,10 @@
             </Option>
           </data_defined_properties>
         </layer>
-        <layer enabled="1" locked="0" class="MarkerLine" pass="0">
+        <layer class="MarkerLine" pass="0" enabled="1" locked="0">
+          <prop k="average_angle_length" v="4"/>
+          <prop k="average_angle_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+          <prop k="average_angle_unit" v="MM"/>
           <prop k="interval" v="3"/>
           <prop k="interval_map_unit_scale" v="3x:0,0,0,0,0,0"/>
           <prop k="interval_unit" v="MM"/>
@@ -291,8 +303,8 @@
               <Option name="type" type="QString" value="collection"/>
             </Option>
           </data_defined_properties>
-          <symbol name="@0@1" type="marker" clip_to_extent="1" force_rhr="0" alpha="1">
-            <layer enabled="1" locked="0" class="SimpleMarker" pass="0">
+          <symbol name="@0@1" force_rhr="0" type="marker" alpha="1" clip_to_extent="1">
+            <layer class="SimpleMarker" pass="0" enabled="1" locked="0">
               <prop k="angle" v="90"/>
               <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
@@ -335,11 +347,12 @@
   <featureBlendMode>0</featureBlendMode>
   <layerOpacity>1</layerOpacity>
   <SingleCategoryDiagramRenderer diagramType="Histogram" attributeLegend="1">
-    <DiagramCategory penAlpha="255" backgroundColor="#ffffff" sizeType="MM" scaleBasedVisibility="0" penColor="#000000" penWidth="0" barWidth="5" sizeScale="3x:0,0,0,0,0,0" lineSizeType="MM" lineSizeScale="3x:0,0,0,0,0,0" opacity="1" diagramOrientation="Up" rotationOffset="270" backgroundAlpha="255" labelPlacementMethod="XHeight" scaleDependency="Area" height="15" maxScaleDenominator="1e+08" minimumSize="0" minScaleDenominator="0" enabled="0" width="15">
-      <fontProperties description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0" style=""/>
+    <DiagramCategory height="15" scaleDependency="Area" diagramOrientation="Up" backgroundColor="#ffffff" penWidth="0" barWidth="5" backgroundAlpha="255" penAlpha="255" lineSizeType="MM" width="15" sizeType="MM" minScaleDenominator="0" penColor="#000000" scaleBasedVisibility="0" sizeScale="3x:0,0,0,0,0,0" labelPlacementMethod="XHeight" opacity="1" minimumSize="0" enabled="0" lineSizeScale="3x:0,0,0,0,0,0" rotationOffset="270" maxScaleDenominator="1e+08">
+      <fontProperties description="MS Shell Dlg 2,7.8,-1,5,50,0,0,0,0,0" style=""/>
+      <attribute label="" color="#000000" field=""/>
     </DiagramCategory>
   </SingleCategoryDiagramRenderer>
-  <DiagramLayerSettings placement="2" dist="0" linePlacementFlags="18" priority="0" showAll="1" zIndex="0" obstacle="0">
+  <DiagramLayerSettings placement="2" showAll="1" obstacle="0" priority="0" dist="0" zIndex="0" linePlacementFlags="18">
     <properties>
       <Option type="Map">
         <Option name="name" type="QString" value=""/>
@@ -402,47 +415,47 @@
     </field>
   </fieldConfiguration>
   <aliases>
-    <alias name="" index="0" field="fid"/>
-    <alias name="" index="1" field="temperature"/>
-    <alias name="" index="2" field="uuid"/>
-    <alias name="" index="3" field="created"/>
-    <alias name="" index="4" field="modified"/>
+    <alias name="" field="fid" index="0"/>
+    <alias name="" field="temperature" index="1"/>
+    <alias name="" field="uuid" index="2"/>
+    <alias name="" field="created" index="3"/>
+    <alias name="" field="modified" index="4"/>
   </aliases>
   <excludeAttributesWMS/>
   <excludeAttributesWFS/>
   <defaults>
     <default expression="" field="fid" applyOnUpdate="0"/>
-    <default expression="" field="temperature" applyOnUpdate="0"/>
+    <default expression="''Neutral''" field="temperature" applyOnUpdate="0"/>
     <default expression=" regexp_replace( uuid() , ''\\{|\\}'', '''')" field="uuid" applyOnUpdate="0"/>
     <default expression=" format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )" field="created" applyOnUpdate="0"/>
     <default expression=" format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )" field="modified" applyOnUpdate="1"/>
   </defaults>
   <constraints>
-    <constraint notnull_strength="1" exp_strength="0" constraints="3" field="fid" unique_strength="1"/>
-    <constraint notnull_strength="0" exp_strength="0" constraints="0" field="temperature" unique_strength="0"/>
-    <constraint notnull_strength="1" exp_strength="0" constraints="1" field="uuid" unique_strength="0"/>
-    <constraint notnull_strength="0" exp_strength="0" constraints="0" field="created" unique_strength="0"/>
-    <constraint notnull_strength="0" exp_strength="0" constraints="0" field="modified" unique_strength="0"/>
+    <constraint constraints="3" notnull_strength="1" field="fid" exp_strength="0" unique_strength="1"/>
+    <constraint constraints="0" notnull_strength="0" field="temperature" exp_strength="0" unique_strength="0"/>
+    <constraint constraints="1" notnull_strength="1" field="uuid" exp_strength="0" unique_strength="0"/>
+    <constraint constraints="0" notnull_strength="0" field="created" exp_strength="0" unique_strength="0"/>
+    <constraint constraints="0" notnull_strength="0" field="modified" exp_strength="0" unique_strength="0"/>
   </constraints>
   <constraintExpressions>
-    <constraint desc="" exp="" field="fid"/>
-    <constraint desc="" exp="" field="temperature"/>
-    <constraint desc="" exp="" field="uuid"/>
-    <constraint desc="" exp="" field="created"/>
-    <constraint desc="" exp="" field="modified"/>
+    <constraint exp="" field="fid" desc=""/>
+    <constraint exp="" field="temperature" desc=""/>
+    <constraint exp="" field="uuid" desc=""/>
+    <constraint exp="" field="created" desc=""/>
+    <constraint exp="" field="modified" desc=""/>
   </constraintExpressions>
   <expressionfields/>
   <attributeactions>
     <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
   </attributeactions>
-  <attributetableconfig sortOrder="0" actionWidgetStyle="dropDown" sortExpression="">
+  <attributetableconfig sortExpression="" actionWidgetStyle="dropDown" sortOrder="0">
     <columns>
-      <column name="fid" hidden="0" type="field" width="-1"/>
-      <column name="temperature" hidden="0" type="field" width="-1"/>
-      <column name="uuid" hidden="0" type="field" width="-1"/>
       <column name="created" hidden="0" type="field" width="-1"/>
-      <column name="modified" hidden="0" type="field" width="-1"/>
+      <column name="temperature" hidden="0" type="field" width="-1"/>
       <column hidden="1" type="actions" width="-1"/>
+      <column name="fid" hidden="0" type="field" width="-1"/>
+      <column name="uuid" hidden="0" type="field" width="-1"/>
+      <column name="modified" hidden="0" type="field" width="-1"/>
     </columns>
   </attributetableconfig>
   <conditionalstyles>
@@ -473,30 +486,34 @@ def my_form_open(dialog, layer, feature):
   <featformsuppress>0</featformsuppress>
   <editorlayout>tablayout</editorlayout>
   <attributeEditorForm>
-    <attributeEditorContainer name="" visibilityExpressionEnabled="0" columnCount="1" groupBox="1" visibilityExpression="" showLabel="1">
-      <attributeEditorField name="temperature" index="1" showLabel="1"/>
-      <attributeEditorField name="fid" index="0" showLabel="1"/>
-      <attributeEditorField name="uuid" index="2" showLabel="1"/>
-      <attributeEditorField name="created" index="3" showLabel="1"/>
-      <attributeEditorField name="modified" index="4" showLabel="1"/>
+    <attributeEditorContainer name="" visibilityExpression="" columnCount="1" showLabel="1" groupBox="1" visibilityExpressionEnabled="0">
+      <attributeEditorField name="temperature" showLabel="1" index="1"/>
+      <attributeEditorField name="fid" showLabel="1" index="0"/>
+      <attributeEditorField name="uuid" showLabel="1" index="2"/>
+      <attributeEditorField name="created" showLabel="1" index="3"/>
+      <attributeEditorField name="modified" showLabel="1" index="4"/>
     </attributeEditorContainer>
   </attributeEditorForm>
   <editable>
-    <field name="created" editable="1"/>
-    <field name="fid" editable="1"/>
-    <field name="modified" editable="1"/>
-    <field name="temperature" editable="1"/>
-    <field name="uuid" editable="1"/>
+    <field editable="0" name="created"/>
+    <field editable="0" name="edited"/>
+    <field editable="1" name="fid"/>
+    <field editable="0" name="modified"/>
+    <field editable="1" name="temperature"/>
+    <field editable="0" name="uuid"/>
+    <field editable="0" name="wid"/>
   </editable>
   <labelOnTop>
     <field name="created" labelOnTop="0"/>
+    <field name="edited" labelOnTop="0"/>
     <field name="fid" labelOnTop="0"/>
     <field name="modified" labelOnTop="0"/>
     <field name="temperature" labelOnTop="0"/>
     <field name="uuid" labelOnTop="0"/>
+    <field name="wid" labelOnTop="0"/>
   </labelOnTop>
   <widgets/>
-  <previewExpression>fid</previewExpression>
+  <previewExpression>wid</previewExpression>
   <mapTip></mapTip>
   <layerGeometryType>1</layerGeometryType>
 </qgis>
