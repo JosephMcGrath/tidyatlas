@@ -40,5 +40,4 @@
       , ('Climate Lattitude', 'Polar Icecaps (North)', 75, 90)
       , ('Climate Lattitude', 'Polar Icecaps (South)', -75, -90)
     ;
-COMMIT;
 {% endblock %}

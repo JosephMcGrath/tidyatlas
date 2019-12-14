@@ -10,7 +10,8 @@ CREATE TABLE climate_class (
 
 INSERT INTO climate_class (name)
 VALUES
-    ('Tropical Rainforest')
+    ('Mountains')
+  , ('Tropical Rainforest')
   , ('Tropical Monsoon')
   , ('Tropical Savannah')
   , ('Hot Desert')

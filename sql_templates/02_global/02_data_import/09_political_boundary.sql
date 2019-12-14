@@ -1,14 +1,10 @@
 {% extends "base.sql" %}
 {% block content %}
-INSERT INTO major_political_boundary
-    (name, uuid, created, modified, the_geom)
+{% for table_name in ["major_political_boundary", "minor_political_boundary"] %}
+INSERT INTO {{table_name}}
+    (name, colour, uuid, created, modified, the_geom)
 SELECT
-    name, uuid, created, modified, the_geom
-FROM previous.major_political_boundary;
-
-INSERT INTO minor_political_boundary
-    (name, uuid, created, modified, the_geom)
-SELECT
-    name, uuid, created, modified, the_geom
-FROM previous.minor_political_boundary;
+    name, colour, uuid, created, modified, the_geom
+FROM previous.{{table_name}};
+{% endfor %}
 {% endblock %}

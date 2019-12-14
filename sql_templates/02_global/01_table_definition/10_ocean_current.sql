@@ -5,7 +5,7 @@
         temperature TEXT PRIMARY KEY
     );
 
-    INSERT INTO prevailing_wind_direction
+    INSERT INTO climate_temperature
         (temperature)
     VALUES
         ('Warm')
