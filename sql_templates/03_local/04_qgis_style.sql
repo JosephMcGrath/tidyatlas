@@ -17,5 +17,6 @@
       , ('', '', '', 'linear_label', 'linear_label', 'linear_label', 'the_geom', 1, '{% include 'styles/linear_label.qml' %}')
       , ('', '', '', 'political_nation', 'political_nation', 'political_nation', 'the_geom', 1, '{% include 'styles/political_nation.qml' %}')
       , ('', '', '', 'political_region', 'political_region', 'political_region', 'the_geom', 1, '{% include 'styles/political_region.qml' %}')
+      , ('', '', '', 'hex_grid', 'hex_grid', 'hex_grid', 'the_geom', 1, '{% include 'styles/hex_grid.qml' %}')
     ;
 {% endblock %}

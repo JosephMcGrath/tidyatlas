@@ -1,14 +1,14 @@
 <!DOCTYPE qgis PUBLIC ''http://mrcc.com/qgis.dtd'' ''SYSTEM''>
-<qgis readOnly="0" version="3.4.3-Madeira" styleCategories="AllStyleCategories" simplifyDrawingTol="1" maxScale="0" hasScaleBasedVisibilityFlag="0" labelsEnabled="1" simplifyLocal="1" simplifyAlgorithm="0" simplifyMaxScale="1" simplifyDrawingHints="1" minScale="1e+08">
+<qgis simplifyMaxScale="1" styleCategories="AllStyleCategories" simplifyAlgorithm="0" version="3.4.3-Madeira" readOnly="0" labelsEnabled="1" hasScaleBasedVisibilityFlag="0" maxScale="0" simplifyDrawingTol="1" minScale="1e+08" simplifyLocal="1" simplifyDrawingHints="1">
   <flags>
     <Identifiable>1</Identifiable>
     <Removable>1</Removable>
     <Searchable>1</Searchable>
   </flags>
-  <renderer-v2 type="singleSymbol" enableorderby="0" symbollevels="0" forceraster="0">
+  <renderer-v2 enableorderby="0" type="singleSymbol" forceraster="0" symbollevels="0">
     <symbols>
-      <symbol name="0" force_rhr="0" alpha="1" type="fill" clip_to_extent="1">
-        <layer locked="0" enabled="1" class="SimpleFill" pass="0">
+      <symbol name="0" alpha="1" force_rhr="0" clip_to_extent="1" type="fill">
+        <layer locked="0" pass="0" class="SimpleFill" enabled="1">
           <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
           <prop k="color" v="0,0,0,26"/>
           <prop k="joinstyle" v="miter"/>
@@ -39,7 +39,7 @@
             </Option>
           </data_defined_properties>
         </layer>
-        <layer locked="0" enabled="1" class="SimpleLine" pass="0">
+        <layer locked="0" pass="0" class="SimpleLine" enabled="1">
           <prop k="capstyle" v="square"/>
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="3x:0,0,0,0,0,0"/>
@@ -77,19 +77,24 @@
   </renderer-v2>
   <labeling type="simple">
     <settings>
-      <text-style fontUnderline="0" multilineHeight="1" fontItalic="1" useSubstitutions="0" fieldName="name" isExpression="0" fontSize="10" fontSizeMapUnitScale="3x:0,0,0,0,0,0" previewBkgrdColor="#ffffff" textColor="0,0,0,255" fontStrikeout="0" fontCapitals="0" fontWordSpacing="0" textOpacity="1" namedStyle="Italic" fontFamily="Arial" fontSizeUnit="Point" fontLetterSpacing="0" fontWeight="50" blendMode="0">
-        <text-buffer bufferColor="255,255,255,255" bufferJoinStyle="128" bufferBlendMode="0" bufferSizeUnits="MM" bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferSize="1" bufferNoFill="1" bufferDraw="1" bufferOpacity="1"/>
-        <background shapeType="0" shapeSizeX="0" shapeRadiiMapUnitScale="3x:0,0,0,0,0,0" shapeBorderColor="128,128,128,255" shapeBorderWidth="0" shapeOffsetMapUnitScale="3x:0,0,0,0,0,0" shapeSizeY="0" shapeRadiiUnit="MM" shapeSizeType="0" shapeRotationType="0" shapeOpacity="1" shapeOffsetX="0" shapeSVGFile="" shapeBorderWidthMapUnitScale="3x:0,0,0,0,0,0" shapeRadiiX="0" shapeBorderWidthUnit="MM" shapeRadiiY="0" shapeSizeUnit="MM" shapeRotation="0" shapeBlendMode="0" shapeDraw="0" shapeFillColor="255,255,255,255" shapeOffsetY="0" shapeJoinStyle="64" shapeSizeMapUnitScale="3x:0,0,0,0,0,0" shapeOffsetUnit="MM"/>
-        <shadow shadowBlendMode="6" shadowOffsetDist="1" shadowOffsetAngle="135" shadowOffsetGlobal="1" shadowRadiusAlphaOnly="0" shadowUnder="0" shadowOffsetUnit="MM" shadowOpacity="0.7" shadowDraw="0" shadowColor="0,0,0,255" shadowOffsetMapUnitScale="3x:0,0,0,0,0,0" shadowRadius="1.5" shadowRadiusUnit="MM" shadowRadiusMapUnitScale="3x:0,0,0,0,0,0" shadowScale="100"/>
+      <text-style fontItalic="1" fontSizeMapUnitScale="3x:0,0,0,0,0,0" fontUnderline="0" useSubstitutions="0" fieldName="name" textOpacity="1" fontSize="10" isExpression="0" fontSizeUnit="Point" fontFamily="Arial" multilineHeight="1" fontLetterSpacing="0" fontCapitals="0" fontWordSpacing="0" fontWeight="50" textColor="0,0,0,255" namedStyle="Italic" previewBkgrdColor="#ffffff" blendMode="0" fontStrikeout="0">
+        <text-buffer bufferOpacity="1" bufferJoinStyle="128" bufferSizeUnits="MM" bufferDraw="1" bufferBlendMode="0" bufferColor="255,255,255,255" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferNoFill="1"/>
+        <background shapeOffsetX="0" shapeOffsetY="0" shapeOffsetUnit="MM" shapeBorderWidthUnit="MM" shapeBorderWidthMapUnitScale="3x:0,0,0,0,0,0" shapeOffsetMapUnitScale="3x:0,0,0,0,0,0" shapeFillColor="255,255,255,255" shapeSizeX="0" shapeRadiiY="0" shapeSVGFile="" shapeRadiiMapUnitScale="3x:0,0,0,0,0,0" shapeBlendMode="0" shapeBorderColor="128,128,128,255" shapeJoinStyle="64" shapeOpacity="1" shapeSizeY="0" shapeRadiiX="0" shapeRotationType="0" shapeBorderWidth="0" shapeRotation="0" shapeSizeType="0" shapeRadiiUnit="MM" shapeSizeUnit="MM" shapeSizeMapUnitScale="3x:0,0,0,0,0,0" shapeType="0" shapeDraw="0"/>
+        <shadow shadowOffsetUnit="MM" shadowOffsetGlobal="1" shadowRadiusMapUnitScale="3x:0,0,0,0,0,0" shadowBlendMode="6" shadowRadiusAlphaOnly="0" shadowColor="0,0,0,255" shadowDraw="0" shadowOffsetAngle="135" shadowUnder="0" shadowRadius="1.5" shadowScale="100" shadowOpacity="0.7" shadowRadiusUnit="MM" shadowOffsetDist="1" shadowOffsetMapUnitScale="3x:0,0,0,0,0,0"/>
         <substitutions/>
       </text-style>
-      <text-format useMaxLineLengthForAutoWrap="1" leftDirectionSymbol="&lt;" wrapChar="" rightDirectionSymbol=">" plussign="0" addDirectionSymbol="0" autoWrapLength="0" multilineAlign="0" placeDirectionSymbol="0" reverseDirectionSymbol="0" formatNumbers="0" decimals="3"/>
-      <placement preserveRotation="1" xOffset="0" dist="0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" distUnits="MM" fitInPolygonOnly="0" offsetType="0" centroidWhole="0" centroidInside="0" placement="0" rotationAngle="0" maxCurvedCharAngleIn="25" repeatDistanceMapUnitScale="3x:0,0,0,0,0,0" offsetUnits="MM" quadOffset="4" yOffset="0" placementFlags="10" repeatDistance="0" priority="5" repeatDistanceUnits="MM" distMapUnitScale="3x:0,0,0,0,0,0" labelOffsetMapUnitScale="3x:0,0,0,0,0,0" maxCurvedCharAngleOut="-25"/>
-      <rendering mergeLines="0" zIndex="0" fontLimitPixelSize="0" obstacle="1" scaleMin="0" labelPerPart="0" scaleVisibility="0" maxNumLabels="2000" upsidedownLabels="0" drawLabels="1" fontMinPixelSize="3" fontMaxPixelSize="10000" minFeatureSize="0" obstacleType="0" displayAll="1" limitNumLabels="0" scaleMax="0" obstacleFactor="1"/>
+      <text-format wrapChar="" formatNumbers="0" decimals="3" autoWrapLength="0" addDirectionSymbol="0" useMaxLineLengthForAutoWrap="1" placeDirectionSymbol="0" plussign="0" multilineAlign="0" leftDirectionSymbol="&lt;" rightDirectionSymbol=">" reverseDirectionSymbol="0"/>
+      <placement quadOffset="4" rotationAngle="0" priority="5" preserveRotation="1" repeatDistance="0" fitInPolygonOnly="0" centroidInside="1" dist="0" placement="0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" offsetUnits="MM" offsetType="0" labelOffsetMapUnitScale="3x:0,0,0,0,0,0" distUnits="MM" centroidWhole="0" xOffset="0" yOffset="0" placementFlags="10" maxCurvedCharAngleOut="-25" distMapUnitScale="3x:0,0,0,0,0,0" repeatDistanceUnits="MM" repeatDistanceMapUnitScale="3x:0,0,0,0,0,0" maxCurvedCharAngleIn="25"/>
+      <rendering scaleVisibility="0" fontMinPixelSize="3" mergeLines="0" limitNumLabels="0" labelPerPart="0" zIndex="0" displayAll="1" upsidedownLabels="0" obstacle="1" minFeatureSize="0" obstacleFactor="1" fontLimitPixelSize="0" scaleMin="0" maxNumLabels="2000" obstacleType="0" fontMaxPixelSize="10000" scaleMax="0" drawLabels="1"/>
       <dd_properties>
         <Option type="Map">
           <Option name="name" value="" type="QString"/>
           <Option name="properties" type="Map">
+            <Option name="BufferColor" type="Map">
+              <Option name="active" value="true" type="bool"/>
+              <Option name="expression" value="CASE&#xd;&#xa;  WHEN &quot;colour&quot; IS NULL THEN ''#ffffff''&#xd;&#xa;  WHEN color_part( &quot;colour&quot; , ''lightness'') > 75 THEN ''#222222''&#xd;&#xa;  ELSE ''#ffffff''&#xd;&#xa;END" type="QString"/>
+              <Option name="type" value="3" type="int"/>
+            </Option>
             <Option name="Color" type="Map">
               <Option name="active" value="true" type="bool"/>
               <Option name="field" value="colour" type="QString"/>
@@ -107,7 +112,7 @@
     </settings>
   </labeling>
   <customproperties>
-    <property key="embeddedWidgets/count" value="0"/>
+    <property value="0" key="embeddedWidgets/count"/>
     <property key="variableNames"/>
     <property key="variableValues"/>
   </customproperties>
@@ -115,12 +120,12 @@
   <featureBlendMode>0</featureBlendMode>
   <layerOpacity>1</layerOpacity>
   <SingleCategoryDiagramRenderer diagramType="Histogram" attributeLegend="1">
-    <DiagramCategory width="15" minScaleDenominator="0" minimumSize="0" backgroundColor="#ffffff" maxScaleDenominator="1e+08" sizeType="MM" lineSizeType="MM" penColor="#000000" scaleBasedVisibility="0" scaleDependency="Area" barWidth="5" sizeScale="3x:0,0,0,0,0,0" labelPlacementMethod="XHeight" opacity="1" penWidth="0" backgroundAlpha="255" enabled="0" diagramOrientation="Up" rotationOffset="270" penAlpha="255" lineSizeScale="3x:0,0,0,0,0,0" height="15">
-      <fontProperties style="" description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0"/>
-      <attribute label="" field="" color="#000000"/>
+    <DiagramCategory enabled="0" backgroundColor="#ffffff" penColor="#000000" backgroundAlpha="255" barWidth="5" height="15" sizeScale="3x:0,0,0,0,0,0" scaleDependency="Area" width="15" minimumSize="0" penWidth="0" lineSizeScale="3x:0,0,0,0,0,0" lineSizeType="MM" maxScaleDenominator="1e+08" sizeType="MM" minScaleDenominator="0" labelPlacementMethod="XHeight" diagramOrientation="Up" opacity="1" penAlpha="255" rotationOffset="270" scaleBasedVisibility="0">
+      <fontProperties description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0" style=""/>
+      <attribute color="#000000" label="" field=""/>
     </DiagramCategory>
   </SingleCategoryDiagramRenderer>
-  <DiagramLayerSettings obstacle="0" zIndex="0" placement="1" showAll="1" linePlacementFlags="18" priority="0" dist="0">
+  <DiagramLayerSettings linePlacementFlags="18" priority="0" zIndex="0" obstacle="0" dist="0" showAll="1" placement="1">
     <properties>
       <Option type="Map">
         <Option name="name" value="" type="QString"/>
@@ -129,7 +134,7 @@
       </Option>
     </properties>
   </DiagramLayerSettings>
-  <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
+  <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
     <activeChecks/>
     <checkConfiguration/>
   </geometryOptions>
@@ -207,14 +212,14 @@
     </field>
   </fieldConfiguration>
   <aliases>
-    <alias field="fid" name="" index="0"/>
-    <alias field="name" name="" index="1"/>
-    <alias field="notes" name="" index="2"/>
-    <alias field="colour" name="" index="3"/>
-    <alias field="uuid" name="" index="4"/>
-    <alias field="area" name="" index="5"/>
-    <alias field="created" name="" index="6"/>
-    <alias field="modified" name="" index="7"/>
+    <alias name="" field="fid" index="0"/>
+    <alias name="" field="name" index="1"/>
+    <alias name="" field="notes" index="2"/>
+    <alias name="" field="colour" index="3"/>
+    <alias name="" field="uuid" index="4"/>
+    <alias name="" field="area" index="5"/>
+    <alias name="" field="created" index="6"/>
+    <alias name="" field="modified" index="7"/>
   </aliases>
   <excludeAttributesWMS/>
   <excludeAttributesWFS/>
@@ -229,40 +234,40 @@
     <default applyOnUpdate="1" field="modified" expression=" format_date( now() , ''yyyy-MM-dd HH:mm:ss'' )"/>
   </defaults>
   <constraints>
-    <constraint field="fid" unique_strength="1" exp_strength="0" notnull_strength="1" constraints="3"/>
-    <constraint field="name" unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0"/>
-    <constraint field="notes" unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0"/>
-    <constraint field="colour" unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0"/>
-    <constraint field="uuid" unique_strength="0" exp_strength="0" notnull_strength="1" constraints="1"/>
-    <constraint field="area" unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0"/>
-    <constraint field="created" unique_strength="0" exp_strength="0" notnull_strength="1" constraints="1"/>
-    <constraint field="modified" unique_strength="0" exp_strength="0" notnull_strength="1" constraints="1"/>
+    <constraint field="fid" constraints="3" exp_strength="0" unique_strength="1" notnull_strength="1"/>
+    <constraint field="name" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
+    <constraint field="notes" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
+    <constraint field="colour" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
+    <constraint field="uuid" constraints="1" exp_strength="0" unique_strength="0" notnull_strength="1"/>
+    <constraint field="area" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
+    <constraint field="created" constraints="1" exp_strength="0" unique_strength="0" notnull_strength="1"/>
+    <constraint field="modified" constraints="1" exp_strength="0" unique_strength="0" notnull_strength="1"/>
   </constraints>
   <constraintExpressions>
-    <constraint field="fid" desc="" exp=""/>
-    <constraint field="name" desc="" exp=""/>
-    <constraint field="notes" desc="" exp=""/>
-    <constraint field="colour" desc="" exp=""/>
-    <constraint field="uuid" desc="" exp=""/>
-    <constraint field="area" desc="" exp=""/>
-    <constraint field="created" desc="" exp=""/>
-    <constraint field="modified" desc="" exp=""/>
+    <constraint exp="" desc="" field="fid"/>
+    <constraint exp="" desc="" field="name"/>
+    <constraint exp="" desc="" field="notes"/>
+    <constraint exp="" desc="" field="colour"/>
+    <constraint exp="" desc="" field="uuid"/>
+    <constraint exp="" desc="" field="area"/>
+    <constraint exp="" desc="" field="created"/>
+    <constraint exp="" desc="" field="modified"/>
   </constraintExpressions>
   <expressionfields/>
   <attributeactions>
-    <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
+    <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
   </attributeactions>
-  <attributetableconfig sortOrder="0" sortExpression="" actionWidgetStyle="dropDown">
+  <attributetableconfig sortExpression="" sortOrder="0" actionWidgetStyle="dropDown">
     <columns>
-      <column width="-1" hidden="0" name="fid" type="field"/>
-      <column width="-1" hidden="0" name="name" type="field"/>
-      <column width="-1" hidden="0" name="notes" type="field"/>
-      <column width="-1" hidden="0" name="colour" type="field"/>
-      <column width="-1" hidden="0" name="uuid" type="field"/>
-      <column width="-1" hidden="0" name="area" type="field"/>
-      <column width="-1" hidden="0" name="created" type="field"/>
-      <column width="-1" hidden="0" name="modified" type="field"/>
-      <column width="-1" hidden="1" type="actions"/>
+      <column name="fid" hidden="0" type="field" width="-1"/>
+      <column name="name" hidden="0" type="field" width="-1"/>
+      <column name="notes" hidden="0" type="field" width="-1"/>
+      <column name="colour" hidden="0" type="field" width="-1"/>
+      <column name="uuid" hidden="0" type="field" width="-1"/>
+      <column name="area" hidden="0" type="field" width="-1"/>
+      <column name="created" hidden="0" type="field" width="-1"/>
+      <column name="modified" hidden="0" type="field" width="-1"/>
+      <column hidden="1" type="actions" width="-1"/>
     </columns>
   </attributetableconfig>
   <conditionalstyles>
@@ -293,7 +298,7 @@ def my_form_open(dialog, layer, feature):
   <featformsuppress>0</featformsuppress>
   <editorlayout>tablayout</editorlayout>
   <attributeEditorForm>
-    <attributeEditorContainer columnCount="1" name="" showLabel="1" visibilityExpression="" groupBox="1" visibilityExpressionEnabled="0">
+    <attributeEditorContainer name="" groupBox="1" showLabel="1" visibilityExpression="" visibilityExpressionEnabled="0" columnCount="1">
       <attributeEditorField name="name" showLabel="1" index="1"/>
       <attributeEditorField name="notes" showLabel="1" index="2"/>
       <attributeEditorField name="colour" showLabel="1" index="3"/>
@@ -305,14 +310,14 @@ def my_form_open(dialog, layer, feature):
     </attributeEditorContainer>
   </attributeEditorForm>
   <editable>
-    <field editable="1" name="area"/>
-    <field editable="1" name="colour"/>
-    <field editable="1" name="created"/>
-    <field editable="1" name="fid"/>
-    <field editable="1" name="modified"/>
-    <field editable="1" name="name"/>
-    <field editable="1" name="notes"/>
-    <field editable="1" name="uuid"/>
+    <field name="area" editable="1"/>
+    <field name="colour" editable="1"/>
+    <field name="created" editable="1"/>
+    <field name="fid" editable="1"/>
+    <field name="modified" editable="1"/>
+    <field name="name" editable="1"/>
+    <field name="notes" editable="1"/>
+    <field name="uuid" editable="1"/>
   </editable>
   <labelOnTop>
     <field name="area" labelOnTop="0"/>
