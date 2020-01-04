@@ -16,7 +16,7 @@
     CREATE TABLE IF NOT EXISTS settlement (
         fid INTEGER PRIMARY KEY AUTOINCREMENT
       , name TEXT
-      , size TEXT NOT NULL
+      , size TEXT NOT NULL REFERENCES settlement_size (size)
       , specialisation TEXT
       , uuid TEXT NOT NULL UNIQUE
       , created TEXT NOT NULL
