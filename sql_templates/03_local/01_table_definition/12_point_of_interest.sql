@@ -1,0 +1,38 @@
+{% extends "base.sql" %}
+{% block content %}
+    CREATE TABLE point_of_interest_type (
+        type TEXT PRIMARY KEY
+    );
+
+    INSERT INTO points_of_interest_type (type)
+    VALUES
+        ('Battle Size')
+      , ('Cave')
+      , ('Mine')
+      , ('Other')
+      , ('Peak')
+      , ('Ruin (Major)')
+      , ('Ruin (Minor)')
+      , ('Tower')
+    ;
+
+    CREATE TABLE IF NOT EXISTS point_of_interest (
+        fid INTEGER PRIMARY KEY AUTOINCREMENT
+      , name TEXT
+      , type TEXT NOT NULL REFERENCES point_of_interest_type (type)
+      , notes TEXT
+      , uuid TEXT NOT NULL UNIQUE
+      , created TEXT NOT NULL
+      , modified TEXT NOT NULL
+      , the_geom POINT NOT NULL
+    );
+
+    SELECT
+      RecoverGeometryColumn('point_of_interest',
+                            'the_geom',
+                            {{local_datum}},
+                            'POINT',
+                            'XY'
+                            )
+    , CreateSpatialIndex('point_of_interest', 'the_geom');
+{% endblock %}
