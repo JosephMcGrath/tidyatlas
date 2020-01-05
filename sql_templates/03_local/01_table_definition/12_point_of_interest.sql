@@ -1,5 +1,6 @@
 {% extends "base.sql" %}
 {% block content %}
+    /*General points of interest.*/
     CREATE TABLE point_of_interest_type (
         type TEXT PRIMARY KEY
     );
@@ -7,7 +8,10 @@
     INSERT INTO points_of_interest_type (type)
     VALUES
         ('Battle Size')
+      , ('Building')
       , ('Cave')
+      , ('Dungeon')
+      , ('Landform')
       , ('Mine')
       , ('Other')
       , ('Peak')
