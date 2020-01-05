@@ -91,6 +91,7 @@
         {% include '03_local/02_data_import/08_land_cover.sql' %}
         {% include '03_local/02_data_import/09_linear_labels.sql' %}
         {% include '03_local/02_data_import/10_political_region.sql' %}
+        {% include '03_local/02_data_import/12_point_of_interest.sql' %}
         DETACH previous;
     {% endif %}
 

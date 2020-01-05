@@ -5,9 +5,9 @@
         type TEXT PRIMARY KEY
     );
 
-    INSERT INTO points_of_interest_type (type)
+    INSERT INTO point_of_interest_type (type)
     VALUES
-        ('Battle Size')
+        ('Battle Site')
       , ('Building')
       , ('Cave')
       , ('Dungeon')
@@ -18,6 +18,7 @@
       , ('Ruin (Major)')
       , ('Ruin (Minor)')
       , ('Tower')
+      , ('Wreck')
     ;
 
     CREATE TABLE IF NOT EXISTS point_of_interest (
