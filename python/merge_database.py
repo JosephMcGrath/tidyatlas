@@ -26,6 +26,18 @@ def load_config(path):
 
 
 def build_db(config, template_dir, dst_dir):
+    # Resolve relative database paths
+    if "previous_db" in config.keys():
+        if not os.path.isabs(config["previous_db"]):
+            config["previous_db"] = os.path.join(config["config_dir"], config["previous_db"])
+    
+    # Resolve relative database paths
+    if "dst_dir" in config.keys():
+        if os.path.isabs(config["dst_dir"]):
+            dst_dir = config["dst_dir"]
+        else:
+            dst_dir =  os.path.join(config["config_dir"], config["dst_dir"])
+        
     file_loader = jinja2.FileSystemLoader(template_dir)
     env = jinja2.Environment(loader=file_loader)
     output = []
@@ -38,8 +50,12 @@ def build_db(config, template_dir, dst_dir):
         f.write("\n\n".join(output))
 
 
-def build_from_config(config_path, template_dir, dst_dir, zip_dir):
+def build_from_config(config_path, template_dir, dst_dir, zip_dir=None):
+    config_path = os.path.abspath(config_path)
     for item in load_config(config_path):
+        item["config_path"] = config_path
+        item["config_dir"] = os.path.split(config_path)[0]
+        
         build_db(item, template_dir, dst_dir)
 
         if zip_dir is not None and "previous_db" in item.keys():
