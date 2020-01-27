@@ -81,6 +81,7 @@
     {% include '03_local/01_table_definition/10_political_region.sql' %}
     {% include '03_local/01_table_definition/11_hex_grid.sql' %}
     {% include '03_local/01_table_definition/12_point_of_interest.sql' %}
+    {% include '03_local/01_table_definition/13_local_area_bounds.sql' %}
 
 /*----------------------------------------------------------------------------*/
     {% if previous_db is defined %}
@@ -96,6 +97,7 @@
         {% include '03_local/02_data_import/09_linear_labels.sql' %}
         {% include '03_local/02_data_import/10_political_region.sql' %}
         {% include '03_local/02_data_import/12_point_of_interest.sql' %}
+        {% include '03_local/02_data_import/13_local_area_bounds.sql' %}
         DETACH previous;
     {% endif %}
 

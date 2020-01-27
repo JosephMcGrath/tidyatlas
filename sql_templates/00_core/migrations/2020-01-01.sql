@@ -4,6 +4,7 @@
 CREATE TABLE IF NOT EXISTS previous.local_area_bounds (
     fid INTEGER PRIMARY KEY
   , name TEXT
+  , uuid TEXT
   , created TEXT
   , modified TEXT
   , the_geom MULTIPOLYGON NOT NULL
