@@ -35,3 +35,12 @@ Rather than have a single set of homogenous layers covering all scales, I've fou
 4. The resulting database should be loadable into QGIS,
     * Layer styles are included in the database and should load automatically. If they don't then they should be accessible via the style management interface,
 5. Start mapping!
+
+## To Do
+
+1. Boundary for regional mapping,
+2. Package up as a Python CLI tool,
+3. Database version updates,
+    * A basic system to manage migrations,
+4. Fix detail decoration layers,
+5. Add logging to templates,
