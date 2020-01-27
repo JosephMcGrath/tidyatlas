@@ -9,11 +9,7 @@
       , the_geom POLYGON UNIQUE NOT NULL
     );
 
-    SELECT
-        RecoverGeometryColumn('continental_shelf',
-                              'the_geom',
-                              4326,
-                              'POLYGON',
-                              'XY'
-                              );
+    {% with table_name='continental_shelf', geom_type='POLYGON' %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 {% endblock %}

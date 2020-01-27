@@ -22,14 +22,9 @@
       , the_geom LINESTRING NOT NULL
     );
 
-    SELECT
-      RecoverGeometryColumn('linear_label',
-                            'the_geom',
-                            {{local_datum}},
-                            'LINESTRING',
-                            'XY'
-                            )
-    , CreateSpatialIndex('linear_label', 'the_geom');
+    {% with table_name='linear_label', geom_type='LINESTRING', srid = local_datum %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 
     CREATE TRIGGER linear_label_insert AFTER INSERT ON linear_label
     BEGIN

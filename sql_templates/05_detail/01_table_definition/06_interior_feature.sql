@@ -31,14 +31,9 @@
       , the_geom LINESTRING NOT NULL
     );
 
-    SELECT
-        RecoverGeometryColumn('interior_feature_f_{{floor.label}}',
-                              'the_geom',
-                              {{local_datum}},
-                              'LINESTRING',
-                              'XY'
-                              )
-      , CreateSpatialIndex('interior_feature_f_{{floor.label}}', 'the_geom');
+    {% with table_name='interior_feature_f_' + floor.label, geom_type='LINESTRING', srid = local_datum %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 
     CREATE TRIGGER interior_feature_f_{{floor.label}}_insert AFTER INSERT ON interior_feature_f_{{floor.label}}
     BEGIN

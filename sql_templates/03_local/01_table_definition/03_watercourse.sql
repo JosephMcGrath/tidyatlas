@@ -23,14 +23,9 @@
       , the_geom LINESTRING NOT NULL
     );
 
-    SELECT
-      RecoverGeometryColumn('watercourse',
-                            'the_geom',
-                            {{local_datum}},
-                            'LINESTRING',
-                            'XY'
-                            )
-    , CreateSpatialIndex('watercourse', 'the_geom');
+    {% with table_name='watercourse', geom_type='LINESTRING', srid = local_datum %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 
     CREATE TRIGGER watercourse_insert AFTER INSERT ON watercourse
     BEGIN

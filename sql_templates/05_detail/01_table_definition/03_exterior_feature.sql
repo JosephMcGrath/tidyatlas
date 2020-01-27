@@ -30,14 +30,9 @@
       , the_geom LINESTRING NOT NULL
     );
 
-    SELECT
-        RecoverGeometryColumn('exterior_feature',
-                              'the_geom',
-                              {{local_datum}},
-                              'LINESTRING',
-                              'XY'
-                              )
-      , CreateSpatialIndex('exterior_feature', 'the_geom');
+    {% with table_name='exterior_feature', geom_type='LINESTRING', srid = local_datum %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 
     CREATE TRIGGER exterior_feature_insert AFTER INSERT ON exterior_feature
     BEGIN

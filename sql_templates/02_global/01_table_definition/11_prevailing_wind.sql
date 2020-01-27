@@ -11,11 +11,7 @@
       , the_geom POINT NOT NULL
     );
 
-    SELECT
-        RecoverGeometryColumn('prevailing_wind',
-                              'the_geom',
-                              4326,
-                              'POINT',
-                              'XY'
-                              );
+    {% with table_name='prevailing_wind', geom_type='POINT' %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 {% endblock %}

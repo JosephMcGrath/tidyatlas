@@ -43,4 +43,4 @@ Rather than have a single set of homogenous layers covering all scales, I've fou
 3. Database version updates,
     * A basic system to manage migrations,
 4. Fix detail decoration layers,
-5. Add logging to templates,
+5. Template local political boundaries,

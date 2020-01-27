@@ -36,11 +36,7 @@ CREATE TABLE climate (
   , the_geom POLYGON UNIQUE NOT NULL
 );
 
-SELECT
-    RecoverGeometryColumn('climate',
-                          'the_geom',
-                          4326,
-                          'POLYGON',
-                          'XY'
-                          );
+{% with table_name='climate', geom_type='POLYGON' %}
+{% include 'register_geom.sql' %}
+{% endwith %}
 {% endblock %}

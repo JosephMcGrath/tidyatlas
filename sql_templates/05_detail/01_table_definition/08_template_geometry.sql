@@ -9,13 +9,9 @@ CREATE TABLE IF NOT EXISTS template_geometry (
   , the_geom MULTIPOLYGON UNIQUE NOT NULL
 );
 
-SELECT
-  RecoverGeometryColumn('template_geometry',
-                        'the_geom',
-                        {{local_datum}},
-                        'MULTIPOLYGON',
-                        'XY'
-                        );
+{% with table_name='template_geometry', geom_type='MULTIPOLYGON', srid = local_datum %}
+{% include 'register_geom.sql' %}
+{% endwith %}
 
 CREATE TRIGGER template_geometry_insert AFTER INSERT ON template_geometry
 BEGIN
@@ -45,13 +41,9 @@ CREATE TABLE template_point (
   , the_geom POINT NOT NULL
 );
 
-SELECT
-  RecoverGeometryColumn('template_point',
-                        'the_geom',
-                        {{local_datum}},
-                        'POINT',
-                        'XY'
-                        );
+{% with table_name='template_point', geom_type='POINT', srid = local_datum %}
+{% include 'register_geom.sql' %}
+{% endwith %}
 
 
 
@@ -64,13 +56,9 @@ CREATE TABLE templated (
   , the_geom MULTIPOLYGON NOT NULL
 );
 
-SELECT
-  RecoverGeometryColumn('templated',
-                        'the_geom',
-                        {{local_datum}},
-                        'MULTIPOLYGON',
-                        'XY'
-                        );
+{% with table_name='templated', geom_type='MULTIPOLYGON', srid = local_datum %}
+{% include 'register_geom.sql' %}
+{% endwith %}
 
 CREATE TRIGGER template_point_insert AFTER INSERT ON template_point
 BEGIN

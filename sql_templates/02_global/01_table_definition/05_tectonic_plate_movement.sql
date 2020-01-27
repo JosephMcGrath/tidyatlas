@@ -10,11 +10,7 @@
       , the_geom POINT NOT NULL
     );
 
-    SELECT
-        RecoverGeometryColumn('tectonic_plate_movement',
-                              'the_geom',
-                              4326,
-                              'POINT',
-                              'XY'
-                              );
+    {% with table_name='tectonic_plate_movement', geom_type='POINT' %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 {% endblock %}

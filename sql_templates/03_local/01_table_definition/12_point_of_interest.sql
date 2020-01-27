@@ -32,12 +32,8 @@
       , the_geom POINT NOT NULL
     );
 
-    SELECT
-      RecoverGeometryColumn('point_of_interest',
-                            'the_geom',
-                            {{local_datum}},
-                            'POINT',
-                            'XY'
-                            )
-    , CreateSpatialIndex('point_of_interest', 'the_geom');
+    {% with table_name='point_of_interest', geom_type='POINT', srid = local_datum %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
+
 {% endblock %}

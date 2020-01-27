@@ -36,14 +36,9 @@
       , the_geom MULTIPOLYGON NOT NULL
     );
 
-    SELECT
-      RecoverGeometryColumn('exterior_space',
-                            'the_geom',
-                            {{local_datum}},
-                            'MULTIPOLYGON',
-                            'XY'
-                            )
-    , CreateSpatialIndex('exterior_space', 'the_geom');
+    {% with table_name='exterior_space', geom_type='MULTIPOLYGON', srid = local_datum %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 
     CREATE TRIGGER colour_pallete_insert_exterior_space AFTER INSERT ON colour_pallete
     BEGIN

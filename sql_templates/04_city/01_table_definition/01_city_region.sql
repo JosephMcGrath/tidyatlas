@@ -27,14 +27,9 @@
       , the_geom MULTIPOLYGON NOT NULL
     );
 
-    SELECT
-      RecoverGeometryColumn('city_region',
-                            'the_geom',
-                            {{local_datum}},
-                            'MULTIPOLYGON',
-                            'XY'
-                            )
-    , CreateSpatialIndex('city_region', 'the_geom');
+    {% with table_name='city_region', geom_type='MULTIPOLYGON', srid = local_datum %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 
     CREATE TRIGGER city_region_insert AFTER INSERT ON city_region
     BEGIN

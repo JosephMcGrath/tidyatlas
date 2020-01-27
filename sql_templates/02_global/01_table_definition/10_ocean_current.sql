@@ -22,11 +22,7 @@
       , the_geom LINESTRING NOT NULL
     );
 
-    SELECT
-        RecoverGeometryColumn('ocean_current',
-                              'the_geom',
-                              4326,
-                              'LINESTRING',
-                              'XY'
-                              );
+    {% with table_name='ocean_current', geom_type='LINESTRING' %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 {% endblock %}

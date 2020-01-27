@@ -10,13 +10,9 @@
       , the_geom LINESTRINGZ NOT NULL
     );
 
-    SELECT
-        RecoverGeometryColumn('elevation_contour',
-                              'the_geom',
-                              {{local_datum}},
-                              'LINESTRINGZ',
-                              'XYZ'
-                              );
+    {% with table_name='elevation_contour', geom_type='LINESTRINGZ', srid = local_datum, geom_dim = 'XYZ' %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 
     /*Triggers to set Z values.*/
     CREATE TRIGGER elevation_contour_insert AFTER INSERT ON elevation_contour
@@ -43,13 +39,9 @@
       , the_geom POINT NOT NULL
     );
 
-    SELECT
-        RecoverGeometryColumn('elevation_point',
-                              'the_geom',
-                              {{local_datum}},
-                              'POINT',
-                              'XYZ'
-                              );
+    {% with table_name='elevation_point', geom_type='POINT', srid = local_datum, geom_dim = 'XYZ' %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 
     /*Triggers to set Z values.*/
     CREATE TRIGGER elevation_point_insert AFTER INSERT ON elevation_point

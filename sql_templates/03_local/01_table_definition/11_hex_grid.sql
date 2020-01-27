@@ -9,5 +9,8 @@ CREATE TABLE hex_grid (
   , the_geom POLYGON
 );
 
-SELECT RecoverGeometryColumn('hex_grid', 'the_geom', {{local_datum}}, 'POLYGON');
+{% with table_name='hex_grid', geom_type='POLYGON', srid = local_datum %}
+{% include 'register_geom.sql' %}
+{% endwith %}
+
 {% endblock %}

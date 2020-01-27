@@ -12,12 +12,8 @@
       , the_geom MULTIPOLYGON NOT NULL
     );
 
-    SELECT
-        RecoverGeometryColumn('{{table_name}}',
-                              'the_geom',
-                              4326,
-                              'MULTIPOLYGON',
-                              'XY'
-                              );
+    {% with geom_type='MULTIPOLYGON' %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 {% endfor %}
 {% endblock %}

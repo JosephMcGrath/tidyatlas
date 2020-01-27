@@ -12,11 +12,7 @@
       , the_geom MULTIPOLYGON NOT NULL
     );
 
-    SELECT
-        RecoverGeometryColumn('global_coastline',
-                              'the_geom',
-                              4326,
-                              'MULTIPOLYGON',
-                              'XY'
-                              );
+    {% with table_name='global_coastline', geom_type='MULTIPOLYGON' %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 {% endblock %}

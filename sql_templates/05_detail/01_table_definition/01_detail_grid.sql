@@ -18,14 +18,9 @@
       , the_geom POLYGON NOT NULL
     );
 
-    SELECT
-        RecoverGeometryColumn('detail_area',
-                              'the_geom',
-                              {{local_datum}},
-                              'POLYGON',
-                              'XY'
-                              )
-      , CreateSpatialIndex('detail_area', 'the_geom');
+    {% with table_name='detail_area', geom_type='POLYGON', srid = local_datum %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 
       CREATE TABLE detail_grid (
           fid INTEGER PRIMARY KEY
@@ -37,14 +32,9 @@
         , the_geom MULTIPOLYGON
       );
 
-      SELECT
-          RecoverGeometryColumn('detail_grid',
-                                'the_geom',
-                                {{local_datum}},
-                                'MULTIPOLYGON',
-                                'XY'
-                                )
-        , CreateSpatialIndex('detail_area', 'the_geom');
+      {% with table_name='detail_grid', geom_type='MULTIPOLYGON', srid = local_datum %}
+      {% include 'register_geom.sql' %}
+      {% endwith %}
 
     CREATE TRIGGER detail_area_insert AFTER INSERT ON detail_area
     BEGIN

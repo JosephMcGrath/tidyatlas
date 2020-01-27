@@ -30,14 +30,9 @@
       , the_geom POLYGON NOT NULL
     );
 
-    SELECT
-      RecoverGeometryColumn('land_cover',
-                            'the_geom',
-                            {{local_datum}},
-                            'POLYGON',
-                            'XY'
-                            )
-    , CreateSpatialIndex('land_cover', 'the_geom');
+    {% with table_name='land_cover', geom_type='POLYGON', srid = local_datum %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 
     CREATE TRIGGER land_cover_insert AFTER INSERT ON land_cover
     BEGIN

@@ -10,11 +10,8 @@
       , the_geom MULTIPOLYGON NOT NULL
     );
 
-    SELECT
-        RecoverGeometryColumn('coastline',
-                              'the_geom',
-                              {{local_datum}},
-                              'MULTIPOLYGON',
-                              'XY'
-                              );
+    {% with table_name='coastline', geom_type='MULTIPOLYGON', srid = local_datum %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
+
 {% endblock %}

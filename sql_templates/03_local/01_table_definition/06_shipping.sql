@@ -12,14 +12,9 @@
       , the_geom LINESTRING NOT NULL
     );
 
-    SELECT
-      RecoverGeometryColumn('shipping',
-                            'the_geom',
-                            {{local_datum}},
-                            'LINESTRING',
-                            'XY'
-                            )
-    , CreateSpatialIndex('shipping', 'the_geom');
+    {% with table_name='shipping', geom_type='LINESTRING', srid = local_datum %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 
     CREATE TRIGGER shipping_insert AFTER INSERT ON shipping
     BEGIN

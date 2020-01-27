@@ -19,13 +19,9 @@
       , the_geom LINESTRING NOT NULL
     );
 
-    SELECT
-        RecoverGeometryColumn('{{ table_name }}',
-                              'the_geom',
-                              4326,
-                              'POLYGON',
-                              'XY'
-                              );
+    {% with geom_type='LINESTRING' %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 
     /*Geometry creation SQL*/
     CREATE TRIGGER {{ table_name }}_input_insert

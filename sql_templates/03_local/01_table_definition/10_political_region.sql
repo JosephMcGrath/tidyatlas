@@ -13,14 +13,9 @@
       , the_geom MULTIPOLYGON NOT NULL
     );
 
-    SELECT
-      RecoverGeometryColumn('political_nation',
-                            'the_geom',
-                            {{local_datum}},
-                            'MULTIPOLYGON',
-                            'XY'
-                            )
-    , CreateSpatialIndex('political_nation', 'the_geom');
+    {% with table_name='political_nation', geom_type='MULTIPOLYGON', srid = local_datum %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 
     CREATE TRIGGER political_nation_insert AFTER INSERT ON political_nation
     BEGIN
@@ -49,14 +44,9 @@
       , the_geom MULTIPOLYGON NOT NULL
     );
 
-    SELECT
-      RecoverGeometryColumn('political_region',
-                            'the_geom',
-                            {{local_datum}},
-                            'MULTIPOLYGON',
-                            'XY'
-                            )
-    , CreateSpatialIndex('political_region', 'the_geom');
+    {% with table_name='political_region', geom_type='MULTIPOLYGON', srid = local_datum %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 
     CREATE TRIGGER political_region_insert AFTER INSERT ON political_region
     BEGIN

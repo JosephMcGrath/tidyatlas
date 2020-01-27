@@ -7,11 +7,7 @@
       , the_geom POLYGON UNIQUE NOT NULL
     );
 
-    SELECT
-        RecoverGeometryColumn('world_boundary',
-                              'the_geom',
-                              4326,
-                              'POLYGON',
-                              'XY'
-                              );
+    {% with table_name='world_boundary', geom_type='POLYGON' %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 {% endblock %}

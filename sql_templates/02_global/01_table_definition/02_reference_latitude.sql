@@ -16,13 +16,9 @@
       , the_geom LINESTRING NOT NULL
     );
 
-    SELECT
-        RecoverGeometryColumn('reference_latitude',
-                              'the_geom',
-                              4326,
-                              'LINESTRING',
-                              'XY'
-                              );
+    {% with table_name='reference_latitude', geom_type='LINESTRING' %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 
     /*Geometry creation SQL*/
     CREATE TRIGGER reference_latitude_input_insert

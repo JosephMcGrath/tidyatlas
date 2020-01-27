@@ -21,12 +21,8 @@
       , the_geom POLYGON NOT NULL
     );
 
-    SELECT
-        RecoverGeometryColumn('tectonic_plate',
-                              'the_geom',
-                              4326,
-                              'POLYGON',
-                              'XY'
-                              );
+    {% with table_name='tectonic_plate', geom_type='POLYGON' %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 
 {% endblock %}

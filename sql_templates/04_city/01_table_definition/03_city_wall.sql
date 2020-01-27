@@ -20,12 +20,7 @@
       , the_geom LINESTRING NOT NULL
     );
 
-    SELECT
-      RecoverGeometryColumn('city_wall',
-                            'the_geom',
-                            {{local_datum}},
-                            'LINESTRING',
-                            'XY'
-                            )
-    , CreateSpatialIndex('city_wall', 'the_geom');
+    {% with table_name='city_wall', geom_type='LINESTRING', srid = local_datum %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 {% endblock %}

@@ -22,11 +22,7 @@
       , the_geom LINESTRING NOT NULL
     );
 
-    SELECT
-        RecoverGeometryColumn('tectonic_plate_boundary',
-                              'the_geom',
-                              4326,
-                              'LINESTRING',
-                              'XY'
-                              );
+    {% with table_name='tectonic_plate_boundary', geom_type='LINESTRING' %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 {% endblock %}

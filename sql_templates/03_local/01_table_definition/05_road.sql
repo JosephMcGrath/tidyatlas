@@ -23,14 +23,9 @@
       , the_geom LINESTRING NOT NULL
     );
 
-    SELECT
-      RecoverGeometryColumn('road',
-                            'the_geom',
-                            {{local_datum}},
-                            'LINESTRING',
-                            'XY'
-                            )
-    , CreateSpatialIndex('road', 'the_geom');
+    {% with table_name='road', geom_type='LINESTRING', srid = local_datum %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 
     CREATE TRIGGER road_insert AFTER INSERT ON road
     BEGIN

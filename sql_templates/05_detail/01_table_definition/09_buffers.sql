@@ -6,14 +6,9 @@ CREATE TABLE buffer_point_in (
   , the_geom MULTIPOINT NOT NULL
 );
 
-SELECT
-    RecoverGeometryColumn('buffer_point_in',
-                          'the_geom',
-                          {{local_datum}},
-                          'MULTIPOINT',
-                          'XY'
-                          )
-  , CreateSpatialIndex('buffer_point_in', 'the_geom');
+{% with table_name='buffer_point_in', geom_type='MULTIPOINT', srid = local_datum %}
+{% include 'register_geom.sql' %}
+{% endwith %}
 
 /**/
 CREATE TABLE buffer_line_in (
@@ -22,32 +17,18 @@ CREATE TABLE buffer_line_in (
   , the_geom MULTILINESTRING NOT NULL
 );
 
-SELECT
-    RecoverGeometryColumn('buffer_line_in',
-                          'the_geom',
-                          {{local_datum}},
-                          'MULTILINESTRING',
-                          'XY'
-                          )
-  , CreateSpatialIndex('buffer_line_in', 'the_geom');
+{% with table_name='buffer_line_in', geom_type='MULTILINESTRING', srid = local_datum %}
+{% include 'register_geom.sql' %}
+{% endwith %}
 
 CREATE TABLE buffer_dummy (
     fid INTEGER PRIMARY KEY
   , the_geom POLYGON
 );
 
-SELECT
-    RecoverGeometryColumn('buffer_dummy',
-                          'the_geom',
-                          {{local_datum}},
-                          'MULTIPOLYGON',
-                          'XY'
-                      );
-
-
-UPDATE geometry_columns_auth
-SET hidden = 1
-WHERE f_table_name = 'buffer_dummy';
+{% with table_name='buffer_dummy', geom_type='POLYGON', srid = local_datum, hidden = True %}
+{% include 'register_geom.sql' %}
+{% endwith %}
 
 CREATE VIEW buffer_output AS SELECT
     fid

@@ -17,6 +17,7 @@
     ;
 
 {% for floor in floors %}
+
     CREATE TABLE IF NOT EXISTS interior_space_f_{{floor.label}} (
         fid INTEGER PRIMARY KEY AUTOINCREMENT
       , floor_pattern TEXT NOT NULL REFERENCES tile_type (type)
@@ -33,14 +34,9 @@
       , the_geom MULTIPOLYGON NOT NULL
     );
 
-    SELECT
-        RecoverGeometryColumn('interior_space_f_{{floor.label}}',
-                              'the_geom',
-                              {{local_datum}},
-                              'MULTIPOLYGON',
-                              'XY'
-                              )
-      , CreateSpatialIndex('interior_space_f_{{floor.label}}', 'the_geom');
+    {% with table_name='interior_space_f_' + floor.label, geom_type='MULTIPOLYGON', srid = local_datum %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 
     CREATE TRIGGER interior_space_f_{{floor.label}}_insert AFTER INSERT ON interior_space_f_{{floor.label}}
     BEGIN

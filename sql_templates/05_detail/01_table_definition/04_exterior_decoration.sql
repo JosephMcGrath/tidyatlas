@@ -13,12 +13,7 @@
       , the_geom POINT NOT NULL
     );
 
-    SELECT
-        RecoverGeometryColumn('exterior_decoration',
-                              'the_geom',
-                              {{local_datum}},
-                              'POINT',
-                              'XY'
-                              )
-      , CreateSpatialIndex('exterior_decoration', 'the_geom');
+    {% with table_name='exterior_decoration', geom_type='POINT', srid = local_datum %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 {% endblock %}
