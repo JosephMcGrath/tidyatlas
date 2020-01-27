@@ -42,4 +42,3 @@ Rather than have a single set of homogenous layers covering all scales, I've fou
 2. Package up as a Python CLI tool,
 3. Template local political boundaries,
 4. Template detail features,
-5. Half-unit grid etc,

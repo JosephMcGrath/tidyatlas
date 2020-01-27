@@ -1,14 +1,14 @@
 <!DOCTYPE qgis PUBLIC ''http://mrcc.com/qgis.dtd'' ''SYSTEM''>
-<qgis minScale="1e+08" styleCategories="AllStyleCategories" hasScaleBasedVisibilityFlag="0" version="3.6.0-Noosa" simplifyDrawingTol="1" simplifyAlgorithm="0" simplifyMaxScale="1" readOnly="0" simplifyDrawingHints="1" simplifyLocal="1" labelsEnabled="0" maxScale="0">
+<qgis labelsEnabled="0" readOnly="0" simplifyAlgorithm="0" minScale="1e+08" simplifyDrawingTol="1" version="3.8.3-Zanzibar" simplifyMaxScale="1" styleCategories="AllStyleCategories" maxScale="0" hasScaleBasedVisibilityFlag="0" simplifyDrawingHints="1" simplifyLocal="1">
   <flags>
     <Identifiable>1</Identifiable>
     <Removable>1</Removable>
     <Searchable>1</Searchable>
   </flags>
-  <renderer-v2 enableorderby="0" type="singleSymbol" symbollevels="0" forceraster="0">
+  <renderer-v2 forceraster="0" type="singleSymbol" symbollevels="0" enableorderby="0">
     <symbols>
-      <symbol clip_to_extent="1" name="0" alpha="1" force_rhr="0" type="fill">
-        <layer enabled="1" class="SimpleLine" locked="0" pass="0">
+      <symbol type="fill" clip_to_extent="1" alpha="1" force_rhr="0" name="0">
+        <layer enabled="1" pass="0" locked="0" class="SimpleLine">
           <prop k="capstyle" v="square"/>
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="3x:0,0,0,0,0,0"/>
@@ -27,9 +27,15 @@
           <prop k="width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
           <data_defined_properties>
             <Option type="Map">
-              <Option name="name" type="QString" value=""/>
-              <Option name="properties"/>
-              <Option name="type" type="QString" value="collection"/>
+              <Option type="QString" value="" name="name"/>
+              <Option type="Map" name="properties">
+                <Option type="Map" name="outlineColor">
+                  <Option type="bool" value="true" name="active"/>
+                  <Option type="QString" value="color_hsva( 0, 0, 14, 30 * ( &quot;size_ft&quot; / 2.5 ) )" name="expression"/>
+                  <Option type="int" value="3" name="type"/>
+                </Option>
+              </Option>
+              <Option type="QString" value="collection" name="type"/>
             </Option>
           </data_defined_properties>
         </layer>
@@ -46,21 +52,22 @@
   <blendMode>0</blendMode>
   <featureBlendMode>0</featureBlendMode>
   <layerOpacity>1</layerOpacity>
-  <SingleCategoryDiagramRenderer attributeLegend="1" diagramType="Histogram">
-    <DiagramCategory backgroundAlpha="255" barWidth="5" scaleBasedVisibility="0" penWidth="0" lineSizeScale="3x:0,0,0,0,0,0" lineSizeType="MM" width="15" backgroundColor="#ffffff" labelPlacementMethod="XHeight" opacity="1" penAlpha="255" maxScaleDenominator="1e+08" height="15" sizeScale="3x:0,0,0,0,0,0" minimumSize="0" rotationOffset="270" penColor="#000000" sizeType="MM" scaleDependency="Area" minScaleDenominator="0" diagramOrientation="Up" enabled="0">
+  <SingleCategoryDiagramRenderer diagramType="Histogram" attributeLegend="1">
+    <DiagramCategory height="15" penAlpha="255" labelPlacementMethod="XHeight" sizeType="MM" backgroundAlpha="255" minScaleDenominator="0" rotationOffset="270" lineSizeScale="3x:0,0,0,0,0,0" barWidth="5" enabled="0" width="15" scaleDependency="Area" backgroundColor="#ffffff" scaleBasedVisibility="0" penWidth="0" penColor="#000000" lineSizeType="MM" diagramOrientation="Up" sizeScale="3x:0,0,0,0,0,0" maxScaleDenominator="1e+08" opacity="1" minimumSize="0">
       <fontProperties description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0" style=""/>
+      <attribute label="" color="#000000" field=""/>
     </DiagramCategory>
   </SingleCategoryDiagramRenderer>
-  <DiagramLayerSettings linePlacementFlags="18" dist="0" zIndex="0" placement="1" obstacle="0" showAll="1" priority="0">
+  <DiagramLayerSettings placement="1" obstacle="0" linePlacementFlags="18" showAll="1" zIndex="0" dist="0" priority="0">
     <properties>
       <Option type="Map">
-        <Option name="name" type="QString" value=""/>
+        <Option type="QString" value="" name="name"/>
         <Option name="properties"/>
-        <Option name="type" type="QString" value="collection"/>
+        <Option type="QString" value="collection" name="type"/>
       </Option>
     </properties>
   </DiagramLayerSettings>
-  <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
+  <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
     <activeChecks/>
     <checkConfiguration/>
   </geometryOptions>
@@ -69,9 +76,16 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option name="IsMultiline" type="bool" value="false"/>
-            <Option name="UseHtml" type="bool" value="false"/>
+            <Option type="bool" value="false" name="IsMultiline"/>
+            <Option type="bool" value="false" name="UseHtml"/>
           </Option>
+        </config>
+      </editWidget>
+    </field>
+    <field name="name">
+      <editWidget type="TextEdit">
+        <config>
+          <Option/>
         </config>
       </editWidget>
     </field>
@@ -79,9 +93,16 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option name="IsMultiline" type="bool" value="false"/>
-            <Option name="UseHtml" type="bool" value="false"/>
+            <Option type="bool" value="false" name="IsMultiline"/>
+            <Option type="bool" value="false" name="UseHtml"/>
           </Option>
+        </config>
+      </editWidget>
+    </field>
+    <field name="size_ft">
+      <editWidget type="TextEdit">
+        <config>
+          <Option/>
         </config>
       </editWidget>
     </field>
@@ -89,8 +110,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option name="IsMultiline" type="bool" value="false"/>
-            <Option name="UseHtml" type="bool" value="false"/>
+            <Option type="bool" value="false" name="IsMultiline"/>
+            <Option type="bool" value="false" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -99,8 +120,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option name="IsMultiline" type="bool" value="false"/>
-            <Option name="UseHtml" type="bool" value="false"/>
+            <Option type="bool" value="false" name="IsMultiline"/>
+            <Option type="bool" value="false" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -109,8 +130,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option name="IsMultiline" type="bool" value="false"/>
-            <Option name="UseHtml" type="bool" value="false"/>
+            <Option type="bool" value="false" name="IsMultiline"/>
+            <Option type="bool" value="false" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -119,60 +140,70 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option name="IsMultiline" type="bool" value="false"/>
-            <Option name="UseHtml" type="bool" value="false"/>
+            <Option type="bool" value="false" name="IsMultiline"/>
+            <Option type="bool" value="false" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
     </field>
   </fieldConfiguration>
   <aliases>
-    <alias field="fid" name="" index="0"/>
-    <alias field="angle" name="" index="1"/>
-    <alias field="t_out_x" name="" index="2"/>
-    <alias field="t_out_y" name="" index="3"/>
-    <alias field="t_in_x" name="" index="4"/>
-    <alias field="t_in_y" name="" index="5"/>
+    <alias field="fid" index="0" name=""/>
+    <alias field="name" index="1" name=""/>
+    <alias field="angle" index="2" name=""/>
+    <alias field="size_ft" index="3" name=""/>
+    <alias field="t_out_x" index="4" name=""/>
+    <alias field="t_out_y" index="5" name=""/>
+    <alias field="t_in_x" index="6" name=""/>
+    <alias field="t_in_y" index="7" name=""/>
   </aliases>
   <excludeAttributesWMS/>
   <excludeAttributesWFS/>
   <defaults>
-    <default field="fid" expression="" applyOnUpdate="0"/>
-    <default field="angle" expression="" applyOnUpdate="0"/>
-    <default field="t_out_x" expression="" applyOnUpdate="0"/>
-    <default field="t_out_y" expression="" applyOnUpdate="0"/>
-    <default field="t_in_x" expression="" applyOnUpdate="0"/>
-    <default field="t_in_y" expression="" applyOnUpdate="0"/>
+    <default expression="" applyOnUpdate="0" field="fid"/>
+    <default expression="" applyOnUpdate="0" field="name"/>
+    <default expression="" applyOnUpdate="0" field="angle"/>
+    <default expression="" applyOnUpdate="0" field="size_ft"/>
+    <default expression="" applyOnUpdate="0" field="t_out_x"/>
+    <default expression="" applyOnUpdate="0" field="t_out_y"/>
+    <default expression="" applyOnUpdate="0" field="t_in_x"/>
+    <default expression="" applyOnUpdate="0" field="t_in_y"/>
   </defaults>
   <constraints>
-    <constraint field="fid" constraints="3" unique_strength="1" exp_strength="0" notnull_strength="1"/>
-    <constraint field="angle" constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0"/>
-    <constraint field="t_out_x" constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0"/>
-    <constraint field="t_out_y" constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0"/>
-    <constraint field="t_in_x" constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0"/>
-    <constraint field="t_in_y" constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0"/>
+    <constraint exp_strength="0" unique_strength="1" constraints="3" notnull_strength="1" field="fid"/>
+    <constraint exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0" field="name"/>
+    <constraint exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0" field="angle"/>
+    <constraint exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0" field="size_ft"/>
+    <constraint exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0" field="t_out_x"/>
+    <constraint exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0" field="t_out_y"/>
+    <constraint exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0" field="t_in_x"/>
+    <constraint exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0" field="t_in_y"/>
   </constraints>
   <constraintExpressions>
-    <constraint desc="" field="fid" exp=""/>
-    <constraint desc="" field="angle" exp=""/>
-    <constraint desc="" field="t_out_x" exp=""/>
-    <constraint desc="" field="t_out_y" exp=""/>
-    <constraint desc="" field="t_in_x" exp=""/>
-    <constraint desc="" field="t_in_y" exp=""/>
+    <constraint exp="" field="fid" desc=""/>
+    <constraint exp="" field="name" desc=""/>
+    <constraint exp="" field="angle" desc=""/>
+    <constraint exp="" field="size_ft" desc=""/>
+    <constraint exp="" field="t_out_x" desc=""/>
+    <constraint exp="" field="t_out_y" desc=""/>
+    <constraint exp="" field="t_in_x" desc=""/>
+    <constraint exp="" field="t_in_y" desc=""/>
   </constraintExpressions>
   <expressionfields/>
   <attributeactions>
     <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
   </attributeactions>
-  <attributetableconfig sortOrder="0" sortExpression="" actionWidgetStyle="dropDown">
+  <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
     <columns>
-      <column name="fid" type="field" width="-1" hidden="0"/>
-      <column name="angle" type="field" width="-1" hidden="0"/>
-      <column name="t_out_x" type="field" width="-1" hidden="0"/>
-      <column name="t_out_y" type="field" width="-1" hidden="0"/>
-      <column name="t_in_x" type="field" width="-1" hidden="0"/>
-      <column name="t_in_y" type="field" width="-1" hidden="0"/>
-      <column type="actions" width="-1" hidden="1"/>
+      <column width="-1" type="field" hidden="0" name="fid"/>
+      <column width="-1" type="field" hidden="0" name="angle"/>
+      <column width="-1" type="field" hidden="0" name="t_out_x"/>
+      <column width="-1" type="field" hidden="0" name="t_out_y"/>
+      <column width="-1" type="field" hidden="0" name="t_in_x"/>
+      <column width="-1" type="field" hidden="0" name="t_in_y"/>
+      <column width="-1" type="actions" hidden="1"/>
+      <column width="-1" type="field" hidden="0" name="name"/>
+      <column width="-1" type="field" hidden="0" name="size_ft"/>
     </columns>
   </attributetableconfig>
   <conditionalstyles>
@@ -205,18 +236,22 @@ def my_form_open(dialog, layer, feature):
   <editable>
     <field editable="0" name="angle"/>
     <field editable="0" name="fid"/>
+    <field editable="1" name="name"/>
+    <field editable="1" name="size_ft"/>
     <field editable="0" name="t_in_x"/>
     <field editable="0" name="t_in_y"/>
     <field editable="0" name="t_out_x"/>
     <field editable="0" name="t_out_y"/>
   </editable>
   <labelOnTop>
-    <field name="angle" labelOnTop="0"/>
-    <field name="fid" labelOnTop="0"/>
-    <field name="t_in_x" labelOnTop="0"/>
-    <field name="t_in_y" labelOnTop="0"/>
-    <field name="t_out_x" labelOnTop="0"/>
-    <field name="t_out_y" labelOnTop="0"/>
+    <field labelOnTop="0" name="angle"/>
+    <field labelOnTop="0" name="fid"/>
+    <field labelOnTop="0" name="name"/>
+    <field labelOnTop="0" name="size_ft"/>
+    <field labelOnTop="0" name="t_in_x"/>
+    <field labelOnTop="0" name="t_in_y"/>
+    <field labelOnTop="0" name="t_out_x"/>
+    <field labelOnTop="0" name="t_out_y"/>
   </labelOnTop>
   <widgets/>
   <previewExpression>fid</previewExpression>
