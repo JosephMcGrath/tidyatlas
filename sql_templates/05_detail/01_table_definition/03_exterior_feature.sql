@@ -9,6 +9,7 @@
         ("Door")
       , ("Door (open)")
       , ("Door (locked)")
+      , ("Stair")
       , ("Step")
       , ("Wall")
       ;

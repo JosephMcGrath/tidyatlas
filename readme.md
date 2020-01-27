@@ -40,7 +40,6 @@ Rather than have a single set of homogenous layers covering all scales, I've fou
 
 1. Boundary for regional mapping,
 2. Package up as a Python CLI tool,
-3. Database version updates,
-    * A basic system to manage migrations,
-4. Fix detail decoration layers,
-5. Template local political boundaries,
+3. Template local political boundaries,
+4. Template detail features,
+5. Half-unit grid etc,
