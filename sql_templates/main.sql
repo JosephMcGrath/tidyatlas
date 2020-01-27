@@ -1,6 +1,7 @@
 /*============================================================================*/
 {% include '00_core/log_table.sql' %}
 {% include '00_core/versions.sql' %}
+{% include '00_core/migrations/00_migrations.sql' %}
 
 /*----------------------------------------------------------------------------*/
 {% include '01_styles/01_table_definition/01_colour_pallete.sql' %}
