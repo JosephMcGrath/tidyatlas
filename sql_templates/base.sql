@@ -1,9 +1,9 @@
 /*==============================================================================
 START: {{ self._TemplateReference__context.name }}
 ==============================================================================*/
-BEGIN;
 INSERT OR ABORT INTO build_log (event)
 VALUES ('Starting: {{ self._TemplateReference__context.name }}');
+BEGIN;
 
 {% block content %}{% endblock %}
 
