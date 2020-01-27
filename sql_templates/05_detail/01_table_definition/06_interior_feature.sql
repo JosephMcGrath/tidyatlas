@@ -7,6 +7,7 @@
     INSERT INTO interior_feature_type (type)
     VALUES
         ("Door")
+      , ("Door (open)")
       , ("Door (locked)")
       , ("Step")
       , ("Wall")
@@ -16,6 +17,7 @@
     CREATE TABLE IF NOT EXISTS interior_feature_f_{{floor.label}} (
         fid INTEGER PRIMARY KEY AUTOINCREMENT
       , type TEXT NOT NULL REFERENCES interior_feature_type(type)
+      , feature_width REAL DEFAULT 1
       , colour_name TEXT
       , colour_primary_hex TEXT
       , colour_primary_override TEXT
