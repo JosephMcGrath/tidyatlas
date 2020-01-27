@@ -1,31 +1,36 @@
 <!DOCTYPE qgis PUBLIC ''http://mrcc.com/qgis.dtd'' ''SYSTEM''>
-<qgis version="3.8.3-Zanzibar" maxScale="0" simplifyLocal="1" hasScaleBasedVisibilityFlag="0" simplifyDrawingHints="0" styleCategories="AllStyleCategories" minScale="1e+08" readOnly="0" labelsEnabled="0" simplifyDrawingTol="1" simplifyMaxScale="1" simplifyAlgorithm="0">
+<qgis labelsEnabled="0" readOnly="0" simplifyAlgorithm="0" minScale="1e+08" simplifyDrawingTol="1" version="3.8.3-Zanzibar" simplifyMaxScale="1" styleCategories="AllStyleCategories" maxScale="0" hasScaleBasedVisibilityFlag="0" simplifyDrawingHints="0" simplifyLocal="1">
   <flags>
     <Identifiable>1</Identifiable>
     <Removable>1</Removable>
     <Searchable>1</Searchable>
   </flags>
-  <renderer-v2 enableorderby="1" symbollevels="0" forceraster="0" type="singleSymbol">
+  <renderer-v2 forceraster="0" type="singleSymbol" symbollevels="0" enableorderby="1">
     <symbols>
-      <symbol type="marker" clip_to_extent="1" force_rhr="0" name="0" alpha="1">
-        <layer pass="0" enabled="1" locked="0" class="RasterMarker">
-          <prop v="1" k="alpha"/>
-          <prop v="0" k="angle"/>
-          <prop v="0" k="fixedAspectRatio"/>
-          <prop v="1" k="horizontal_anchor_point"/>
-          <prop v="" k="imageFile"/>
-          <prop v="0,0" k="offset"/>
-          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
-          <prop v="MM" k="offset_unit"/>
-          <prop v="diameter" k="scale_method"/>
-          <prop v="2" k="size"/>
-          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
-          <prop v="RenderMetersInMapUnits" k="size_unit"/>
-          <prop v="1" k="vertical_anchor_point"/>
+      <symbol type="marker" clip_to_extent="1" alpha="1" force_rhr="0" name="0">
+        <layer enabled="1" pass="0" locked="0" class="RasterMarker">
+          <prop k="alpha" v="1"/>
+          <prop k="angle" v="0"/>
+          <prop k="fixedAspectRatio" v="0"/>
+          <prop k="horizontal_anchor_point" v="1"/>
+          <prop k="imageFile" v=""/>
+          <prop k="offset" v="0,0"/>
+          <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+          <prop k="offset_unit" v="MM"/>
+          <prop k="scale_method" v="diameter"/>
+          <prop k="size" v="2"/>
+          <prop k="size_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+          <prop k="size_unit" v="RenderMetersInMapUnits"/>
+          <prop k="vertical_anchor_point" v="1"/>
           <data_defined_properties>
             <Option type="Map">
               <Option type="QString" value="" name="name"/>
               <Option type="Map" name="properties">
+                <Option type="Map" name="alpha">
+                  <Option type="bool" value="true" name="active"/>
+                  <Option type="QString" value="opacity" name="field"/>
+                  <Option type="int" value="2" name="type"/>
+                </Option>
                 <Option type="Map" name="angle">
                   <Option type="bool" value="true" name="active"/>
                   <Option type="QString" value="rotation" name="field"/>
@@ -51,10 +56,13 @@
     <rotation/>
     <sizescale/>
     <orderby>
-      <orderByClause nullsFirst="0" asc="1">"draw_order"</orderByClause>
+      <orderByClause asc="1" nullsFirst="0">"draw_order"</orderByClause>
     </orderby>
   </renderer-v2>
   <customproperties>
+    <property key="dualview/previewExpressions">
+      <value>fid</value>
+    </property>
     <property key="embeddedWidgets/count" value="0"/>
     <property key="variableNames"/>
     <property key="variableValues"/>
@@ -62,13 +70,13 @@
   <blendMode>0</blendMode>
   <featureBlendMode>0</featureBlendMode>
   <layerOpacity>1</layerOpacity>
-  <SingleCategoryDiagramRenderer attributeLegend="1" diagramType="Histogram">
-    <DiagramCategory sizeScale="3x:0,0,0,0,0,0" backgroundAlpha="255" penAlpha="255" scaleBasedVisibility="0" labelPlacementMethod="XHeight" enabled="0" width="15" opacity="1" rotationOffset="270" height="15" maxScaleDenominator="1e+08" sizeType="MM" lineSizeScale="3x:0,0,0,0,0,0" diagramOrientation="Up" minimumSize="0" backgroundColor="#ffffff" penWidth="0" lineSizeType="MM" minScaleDenominator="0" barWidth="5" penColor="#000000" scaleDependency="Area">
-      <fontProperties style="" description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0"/>
-      <attribute color="#000000" label="" field=""/>
+  <SingleCategoryDiagramRenderer diagramType="Histogram" attributeLegend="1">
+    <DiagramCategory height="15" penAlpha="255" labelPlacementMethod="XHeight" sizeType="MM" backgroundAlpha="255" minScaleDenominator="0" rotationOffset="270" lineSizeScale="3x:0,0,0,0,0,0" barWidth="5" enabled="0" width="15" scaleDependency="Area" backgroundColor="#ffffff" scaleBasedVisibility="0" penWidth="0" penColor="#000000" lineSizeType="MM" diagramOrientation="Up" sizeScale="3x:0,0,0,0,0,0" maxScaleDenominator="1e+08" opacity="1" minimumSize="0">
+      <fontProperties description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0" style=""/>
+      <attribute label="" color="#000000" field=""/>
     </DiagramCategory>
   </SingleCategoryDiagramRenderer>
-  <DiagramLayerSettings placement="0" priority="0" showAll="1" obstacle="0" linePlacementFlags="18" zIndex="0" dist="0">
+  <DiagramLayerSettings placement="0" obstacle="0" linePlacementFlags="18" showAll="1" zIndex="0" dist="0" priority="0">
     <properties>
       <Option type="Map">
         <Option type="QString" value="" name="name"/>
@@ -94,8 +102,8 @@
         <config>
           <Option type="Map">
             <Option type="int" value="1" name="DocumentViewer"/>
-            <Option type="int" value="0" name="DocumentViewerHeight"/>
-            <Option type="int" value="0" name="DocumentViewerWidth"/>
+            <Option type="int" value="100" name="DocumentViewerHeight"/>
+            <Option type="int" value="100" name="DocumentViewerWidth"/>
             <Option type="bool" value="true" name="FileWidget"/>
             <Option type="bool" value="true" name="FileWidgetButton"/>
             <Option type="QString" value="" name="FileWidgetFilter"/>
@@ -140,29 +148,81 @@
         </config>
       </editWidget>
     </field>
+    <field name="opacity">
+      <editWidget type="TextEdit">
+        <config>
+          <Option type="Map">
+            <Option type="bool" value="false" name="IsMultiline"/>
+            <Option type="bool" value="false" name="UseHtml"/>
+          </Option>
+        </config>
+      </editWidget>
+    </field>
+    <field name="uuid">
+      <editWidget type="TextEdit">
+        <config>
+          <Option type="Map">
+            <Option type="bool" value="false" name="IsMultiline"/>
+            <Option type="bool" value="false" name="UseHtml"/>
+          </Option>
+        </config>
+      </editWidget>
+    </field>
+    <field name="created">
+      <editWidget type="TextEdit">
+        <config>
+          <Option type="Map">
+            <Option type="bool" value="false" name="IsMultiline"/>
+            <Option type="bool" value="false" name="UseHtml"/>
+          </Option>
+        </config>
+      </editWidget>
+    </field>
+    <field name="modified">
+      <editWidget type="TextEdit">
+        <config>
+          <Option type="Map">
+            <Option type="bool" value="false" name="IsMultiline"/>
+            <Option type="bool" value="false" name="UseHtml"/>
+          </Option>
+        </config>
+      </editWidget>
+    </field>
   </fieldConfiguration>
   <aliases>
-    <alias index="0" field="fid" name=""/>
-    <alias index="1" field="asset_path" name=""/>
-    <alias index="2" field="size" name=""/>
-    <alias index="3" field="rotation" name=""/>
-    <alias index="4" field="draw_order" name=""/>
+    <alias field="fid" index="0" name=""/>
+    <alias field="asset_path" index="1" name=""/>
+    <alias field="size" index="2" name=""/>
+    <alias field="rotation" index="3" name=""/>
+    <alias field="draw_order" index="4" name=""/>
+    <alias field="opacity" index="5" name=""/>
+    <alias field="uuid" index="6" name=""/>
+    <alias field="created" index="7" name=""/>
+    <alias field="modified" index="8" name=""/>
   </aliases>
   <excludeAttributesWMS/>
   <excludeAttributesWFS/>
   <defaults>
-    <default expression="" field="fid" applyOnUpdate="0"/>
-    <default expression="" field="asset_path" applyOnUpdate="0"/>
-    <default expression="1" field="size" applyOnUpdate="0"/>
-    <default expression="0" field="rotation" applyOnUpdate="0"/>
-    <default expression="0" field="draw_order" applyOnUpdate="0"/>
+    <default expression="" applyOnUpdate="0" field="fid"/>
+    <default expression="" applyOnUpdate="0" field="asset_path"/>
+    <default expression="1.524" applyOnUpdate="0" field="size"/>
+    <default expression="0" applyOnUpdate="0" field="rotation"/>
+    <default expression="0" applyOnUpdate="0" field="draw_order"/>
+    <default expression="100" applyOnUpdate="0" field="opacity"/>
+    <default expression=" regexp_replace( uuid() , ''\\{|\\}'', '''')" applyOnUpdate="0" field="uuid"/>
+    <default expression=" format_date(  now() , ''yyyy-MM-dd HH:mm:ss'' )" applyOnUpdate="0" field="created"/>
+    <default expression=" format_date(  now() , ''yyyy-MM-dd HH:mm:ss'' )" applyOnUpdate="1" field="modified"/>
   </defaults>
   <constraints>
-    <constraint constraints="3" unique_strength="1" field="fid" notnull_strength="1" exp_strength="0"/>
-    <constraint constraints="1" unique_strength="0" field="asset_path" notnull_strength="1" exp_strength="0"/>
-    <constraint constraints="1" unique_strength="0" field="size" notnull_strength="1" exp_strength="0"/>
-    <constraint constraints="1" unique_strength="0" field="rotation" notnull_strength="1" exp_strength="0"/>
-    <constraint constraints="1" unique_strength="0" field="draw_order" notnull_strength="1" exp_strength="0"/>
+    <constraint exp_strength="0" unique_strength="1" constraints="3" notnull_strength="1" field="fid"/>
+    <constraint exp_strength="0" unique_strength="0" constraints="1" notnull_strength="1" field="asset_path"/>
+    <constraint exp_strength="0" unique_strength="0" constraints="1" notnull_strength="1" field="size"/>
+    <constraint exp_strength="0" unique_strength="0" constraints="1" notnull_strength="1" field="rotation"/>
+    <constraint exp_strength="0" unique_strength="0" constraints="1" notnull_strength="1" field="draw_order"/>
+    <constraint exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0" field="opacity"/>
+    <constraint exp_strength="0" unique_strength="0" constraints="1" notnull_strength="1" field="uuid"/>
+    <constraint exp_strength="0" unique_strength="0" constraints="1" notnull_strength="1" field="created"/>
+    <constraint exp_strength="0" unique_strength="0" constraints="1" notnull_strength="1" field="modified"/>
   </constraints>
   <constraintExpressions>
     <constraint exp="" field="fid" desc=""/>
@@ -170,19 +230,27 @@
     <constraint exp="" field="size" desc=""/>
     <constraint exp="" field="rotation" desc=""/>
     <constraint exp="" field="draw_order" desc=""/>
+    <constraint exp="" field="opacity" desc=""/>
+    <constraint exp="" field="uuid" desc=""/>
+    <constraint exp="" field="created" desc=""/>
+    <constraint exp="" field="modified" desc=""/>
   </constraintExpressions>
   <expressionfields/>
   <attributeactions>
     <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
   </attributeactions>
-  <attributetableconfig sortOrder="0" actionWidgetStyle="dropDown" sortExpression="">
+  <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
     <columns>
-      <column width="-1" hidden="0" type="field" name="fid"/>
-      <column width="-1" hidden="0" type="field" name="asset_path"/>
-      <column width="-1" hidden="0" type="field" name="size"/>
-      <column width="-1" hidden="0" type="field" name="rotation"/>
-      <column width="-1" hidden="0" type="field" name="draw_order"/>
-      <column width="-1" hidden="1" type="actions"/>
+      <column width="-1" type="field" hidden="0" name="fid"/>
+      <column width="-1" type="field" hidden="0" name="asset_path"/>
+      <column width="-1" type="field" hidden="0" name="size"/>
+      <column width="-1" type="field" hidden="0" name="rotation"/>
+      <column width="-1" type="field" hidden="0" name="draw_order"/>
+      <column width="-1" type="actions" hidden="1"/>
+      <column width="-1" type="field" hidden="0" name="opacity"/>
+      <column width="-1" type="field" hidden="0" name="uuid"/>
+      <column width="-1" type="field" hidden="0" name="created"/>
+      <column width="-1" type="field" hidden="0" name="modified"/>
     </columns>
   </attributetableconfig>
   <conditionalstyles>
@@ -214,17 +282,25 @@ def my_form_open(dialog, layer, feature):
   <editorlayout>generatedlayout</editorlayout>
   <editable>
     <field editable="1" name="asset_path"/>
+    <field editable="0" name="created"/>
     <field editable="1" name="draw_order"/>
     <field editable="1" name="fid"/>
+    <field editable="0" name="modified"/>
+    <field editable="1" name="opacity"/>
     <field editable="1" name="rotation"/>
     <field editable="1" name="size"/>
+    <field editable="0" name="uuid"/>
   </editable>
   <labelOnTop>
     <field labelOnTop="0" name="asset_path"/>
+    <field labelOnTop="0" name="created"/>
     <field labelOnTop="0" name="draw_order"/>
     <field labelOnTop="0" name="fid"/>
+    <field labelOnTop="0" name="modified"/>
+    <field labelOnTop="0" name="opacity"/>
     <field labelOnTop="0" name="rotation"/>
     <field labelOnTop="0" name="size"/>
+    <field labelOnTop="0" name="uuid"/>
   </labelOnTop>
   <widgets/>
   <previewExpression>fid</previewExpression>
