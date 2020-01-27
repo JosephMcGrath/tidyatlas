@@ -20,12 +20,7 @@
       WHERE colour_no = NEW.colour_no;
     END;
 
-    SELECT
-      RecoverGeometryColumn('colour_pallete',
-                            'the_geom',
-                            {{ local_datum if local_datum is defined else -1 }},
-                            'POLYGON',
-                            'XY'
-                            )
-    , CreateSpatialIndex('political_nation', 'the_geom');
+    {% with table_name='colour_pallete', geom_type='POLYGON', srid = local_datum if local_datum is defined else -1 %}
+    {% include 'register_geom.sql' %}
+    {% endwith %}
 {% endblock %}
