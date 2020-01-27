@@ -38,7 +38,7 @@
                 </Option>
                 <Option type="Map" name="name">
                   <Option type="bool" value="true" name="active"/>
-                  <Option type="QString" value="&quot;asset_path&quot;" name="expression"/>
+                  <Option type="QString" value="@project_folder  || ''\\assets\\'' +  file_name( &quot;asset_path&quot; )" name="expression"/>
                   <Option type="int" value="3" name="type"/>
                 </Option>
                 <Option type="Map" name="width">
@@ -60,9 +60,7 @@
     </orderby>
   </renderer-v2>
   <customproperties>
-    <property key="dualview/previewExpressions">
-      <value>fid</value>
-    </property>
+    <property key="dualview/previewExpressions" value="fid"/>
     <property key="embeddedWidgets/count" value="0"/>
     <property key="variableNames"/>
     <property key="variableValues"/>
@@ -109,7 +107,7 @@
             <Option type="QString" value="" name="FileWidgetFilter"/>
             <Option type="Map" name="PropertyCollection">
               <Option type="QString" value="" name="name"/>
-              <Option name="properties"/>
+              <Option type="invalid" name="properties"/>
               <Option type="QString" value="collection" name="type"/>
             </Option>
             <Option type="int" value="0" name="RelativeStorage"/>
