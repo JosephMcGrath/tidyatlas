@@ -13,6 +13,7 @@
       , ('Forest')
       , ('Water')
       , ('Rocky')
+      , ('Scrubland')
       , ('Snow')
       , ('Swamp')
       , ('Sand')
