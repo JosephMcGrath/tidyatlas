@@ -38,7 +38,6 @@ Rather than have a single set of homogenous layers covering all scales, I've fou
 
 ## To Do
 
-1. Boundary for regional mapping,
-2. Package up as a Python CLI tool,
-3. Template local political boundaries,
-4. Template detail features,
+1. Package up as a Python CLI tool,
+2. Template detail features,
+3. Template standard columns (uuid, created, modified etc),
