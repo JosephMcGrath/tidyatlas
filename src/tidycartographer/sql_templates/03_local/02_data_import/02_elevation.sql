@@ -1,5 +1,5 @@
-{% extends "base.sql" %}
-{% block content %}
+{% extends "import_data.sql" %}
+{% block import %}
 /*Elevation*/
 INSERT INTO elevation_contour
     (elevation, uuid, created, modified, the_geom)

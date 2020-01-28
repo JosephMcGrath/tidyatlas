@@ -1,5 +1,5 @@
-{% extends "base.sql" %}
-{% block content %}
+{% extends "import_data.sql" %}
+{% block import %}
 /*Coastline*/
 INSERT INTO coastline
     (name, uuid, created, modified, the_geom)

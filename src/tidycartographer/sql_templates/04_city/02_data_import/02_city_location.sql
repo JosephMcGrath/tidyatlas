@@ -1,5 +1,5 @@
-{% extends "base.sql" %}
-{% block content %}
+{% extends "import_data.sql" %}
+{% block import %}
 /*City Location*/
 INSERT INTO city_location
     (name, purpose, importance, notes, uuid, created, modified, the_geom)

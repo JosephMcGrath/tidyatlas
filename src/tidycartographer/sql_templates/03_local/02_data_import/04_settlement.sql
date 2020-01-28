@@ -1,5 +1,5 @@
-{% extends "base.sql" %}
-{% block content %}
+{% extends "import_data.sql" %}
+{% block import %}
 /*Settlement*/
 INSERT INTO settlement
     (name, size, specialisation, uuid, created, modified, the_geom)

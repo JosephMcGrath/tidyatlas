@@ -1,5 +1,5 @@
-{% extends "base.sql" %}
-{% block content %}
+{% extends "import_data.sql" %}
+{% block import %}
 /*Nation-scale regions.*/
 INSERT INTO local_area_bounds
     (name, uuid, created, modified, the_geom)

@@ -1,5 +1,5 @@
-{% extends "base.sql" %}
-{% block content %}
+{% extends "import_data.sql" %}
+{% block import %}
 /*Bathymetry*/
 INSERT INTO bathymetry_contour
     (depth, uuid, created, modified, the_geom)

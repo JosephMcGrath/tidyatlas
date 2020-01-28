@@ -1,5 +1,5 @@
-{% extends "base.sql" %}
-{% block content %}
+{% extends "import_data.sql" %}
+{% block import %}
     /*Colour Pallete*/
     INSERT OR IGNORE INTO colour_pallete
         (colour_name, primary_colour, secondary_colour)

@@ -1,5 +1,5 @@
-{% extends "base.sql" %}
-{% block content %}
+{% extends "import_data.sql" %}
+{% block import %}
 /*Nation-scale regions.*/
 INSERT INTO political_nation
     (name, notes, colour, uuid, area, created, modified, the_geom)

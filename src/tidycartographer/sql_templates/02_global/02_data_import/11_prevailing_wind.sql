@@ -1,5 +1,5 @@
-{% extends "base.sql" %}
-{% block content %}
+{% extends "import_data.sql" %}
+{% block import %}
 INSERT INTO prevailing_wind
     (direction, temperature, uuid, created, modified, the_geom)
 SELECT

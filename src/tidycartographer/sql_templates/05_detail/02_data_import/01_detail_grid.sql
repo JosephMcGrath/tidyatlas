@@ -1,5 +1,5 @@
-{% extends "base.sql" %}
-{% block content %}
+{% extends "import_data.sql" %}
+{% block import %}
 INSERT INTO detail_area
     (name, angle, uuid, created, modified, the_geom)
 SELECT

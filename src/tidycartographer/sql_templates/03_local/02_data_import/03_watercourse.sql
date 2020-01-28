@@ -1,5 +1,5 @@
-{% extends "base.sql" %}
-{% block content %}
+{% extends "import_data.sql" %}
+{% block import %}
 /*Watercourse*/
 INSERT INTO watercourse
     (name, size, uuid, line_length, created, modified, the_geom)

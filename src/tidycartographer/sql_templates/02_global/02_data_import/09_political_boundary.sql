@@ -1,5 +1,5 @@
-{% extends "base.sql" %}
-{% block content %}
+{% extends "import_data.sql" %}
+{% block import %}
 {% for table_name in ["major_political_boundary", "minor_political_boundary"] %}
 INSERT INTO {{table_name}}
     (name, colour, uuid, created, modified, the_geom)
