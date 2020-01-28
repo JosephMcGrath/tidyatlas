@@ -5,99 +5,82 @@ import sys
 import zipfile
 
 
-def make_floor(n):
-    if n > 0:
-        label = f"p{n}"
-    elif n < 0:
-        label = f"n{abs(n)}"
-    else:
-        label = f"{n}"
-    return {"label": label, "no": n}
-
-
-def load_config(path):
-    with open(path) as f:
-        config = json.load(f)
-    for item in config:
-        if "floors" in item:
-            item["floors"] = [make_floor(n) for n in item["floors"]]
-
-    return config
-
-
-def build_db(config, template_dir, dst_dir):
-    # Resolve relative database paths
-    if "previous_db" in config.keys():
-        if not os.path.isabs(config["previous_db"]):
-            config["previous_db"] = os.path.join(config["config_dir"], config["previous_db"])
-    
-    # Resolve relative database paths
-    if "dst_dir" in config.keys():
-        if os.path.isabs(config["dst_dir"]):
-            dst_dir = config["dst_dir"]
+class Builder:
+    def __init__(self, config_file=None, config={}, write_output=True):
+        self.loader = jinja2.PackageLoader("tidycartographer", "sql_templates")
+        if config_file is not None:
+            temp_config = self._load_config_file(config_file)
         else:
-            dst_dir =  os.path.join(config["config_dir"], config["dst_dir"])
-        
-    file_loader = jinja2.FileSystemLoader(template_dir)
-    env = jinja2.Environment(loader=file_loader)
-    output = []
+            temp_config = [{}]
+        self.config = [{**self._default_config(), **x, **config} for x in temp_config]
+        self.output = {x["dst_path"]: self._build_from_loader(x) for x in self.config}
+        if write_output:
+            self.write()
 
-    output.append(env.get_template("Main.sql").render(**config))
+    def write(self):
+        for x in self.output:
+            with open(x, mode="w", encoding="utf-8") as f:
+                f.write(self.output[x])
 
-    dst_path = os.path.join(dst_dir, config["name"]) + ".sql"
+    def _build_from_loader(self, config, main_template="Main.sql"):
+        "Builds the database from a provided loader."
+        env = jinja2.Environment(loader=self.loader)
+        output = env.get_template(main_template).render(**config)
+        return output
 
-    with open(dst_path, "w") as f:
-        f.write("\n\n".join(output))
+    def _load_config_file(self, src_path):
+        "Loads and processes a config file."
 
+        def make_floor(n):
+            if n > 0:
+                label = f"p{n}"
+            elif n < 0:
+                label = f"n{abs(n)}"
+            else:
+                label = f"{n}"
+            return {"label": label, "no": n}
 
-def build_from_config(config_path, template_dir, dst_dir, zip_dir=None):
-    config_path = os.path.abspath(config_path)
-    for item in load_config(config_path):
-        item["config_path"] = config_path
-        item["config_dir"] = os.path.split(config_path)[0]
-        
-        build_db(item, template_dir, dst_dir)
+        with open(src_path) as f:
+            config = json.load(f)
+        for item in config:
+            item["config_path"] = src_path
+            item["config_dir"] = os.path.split(src_path)[0]
+            if "floors" in item:
+                item["floors"] = [make_floor(n) for n in item["floors"]]
+            if "previous_db" in item:
+                if not os.path.isabs(item["previous_db"]):
+                    item["previous_db"] = os.path.join(
+                        item["config_dir"], item["previous_db"]
+                    )
+            if "dst_dir" in item:
+                if not os.path.isabs(item["dst_dir"]):
+                    item["dst_dir"] = os.path.join(item["config_dir"], item["dst_dir"])
+                item["dst_path"] = os.path.join(item["dst_dir"], item["name"]) + ".sql"
+            else:
+                item["dst_path"] = item["name"] + ".sql"
+        return config
 
-        if zip_dir is not None and "previous_db" in item.keys():
-            try:
-                backup_database(item["previous_db"], zip_dir)
-            except:
-                print(f"Couldn't backup '{item['previous_db']}'.")
+    def _default_config(self):
+        return {
+            "name": "Test Database",
+            "global": False,
+            "local": True,
+            "city": True,
+            "detail": True,
+            "floors": [-1, 0, 1],
+            "style": True,
+            "local_datum": 32637,
+            "previous_db": None,
+            "dst_dir": "sql",
+        }
 
-
-def backup_database(src_path, dst_dir):
-    arch_name = os.path.split(src_path)[-1]
-
-    dst_name = (
-        os.path.splitext(arch_name)[0]
-        + "_"
-        + str(int(os.stat(src_path).st_mtime))
-        + ".zip"
-    )
-    dst_path = os.path.join(dst_dir, dst_name)
-    if os.path.exists(dst_path):
-        return None
-
-    with zipfile.ZipFile(dst_path, "w", zipfile.ZIP_DEFLATED) as zf:
-        zf.write(src_path, arcname=arch_name)
-
-
-root_path = os.path.split(os.getcwd())[0]
-template_dir = os.path.join(root_path, "sql_templates")
-dst_dir = os.path.join(root_path, "compiled")
-
-os.makedirs(dst_dir, exist_ok=True)
-
-args = sys.argv
-
-if len(args) >= 2:
-    config_path = args[1]
-else:
-    config_path = "config.json"
-if len(args) >= 3:
-    zip_dir = args[2]
-else:
-    zip_dir = None
-
-
-build_from_config(config_path, template_dir, dst_dir, zip_dir=zip_dir)
+    def backup_file(self, src_path, dst_dir):
+        "Saves a copy of a file in a timestamped archive."
+        arch_name = os.path.split(src_path)[-1]
+        arch_name = os.path.splitext(arch_name)[0]
+        dst_name = arch_name + "_" + str(int(os.stat(src_path).st_mtime)) + ".zip"
+        dst_path = os.path.join(dst_dir, dst_name)
+        if os.path.exists(dst_path):
+            return None
+        with zipfile.ZipFile(dst_path, "w", zipfile.ZIP_DEFLATED) as zf:
+            zf.write(src_path, arcname=arch_name)

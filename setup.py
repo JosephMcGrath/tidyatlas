@@ -33,4 +33,5 @@ setup(
     package_dir={"": "src"},
     include_package_data=True,
     install_requires=["jinja2"],
+    entry_points={"console_scripts": ["tidycartographer=tidycartographer.__main__:main"]},
 )
