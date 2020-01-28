@@ -120,5 +120,4 @@ qml_raw/
 svg/qgis/
 
 # Local scripts
-*.bat
 live/
