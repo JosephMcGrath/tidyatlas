@@ -14,6 +14,7 @@
 
     {% with geom_type='MULTIPOLYGON' %}
     {% include 'register_geom.sql' %}
+    {% include '02_global/02_data_import/09_political_boundary.sql' %}
     {% endwith %}
 {% endfor %}
 {% endblock %}

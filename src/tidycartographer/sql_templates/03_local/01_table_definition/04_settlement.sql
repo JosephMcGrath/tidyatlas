@@ -26,5 +26,6 @@
 
     {% with table_name='settlement', geom_type='POINT', srid = local_datum %}
     {% include 'register_geom.sql' %}
+    {% include '03_local/02_data_import/04_settlement.sql' %}
     {% endwith %}
 {% endblock %}

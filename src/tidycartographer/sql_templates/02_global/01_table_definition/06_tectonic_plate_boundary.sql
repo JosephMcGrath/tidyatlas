@@ -24,5 +24,6 @@
 
     {% with table_name='tectonic_plate_boundary', geom_type='LINESTRING' %}
     {% include 'register_geom.sql' %}
+    {% include '02_global/02_data_import/06_tectonic_plate_boundary.sql' %}
     {% endwith %}
 {% endblock %}

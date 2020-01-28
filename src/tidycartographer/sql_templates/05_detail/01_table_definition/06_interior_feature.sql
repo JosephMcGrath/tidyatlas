@@ -34,6 +34,7 @@
 
     {% with table_name='interior_feature_f_' + floor.label, geom_type='LINESTRING', srid = local_datum %}
     {% include 'register_geom.sql' %}
+    {% include '05_detail/02_data_import/06_interior_feature.sql' %}
     {% include 'length_calc_trigger.sql' %}
     {% include 'colour_management_trigger.sql' %}
     {% endwith %}

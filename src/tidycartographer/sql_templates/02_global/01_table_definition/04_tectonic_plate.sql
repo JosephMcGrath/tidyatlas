@@ -23,6 +23,7 @@
 
     {% with table_name='tectonic_plate', geom_type='POLYGON' %}
     {% include 'register_geom.sql' %}
+    {% include '02_global/02_data_import/04_tectonic_plate.sql' %}
     {% endwith %}
 
 {% endblock %}

@@ -27,5 +27,6 @@
 
     {% with table_name='city_location', geom_type='POINT', srid = local_datum %}
     {% include 'register_geom.sql' %}
+    {% include '04_city/02_data_import/02_city_location.sql' %}
     {% endwith %}
 {% endblock %}

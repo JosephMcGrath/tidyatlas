@@ -12,5 +12,6 @@
 
     {% with table_name='tectonic_plate_movement', geom_type='POINT' %}
     {% include 'register_geom.sql' %}
+    {% include '02_global/02_data_import/05_tectonic_plate_movement.sql' %}
     {% endwith %}
 {% endblock %}

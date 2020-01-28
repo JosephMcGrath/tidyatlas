@@ -41,6 +41,7 @@
 
     {% with table_name='bathymetry_point', geom_type='POINT', srid = local_datum, geom_dim = 'XYZ' %}
     {% include 'register_geom.sql' %}
+    {% include '03_local/02_data_import/07_bathymetry.sql' %}
     {% endwith %}
 
     /*Triggers to set Z values.*/

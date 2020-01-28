@@ -12,6 +12,7 @@
 
     {% with table_name='coastline', geom_type='MULTIPOLYGON', srid = local_datum %}
     {% include 'register_geom.sql' %}
+    {% include '03_local/02_data_import/01_coastline.sql' %}
     {% endwith %}
 
 {% endblock %}

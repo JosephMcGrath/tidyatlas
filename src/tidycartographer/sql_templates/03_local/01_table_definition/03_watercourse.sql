@@ -25,6 +25,7 @@
 
     {% with table_name='watercourse', geom_type='LINESTRING', srid = local_datum %}
     {% include 'register_geom.sql' %}
+    {% include '03_local/02_data_import/03_watercourse.sql' %}
     {% include 'length_calc_trigger.sql' %}
     {% endwith %}
 {% endblock %}

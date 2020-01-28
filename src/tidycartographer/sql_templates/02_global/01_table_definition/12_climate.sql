@@ -38,5 +38,6 @@ CREATE TABLE climate (
 
 {% with table_name='climate', geom_type='POLYGON' %}
 {% include 'register_geom.sql' %}
+{% include '02_global/02_data_import/12_climate.sql' %}
 {% endwith %}
 {% endblock %}

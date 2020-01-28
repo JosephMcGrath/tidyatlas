@@ -13,5 +13,6 @@
 
     {% with table_name='prevailing_wind', geom_type='POINT' %}
     {% include 'register_geom.sql' %}
+    {% include '02_global/02_data_import/11_prevailing_wind.sql' %}
     {% endwith %}
 {% endblock %}

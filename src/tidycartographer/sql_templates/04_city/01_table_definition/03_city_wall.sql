@@ -22,5 +22,6 @@
 
     {% with table_name='city_wall', geom_type='LINESTRING', srid = local_datum %}
     {% include 'register_geom.sql' %}
+    {% include '04_city/02_data_import/03_city_wall.sql' %}
     {% endwith %}
 {% endblock %}

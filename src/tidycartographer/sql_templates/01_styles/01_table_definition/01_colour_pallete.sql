@@ -22,5 +22,6 @@
 
     {% with table_name='colour_pallete', geom_type='POLYGON', srid = local_datum if local_datum is defined else -1 %}
     {% include 'register_geom.sql' %}
+    {% include '01_styles/02_data_import/01_colour_pallete.sql' %}
     {% endwith %}
 {% endblock %}

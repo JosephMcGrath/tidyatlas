@@ -33,6 +33,7 @@
 
     {% with table_name='exterior_feature', geom_type='LINESTRING', srid = local_datum %}
     {% include 'register_geom.sql' %}
+    {% include '05_detail/02_data_import/03_exterior_feature.sql' %}
     {% include 'length_calc_trigger.sql' %}
     {% include 'colour_management_trigger.sql' %}
     {% endwith %}

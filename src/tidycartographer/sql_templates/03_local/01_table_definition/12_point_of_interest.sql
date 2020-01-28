@@ -34,6 +34,7 @@
 
     {% with table_name='point_of_interest', geom_type='POINT', srid = local_datum %}
     {% include 'register_geom.sql' %}
+    {% include '03_local/02_data_import/12_point_of_interest.sql' %}
     {% endwith %}
 
 {% endblock %}

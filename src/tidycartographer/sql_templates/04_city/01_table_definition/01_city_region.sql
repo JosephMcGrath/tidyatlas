@@ -29,6 +29,7 @@
 
     {% with table_name='city_region', geom_type='MULTIPOLYGON', srid = local_datum %}
     {% include 'register_geom.sql' %}
+    {% include '04_city/02_data_import/01_city_region.sql' %}
     {% include 'area_calc_trigger.sql' %}
     {% endwith %}
 {% endblock %}

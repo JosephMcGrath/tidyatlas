@@ -155,4 +155,6 @@
         DELETE FROM detail_grid
         WHERE name = OLD.name;
     END;
+
+    {% include '05_detail/02_data_import/01_detail_grid.sql' %}
 {% endblock %}
