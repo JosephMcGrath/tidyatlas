@@ -13,6 +13,7 @@ class Builder:
         else:
             temp_config = [{}]
         self.config = [{**self._default_config(), **x, **config} for x in temp_config]
+        self._clean_config()
         self.output = {x["dst_path"]: self._build_from_loader(x) for x in self.config}
         if write_output:
             self.write()
