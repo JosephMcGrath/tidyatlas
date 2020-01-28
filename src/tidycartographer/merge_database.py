@@ -32,6 +32,15 @@ class Builder:
     def _load_config_file(self, src_path):
         "Loads and processes a config file."
 
+        with open(src_path) as f:
+            config = json.load(f)
+
+        for item in config:
+            item["config_path"] = src_path
+            item["config_dir"] = os.path.split(src_path)[0]
+        return config
+
+    def _clean_config(self):
         def make_floor(n):
             if n > 0:
                 label = f"p{n}"
@@ -41,14 +50,7 @@ class Builder:
                 label = f"{n}"
             return {"label": label, "no": n}
 
-        with open(src_path) as f:
-            config = json.load(f)
-        return config
-
-    def _clean_config(self):
         for item in self.config:
-            item["config_path"] = src_path
-            item["config_dir"] = os.path.split(src_path)[0]
             if "floors" in item:
                 item["floors"] = [make_floor(n) for n in item["floors"]]
             if "previous_db" in item:
@@ -62,7 +64,6 @@ class Builder:
                 item["dst_path"] = os.path.join(item["dst_dir"], item["name"]) + ".sql"
             else:
                 item["dst_path"] = item["name"] + ".sql"
-
 
     def _default_config(self):
         return {
@@ -80,16 +81,20 @@ class Builder:
         }
 
     def backup(self):
-        for x in self.config():
-            if not os.path.exists(x["dst_path"]):
+        for x in self.config:
+            if not os.path.exists(x["previous_db"]):
                 continue
-            self._backup_file(x["dst_path"], x["backup_dir"])
+            self._backup_file(x["previous_db"], x["backup_dir"])
 
     def _backup_file(self, src_path, dst_dir):
         "Saves a copy of a file in a timestamped archive."
         arch_name = os.path.split(src_path)[-1]
-        arch_name = os.path.splitext(arch_name)[0]
-        dst_name = arch_name + "_" + str(int(os.stat(src_path).st_mtime)) + ".zip"
+        dst_name = (
+            os.path.splitext(arch_name)[0]
+            + "_"
+            + str(int(os.stat(src_path).st_mtime))
+            + ".zip"
+        )
         dst_path = os.path.join(dst_dir, dst_name)
         if os.path.exists(dst_path):
             return None
