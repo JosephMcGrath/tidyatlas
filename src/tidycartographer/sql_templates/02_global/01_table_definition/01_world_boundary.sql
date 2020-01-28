@@ -9,5 +9,6 @@
 
     {% with table_name='world_boundary', geom_type='POLYGON' %}
     {% include 'register_geom.sql' %}
+    {% include 'uuid_gen_trigger.sql' %}
     {% endwith %}
 {% endblock %}

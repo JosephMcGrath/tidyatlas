@@ -16,7 +16,7 @@
         fid INTEGER PRIMARY KEY AUTOINCREMENT
       , name TEXT
       , size TEXT NOT NULL REFERENCES road_size(size)
-      , uuid TEXT NOT NULL UNIQUE
+      , uuid TEXT NOT NULL
       , line_length REAL
       , created TEXT NOT NULL
       , modified TEXT NOT NULL
@@ -27,5 +27,6 @@
     {% include 'register_geom.sql' %}
     {% include '03_local/02_data_import/05_road.sql' %}
     {% include 'length_calc_trigger.sql' %}
+    {% include 'uuid_gen_trigger.sql' %}
     {% endwith %}
 {% endblock %}

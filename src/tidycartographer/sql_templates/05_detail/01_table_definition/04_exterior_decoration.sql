@@ -7,7 +7,7 @@
       , rotation REAL NOT NULL DEFAULT 0
       , draw_order REAL NOT NULL DEFAULT 0
       , opacity REAL
-      , uuid TEXT NOT NULL UNIQUE
+      , uuid TEXT NOT NULL
       , created TEXT NOT NULL
       , modified TEXT NOT NULL
       , the_geom POINT NOT NULL
@@ -16,5 +16,6 @@
     {% with table_name='exterior_decoration', geom_type='POINT', srid = local_datum %}
     {% include 'register_geom.sql' %}
     {% include '05_detail/02_data_import/04_exterior_decoration.sql' %}
+    {% include 'uuid_gen_trigger.sql' %}
     {% endwith %}
 {% endblock %}

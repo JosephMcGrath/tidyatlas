@@ -28,7 +28,7 @@
       , colour_secondary_override TEXT
       , colour_lightness REAL DEFAULT 0
       , area REAL
-      , uuid TEXT NOT NULL UNIQUE
+      , uuid TEXT NOT NULL
       , created TEXT NOT NULL
       , modified TEXT NOT NULL
       , the_geom MULTIPOLYGON NOT NULL
@@ -39,6 +39,7 @@
     {% include '05_detail/02_data_import/05_interior_space.sql' %}
     {% include 'area_calc_trigger.sql' %}
     {% include 'colour_management_trigger.sql' %}
+    {% include 'uuid_gen_trigger.sql' %}
     {% endwith %}
 
 {% endfor %}

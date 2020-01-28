@@ -25,7 +25,7 @@
       , colour_secondary_override TEXT
       , colour_lightness REAL DEFAULT 0
       , length REAL
-      , uuid TEXT NOT NULL UNIQUE
+      , uuid TEXT NOT NULL
       , created TEXT NOT NULL
       , modified TEXT NOT NULL
       , the_geom LINESTRING NOT NULL
@@ -36,6 +36,7 @@
     {% include '05_detail/02_data_import/03_exterior_feature.sql' %}
     {% include 'length_calc_trigger.sql' %}
     {% include 'colour_management_trigger.sql' %}
+    {% include 'uuid_gen_trigger.sql' %}
     {% endwith %}
 
 {% endblock %}

@@ -21,6 +21,7 @@
 
     {% with geom_type='LINESTRING' %}
     {% include 'register_geom.sql' %}
+    {% include 'uuid_gen_trigger.sql' %}
     {% endwith %}
 
     /*Geometry creation SQL*/

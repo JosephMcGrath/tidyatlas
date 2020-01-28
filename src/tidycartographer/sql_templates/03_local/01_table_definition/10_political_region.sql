@@ -6,7 +6,7 @@
       , name TEXT
       , notes TEXT
       , colour TEXT
-      , uuid TEXT NOT NULL UNIQUE
+      , uuid TEXT NOT NULL
       , area REAL
       , created TEXT NOT NULL
       , modified TEXT NOT NULL
@@ -17,6 +17,7 @@
     {% include 'register_geom.sql' %}
     {% include '03_local/02_data_import/10_political_region.sql' %}
     {% include 'area_calc_trigger.sql' %}
+    {% include 'uuid_gen_trigger.sql' %}
     {% endwith %}
 {% endfor %}
 {% endblock %}

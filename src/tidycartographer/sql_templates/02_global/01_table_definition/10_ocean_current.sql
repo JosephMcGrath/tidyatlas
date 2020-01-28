@@ -25,5 +25,6 @@
     {% with table_name='ocean_current', geom_type='LINESTRING' %}
     {% include 'register_geom.sql' %}
     {% include '02_global/02_data_import/10_ocean_current.sql' %}
+    {% include 'uuid_gen_trigger.sql' %}
     {% endwith %}
 {% endblock %}

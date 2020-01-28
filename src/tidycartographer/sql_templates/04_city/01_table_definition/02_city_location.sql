@@ -19,7 +19,7 @@
       , purpose TEXT
       , importance TEXT
       , notes TEXT
-      , uuid TEXT NOT NULL UNIQUE
+      , uuid TEXT NOT NULL
       , created TEXT NOT NULL
       , modified TEXT NOT NULL
       , the_geom POINT NOT NULL
@@ -28,5 +28,6 @@
     {% with table_name='city_location', geom_type='POINT', srid = local_datum %}
     {% include 'register_geom.sql' %}
     {% include '04_city/02_data_import/02_city_location.sql' %}
+    {% include 'uuid_gen_trigger.sql' %}
     {% endwith %}
 {% endblock %}

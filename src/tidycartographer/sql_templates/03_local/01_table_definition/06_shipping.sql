@@ -5,7 +5,7 @@
       , source TEXT
       , destination TEXT
       , typical_duration TEXT
-      , uuid TEXT NOT NULL UNIQUE
+      , uuid TEXT NOT NULL
       , line_length REAL
       , created TEXT NOT NULL
       , modified TEXT NOT NULL
@@ -16,5 +16,6 @@
     {% include 'register_geom.sql' %}
     {% include '03_local/02_data_import/06_shipping.sql' %}
     {% include 'length_calc_trigger.sql' %}
+    {% include 'uuid_gen_trigger.sql' %}
     {% endwith %}
 {% endblock %}

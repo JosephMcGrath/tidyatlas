@@ -20,7 +20,7 @@
       , purpose TEXT NOT NULL DEFAULT 'Other' REFERENCES city_region_purpose(purpose)
       , notes TEXT
       , colour TEXT /*Custom colour for the polygon.*/
-      , uuid TEXT NOT NULL UNIQUE
+      , uuid TEXT NOT NULL
       , area REAL
       , created TEXT NOT NULL
       , modified TEXT NOT NULL
@@ -31,5 +31,6 @@
     {% include 'register_geom.sql' %}
     {% include '04_city/02_data_import/01_city_region.sql' %}
     {% include 'area_calc_trigger.sql' %}
+    {% include 'uuid_gen_trigger.sql' %}
     {% endwith %}
 {% endblock %}
