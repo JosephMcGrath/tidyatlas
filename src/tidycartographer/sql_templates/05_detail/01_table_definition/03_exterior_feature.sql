@@ -34,39 +34,7 @@
     {% with table_name='exterior_feature', geom_type='LINESTRING', srid = local_datum %}
     {% include 'register_geom.sql' %}
     {% include 'length_calc_trigger.sql' %}
+    {% include 'colour_management_trigger.sql' %}
     {% endwith %}
 
-    CREATE TRIGGER exterior_feature_insert AFTER INSERT ON exterior_feature
-    BEGIN
-        UPDATE exterior_feature
-        SET colour_primary_hex = (SELECT primary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
-          , colour_secondary_hex = (SELECT secondary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
-        WHERE fid = NEW.fid
-          AND NEW.colour_name IS NOT NULL;
-    END;
-
-    CREATE TRIGGER exterior_feature_update AFTER UPDATE ON exterior_feature
-    BEGIN
-        UPDATE exterior_feature
-        SET colour_primary_hex = (SELECT primary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
-          , colour_secondary_hex = (SELECT secondary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
-        WHERE fid = NEW.fid
-          AND NEW.colour_name IS NOT NULL;
-    END;
-
-    CREATE TRIGGER colour_pallete_insert_exterior_feature AFTER INSERT ON colour_pallete
-    BEGIN
-        UPDATE exterior_feature
-        SET colour_primary_hex = NEW.primary_colour
-          , colour_secondary_hex = NEW.secondary_colour
-        WHERE colour_name = NEW.colour_name;
-    END;
-
-    CREATE TRIGGER colour_pallete_update_exterior_feature AFTER UPDATE ON colour_pallete
-    BEGIN
-        UPDATE exterior_feature
-        SET colour_primary_hex = NEW.primary_colour
-          , colour_secondary_hex = NEW.secondary_colour
-        WHERE colour_name = NEW.colour_name;
-    END;
 {% endblock %}

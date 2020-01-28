@@ -37,40 +37,8 @@
     {% with table_name='interior_space_f_' + floor.label, geom_type='MULTIPOLYGON', srid = local_datum %}
     {% include 'register_geom.sql' %}
     {% include 'area_calc_trigger.sql' %}
+    {% include 'colour_management_trigger.sql' %}
     {% endwith %}
 
-    CREATE TRIGGER interior_space_f_{{floor.label}}_insert AFTER INSERT ON interior_space_f_{{floor.label}}
-    BEGIN
-        UPDATE interior_space_f_{{floor.label}}
-        SET colour_primary_hex = (SELECT primary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
-          , colour_secondary_hex = (SELECT secondary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
-        WHERE fid = NEW.fid
-          AND NEW.colour_name IS NOT NULL;
-    END;
-
-    CREATE TRIGGER interior_space_f_{{floor.label}}_update AFTER UPDATE ON interior_space_f_{{floor.label}}
-    BEGIN
-        UPDATE interior_space_f_{{floor.label}}
-        SET colour_primary_hex = (SELECT primary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
-          , colour_secondary_hex = (SELECT secondary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
-        WHERE fid = NEW.fid
-          AND NEW.colour_name IS NOT NULL;
-    END;
-
-    CREATE TRIGGER colour_pallete_insert_interior_space_f_{{floor.label}} AFTER INSERT ON colour_pallete
-    BEGIN
-        UPDATE interior_space_f_{{floor.label}}
-        SET colour_primary_hex = NEW.primary_colour
-          , colour_secondary_hex = NEW.secondary_colour
-        WHERE colour_name = NEW.colour_name;
-    END;
-
-    CREATE TRIGGER colour_pallete_update_interior_space_f_{{floor.label}} AFTER UPDATE ON colour_pallete
-    BEGIN
-        UPDATE interior_space_f_{{floor.label}}
-        SET colour_primary_hex = NEW.primary_colour
-          , colour_secondary_hex = NEW.secondary_colour
-        WHERE colour_name = NEW.colour_name;
-    END;
 {% endfor %}
 {% endblock %}

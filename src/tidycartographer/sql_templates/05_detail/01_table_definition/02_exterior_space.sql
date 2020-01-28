@@ -39,39 +39,7 @@
     {% with table_name='exterior_space', geom_type='MULTIPOLYGON', srid = local_datum %}
     {% include 'register_geom.sql' %}
     {% include 'area_calc_trigger.sql' %}
+    {% include 'colour_management_trigger.sql' %}
     {% endwith %}
 
-    CREATE TRIGGER colour_pallete_insert_exterior_space AFTER INSERT ON colour_pallete
-    BEGIN
-        UPDATE exterior_space
-        SET colour_primary_hex = NEW.primary_colour
-          , colour_secondary_hex = NEW.secondary_colour
-        WHERE colour_name = NEW.colour_name;
-    END;
-
-    CREATE TRIGGER colour_pallete_update_exterior_space AFTER UPDATE ON colour_pallete
-    BEGIN
-        UPDATE exterior_space
-        SET colour_primary_hex = NEW.primary_colour
-          , colour_secondary_hex = NEW.secondary_colour
-        WHERE colour_name = NEW.colour_name;
-    END;
-
-    CREATE TRIGGER exterior_space_insert AFTER INSERT ON exterior_space
-    BEGIN
-        UPDATE exterior_space
-        SET colour_primary_hex = (SELECT primary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
-          , colour_secondary_hex = (SELECT secondary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
-        WHERE fid = NEW.fid
-          AND NEW.colour_name IS NOT NULL;
-    END;
-
-    CREATE TRIGGER exterior_space_update AFTER UPDATE ON exterior_space
-    BEGIN
-        UPDATE exterior_space
-        SET colour_primary_hex = (SELECT primary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
-          , colour_secondary_hex = (SELECT secondary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
-        WHERE fid = NEW.fid
-          AND NEW.colour_name IS NOT NULL;
-    END;
 {% endblock %}
