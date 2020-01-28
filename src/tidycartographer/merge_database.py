@@ -42,7 +42,10 @@ class Builder:
 
         with open(src_path) as f:
             config = json.load(f)
-        for item in config:
+        return config
+
+    def _clean_config(self):
+        for item in self.config:
             item["config_path"] = src_path
             item["config_dir"] = os.path.split(src_path)[0]
             if "floors" in item:
@@ -58,7 +61,7 @@ class Builder:
                 item["dst_path"] = os.path.join(item["dst_dir"], item["name"]) + ".sql"
             else:
                 item["dst_path"] = item["name"] + ".sql"
-        return config
+
 
     def _default_config(self):
         return {
@@ -72,9 +75,16 @@ class Builder:
             "local_datum": 32637,
             "previous_db": None,
             "dst_dir": "sql",
+            "backup_dir": "backup",
         }
 
-    def backup_file(self, src_path, dst_dir):
+    def backup(self):
+        for x in self.config():
+            if not os.path.exists(x["dst_path"]):
+                continue
+            self._backup_file(x["dst_path"], x["backup_dir"])
+
+    def _backup_file(self, src_path, dst_dir):
         "Saves a copy of a file in a timestamped archive."
         arch_name = os.path.split(src_path)[-1]
         arch_name = os.path.splitext(arch_name)[0]
