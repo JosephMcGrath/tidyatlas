@@ -3,6 +3,10 @@
 {% include '00_core/versions.sql' %}
 {% include '00_core/migrations/00_migrations.sql' %}
 
+{% if previous_db is defined %}
+    ATTACH "{{previous_db}}" AS previous;
+{% endif %}
+
 /*----------------------------------------------------------------------------*/
 {% include '01_styles/01_table_definition/01_colour_pallete.sql' %}
 {% if style %}
@@ -10,9 +14,7 @@
 {% endif %}
 /*----------------------------------------------------------------------------*/
 {% if previous_db is defined %}
-    ATTACH "{{previous_db}}" AS previous;
     {% include '01_styles/02_data_import/01_colour_pallete.sql' %}
-    DETACH previous;
 {% endif %}
 /*----------------------------------------------------------------------------*/
 {% include '01_styles/03_data_generation/01_colour_pallete.sql' %}
@@ -40,7 +42,6 @@
 
 /*----------------------------------------------------------------------------*/
     {% if previous_db is defined %}
-        ATTACH "{{previous_db}}" AS previous;
         {% include '02_global/02_data_import/04_tectonic_plate.sql' %}
         {% include '02_global/02_data_import/05_tectonic_plate_movement.sql' %}
         {% include '02_global/02_data_import/06_tectonic_plate_boundary.sql' %}
@@ -50,7 +51,6 @@
         {% include '02_global/02_data_import/10_ocean_current.sql' %}
         {% include '02_global/02_data_import/11_prevailing_wind.sql' %}
         {% include '02_global/02_data_import/12_climate.sql' %}
-        DETACH previous;
     {% endif %}
 
 /*----------------------------------------------------------------------------*/
@@ -85,7 +85,6 @@
 
 /*----------------------------------------------------------------------------*/
     {% if previous_db is defined %}
-        ATTACH "{{previous_db}}" AS previous;
         {% include '03_local/02_data_import/01_coastline.sql' %}
         {% include '03_local/02_data_import/02_elevation.sql' %}
         {% include '03_local/02_data_import/03_watercourse.sql' %}
@@ -98,7 +97,6 @@
         {% include '03_local/02_data_import/10_political_region.sql' %}
         {% include '03_local/02_data_import/12_point_of_interest.sql' %}
         {% include '03_local/02_data_import/13_local_area_bounds.sql' %}
-        DETACH previous;
     {% endif %}
 
 /*----------------------------------------------------------------------------*/
@@ -122,12 +120,10 @@
 
 /*----------------------------------------------------------------------------*/
     {% if previous_db is defined %}
-        ATTACH "{{previous_db}}" AS previous;
         {% include '04_city/02_data_import/01_city_region.sql' %}
         {% include '04_city/02_data_import/02_city_location.sql' %}
         {% include '04_city/02_data_import/03_city_wall.sql' %}
         {% include '04_city/02_data_import/04_city_street.sql' %}
-        DETACH previous;
     {% endif %}
 
 /*----------------------------------------------------------------------------*/
@@ -153,7 +149,6 @@
 
 /*----------------------------------------------------------------------------*/
     {% if previous_db is defined %}
-        ATTACH "{{previous_db}}" AS previous;
         {% include '05_detail/02_data_import/01_detail_grid.sql' %}
         {% include '05_detail/02_data_import/02_exterior_space.sql' %}
         {% include '05_detail/02_data_import/03_exterior_feature.sql' %}
@@ -161,7 +156,6 @@
         {% include '05_detail/02_data_import/05_interior_space.sql' %}
         {% include '05_detail/02_data_import/06_interior_feature.sql' %}
         {% include '05_detail/02_data_import/07_interior_decoration.sql' %}
-        DETACH previous;
     {% endif %}
 
 /*----------------------------------------------------------------------------*/
@@ -171,5 +165,10 @@
     {% if style %}
         {% include '05_detail/04_qgis_style.sql' %}
     {% endif %}
+
+
+{% if previous_db is defined %}
+    DETACH previous;
+{% endif %}
 
 {% endif %}
