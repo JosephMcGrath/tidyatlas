@@ -25,19 +25,6 @@
 
     {% with table_name='road', geom_type='LINESTRING', srid = local_datum %}
     {% include 'register_geom.sql' %}
+    {% include 'length_calc_trigger.sql' %}
     {% endwith %}
-
-    CREATE TRIGGER road_insert AFTER INSERT ON road
-    BEGIN
-      UPDATE road
-      SET line_length = ST_Length(the_geom)
-      WHERE fid = NEW.fid;
-    END;
-
-    CREATE TRIGGER road_update AFTER UPDATE ON road
-    BEGIN
-      UPDATE road
-      SET line_length = ST_Length(the_geom)
-      WHERE fid = NEW.fid;
-    END;
 {% endblock %}

@@ -14,19 +14,6 @@
 
     {% with table_name='shipping', geom_type='LINESTRING', srid = local_datum %}
     {% include 'register_geom.sql' %}
+    {% include 'length_calc_trigger.sql' %}
     {% endwith %}
-
-    CREATE TRIGGER shipping_insert AFTER INSERT ON shipping
-    BEGIN
-      UPDATE shipping
-      SET line_length = ST_Length(the_geom)
-      WHERE fid = NEW.fid;
-    END;
-
-    CREATE TRIGGER shipping_update AFTER UPDATE ON shipping
-    BEGIN
-      UPDATE shipping
-      SET line_length = ST_Length(the_geom)
-      WHERE fid = NEW.fid;
-    END;
 {% endblock %}

@@ -40,3 +40,4 @@ Rather than have a single set of homogenous layers covering all scales, I've fou
 
 1. Template detail features,
 2. Template standard columns (uuid, created, modified etc),
+3. Template colour palate management,

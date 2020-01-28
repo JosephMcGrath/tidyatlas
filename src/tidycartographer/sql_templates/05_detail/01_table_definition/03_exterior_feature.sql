@@ -33,14 +33,11 @@
 
     {% with table_name='exterior_feature', geom_type='LINESTRING', srid = local_datum %}
     {% include 'register_geom.sql' %}
+    {% include 'length_calc_trigger.sql' %}
     {% endwith %}
 
     CREATE TRIGGER exterior_feature_insert AFTER INSERT ON exterior_feature
     BEGIN
-        UPDATE exterior_feature
-        SET length = ST_Length(the_geom)
-        WHERE fid = NEW.fid;
-
         UPDATE exterior_feature
         SET colour_primary_hex = (SELECT primary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
           , colour_secondary_hex = (SELECT secondary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
@@ -50,10 +47,6 @@
 
     CREATE TRIGGER exterior_feature_update AFTER UPDATE ON exterior_feature
     BEGIN
-        UPDATE exterior_feature
-        SET length = ST_Length(the_geom)
-        WHERE fid = NEW.fid;
-
         UPDATE exterior_feature
         SET colour_primary_hex = (SELECT primary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
           , colour_secondary_hex = (SELECT secondary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)

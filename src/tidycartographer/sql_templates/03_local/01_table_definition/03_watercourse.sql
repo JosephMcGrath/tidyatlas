@@ -25,19 +25,6 @@
 
     {% with table_name='watercourse', geom_type='LINESTRING', srid = local_datum %}
     {% include 'register_geom.sql' %}
+    {% include 'length_calc_trigger.sql' %}
     {% endwith %}
-
-    CREATE TRIGGER watercourse_insert AFTER INSERT ON watercourse
-    BEGIN
-      UPDATE watercourse
-      SET line_length = ST_Length(the_geom)
-      WHERE fid = NEW.fid;
-    END;
-
-    CREATE TRIGGER watercourse_update AFTER UPDATE ON watercourse
-    BEGIN
-      UPDATE watercourse
-      SET line_length = ST_Length(the_geom)
-      WHERE fid = NEW.fid;
-    END;
 {% endblock %}
