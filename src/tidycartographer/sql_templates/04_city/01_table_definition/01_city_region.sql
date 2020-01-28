@@ -29,19 +29,6 @@
 
     {% with table_name='city_region', geom_type='MULTIPOLYGON', srid = local_datum %}
     {% include 'register_geom.sql' %}
+    {% include 'area_calc_trigger.sql' %}
     {% endwith %}
-
-    CREATE TRIGGER city_region_insert AFTER INSERT ON city_region
-    BEGIN
-      UPDATE city_region
-      SET area = ST_Area(the_geom)
-      WHERE fid = NEW.fid;
-    END;
-
-    CREATE TRIGGER city_region_update AFTER UPDATE ON city_region
-    BEGIN
-      UPDATE city_region
-      SET area = ST_Area(the_geom)
-      WHERE fid = NEW.fid;
-    END;
 {% endblock %}

@@ -36,15 +36,11 @@
 
     {% with table_name='interior_space_f_' + floor.label, geom_type='MULTIPOLYGON', srid = local_datum %}
     {% include 'register_geom.sql' %}
+    {% include 'area_calc_trigger.sql' %}
     {% endwith %}
 
     CREATE TRIGGER interior_space_f_{{floor.label}}_insert AFTER INSERT ON interior_space_f_{{floor.label}}
     BEGIN
-        UPDATE interior_space_f_{{floor.label}}
-        SET area = ST_Area(the_geom)
-          , the_geom = COALESCE(MakeValid(the_geom), the_geom)
-        WHERE fid = NEW.fid;
-
         UPDATE interior_space_f_{{floor.label}}
         SET colour_primary_hex = (SELECT primary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
           , colour_secondary_hex = (SELECT secondary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
@@ -54,11 +50,6 @@
 
     CREATE TRIGGER interior_space_f_{{floor.label}}_update AFTER UPDATE ON interior_space_f_{{floor.label}}
     BEGIN
-        UPDATE interior_space_f_{{floor.label}}
-        SET area = ST_Area(the_geom)
-          , the_geom = COALESCE(MakeValid(the_geom), the_geom)
-        WHERE fid = NEW.fid;
-
         UPDATE interior_space_f_{{floor.label}}
         SET colour_primary_hex = (SELECT primary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)
           , colour_secondary_hex = (SELECT secondary_colour FROM colour_pallete WHERE colour_name = NEW.colour_name)

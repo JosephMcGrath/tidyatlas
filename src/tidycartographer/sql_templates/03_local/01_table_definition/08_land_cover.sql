@@ -32,19 +32,6 @@
 
     {% with table_name='land_cover', geom_type='POLYGON', srid = local_datum %}
     {% include 'register_geom.sql' %}
+    {% include 'area_calc_trigger.sql' %}
     {% endwith %}
-
-    CREATE TRIGGER land_cover_insert AFTER INSERT ON land_cover
-    BEGIN
-        UPDATE land_cover
-        SET area = ST_Area(the_geom)
-        WHERE fid = NEW.fid;
-    END;
-
-    CREATE TRIGGER land_cover_update AFTER UPDATE ON land_cover
-    BEGIN
-        UPDATE land_cover
-        SET area = ST_Area(the_geom)
-        WHERE fid = NEW.fid;
-    END;
 {% endblock %}
