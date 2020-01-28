@@ -1,6 +1,8 @@
-CALL %conda_activate%
+@CALL %conda_activate%
 
-python setup.py sdist bdist_wheel
-pip install --no-index --find-links=file:%~dp0\dist tidycartographer
+REM @DEL %~dp0\dist /Q
 
-PAUSE
+@python setup.py sdist bdist_wheel > build.log
+@pip install --no-index --find-links=file:%~dp0\dist tidycartographer >> build.log --upgrade
+
+@PAUSE
