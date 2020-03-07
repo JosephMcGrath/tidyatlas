@@ -24,7 +24,7 @@
       , colour_secondary_hex TEXT
       , colour_secondary_override TEXT
       , colour_lightness REAL DEFAULT 0
-      , length REAL
+      , line_length REAL
       , uuid TEXT NOT NULL
       , created TEXT NOT NULL
       , modified TEXT NOT NULL
