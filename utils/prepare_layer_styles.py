@@ -5,11 +5,7 @@ import re
 
 
 def prepare_qml(src_file, dst_file):
-    print(src_dir)
-
-    if os.path.exists(src_dir) and os.path.exists(dst_dir):
-        if os.stat(src_dir).st_mtime <= os.stat(dst_dir).st_mtime:
-            print("Skipping")
+    print(src_file)
 
     with open(src_file, "r", encoding="utf-8") as f:
         raw = f.read()
