@@ -8,7 +8,8 @@
 
     INSERT INTO interior_tile_type (type)
     VALUES
-        ("Plain")
+        ("Furniture")
+      , ("Plain")
       , ("Planks")
       , ("Structure")
       , ('Tiles')

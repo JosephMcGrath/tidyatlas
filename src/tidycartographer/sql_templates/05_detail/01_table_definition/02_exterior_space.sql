@@ -3,7 +3,7 @@
 {% with table_name='exterior_space', geom_type='MULTIPOLYGON', srid = local_datum %}
 
     CREATE TABLE {{table_name}}_class (
-        {{table_name}}_class TEXT PRIMARY KEY
+        class TEXT PRIMARY KEY
     );
 
     INSERT INTO {{table_name}}_class (class)

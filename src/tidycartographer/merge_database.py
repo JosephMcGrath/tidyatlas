@@ -26,7 +26,9 @@ class Builder:
     def _build_from_loader(self, config, main_template="Main.sql"):
         "Builds the database from a provided loader."
         env = jinja2.Environment(loader=self.loader)
-        output = env.get_template(main_template).render(**config)
+        output = env.get_template(main_template).render(
+            **config, trim_blocks=True, lstrip_blocks=True
+        )
         return output
 
     def _load_config_file(self, src_path):
