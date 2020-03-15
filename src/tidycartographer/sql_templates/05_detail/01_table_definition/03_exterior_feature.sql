@@ -11,6 +11,7 @@
         ("Door")
       , ("Door (open)")
       , ("Door (locked)")
+      , ("Door (secret)")
       , ("Stair")
       , ("Step")
       , ("Wall")

@@ -39,3 +39,7 @@ Rather than have a single set of homogenous layers covering all scales, I've fou
 ## To Do
 
 1. Template standard column imports,
+2. Player-facing grids,
+    * Walk-able areas only,
+    * 5 ft grid,
+    * Might be integrated with a interior mask to improve rendering of multiple layers at once.
