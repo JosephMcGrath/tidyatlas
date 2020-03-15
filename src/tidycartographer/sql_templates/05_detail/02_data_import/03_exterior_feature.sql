@@ -5,4 +5,7 @@ INSERT INTO exterior_feature
 SELECT
     type, feature_width, colour_name, colour_primary_override, colour_secondary_override, colour_lightness, uuid, created, modified, the_geom
 FROM previous.exterior_feature;
+
+{% include 'colour_management_update.sql' %}
+
 {% endblock %}
