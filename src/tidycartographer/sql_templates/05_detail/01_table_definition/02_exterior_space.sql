@@ -1,10 +1,12 @@
 {% extends "base.sql" %}
 {% block content %}
-    CREATE TABLE exterior_space_class (
-        exterior_space_class TEXT PRIMARY KEY
+{% with table_name='exterior_space', geom_type='MULTIPOLYGON', srid = local_datum %}
+
+    CREATE TABLE {{table_name}}_class (
+        {{table_name}}_class TEXT PRIMARY KEY
     );
 
-    INSERT INTO exterior_space_class (exterior_space_class)
+    INSERT INTO {{table_name}}_class ({{table_name}}_class)
     VALUES
         ('Building')
       , ('Bare Soil')
@@ -19,9 +21,9 @@
       , ('Unclassified')
     ;
 
-    CREATE TABLE IF NOT EXISTS exterior_space (
+    CREATE TABLE IF NOT EXISTS {{table_name}} (
         fid INTEGER PRIMARY KEY AUTOINCREMENT
-      , class TEXT NOT NULL DEFAULT 'Unclassified' REFERENCES exterior_space_class(exterior_space_class)
+      , class TEXT NOT NULL DEFAULT 'Unclassified' REFERENCES {{table_name}}_class({{table_name}}_class)
       , name TEXT
       , colour_name TEXT
       , colour_primary_hex TEXT
@@ -36,12 +38,11 @@
       , the_geom MULTIPOLYGON NOT NULL
     );
 
-    {% with table_name='exterior_space', geom_type='MULTIPOLYGON', srid = local_datum %}
     {% include 'register_geom.sql' %}
     {% include '05_detail/02_data_import/02_exterior_space.sql' %}
     {% include 'area_calc_trigger.sql' %}
     {% include 'colour_management_trigger.sql' %}
     {% include 'uuid_gen_trigger.sql' %}
-    {% endwith %}
 
+{% endwith %}
 {% endblock %}

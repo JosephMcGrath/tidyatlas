@@ -1,7 +1,8 @@
 {% extends "base.sql" %}
 {% block content %}
+    {% with table_name='elevation_contour', geom_type='LINESTRINGZ', srid = local_datum, geom_dim = 'XYZ' %}
     /*Contour Lines*/
-    CREATE TABLE elevation_contour (
+    CREATE TABLE {{table_name}} (
         fid INTEGER PRIMARY KEY
       , elevation REAL
       , uuid TEXT NOT NULL
@@ -10,27 +11,27 @@
       , the_geom LINESTRINGZ NOT NULL
     );
 
-    {% with table_name='elevation_contour', geom_type='LINESTRINGZ', srid = local_datum, geom_dim = 'XYZ' %}
     {% include 'register_geom.sql' %}
-    {% endwith %}
 
     /*Triggers to set Z values.*/
-    CREATE TRIGGER elevation_contour_insert AFTER INSERT ON elevation_contour
+    CREATE TRIGGER {{table_name}}_insert AFTER INSERT ON {{table_name}}
     BEGIN
-        UPDATE elevation_contour
+        UPDATE {{table_name}}
         SET the_geom = ST_Translate(CastToXYZ(CastToXY(the_geom)), 0, 0, elevation)
         WHERE fid = NEW.fid;
     END;
 
-    CREATE TRIGGER elevation_contour_update AFTER UPDATE ON elevation_contour
+    CREATE TRIGGER {{table_name}}_update AFTER UPDATE ON {{table_name}}
     BEGIN
-        UPDATE elevation_contour
+        UPDATE {{table_name}}
         SET the_geom = ST_Translate(CastToXYZ(CastToXY(the_geom)), 0, 0, elevation)
         WHERE fid = NEW.fid;
     END;
+    {% endwith %}
 
 
-    CREATE TABLE elevation_point (
+    {% with table_name='elevation_point', geom_type='POINT', srid = local_datum, geom_dim = 'XYZ' %}
+    CREATE TABLE {{table_name}} (
         fid INTEGER PRIMARY KEY
       , elevation REAL
       , uuid TEXT NOT NULL
@@ -39,25 +40,24 @@
       , the_geom POINT NOT NULL
     );
 
-    {% with table_name='elevation_point', geom_type='POINT', srid = local_datum, geom_dim = 'XYZ' %}
     {% include 'register_geom.sql' %}
     {% include '03_local/02_data_import/02_elevation.sql' %}
-    {% endwith %}
 
     /*Triggers to set Z values.*/
-    CREATE TRIGGER elevation_point_insert AFTER INSERT ON elevation_point
+    CREATE TRIGGER {{table_name}}_insert AFTER INSERT ON {{table_name}}
     BEGIN
-        UPDATE elevation_point
+        UPDATE {{table_name}}
         SET the_geom = ST_Translate(CastToXYZ(CastToXY(the_geom)), 0, 0, elevation)
         WHERE fid = NEW.fid;
     END;
 
-    CREATE TRIGGER elevation_point_update AFTER UPDATE ON elevation_point
+    CREATE TRIGGER {{table_name}}_update AFTER UPDATE ON {{table_name}}
     BEGIN
-        UPDATE elevation_point
+        UPDATE {{table_name}}
         SET the_geom = ST_Translate(CastToXYZ(CastToXY(the_geom)), 0, 0, elevation)
         WHERE fid = NEW.fid;
     END;
+    {% endwith %}
 
     /*Filled in contours*/
     CREATE VIEW elevation_polygon_intermediate AS

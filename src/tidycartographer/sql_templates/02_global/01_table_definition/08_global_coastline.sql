@@ -1,7 +1,7 @@
 {% extends "base.sql" %}
 {% block content %}
-    /*Coastlines*/
-    CREATE TABLE global_coastline (
+{% with table_name='global_coastline', geom_type='MULTIPOLYGON' %}
+    CREATE TABLE {{table_name}} (
         fid INTEGER PRIMARY KEY
       , name TEXT
       , uuid TEXT NOT NULL
@@ -12,9 +12,8 @@
       , the_geom MULTIPOLYGON NOT NULL
     );
 
-    {% with table_name='global_coastline', geom_type='MULTIPOLYGON' %}
     {% include 'register_geom.sql' %}
     {% include '02_global/02_data_import/08_global_coastline.sql' %}
     {% include 'uuid_gen_trigger.sql' %}
-    {% endwith %}
+{% endwith %}
 {% endblock %}

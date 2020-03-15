@@ -1,10 +1,12 @@
 {% extends "base.sql" %}
 {% block content %}
-    CREATE TABLE city_region_purpose (
+{% with table_name='city_region', geom_type='MULTIPOLYGON', srid = local_datum %}
+
+    CREATE TABLE {{table_name}}_purpose (
         purpose TEXT PRIMARY KEY
     );
 
-    INSERT INTO city_region_purpose (purpose)
+    INSERT INTO {{table_name}}_purpose (purpose)
     VALUES
         ('Trade')
       , ('Industry')
@@ -14,10 +16,10 @@
       , ('Other')
     ;
 
-    CREATE TABLE IF NOT EXISTS city_region (
+    CREATE TABLE IF NOT EXISTS {{table_name}} (
         fid INTEGER PRIMARY KEY AUTOINCREMENT
       , name TEXT
-      , purpose TEXT NOT NULL DEFAULT 'Other' REFERENCES city_region_purpose(purpose)
+      , purpose TEXT NOT NULL DEFAULT 'Other' REFERENCES {{table_name}}_purpose(purpose)
       , notes TEXT
       , colour TEXT /*Custom colour for the polygon.*/
       , uuid TEXT NOT NULL
@@ -27,10 +29,10 @@
       , the_geom MULTIPOLYGON NOT NULL
     );
 
-    {% with table_name='city_region', geom_type='MULTIPOLYGON', srid = local_datum %}
     {% include 'register_geom.sql' %}
     {% include '04_city/02_data_import/01_city_region.sql' %}
     {% include 'area_calc_trigger.sql' %}
     {% include 'uuid_gen_trigger.sql' %}
-    {% endwith %}
+
+{% endwith %}
 {% endblock %}

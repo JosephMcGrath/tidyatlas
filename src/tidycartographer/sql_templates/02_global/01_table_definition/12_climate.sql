@@ -1,9 +1,9 @@
 {% extends "base.sql" %}
 {% block content %}
-/*Climates*/
 /*Based loosely off the Köppen climate classification system*/
 /*Sourced from  Artifexian's climate series:*/
 /* https://www.youtube.com/watch?v=5lCbxMZJ4zA */
+{% with table_name='climate', geom_type='POLYGON' %}
 CREATE TABLE climate_class (
     name TEXT PRIMARY KEY
 );
@@ -27,7 +27,7 @@ VALUES
   , ('Polar Icecaps')
 ;
 
-CREATE TABLE climate (
+CREATE TABLE {{table_name}} (
     fid INTEGER PRIMARY KEY
   , climate TEXT REFERENCES climate_class (name)
   , uuid TEXT NOT NULL
@@ -36,7 +36,6 @@ CREATE TABLE climate (
   , the_geom POLYGON UNIQUE NOT NULL
 );
 
-{% with table_name='climate', geom_type='POLYGON' %}
 {% include 'register_geom.sql' %}
 {% include '02_global/02_data_import/12_climate.sql' %}
 {% include 'uuid_gen_trigger.sql' %}

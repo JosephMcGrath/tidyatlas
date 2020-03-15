@@ -1,5 +1,6 @@
 {% extends "base.sql" %}
 {% block content %}
+{% with geom_type='LINESTRING' %}
 {% for table_name in ["circulation_cell", "climate_zone"] %}
     CREATE TABLE {{ table_name }}_input (
         fid INTEGER PRIMARY KEY
@@ -19,10 +20,8 @@
       , the_geom LINESTRING NOT NULL
     );
 
-    {% with geom_type='LINESTRING' %}
     {% include 'register_geom.sql' %}
     {% include 'uuid_gen_trigger.sql' %}
-    {% endwith %}
 
     /*Geometry creation SQL*/
     CREATE TRIGGER {{ table_name }}_input_insert
@@ -61,4 +60,5 @@
         DELETE FROM {{ table_name }} WHERE fid = OLD.fid;
     END;
 {% endfor %}
+{% endwith %}
 {% endblock %}

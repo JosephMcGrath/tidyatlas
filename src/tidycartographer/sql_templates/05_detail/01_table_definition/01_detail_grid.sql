@@ -1,6 +1,7 @@
 {% extends "base.sql" %}
 {% block content %}
-/*Todo: part-scale grids for details.*/
+/*TODO : part-scale grids for details (use Jinja loops).*/
+/*TODO : Parameterise table names here.*/
     CREATE TABLE detail_area (
         fid INTEGER PRIMARY KEY
       , name TEXT NOT NULL UNIQUE

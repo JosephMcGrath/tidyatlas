@@ -1,10 +1,11 @@
 {% extends "base.sql" %}
 {% block content %}
-    CREATE TABLE settlement_size (
+{% with table_name='settlement', geom_type='POINT', srid = local_datum %}
+    CREATE TABLE {{table_name}}_size (
         size TEXT PRIMARY KEY
     );
 
-    INSERT INTO settlement_size (size)
+    INSERT INTO {{table_name}}_size (size)
     VALUES
         ('Capital')
       , ('City')
@@ -13,10 +14,10 @@
       , ('Hamlet')
     ;
 
-    CREATE TABLE IF NOT EXISTS settlement (
+    CREATE TABLE IF NOT EXISTS {{table_name}} (
         fid INTEGER PRIMARY KEY AUTOINCREMENT
       , name TEXT
-      , size TEXT NOT NULL REFERENCES settlement_size (size)
+      , size TEXT NOT NULL REFERENCES {{table_name}}_size (size)
       , specialisation TEXT
       , uuid TEXT NOT NULL
       , created TEXT NOT NULL
@@ -24,9 +25,8 @@
       , the_geom POINT NOT NULL
     );
 
-    {% with table_name='settlement', geom_type='POINT', srid = local_datum %}
     {% include 'register_geom.sql' %}
     {% include '03_local/02_data_import/04_settlement.sql' %}
     {% include 'uuid_gen_trigger.sql' %}
-    {% endwith %}
+{% endwith %}
 {% endblock %}

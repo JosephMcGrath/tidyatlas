@@ -1,11 +1,13 @@
 {% extends "base.sql" %}
 {% block content %}
-    CREATE TABLE IF NOT EXISTS city_location_importance (
+{% with table_name='city_location', geom_type='POINT', srid = local_datum %}
+
+    CREATE TABLE IF NOT EXISTS {{table_name}}_importance (
         label TEXT PRIMARY KEY
       , description TEXT NOT NULL
     );
 
-    INSERT INTO city_location_importance (label, description)
+    INSERT INTO {{table_name}}_importance (label, description)
     VALUES
         ('A', 'Unique and distinctinve landmarks.')
       , ('B', 'Significant / large buildings.')
@@ -13,7 +15,7 @@
       , ('D', 'Small / minor buildings.')
     ;
 
-    CREATE TABLE IF NOT EXISTS city_location (
+    CREATE TABLE IF NOT EXISTS {{table_name}} (
         fid INTEGER PRIMARY KEY AUTOINCREMENT
       , name TEXT
       , purpose TEXT
@@ -25,9 +27,9 @@
       , the_geom POINT NOT NULL
     );
 
-    {% with table_name='city_location', geom_type='POINT', srid = local_datum %}
     {% include 'register_geom.sql' %}
     {% include '04_city/02_data_import/02_city_location.sql' %}
     {% include 'uuid_gen_trigger.sql' %}
-    {% endwith %}
+
+{% endwith %}
 {% endblock %}

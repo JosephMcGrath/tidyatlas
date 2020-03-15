@@ -1,5 +1,7 @@
 {% extends "base.sql" %}
 {% block content %}
+{% with geom_type='MULTIPOLYGON', srid = local_datum %}
+
     CREATE TABLE tile_type (
         type TEXT PRIMARY KEY
     );
@@ -17,8 +19,9 @@
     ;
 
 {% for floor in floors %}
+{% with table_name='interior_space_f_' + floor.label %}
 
-    CREATE TABLE IF NOT EXISTS interior_space_f_{{floor.label}} (
+    CREATE TABLE IF NOT EXISTS {{table_name}} (
         fid INTEGER PRIMARY KEY AUTOINCREMENT
       , floor_pattern TEXT NOT NULL REFERENCES tile_type (type)
       , colour_name TEXT
@@ -34,13 +37,14 @@
       , the_geom MULTIPOLYGON NOT NULL
     );
 
-    {% with table_name='interior_space_f_' + floor.label, geom_type='MULTIPOLYGON', srid = local_datum %}
     {% include 'register_geom.sql' %}
     {% include '05_detail/02_data_import/05_interior_space.sql' %}
     {% include 'area_calc_trigger.sql' %}
     {% include 'colour_management_trigger.sql' %}
     {% include 'uuid_gen_trigger.sql' %}
-    {% endwith %}
 
+{% endwith %}
 {% endfor %}
+
+{% endwith %}
 {% endblock %}

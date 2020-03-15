@@ -1,13 +1,14 @@
 {% extends "base.sql" %}
 {% block content %}
-    CREATE TABLE reference_latitude_input (
+{% with table_name='reference_latitude', geom_type='LINESTRING' %}
+    CREATE TABLE {{table_name}}_input (
         fid INTEGER PRIMARY KEY
       , latitude REAL
       , label TEXT
       , category TEXT
     );
 
-    CREATE TABLE reference_latitude (
+    CREATE TABLE {{table_name}} (
         fid INTEGER PRIMARY KEY
       , latitude REAL
       , label TEXT
@@ -16,16 +17,14 @@
       , the_geom LINESTRING NOT NULL
     );
 
-    {% with table_name='reference_latitude', geom_type='LINESTRING' %}
     {% include 'register_geom.sql' %}
     {% include 'uuid_gen_trigger.sql' %}
-    {% endwith %}
 
     /*Geometry creation SQL*/
-    CREATE TRIGGER reference_latitude_input_insert
-    AFTER INSERT ON reference_latitude_input
+    CREATE TRIGGER {{table_name}}_input_insert
+    AFTER INSERT ON {{table_name}}_input
     BEGIN
-        INSERT INTO reference_latitude (fid, latitude, label, category, uuid, the_geom)
+        INSERT INTO {{table_name}} (fid, latitude, label, category, uuid, the_geom)
         SELECT
             NEW.fid
           , NEW.latitude
@@ -37,10 +36,10 @@
                  );
     END;
 
-    CREATE TRIGGER reference_latitude_input_update
-    AFTER UPDATE ON reference_latitude_input
+    CREATE TRIGGER {{table_name}}_input_update
+    AFTER UPDATE ON {{table_name}}_input
     BEGIN
-        UPDATE reference_latitude
+        UPDATE {{table_name}}
         SET latitude = NEW.latitude
           , label = NEW.label
           , category = NEW.category
@@ -50,9 +49,10 @@
         WHERE fid = OLD.fid;
     END;
 
-    CREATE TRIGGER reference_latitude_input_delete
-    AFTER DELETE ON reference_latitude_input
+    CREATE TRIGGER {{table_name}}_input_delete
+    AFTER DELETE ON {{table_name}}_input
     BEGIN
-        DELETE FROM reference_latitude WHERE fid = OLD.fid;
+        DELETE FROM {{table_name}} WHERE fid = OLD.fid;
     END;
+{% endwith %}
 {% endblock %}

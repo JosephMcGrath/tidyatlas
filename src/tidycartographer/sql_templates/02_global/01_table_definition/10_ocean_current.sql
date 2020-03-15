@@ -1,6 +1,6 @@
 {% extends "base.sql" %}
 {% block content %}
-    /*Ocean Currents*/
+{% with table_name='ocean_current', geom_type='LINESTRING' %}
     CREATE TABLE climate_temperature (
         temperature TEXT PRIMARY KEY
     );
@@ -13,7 +13,7 @@
       , ('Cool')
     ;
 
-    CREATE TABLE ocean_current (
+    CREATE TABLE {{table_name}} (
         fid INTEGER PRIMARY KEY
       , temperature TEXT REFERENCES climate_temperature (temperature)
       , uuid TEXT NOT NULL
@@ -22,9 +22,8 @@
       , the_geom LINESTRING NOT NULL
     );
 
-    {% with table_name='ocean_current', geom_type='LINESTRING' %}
     {% include 'register_geom.sql' %}
     {% include '02_global/02_data_import/10_ocean_current.sql' %}
     {% include 'uuid_gen_trigger.sql' %}
-    {% endwith %}
+{% endwith %}
 {% endblock %}

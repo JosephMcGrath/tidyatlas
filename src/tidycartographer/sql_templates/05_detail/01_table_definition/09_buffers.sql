@@ -10,7 +10,6 @@ CREATE TABLE buffer_point_in (
 {% include 'register_geom.sql' %}
 {% endwith %}
 
-/**/
 CREATE TABLE buffer_line_in (
     fid INTEGER PRIMARY KEY
   , distance REAL NOT NULL DEFAULT 5

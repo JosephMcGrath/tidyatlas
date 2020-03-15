@@ -1,7 +1,11 @@
 {% extends "base.sql" %}
 {% block content %}
+{% with geom_type='POINT', srid = local_datum %}
+
 {% for floor in floors %}
-    CREATE TABLE IF NOT EXISTS interior_decoration_f_{{floor.label}} (
+{% with table_name='interior_decoration_f_' + floor.label %}
+
+    CREATE TABLE IF NOT EXISTS {{table_name}} (
         fid INTEGER PRIMARY KEY AUTOINCREMENT
       , asset_path TEXT NOT NULL
       , size REAL NOT NULL
@@ -14,10 +18,12 @@
       , the_geom POINT NOT NULL
     );
 
-    {% with table_name='interior_decoration_f_' + floor.label, geom_type='POINT', srid = local_datum %}
     {% include 'register_geom.sql' %}
     {% include '05_detail/02_data_import/07_interior_decoration.sql' %}
     {% include 'uuid_gen_trigger.sql' %}
-    {% endwith %}
+
+{% endwith %}
 {% endfor %}
+
+{% endwith %}
 {% endblock %}

@@ -1,7 +1,8 @@
 {% extends "base.sql" %}
 {% block content %}
-/*Hexagonal grid covering landmasses.*/
-CREATE TABLE hex_grid (
+{% with table_name='hex_grid', geom_type='POLYGON', srid = local_datum %}
+
+CREATE TABLE {{table_name}} (
     fid INTEGER
         PRIMARY KEY
   , grid_size INTEGER
@@ -9,8 +10,6 @@ CREATE TABLE hex_grid (
   , the_geom POLYGON
 );
 
-{% with table_name='hex_grid', geom_type='POLYGON', srid = local_datum %}
 {% include 'register_geom.sql' %}
 {% endwith %}
-
 {% endblock %}
