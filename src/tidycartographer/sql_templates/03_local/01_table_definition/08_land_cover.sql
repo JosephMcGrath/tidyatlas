@@ -22,7 +22,7 @@
     ;
 
     CREATE TABLE IF NOT EXISTS {{table_name}} (
-        fid INTEGER PRIMARY KEY AUTOINCREMENT
+        {% include 'defs/primary_key.sql' %}
       , cover TEXT NOT NULL REFERENCES {{table_name}}_type (cover)
       , area REAL
       , {% include 'defs/standard_cols.sql' %}

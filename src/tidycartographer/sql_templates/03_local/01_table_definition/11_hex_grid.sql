@@ -3,11 +3,10 @@
 {% with table_name='hex_grid', geom_type='POLYGON', srid = local_datum %}
 
 CREATE TABLE {{table_name}} (
-    fid INTEGER
-        PRIMARY KEY
+    {% include 'defs/primary_key.sql' %}
   , grid_size INTEGER
   , terrain INTEGER
-  , the_geom POLYGON
+  , the_geom {{geom_type}}
 );
 
 {% include 'register_geom.sql' %}

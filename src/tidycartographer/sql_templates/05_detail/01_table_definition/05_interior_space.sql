@@ -22,7 +22,7 @@
 {% with table_name='interior_space_f_' + floor.label %}
 
     CREATE TABLE IF NOT EXISTS {{table_name}} (
-        fid INTEGER PRIMARY KEY AUTOINCREMENT
+        {% include 'defs/primary_key.sql' %}
       , floor_pattern TEXT NOT NULL REFERENCES tile_type (type)
       , colour_name TEXT
       , colour_primary_hex TEXT

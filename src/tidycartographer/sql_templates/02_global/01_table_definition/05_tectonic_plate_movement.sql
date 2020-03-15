@@ -2,7 +2,7 @@
 {% block content %}
 {% with table_name='tectonic_plate_movement', geom_type='POINT' %}
     CREATE TABLE {{table_name}} (
-        fid INTEGER PRIMARY KEY
+        {% include 'defs/primary_key.sql' %}
       , direction REAL
       , {% include 'defs/standard_cols.sql' %}
     );

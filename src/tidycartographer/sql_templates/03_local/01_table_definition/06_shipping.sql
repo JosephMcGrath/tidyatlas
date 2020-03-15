@@ -2,7 +2,7 @@
 {% block content %}
 {% with table_name='shipping', geom_type='LINESTRING', srid = local_datum %}
     CREATE TABLE IF NOT EXISTS {{table_name}} (
-        fid INTEGER PRIMARY KEY AUTOINCREMENT
+        {% include 'defs/primary_key.sql' %}
       , source TEXT
       , destination TEXT
       , typical_duration TEXT

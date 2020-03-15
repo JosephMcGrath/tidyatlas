@@ -3,7 +3,7 @@
 /*TODO : part-scale grids for details (use Jinja loops).*/
 /*TODO : Parameterise table names here.*/
     CREATE TABLE detail_area (
-        fid INTEGER PRIMARY KEY
+        {% include 'defs/primary_key.sql' %}
       , name TEXT NOT NULL UNIQUE
       , angle REAL
       , x_min REAL
@@ -23,7 +23,7 @@
     {% endwith %}
 
       CREATE TABLE detail_grid (
-          fid INTEGER PRIMARY KEY
+          {% include 'defs/primary_key.sql' %}
         , name TEXT
         , angle REAL
         , size_ft REAL

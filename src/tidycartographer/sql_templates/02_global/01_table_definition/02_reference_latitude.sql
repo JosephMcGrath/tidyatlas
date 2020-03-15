@@ -2,14 +2,14 @@
 {% block content %}
 {% with table_name='reference_latitude', geom_type='LINESTRING' %}
     CREATE TABLE {{table_name}}_input (
-        fid INTEGER PRIMARY KEY
+        {% include 'defs/primary_key.sql' %}
       , latitude REAL
       , label TEXT
       , category TEXT
     );
 
     CREATE TABLE {{table_name}} (
-        fid INTEGER PRIMARY KEY
+        {% include 'defs/primary_key.sql' %}
       , latitude REAL
       , label TEXT
       , category TEXT

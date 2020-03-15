@@ -2,7 +2,7 @@
 {% block content %}
 {% with table_name='global_coastline', geom_type='MULTIPOLYGON' %}
     CREATE TABLE {{table_name}} (
-        fid INTEGER PRIMARY KEY
+        {% include 'defs/primary_key.sql' %}
       , name TEXT
       , major_political_colour TEXT
       , minor_political_colour TEXT

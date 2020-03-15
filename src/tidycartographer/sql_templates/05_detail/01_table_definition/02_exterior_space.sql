@@ -22,7 +22,7 @@
     ;
 
     CREATE TABLE IF NOT EXISTS {{table_name}} (
-        fid INTEGER PRIMARY KEY AUTOINCREMENT
+        {% include 'defs/primary_key.sql' %}
       , class TEXT NOT NULL DEFAULT 'Unclassified' REFERENCES {{table_name}}_class({{table_name}}_class)
       , name TEXT
       , colour_name TEXT

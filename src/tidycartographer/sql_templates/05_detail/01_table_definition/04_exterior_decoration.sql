@@ -3,7 +3,7 @@
 {% with table_name='exterior_decoration', geom_type='POINT', srid = local_datum %}
 
     CREATE TABLE IF NOT EXISTS {{table_name}} (
-        fid INTEGER PRIMARY KEY AUTOINCREMENT
+        {% include 'defs/primary_key.sql' %}
       , asset_path TEXT NOT NULL
       , size REAL NOT NULL
       , rotation REAL NOT NULL DEFAULT 0

@@ -6,7 +6,7 @@
 {% with table_name='interior_decoration_f_' + floor.label %}
 
     CREATE TABLE IF NOT EXISTS {{table_name}} (
-        fid INTEGER PRIMARY KEY AUTOINCREMENT
+        {% include 'defs/primary_key.sql' %}
       , asset_path TEXT NOT NULL
       , size REAL NOT NULL
       , rotation REAL NOT NULL DEFAULT 0

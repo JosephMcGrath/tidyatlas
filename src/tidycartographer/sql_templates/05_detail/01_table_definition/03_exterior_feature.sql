@@ -17,7 +17,7 @@
       ;
 
     CREATE TABLE IF NOT EXISTS {{table_name}} (
-        fid INTEGER PRIMARY KEY AUTOINCREMENT
+        {% include 'defs/primary_key.sql' %}
       , type TEXT NOT NULL REFERENCES {{table_name}}_type(type)
       , feature_width REAL DEFAULT 1
       , colour_name TEXT

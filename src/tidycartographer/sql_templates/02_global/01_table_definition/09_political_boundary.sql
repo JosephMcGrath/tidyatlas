@@ -3,7 +3,7 @@
 {% with geom_type='MULTIPOLYGON' %}
 {% for table_name in ["major_political_boundary", "minor_political_boundary"] %}
     CREATE TABLE {{table_name}} (
-        fid INTEGER PRIMARY KEY
+        {% include 'defs/primary_key.sql' %}
       , name TEXT
       , colour TEXT
       , {% include 'defs/standard_cols.sql' %}

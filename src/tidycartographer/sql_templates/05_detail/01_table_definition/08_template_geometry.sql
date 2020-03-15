@@ -4,7 +4,7 @@
 
 /*The templates themselves.*/
 CREATE TABLE IF NOT EXISTS template_geometry (
-    fid INTEGER PRIMARY KEY
+    {% include 'defs/primary_key.sql' %}
   , name TEXT UNIQUE NOT NULL
   , the_geom MULTIPOLYGON UNIQUE NOT NULL
 );
@@ -34,7 +34,7 @@ END;
 
 /*Points where the templates should be put into the real world.*/
 CREATE TABLE template_point (
-    fid INTEGER PRIMARY KEY
+    {% include 'defs/primary_key.sql' %}
   , angle REAL NOT NULL DEFAULT 0
   , scale REAL NOT NULL DEFAULT 1
   , template TEXT NOT NULL REFERENCES template_geometry(name)
@@ -49,7 +49,7 @@ CREATE TABLE template_point (
 
 /**/
 CREATE TABLE templated (
-    fid INTEGER PRIMARY KEY
+    {% include 'defs/primary_key.sql' %}
   , angle REAL
   , scale REAL NOT NULL DEFAULT 1
   , template TEXT NOT NULL REFERENCES template_geometry(name)

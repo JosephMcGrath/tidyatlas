@@ -3,7 +3,7 @@
 {% with geom_type='LINESTRING' %}
 {% for table_name in ["circulation_cell", "climate_zone"] %}
     CREATE TABLE {{ table_name }}_input (
-        fid INTEGER PRIMARY KEY
+        {% include 'defs/primary_key.sql' %}
       , min_latitude REAL
       , max_latitude REAL
       , label TEXT
@@ -11,7 +11,7 @@
     );
 
     CREATE TABLE {{ table_name }} (
-        fid INTEGER PRIMARY KEY
+        {% include 'defs/primary_key.sql' %}
       , min_latitude REAL
       , max_latitude REAL
       , label TEXT

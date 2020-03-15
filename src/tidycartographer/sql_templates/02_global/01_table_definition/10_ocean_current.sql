@@ -14,7 +14,7 @@
     ;
 
     CREATE TABLE {{table_name}} (
-        fid INTEGER PRIMARY KEY
+        {% include 'defs/primary_key.sql' %}
       , temperature TEXT REFERENCES climate_temperature (temperature)
       , {% include 'defs/standard_cols.sql' %}
     );

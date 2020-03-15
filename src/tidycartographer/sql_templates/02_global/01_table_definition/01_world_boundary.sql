@@ -2,7 +2,7 @@
 {% block content %}
 {% with table_name='world_boundary', geom_type='POLYGON' %}
     CREATE TABLE {{table_name}} (
-        fid INTEGER PRIMARY KEY
+        {% include 'defs/primary_key.sql' %}
       , uuid TEXT NOT NULL
       , the_geom POLYGON UNIQUE NOT NULL
     );

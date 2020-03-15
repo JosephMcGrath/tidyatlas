@@ -3,7 +3,7 @@
 {% with table_name='local_area_bounds', geom_type='MULTIPOLYGON', srid = local_datum %}
 
 CREATE TABLE {{table_name}} (
-    fid INTEGER PRIMARY KEY
+    {% include 'defs/primary_key.sql' %}
   , name TEXT
   , {% include 'defs/standard_cols.sql' %}
 );

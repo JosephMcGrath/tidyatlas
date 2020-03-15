@@ -2,7 +2,7 @@
 {% block content %}
 {% with table_name='continental_shelf', geom_type='POLYGON' %}
     CREATE TABLE {{table_name}} (
-        fid INTEGER PRIMARY KEY
+        {% include 'defs/primary_key.sql' %}
       , {% include 'defs/standard_cols.sql' %}
     );
 

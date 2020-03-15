@@ -20,7 +20,7 @@
 {% with table_name='interior_feature_f_' + floor.label %}
 
     CREATE TABLE IF NOT EXISTS {{table_name}} (
-        fid INTEGER PRIMARY KEY AUTOINCREMENT
+        {% include 'defs/primary_key.sql' %}
       , type TEXT NOT NULL REFERENCES interior_feature_type(type)
       , feature_width REAL DEFAULT 1
       , colour_name TEXT

@@ -1,8 +1,7 @@
 BEGIN;
 /*Table for logging events.*/
 CREATE TABLE build_log (
-    fid INTEGER
-        PRIMARY KEY
+    {% include 'defs/primary_key.sql' %}
   , log_time DATETIME
         NOT NULL
         DEFAULT CURRENT_TIMESTAMP

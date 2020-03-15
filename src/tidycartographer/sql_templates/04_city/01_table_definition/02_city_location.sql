@@ -16,7 +16,7 @@
     ;
 
     CREATE TABLE IF NOT EXISTS {{table_name}} (
-        fid INTEGER PRIMARY KEY AUTOINCREMENT
+        {% include 'defs/primary_key.sql' %}
       , name TEXT
       , purpose TEXT
       , importance TEXT

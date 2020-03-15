@@ -2,7 +2,7 @@
 {% block content %}
 {% with table_name='coastline', geom_type='MULTIPOLYGON', srid = local_datum %}
     CREATE TABLE {{table_name}} (
-        fid INTEGER PRIMARY KEY
+        {% include 'defs/primary_key.sql' %}
       , name TEXT
       , {% include 'defs/standard_cols.sql' %}
     );

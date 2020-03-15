@@ -2,7 +2,7 @@
 {% block content %}
 {% with table_name='prevailing_wind', geom_type='POINT' %}
     CREATE TABLE {{table_name}} (
-        fid INTEGER PRIMARY KEY
+        {% include 'defs/primary_key.sql' %}
       , direction REAL
       , temperature TEXT NOT NULL REFERENCES climate_temperature (temperature)
       , {% include 'defs/standard_cols.sql' %}

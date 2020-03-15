@@ -3,7 +3,7 @@
     {% with table_name='elevation_contour', geom_type='LINESTRINGZ', srid = local_datum, geom_dim = 'XYZ' %}
     /*Contour Lines*/
     CREATE TABLE {{table_name}} (
-        fid INTEGER PRIMARY KEY
+        {% include 'defs/primary_key.sql' %}
       , elevation REAL
       , {% include 'defs/standard_cols.sql' %}
     );
@@ -29,7 +29,7 @@
 
     {% with table_name='elevation_point', geom_type='POINT', srid = local_datum, geom_dim = 'XYZ' %}
     CREATE TABLE {{table_name}} (
-        fid INTEGER PRIMARY KEY
+        {% include 'defs/primary_key.sql' %}
       , elevation REAL
       , {% include 'defs/standard_cols.sql' %}
     );

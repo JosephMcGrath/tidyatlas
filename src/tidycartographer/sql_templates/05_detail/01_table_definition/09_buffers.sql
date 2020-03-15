@@ -1,7 +1,7 @@
 {% extends "base.sql" %}
 {% block content %}
 CREATE TABLE buffer_point_in (
-    fid INTEGER PRIMARY KEY
+    {% include 'defs/primary_key.sql' %}
   , distance REAL NOT NULL DEFAULT 5
   , the_geom MULTIPOINT NOT NULL
 );
@@ -11,7 +11,7 @@ CREATE TABLE buffer_point_in (
 {% endwith %}
 
 CREATE TABLE buffer_line_in (
-    fid INTEGER PRIMARY KEY
+    {% include 'defs/primary_key.sql' %}
   , distance REAL NOT NULL DEFAULT 5
   , the_geom MULTILINESTRING NOT NULL
 );
@@ -21,7 +21,7 @@ CREATE TABLE buffer_line_in (
 {% endwith %}
 
 CREATE TABLE buffer_dummy (
-    fid INTEGER PRIMARY KEY
+    {% include 'defs/primary_key.sql' %}
   , the_geom POLYGON
 );
 

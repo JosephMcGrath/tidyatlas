@@ -14,7 +14,7 @@
     ;
 
     CREATE TABLE IF NOT EXISTS {{table_name}} (
-        fid INTEGER PRIMARY KEY AUTOINCREMENT
+        {% include 'defs/primary_key.sql' %}
       , class TEXT REFERENCES {{table_name}}_class (class)
       , {% include 'defs/standard_cols.sql' %}
     );

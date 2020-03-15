@@ -28,7 +28,7 @@ VALUES
 ;
 
 CREATE TABLE {{table_name}} (
-    fid INTEGER PRIMARY KEY
+    {% include 'defs/primary_key.sql' %}
   , climate TEXT REFERENCES climate_class (name)
   , uuid TEXT NOT NULL
   , created TEXT
