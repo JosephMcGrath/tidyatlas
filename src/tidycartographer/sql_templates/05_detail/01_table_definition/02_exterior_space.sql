@@ -31,11 +31,8 @@
       , colour_secondary_hex TEXT
       , colour_secondary_override TEXT
       , colour_lightness REAL DEFAULT 0
-      , uuid TEXT NOT NULL
       , area REAL
-      , created TEXT NOT NULL
-      , modified TEXT NOT NULL
-      , the_geom MULTIPOLYGON NOT NULL
+      , {% include 'defs/standard_cols.sql' %}
     );
 
     {% include 'register_geom.sql' %}

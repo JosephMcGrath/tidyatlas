@@ -22,11 +22,8 @@
       , purpose TEXT NOT NULL DEFAULT 'Other' REFERENCES {{table_name}}_purpose(purpose)
       , notes TEXT
       , colour TEXT /*Custom colour for the polygon.*/
-      , uuid TEXT NOT NULL
       , area REAL
-      , created TEXT NOT NULL
-      , modified TEXT NOT NULL
-      , the_geom MULTIPOLYGON NOT NULL
+      , {% include 'defs/standard_cols.sql' %}
     );
 
     {% include 'register_geom.sql' %}

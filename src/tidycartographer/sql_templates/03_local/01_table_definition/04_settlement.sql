@@ -19,10 +19,7 @@
       , name TEXT
       , size TEXT NOT NULL REFERENCES {{table_name}}_size (size)
       , specialisation TEXT
-      , uuid TEXT NOT NULL
-      , created TEXT NOT NULL
-      , modified TEXT NOT NULL
-      , the_geom POINT NOT NULL
+      , {% include 'defs/standard_cols.sql' %}
     );
 
     {% include 'register_geom.sql' %}

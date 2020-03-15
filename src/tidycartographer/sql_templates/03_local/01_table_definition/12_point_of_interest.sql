@@ -27,10 +27,7 @@
       , name TEXT
       , type TEXT NOT NULL REFERENCES {{table_name}}_type (type)
       , notes TEXT
-      , uuid TEXT NOT NULL
-      , created TEXT NOT NULL
-      , modified TEXT NOT NULL
-      , the_geom POINT NOT NULL
+      , {% include 'defs/standard_cols.sql' %}
     );
 
     {% include 'register_geom.sql' %}

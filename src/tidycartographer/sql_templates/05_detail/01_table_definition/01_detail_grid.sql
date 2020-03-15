@@ -12,11 +12,8 @@
       , y_max REAL
       , x_cells INTEGER
       , y_cells INTEGER
-      , uuid TEXT NOT NULL UNIQUE
       , area REAL
-      , created TEXT NOT NULL
-      , modified TEXT NOT NULL
-      , the_geom POLYGON NOT NULL
+      , {% include 'defs/standard_cols.sql' %}
     );
 
     CREATE INDEX detail_area_name_idx ON detail_area (name);

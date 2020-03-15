@@ -16,10 +16,7 @@
     CREATE TABLE {{table_name}} (
         fid INTEGER PRIMARY KEY
       , category TEXT REFERENCES {{table_name}}_category (category)
-      , uuid TEXT NOT NULL
-      , created TEXT
-      , modified TEXT
-      , the_geom LINESTRING NOT NULL
+      , {% include 'defs/standard_cols.sql' %}
     );
 
     {% include 'register_geom.sql' %}

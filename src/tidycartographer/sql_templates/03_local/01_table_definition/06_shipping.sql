@@ -6,11 +6,8 @@
       , source TEXT
       , destination TEXT
       , typical_duration TEXT
-      , uuid TEXT NOT NULL
       , line_length REAL
-      , created TEXT NOT NULL
-      , modified TEXT NOT NULL
-      , the_geom LINESTRING NOT NULL
+      , {% include 'defs/standard_cols.sql' %}
     );
 
     {% include 'register_geom.sql' %}

@@ -16,10 +16,7 @@
     CREATE TABLE IF NOT EXISTS {{table_name}} (
         fid INTEGER PRIMARY KEY AUTOINCREMENT
       , class TEXT REFERENCES {{table_name}}_class (class)
-      , uuid TEXT NOT NULL
-      , created TEXT NOT NULL
-      , modified TEXT NOT NULL
-      , the_geom LINESTRING NOT NULL
+      , {% include 'defs/standard_cols.sql' %}
     );
 
     {% include 'register_geom.sql' %}

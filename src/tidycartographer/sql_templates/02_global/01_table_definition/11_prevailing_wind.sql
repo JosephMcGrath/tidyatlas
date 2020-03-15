@@ -5,10 +5,7 @@
         fid INTEGER PRIMARY KEY
       , direction REAL
       , temperature TEXT NOT NULL REFERENCES climate_temperature (temperature)
-      , uuid TEXT NOT NULL
-      , created TEXT
-      , modified TEXT
-      , the_geom POINT NOT NULL
+      , {% include 'defs/standard_cols.sql' %}
     );
 
     {% include 'register_geom.sql' %}

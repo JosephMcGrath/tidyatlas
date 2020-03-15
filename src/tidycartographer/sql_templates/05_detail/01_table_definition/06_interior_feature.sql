@@ -30,10 +30,7 @@
       , colour_secondary_override TEXT
       , colour_lightness REAL DEFAULT 0
       , line_length REAL
-      , uuid TEXT NOT NULL
-      , created TEXT NOT NULL
-      , modified TEXT NOT NULL
-      , the_geom LINESTRING NOT NULL
+      , {% include 'defs/standard_cols.sql' %}
     );
 
     {% include 'register_geom.sql' %}

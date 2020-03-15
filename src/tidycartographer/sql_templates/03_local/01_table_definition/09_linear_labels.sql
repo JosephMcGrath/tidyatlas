@@ -15,11 +15,8 @@
         fid INTEGER PRIMARY KEY AUTOINCREMENT
       , label TEXT NOT NULL
       , style TEXT NOT NULL DEFAULT 'Other' REFERENCES {{table_name}}_style(label_style)
-      , uuid TEXT NOT NULL
       , line_length REAL
-      , created TEXT NOT NULL
-      , modified TEXT NOT NULL
-      , the_geom LINESTRING NOT NULL
+      , {% include 'defs/standard_cols.sql' %}
     );
 
     {% include 'register_geom.sql' %}

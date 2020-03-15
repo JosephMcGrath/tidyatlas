@@ -1,6 +1,7 @@
 {% extends "base.sql" %}
 {% block content %}
 {% with table_name='tectonic_plate', geom_type='POLYGON' %}
+
     CREATE TABLE {{table_name}}_category (
         category TEXT PRIMARY KEY
     );
@@ -14,10 +15,7 @@
     CREATE TABLE {{table_name}} (
         fid INTEGER PRIMARY KEY
       , category TEXT REFERENCES {{table_name}}_category (category)
-      , uuid TEXT NOT NULL
-      , created TEXT
-      , modified TEXT
-      , the_geom POLYGON NOT NULL
+      , {% include 'defs/standard_cols.sql' %}
     );
 
     {% include 'register_geom.sql' %}

@@ -4,12 +4,9 @@
     CREATE TABLE {{table_name}} (
         fid INTEGER PRIMARY KEY
       , name TEXT
-      , uuid TEXT NOT NULL
       , major_political_colour TEXT
       , minor_political_colour TEXT
-      , created TEXT
-      , modified TEXT
-      , the_geom MULTIPOLYGON NOT NULL
+      , {% include 'defs/standard_cols.sql' %}
     );
 
     {% include 'register_geom.sql' %}
