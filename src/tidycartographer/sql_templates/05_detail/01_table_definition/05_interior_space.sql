@@ -2,11 +2,11 @@
 {% block content %}
 {% with geom_type='MULTIPOLYGON', srid = local_datum %}
 
-    CREATE TABLE tile_type (
+    CREATE TABLE interior_tile_type (
         type TEXT PRIMARY KEY
     );
 
-    INSERT INTO tile_type (type)
+    INSERT INTO interior_tile_type (type)
     VALUES
         ("Furniture")
       , ("Plain")
@@ -23,7 +23,7 @@
 
     CREATE TABLE IF NOT EXISTS {{table_name}} (
         {% include 'defs/primary_key.sql' %}
-      , floor_pattern TEXT NOT NULL REFERENCES tile_type (type)
+      , floor_pattern TEXT NOT NULL REFERENCES interior_tile_type (type)
       , {% include 'defs/colour_cols.sql' %}
       , area REAL
       , {% include 'defs/standard_cols.sql' %}

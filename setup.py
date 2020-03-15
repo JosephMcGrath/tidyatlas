@@ -12,7 +12,7 @@ with open(HERE / "readme.md", encoding="utf-8") as f:
 # This call to setup() does all the work
 setup(
     name="tidycartographer",
-    version="20.03.01",
+    version="20.03.02",
     description="A GIS database to use in worldbuilding.",
     long_description=README,
     long_description_content_type="text/markdown",

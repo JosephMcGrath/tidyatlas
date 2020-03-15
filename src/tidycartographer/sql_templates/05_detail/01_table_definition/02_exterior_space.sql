@@ -6,7 +6,7 @@
         {{table_name}}_class TEXT PRIMARY KEY
     );
 
-    INSERT INTO {{table_name}}_class ({{table_name}}_class)
+    INSERT INTO {{table_name}}_class (class)
     VALUES
         ('Building')
       , ('Bare Soil')
@@ -23,7 +23,7 @@
 
     CREATE TABLE IF NOT EXISTS {{table_name}} (
         {% include 'defs/primary_key.sql' %}
-      , class TEXT NOT NULL DEFAULT 'Unclassified' REFERENCES {{table_name}}_class({{table_name}}_class)
+      , class TEXT NOT NULL DEFAULT 'Unclassified' REFERENCES {{table_name}}_class(class)
       , name TEXT
       , {% include 'defs/colour_cols.sql' %}
       , area REAL
