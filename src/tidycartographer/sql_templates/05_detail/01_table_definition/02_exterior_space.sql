@@ -25,12 +25,7 @@
         {% include 'defs/primary_key.sql' %}
       , class TEXT NOT NULL DEFAULT 'Unclassified' REFERENCES {{table_name}}_class({{table_name}}_class)
       , name TEXT
-      , colour_name TEXT
-      , colour_primary_hex TEXT
-      , colour_primary_override TEXT
-      , colour_secondary_hex TEXT
-      , colour_secondary_override TEXT
-      , colour_lightness REAL DEFAULT 0
+      , {% include 'defs/colour_cols.sql' %}
       , area REAL
       , {% include 'defs/standard_cols.sql' %}
     );

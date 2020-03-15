@@ -38,8 +38,4 @@ Rather than have a single set of homogenous layers covering all scales, I've fou
 
 ## To Do
 
-1. Template standard columns (uuid, created, modified etc),
-    * Also colour columns,
-    * And primary key definition, there's a few weird definitions,
-2. Remove constraint on uuids and generate with a trigger,
-3. Consistently apply length/area triggers,
+1. Template standard column imports,

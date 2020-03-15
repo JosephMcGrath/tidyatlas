@@ -24,12 +24,7 @@
     CREATE TABLE IF NOT EXISTS {{table_name}} (
         {% include 'defs/primary_key.sql' %}
       , floor_pattern TEXT NOT NULL REFERENCES tile_type (type)
-      , colour_name TEXT
-      , colour_primary_hex TEXT
-      , colour_primary_override TEXT
-      , colour_secondary_hex TEXT
-      , colour_secondary_override TEXT
-      , colour_lightness REAL DEFAULT 0
+      , {% include 'defs/colour_cols.sql' %}
       , area REAL
       , {% include 'defs/standard_cols.sql' %}
     );

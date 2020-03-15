@@ -23,12 +23,7 @@
         {% include 'defs/primary_key.sql' %}
       , type TEXT NOT NULL REFERENCES interior_feature_type(type)
       , feature_width REAL DEFAULT 1
-      , colour_name TEXT
-      , colour_primary_hex TEXT
-      , colour_primary_override TEXT
-      , colour_secondary_hex TEXT
-      , colour_secondary_override TEXT
-      , colour_lightness REAL DEFAULT 0
+      , {% include 'defs/colour_cols.sql' %}
       , line_length REAL
       , {% include 'defs/standard_cols.sql' %}
     );
