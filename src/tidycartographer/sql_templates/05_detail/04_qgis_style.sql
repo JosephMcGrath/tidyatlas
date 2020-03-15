@@ -11,6 +11,7 @@
       , ('', '', '', 'interior_space_f_{{floor.label}}', 'interior_space_f_{{floor.label}}', 'interior_space_f_{{floor.label}}', 'the_geom', 1, '{% include 'styles/interior_space.qml' %}')
       , ('', '', '', 'interior_feature_f_{{floor.label}}', 'interior_feature_f_{{floor.label}}', 'interior_feature_f_{{floor.label}}', 'the_geom', 1, '{% include 'styles/interior_feature.qml' %}')
       , ('', '', '', 'interior_decoration_f_{{floor.label}}', 'interior_decoration_f_{{floor.label}}', 'interior_decoration_f_{{floor.label}}', 'the_geom', 1, '{% include 'styles/detail_decoration.qml' %}')
+      , ('', '', '', 'interior_block_f_{{floor.label}}', 'interior_block_f_{{floor.label}}', 'interior_block_f_{{floor.label}}', 'the_geom', 1, '{% include 'styles/interior_block.qml' %}')
       {% endfor %}
       , ('', '', '', 'template_point', 'template_point', 'template_point', 'the_geom', 1, '{% include 'styles/template_point.qml' %}')
       , ('', '', '', 'templated', 'templated', 'templated', 'the_geom', 1, '{% include 'styles/templated.qml' %}')

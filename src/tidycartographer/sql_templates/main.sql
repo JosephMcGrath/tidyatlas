@@ -106,6 +106,7 @@
     {% include '05_detail/01_table_definition/07_interior_decoration.sql' %}
     {% include '05_detail/01_table_definition/08_template_geometry.sql' %}
     {% include '05_detail/01_table_definition/09_buffers.sql' %}
+    {% include '05_detail/01_table_definition/10_interior_blocks.sql' %}
 
 /*----------------------------------------------------------------------------*/
     {% include '05_detail/03_data_generation/05_template_geometry.sql' %}
