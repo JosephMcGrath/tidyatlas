@@ -1,14 +1,14 @@
 <!DOCTYPE qgis PUBLIC ''http://mrcc.com/qgis.dtd'' ''SYSTEM''>
-<qgis simplifyLocal="1" simplifyMaxScale="1" simplifyAlgorithm="0" labelsEnabled="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="0" readOnly="0" styleCategories="AllStyleCategories" simplifyDrawingHints="0" version="3.10.2-A Coruña" maxScale="0" minScale="1e+08">
+<qgis labelsEnabled="0" hasScaleBasedVisibilityFlag="0" readOnly="0" styleCategories="AllStyleCategories" version="3.10.2-A Coruña" maxScale="0" simplifyLocal="1" simplifyDrawingHints="0" minScale="1e+08" simplifyAlgorithm="0" simplifyMaxScale="1" simplifyDrawingTol="1">
   <flags>
     <Identifiable>1</Identifiable>
     <Removable>1</Removable>
     <Searchable>1</Searchable>
   </flags>
-  <renderer-v2 symbollevels="0" forceraster="0" enableorderby="1" type="singleSymbol">
+  <renderer-v2 forceraster="0" symbollevels="0" enableorderby="1" type="singleSymbol">
     <symbols>
-      <symbol alpha="1" force_rhr="0" name="0" clip_to_extent="1" type="marker">
-        <layer enabled="1" pass="0" locked="0" class="RasterMarker">
+      <symbol name="0" alpha="1" force_rhr="0" clip_to_extent="1" type="marker">
+        <layer pass="0" locked="0" enabled="1" class="RasterMarker">
           <prop k="alpha" v="1"/>
           <prop k="angle" v="0"/>
           <prop k="fixedAspectRatio" v="0"/>
@@ -38,7 +38,7 @@
                 </Option>
                 <Option name="name" type="Map">
                   <Option value="true" name="active" type="bool"/>
-                  <Option value="@project_folder  || ''\\assets\\'' +  file_name( &quot;asset_path&quot; )" name="expression" type="QString"/>
+                  <Option value="&quot;asset_path&quot;" name="expression" type="QString"/>
                   <Option value="3" name="type" type="int"/>
                 </Option>
                 <Option name="width" type="Map">
@@ -60,8 +60,8 @@
     </orderby>
   </renderer-v2>
   <customproperties>
-    <property key="dualview/previewExpressions" value="fid"/>
-    <property key="embeddedWidgets/count" value="0"/>
+    <property value="fid" key="dualview/previewExpressions"/>
+    <property value="0" key="embeddedWidgets/count"/>
     <property key="variableNames"/>
     <property key="variableValues"/>
   </customproperties>
@@ -69,12 +69,12 @@
   <featureBlendMode>0</featureBlendMode>
   <layerOpacity>1</layerOpacity>
   <SingleCategoryDiagramRenderer diagramType="Histogram" attributeLegend="1">
-    <DiagramCategory scaleDependency="Area" rotationOffset="270" lineSizeScale="3x:0,0,0,0,0,0" minScaleDenominator="0" penColor="#000000" scaleBasedVisibility="0" lineSizeType="MM" width="15" labelPlacementMethod="XHeight" barWidth="5" opacity="1" maxScaleDenominator="1e+08" sizeScale="3x:0,0,0,0,0,0" penAlpha="255" minimumSize="0" sizeType="MM" backgroundAlpha="255" diagramOrientation="Up" enabled="0" penWidth="0" backgroundColor="#ffffff" height="15">
-      <fontProperties description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0" style=""/>
-      <attribute label="" color="#000000" field=""/>
+    <DiagramCategory penAlpha="255" lineSizeScale="3x:0,0,0,0,0,0" penWidth="0" rotationOffset="270" sizeScale="3x:0,0,0,0,0,0" backgroundColor="#ffffff" width="15" scaleBasedVisibility="0" height="15" scaleDependency="Area" labelPlacementMethod="XHeight" sizeType="MM" barWidth="5" diagramOrientation="Up" minScaleDenominator="0" opacity="1" enabled="0" maxScaleDenominator="1e+08" penColor="#000000" minimumSize="0" backgroundAlpha="255" lineSizeType="MM">
+      <fontProperties style="" description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0"/>
+      <attribute label="" field="" color="#000000"/>
     </DiagramCategory>
   </SingleCategoryDiagramRenderer>
-  <DiagramLayerSettings placement="0" priority="0" obstacle="0" dist="0" linePlacementFlags="18" zIndex="0" showAll="1">
+  <DiagramLayerSettings placement="0" linePlacementFlags="18" showAll="1" zIndex="0" obstacle="0" priority="0" dist="0">
     <properties>
       <Option type="Map">
         <Option value="" name="name" type="QString"/>
@@ -83,7 +83,7 @@
       </Option>
     </properties>
   </DiagramLayerSettings>
-  <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
+  <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
     <activeChecks/>
     <checkConfiguration/>
   </geometryOptions>
@@ -188,67 +188,67 @@
     </field>
   </fieldConfiguration>
   <aliases>
-    <alias name="" index="0" field="fid"/>
-    <alias name="" index="1" field="asset_path"/>
-    <alias name="" index="2" field="size"/>
-    <alias name="" index="3" field="rotation"/>
-    <alias name="" index="4" field="draw_order"/>
-    <alias name="" index="5" field="opacity"/>
-    <alias name="" index="6" field="uuid"/>
-    <alias name="" index="7" field="created"/>
-    <alias name="" index="8" field="modified"/>
+    <alias index="0" name="" field="fid"/>
+    <alias index="1" name="" field="asset_path"/>
+    <alias index="2" name="" field="size"/>
+    <alias index="3" name="" field="rotation"/>
+    <alias index="4" name="" field="draw_order"/>
+    <alias index="5" name="" field="opacity"/>
+    <alias index="6" name="" field="uuid"/>
+    <alias index="7" name="" field="created"/>
+    <alias index="8" name="" field="modified"/>
   </aliases>
   <excludeAttributesWMS/>
   <excludeAttributesWFS/>
   <defaults>
-    <default expression="" applyOnUpdate="0" field="fid"/>
-    <default expression="" applyOnUpdate="0" field="asset_path"/>
-    <default expression="1.524" applyOnUpdate="0" field="size"/>
-    <default expression="0" applyOnUpdate="0" field="rotation"/>
-    <default expression="0" applyOnUpdate="0" field="draw_order"/>
-    <default expression="100" applyOnUpdate="0" field="opacity"/>
-    <default expression=" regexp_replace( uuid() , ''\\{|\\}'', '''')" applyOnUpdate="0" field="uuid"/>
-    <default expression=" format_date(  now() , ''yyyy-MM-dd HH:mm:ss'' )" applyOnUpdate="0" field="created"/>
-    <default expression=" format_date(  now() , ''yyyy-MM-dd HH:mm:ss'' )" applyOnUpdate="1" field="modified"/>
+    <default field="fid" applyOnUpdate="0" expression=""/>
+    <default field="asset_path" applyOnUpdate="0" expression="''D:\\dropbox\\Dropbox\\RPG\\2018-10-06_Drakensard\\maps\\assets''"/>
+    <default field="size" applyOnUpdate="0" expression="1.524"/>
+    <default field="rotation" applyOnUpdate="0" expression="0.1"/>
+    <default field="draw_order" applyOnUpdate="0" expression="0.1"/>
+    <default field="opacity" applyOnUpdate="0" expression="100"/>
+    <default field="uuid" applyOnUpdate="0" expression=" regexp_replace( uuid() , ''\\{|\\}'', '''')"/>
+    <default field="created" applyOnUpdate="0" expression=" format_date(  now() , ''yyyy-MM-dd HH:mm:ss'' )"/>
+    <default field="modified" applyOnUpdate="1" expression=" format_date(  now() , ''yyyy-MM-dd HH:mm:ss'' )"/>
   </defaults>
   <constraints>
-    <constraint constraints="3" unique_strength="1" field="fid" notnull_strength="1" exp_strength="0"/>
-    <constraint constraints="1" unique_strength="0" field="asset_path" notnull_strength="1" exp_strength="0"/>
-    <constraint constraints="1" unique_strength="0" field="size" notnull_strength="1" exp_strength="0"/>
-    <constraint constraints="1" unique_strength="0" field="rotation" notnull_strength="1" exp_strength="0"/>
-    <constraint constraints="1" unique_strength="0" field="draw_order" notnull_strength="1" exp_strength="0"/>
-    <constraint constraints="0" unique_strength="0" field="opacity" notnull_strength="0" exp_strength="0"/>
-    <constraint constraints="1" unique_strength="0" field="uuid" notnull_strength="1" exp_strength="0"/>
-    <constraint constraints="1" unique_strength="0" field="created" notnull_strength="1" exp_strength="0"/>
-    <constraint constraints="1" unique_strength="0" field="modified" notnull_strength="1" exp_strength="0"/>
+    <constraint unique_strength="1" exp_strength="0" constraints="3" notnull_strength="1" field="fid"/>
+    <constraint unique_strength="0" exp_strength="0" constraints="1" notnull_strength="1" field="asset_path"/>
+    <constraint unique_strength="0" exp_strength="0" constraints="1" notnull_strength="1" field="size"/>
+    <constraint unique_strength="0" exp_strength="0" constraints="1" notnull_strength="2" field="rotation"/>
+    <constraint unique_strength="0" exp_strength="0" constraints="1" notnull_strength="2" field="draw_order"/>
+    <constraint unique_strength="0" exp_strength="0" constraints="0" notnull_strength="0" field="opacity"/>
+    <constraint unique_strength="0" exp_strength="0" constraints="1" notnull_strength="1" field="uuid"/>
+    <constraint unique_strength="0" exp_strength="0" constraints="1" notnull_strength="1" field="created"/>
+    <constraint unique_strength="0" exp_strength="0" constraints="1" notnull_strength="1" field="modified"/>
   </constraints>
   <constraintExpressions>
-    <constraint exp="" field="fid" desc=""/>
-    <constraint exp="" field="asset_path" desc=""/>
-    <constraint exp="" field="size" desc=""/>
-    <constraint exp="" field="rotation" desc=""/>
-    <constraint exp="" field="draw_order" desc=""/>
-    <constraint exp="" field="opacity" desc=""/>
-    <constraint exp="" field="uuid" desc=""/>
-    <constraint exp="" field="created" desc=""/>
-    <constraint exp="" field="modified" desc=""/>
+    <constraint desc="" field="fid" exp=""/>
+    <constraint desc="" field="asset_path" exp=""/>
+    <constraint desc="" field="size" exp=""/>
+    <constraint desc="" field="rotation" exp=""/>
+    <constraint desc="" field="draw_order" exp=""/>
+    <constraint desc="" field="opacity" exp=""/>
+    <constraint desc="" field="uuid" exp=""/>
+    <constraint desc="" field="created" exp=""/>
+    <constraint desc="" field="modified" exp=""/>
   </constraintExpressions>
   <expressionfields/>
   <attributeactions>
-    <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
+    <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
   </attributeactions>
-  <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
+  <attributetableconfig sortExpression="" actionWidgetStyle="dropDown" sortOrder="0">
     <columns>
-      <column name="fid" width="-1" hidden="0" type="field"/>
-      <column name="asset_path" width="-1" hidden="0" type="field"/>
-      <column name="size" width="-1" hidden="0" type="field"/>
-      <column name="rotation" width="-1" hidden="0" type="field"/>
-      <column name="draw_order" width="-1" hidden="0" type="field"/>
+      <column width="-1" hidden="0" name="fid" type="field"/>
+      <column width="-1" hidden="0" name="asset_path" type="field"/>
+      <column width="-1" hidden="0" name="size" type="field"/>
+      <column width="-1" hidden="0" name="rotation" type="field"/>
+      <column width="-1" hidden="0" name="draw_order" type="field"/>
       <column width="-1" hidden="1" type="actions"/>
-      <column name="opacity" width="-1" hidden="0" type="field"/>
-      <column name="uuid" width="-1" hidden="0" type="field"/>
-      <column name="created" width="-1" hidden="0" type="field"/>
-      <column name="modified" width="-1" hidden="0" type="field"/>
+      <column width="-1" hidden="0" name="opacity" type="field"/>
+      <column width="-1" hidden="0" name="uuid" type="field"/>
+      <column width="-1" hidden="0" name="created" type="field"/>
+      <column width="-1" hidden="0" name="modified" type="field"/>
     </columns>
   </attributetableconfig>
   <conditionalstyles>
@@ -278,28 +278,41 @@ def my_form_open(dialog, layer, feature):
 	control = dialog.findChild(QWidget, "MyLineEdit")
 ]]></editforminitcode>
   <featformsuppress>0</featformsuppress>
-  <editorlayout>generatedlayout</editorlayout>
+  <editorlayout>tablayout</editorlayout>
+  <attributeEditorForm>
+    <attributeEditorContainer visibilityExpression="" columnCount="1" groupBox="1" name="" showLabel="1" visibilityExpressionEnabled="0">
+      <attributeEditorField index="1" name="asset_path" showLabel="1"/>
+      <attributeEditorField index="2" name="size" showLabel="1"/>
+      <attributeEditorField index="3" name="rotation" showLabel="1"/>
+      <attributeEditorField index="4" name="draw_order" showLabel="1"/>
+      <attributeEditorField index="5" name="opacity" showLabel="1"/>
+      <attributeEditorField index="0" name="fid" showLabel="1"/>
+      <attributeEditorField index="6" name="uuid" showLabel="1"/>
+      <attributeEditorField index="7" name="created" showLabel="1"/>
+      <attributeEditorField index="8" name="modified" showLabel="1"/>
+    </attributeEditorContainer>
+  </attributeEditorForm>
   <editable>
-    <field editable="1" name="asset_path"/>
-    <field editable="0" name="created"/>
-    <field editable="1" name="draw_order"/>
-    <field editable="1" name="fid"/>
-    <field editable="0" name="modified"/>
-    <field editable="1" name="opacity"/>
-    <field editable="1" name="rotation"/>
-    <field editable="1" name="size"/>
-    <field editable="0" name="uuid"/>
+    <field name="asset_path" editable="1"/>
+    <field name="created" editable="0"/>
+    <field name="draw_order" editable="1"/>
+    <field name="fid" editable="1"/>
+    <field name="modified" editable="0"/>
+    <field name="opacity" editable="1"/>
+    <field name="rotation" editable="1"/>
+    <field name="size" editable="1"/>
+    <field name="uuid" editable="0"/>
   </editable>
   <labelOnTop>
-    <field labelOnTop="0" name="asset_path"/>
-    <field labelOnTop="0" name="created"/>
-    <field labelOnTop="0" name="draw_order"/>
-    <field labelOnTop="0" name="fid"/>
-    <field labelOnTop="0" name="modified"/>
-    <field labelOnTop="0" name="opacity"/>
-    <field labelOnTop="0" name="rotation"/>
-    <field labelOnTop="0" name="size"/>
-    <field labelOnTop="0" name="uuid"/>
+    <field name="asset_path" labelOnTop="0"/>
+    <field name="created" labelOnTop="0"/>
+    <field name="draw_order" labelOnTop="0"/>
+    <field name="fid" labelOnTop="0"/>
+    <field name="modified" labelOnTop="0"/>
+    <field name="opacity" labelOnTop="0"/>
+    <field name="rotation" labelOnTop="0"/>
+    <field name="size" labelOnTop="0"/>
+    <field name="uuid" labelOnTop="0"/>
   </labelOnTop>
   <widgets/>
   <previewExpression>fid</previewExpression>
