@@ -100,7 +100,7 @@ END;
 CREATE TRIGGER {{space_table_name}}_block_delete AFTER DELETE ON {{space_table_name}}
 BEGIN
     DELETE FROM {{table_name}}
-    WHERE name IN (SELECT name from detail_area WHERE ST_Intersects(the_geom, NEW.the_geom));
+    WHERE name IN (SELECT name from detail_area WHERE ST_Intersects(the_geom, OLD.the_geom));
 
     INSERT OR IGNORE INTO {{table_name}} (name, the_geom)
     SELECT
@@ -110,7 +110,7 @@ BEGIN
         detail_area as a
         INNER JOIN {{space_table_name}} as s
             ON ST_Intersects(a.the_geom, s.the_geom)
-    WHERE name IN (SELECT name from detail_area WHERE ST_Intersects(the_geom, NEW.the_geom))
+    WHERE name IN (SELECT name from detail_area WHERE ST_Intersects(the_geom, OLD.the_geom))
     GROUP BY a.fid;
 END;
 
