@@ -36,6 +36,7 @@
     {% include '02_global/01_table_definition/10_ocean_current.sql' %}
     {% include '02_global/01_table_definition/11_prevailing_wind.sql' %}
     {% include '02_global/01_table_definition/12_climate.sql' %}
+    {% include '02_global/01_table_definition/13_major_settlement.sql' %}
 
 /*----------------------------------------------------------------------------*/
     {% include '02_global/03_data_generation/01_world_boundary.sql' %}

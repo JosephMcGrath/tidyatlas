@@ -16,5 +16,6 @@
       , ('', '', '', 'climate', 'climate', 'climate', 'the_geom', 1, '{% include 'styles/climate.qml' %}')
       , ('', '', '', 'climate_zone', 'climate_zone', 'climate_zone', 'the_geom', 1, '{% include 'styles/climate_zone.qml' %}')
       , ('', '', '', 'prevailing_wind', 'prevailing_wind', 'prevailing_wind', 'the_geom', 1, '{% include 'styles/prevailing_wind.qml' %}')
+      , ('', '', '', 'major_settlement', 'major_settlement', 'major_settlement', 'the_geom', 1, '{% include 'styles/major_settlement.qml' %}')
     ;
 {% endblock %}
