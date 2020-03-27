@@ -1,4 +1,7 @@
 
+INSERT OR ABORT INTO build_log (event)
+VALUES ('Adding colour pallet trigger to: {{table_name}}.');
+
 CREATE TRIGGER colour_pallete_insert_{{table_name}} AFTER INSERT ON colour_pallete
 BEGIN
     UPDATE {{table_name}}

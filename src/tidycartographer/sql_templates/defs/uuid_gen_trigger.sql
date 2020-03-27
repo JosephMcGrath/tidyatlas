@@ -1,3 +1,5 @@
+INSERT OR ABORT INTO build_log (event)
+VALUES ('Adding UUID generation trigger to: {{table_name}}.');
 
 CREATE TRIGGER {{table_name}}_uuid_insert AFTER INSERT ON {{table_name}}
 BEGIN
