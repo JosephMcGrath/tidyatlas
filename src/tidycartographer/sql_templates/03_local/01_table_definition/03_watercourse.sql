@@ -23,7 +23,7 @@
 
     {% include 'register_geom.sql' %}
     {% include '03_local/02_data_import/03_watercourse.sql' %}
-    {% include 'length_calc_trigger.sql' %}
+    {% include 'defs/length_calc_trigger.sql' %}
     {% include 'uuid_gen_trigger.sql' %}
 {% endwith %}
 {% endblock %}

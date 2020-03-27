@@ -31,7 +31,7 @@
 
     {% include 'register_geom.sql' %}
     {% include '05_detail/02_data_import/06_interior_feature.sql' %}
-    {% include 'length_calc_trigger.sql' %}
+    {% include 'defs/length_calc_trigger.sql' %}
     {% include 'defs/colour_management_trigger.sql' %}
     {% include 'uuid_gen_trigger.sql' %}
 
