@@ -11,7 +11,7 @@ CREATE TABLE {{table_name}}(
   , name TEXT NOT NULL UNIQUE
   , the_geom {{geom_type}} NOT NULL
 );
-    {% include 'register_geom.sql' %}
+    {% include 'defs/register_geom.sql' %}
 
 
 /*One-time regeneration of blocks on database creation*/

@@ -30,7 +30,7 @@
       , {% include 'defs/standard_cols.sql' %}
     );
 
-    {% include 'register_geom.sql' %}
+    {% include 'defs/register_geom.sql' %}
     {% include '05_detail/02_data_import/02_exterior_space.sql' %}
     {% include 'defs/area_calc_trigger.sql' %}
     {% include 'defs/colour_management_trigger.sql' %}

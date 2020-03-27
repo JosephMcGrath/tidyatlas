@@ -19,7 +19,7 @@
       , {% include 'defs/standard_cols.sql' %}
     );
 
-    {% include 'register_geom.sql' %}
+    {% include 'defs/register_geom.sql' %}
     {% include 'defs/uuid_gen_trigger.sql' %}
 
     /*Geometry creation SQL*/

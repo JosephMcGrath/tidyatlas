@@ -19,7 +19,7 @@
     CREATE INDEX detail_area_name_idx ON detail_area (name);
 
     {% with table_name='detail_area', geom_type='POLYGON', srid = local_datum %}
-    {% include 'register_geom.sql' %}
+    {% include 'defs/register_geom.sql' %}
     {% endwith %}
 
       CREATE TABLE detail_grid (
@@ -35,7 +35,7 @@
       );
 
       {% with table_name='detail_grid', geom_type='MULTIPOLYGON', srid = local_datum %}
-      {% include 'register_geom.sql' %}
+      {% include 'defs/register_geom.sql' %}
       {% endwith %}
 
     CREATE TRIGGER detail_area_insert AFTER INSERT ON detail_area

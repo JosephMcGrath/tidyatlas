@@ -8,7 +8,7 @@ CREATE TABLE {{table_name}} (
   , {% include 'defs/standard_cols.sql' %}
 );
 
-{% include 'register_geom.sql' %}
+{% include 'defs/register_geom.sql' %}
 {% include '03_local/02_data_import/13_local_area_bounds.sql' %}
 {% include 'defs/uuid_gen_trigger.sql' %}
 

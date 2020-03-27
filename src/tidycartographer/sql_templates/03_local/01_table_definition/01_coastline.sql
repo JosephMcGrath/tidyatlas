@@ -7,7 +7,7 @@
       , {% include 'defs/standard_cols.sql' %}
     );
 
-    {% include 'register_geom.sql' %}
+    {% include 'defs/register_geom.sql' %}
     {% include '03_local/02_data_import/01_coastline.sql' %}
     {% include 'defs/uuid_gen_trigger.sql' %}
 

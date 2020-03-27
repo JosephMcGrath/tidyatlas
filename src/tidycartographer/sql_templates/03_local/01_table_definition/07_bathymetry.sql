@@ -8,7 +8,7 @@
       , {% include 'defs/standard_cols.sql' %}
     );
 
-    {% include 'register_geom.sql' %}
+    {% include 'defs/register_geom.sql' %}
 
     /*Triggers to set Z values.*/
     CREATE TRIGGER {{table_name}}_insert AFTER INSERT ON {{table_name}}
@@ -34,7 +34,7 @@
       , {% include 'defs/standard_cols.sql' %}
     );
 
-    {% include 'register_geom.sql' %}
+    {% include 'defs/register_geom.sql' %}
     {% include '03_local/02_data_import/07_bathymetry.sql' %}
 
     /*Triggers to set Z values.*/

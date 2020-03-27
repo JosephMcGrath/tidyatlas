@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS template_geometry (
 );
 
 {% with table_name='template_geometry', geom_type='MULTIPOLYGON', srid = local_datum %}
-{% include 'register_geom.sql' %}
+{% include 'defs/register_geom.sql' %}
 {% endwith %}
 
 CREATE TRIGGER template_geometry_insert AFTER INSERT ON template_geometry
@@ -42,7 +42,7 @@ CREATE TABLE template_point (
 );
 
 {% with table_name='template_point', geom_type='POINT', srid = local_datum %}
-{% include 'register_geom.sql' %}
+{% include 'defs/register_geom.sql' %}
 {% endwith %}
 
 
@@ -57,7 +57,7 @@ CREATE TABLE templated (
 );
 
 {% with table_name='templated', geom_type='MULTIPOLYGON', srid = local_datum %}
-{% include 'register_geom.sql' %}
+{% include 'defs/register_geom.sql' %}
 {% endwith %}
 
 CREATE TRIGGER template_point_insert AFTER INSERT ON template_point

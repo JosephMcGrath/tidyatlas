@@ -9,6 +9,6 @@ CREATE TABLE {{table_name}} (
   , the_geom {{geom_type}}
 );
 
-{% include 'register_geom.sql' %}
+{% include 'defs/register_geom.sql' %}
 {% endwith %}
 {% endblock %}

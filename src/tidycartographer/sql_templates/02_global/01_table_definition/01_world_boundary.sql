@@ -7,7 +7,7 @@
       , the_geom POLYGON UNIQUE NOT NULL
     );
 
-    {% include 'register_geom.sql' %}
+    {% include 'defs/register_geom.sql' %}
     {% include 'defs/uuid_gen_trigger.sql' %}
 {% endwith %}
 {% endblock %}

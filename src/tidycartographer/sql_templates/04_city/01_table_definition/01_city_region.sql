@@ -26,7 +26,7 @@
       , {% include 'defs/standard_cols.sql' %}
     );
 
-    {% include 'register_geom.sql' %}
+    {% include 'defs/register_geom.sql' %}
     {% include '04_city/02_data_import/01_city_region.sql' %}
     {% include 'defs/area_calc_trigger.sql' %}
     {% include 'defs/uuid_gen_trigger.sql' %}

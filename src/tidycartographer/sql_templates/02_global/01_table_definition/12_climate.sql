@@ -36,7 +36,7 @@ CREATE TABLE {{table_name}} (
   , the_geom POLYGON UNIQUE NOT NULL
 );
 
-{% include 'register_geom.sql' %}
+{% include 'defs/register_geom.sql' %}
 {% include '02_global/02_data_import/12_climate.sql' %}
 {% include 'defs/uuid_gen_trigger.sql' %}
 {% endwith %}

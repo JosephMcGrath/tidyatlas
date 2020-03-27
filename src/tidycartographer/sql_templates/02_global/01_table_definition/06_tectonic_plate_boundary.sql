@@ -19,7 +19,7 @@
       , {% include 'defs/standard_cols.sql' %}
     );
 
-    {% include 'register_geom.sql' %}
+    {% include 'defs/register_geom.sql' %}
     {% include '02_global/02_data_import/06_tectonic_plate_boundary.sql' %}
     {% include 'defs/uuid_gen_trigger.sql' %}
 {% endwith %}
