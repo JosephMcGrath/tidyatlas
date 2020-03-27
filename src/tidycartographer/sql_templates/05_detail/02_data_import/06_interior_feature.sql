@@ -6,6 +6,6 @@ SELECT
     type, feature_width, colour_name, colour_primary_override, colour_secondary_override, colour_lightness, uuid, created, modified, the_geom
 FROM previous.{{table_name}};
 
-{% include 'colour_management_update.sql' %}
+{% include 'defs/colour_management_update.sql' %}
 
 {% endblock %}
