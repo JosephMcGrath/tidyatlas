@@ -24,6 +24,6 @@
     {% include 'register_geom.sql' %}
     {% include '03_local/02_data_import/05_road.sql' %}
     {% include 'defs/length_calc_trigger.sql' %}
-    {% include 'uuid_gen_trigger.sql' %}
+    {% include 'defs/uuid_gen_trigger.sql' %}
 {% endwith %}
 {% endblock %}

@@ -8,6 +8,6 @@
     );
 
     {% include 'register_geom.sql' %}
-    {% include 'uuid_gen_trigger.sql' %}
+    {% include 'defs/uuid_gen_trigger.sql' %}
 {% endwith %}
 {% endblock %}

@@ -17,7 +17,7 @@
     );
 
     {% include 'register_geom.sql' %}
-    {% include 'uuid_gen_trigger.sql' %}
+    {% include 'defs/uuid_gen_trigger.sql' %}
 
     /*Geometry creation SQL*/
     CREATE TRIGGER {{table_name}}_input_insert

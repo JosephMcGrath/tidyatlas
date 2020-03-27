@@ -15,7 +15,7 @@
     {% include 'register_geom.sql' %}
     {% include '03_local/02_data_import/10_political_region.sql' %}
     {% include 'defs/area_calc_trigger.sql' %}
-    {% include 'uuid_gen_trigger.sql' %}
+    {% include 'defs/uuid_gen_trigger.sql' %}
 
 {% endwith %}
 {% endfor %}

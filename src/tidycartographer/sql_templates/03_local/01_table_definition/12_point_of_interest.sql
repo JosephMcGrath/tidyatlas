@@ -32,7 +32,7 @@
 
     {% include 'register_geom.sql' %}
     {% include '03_local/02_data_import/12_point_of_interest.sql' %}
-    {% include 'uuid_gen_trigger.sql' %}
+    {% include 'defs/uuid_gen_trigger.sql' %}
 
 {% endwith %}
 {% endblock %}

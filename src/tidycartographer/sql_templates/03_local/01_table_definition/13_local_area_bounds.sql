@@ -10,7 +10,7 @@ CREATE TABLE {{table_name}} (
 
 {% include 'register_geom.sql' %}
 {% include '03_local/02_data_import/13_local_area_bounds.sql' %}
-{% include 'uuid_gen_trigger.sql' %}
+{% include 'defs/uuid_gen_trigger.sql' %}
 
 {% endwith %}
 {% endblock %}

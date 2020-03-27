@@ -20,7 +20,7 @@
 
     {% include 'register_geom.sql' %}
     {% include '02_global/02_data_import/04_tectonic_plate.sql' %}
-    {% include 'uuid_gen_trigger.sql' %}
+    {% include 'defs/uuid_gen_trigger.sql' %}
 
 {% endwith %}
 {% endblock %}

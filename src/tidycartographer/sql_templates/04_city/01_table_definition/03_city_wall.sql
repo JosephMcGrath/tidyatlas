@@ -21,7 +21,7 @@
 
     {% include 'register_geom.sql' %}
     {% include '04_city/02_data_import/03_city_wall.sql' %}
-    {% include 'uuid_gen_trigger.sql' %}
+    {% include 'defs/uuid_gen_trigger.sql' %}
 
 {% endwith %}
 {% endblock %}

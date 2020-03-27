@@ -10,6 +10,6 @@
 
     {% include 'register_geom.sql' %}
     {% include '02_global/02_data_import/11_prevailing_wind.sql' %}
-    {% include 'uuid_gen_trigger.sql' %}
+    {% include 'defs/uuid_gen_trigger.sql' %}
 {% endwith %}
 {% endblock %}

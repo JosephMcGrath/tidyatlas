@@ -14,7 +14,7 @@
 
     {% include 'register_geom.sql' %}
     {% include '05_detail/02_data_import/11_box_text.sql' %}
-    {% include 'uuid_gen_trigger.sql' %}
+    {% include 'defs/uuid_gen_trigger.sql' %}
 
 {% endwith %}
 {% endfor %}
