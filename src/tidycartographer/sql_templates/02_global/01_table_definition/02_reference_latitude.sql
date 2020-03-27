@@ -13,8 +13,7 @@
       , latitude REAL
       , label TEXT
       , category TEXT
-      , uuid TEXT NOT NULL
-      , the_geom LINESTRING NOT NULL
+      , {% include 'defs/standard_cols.sql' %}
     );
 
     {% include 'register_geom.sql' %}

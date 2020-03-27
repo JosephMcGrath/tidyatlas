@@ -1,6 +1,6 @@
 {% extends "base.sql" %}
 {% block content %}
-{% with geom_type='LINESTRING' %}
+{% with geom_type='POLYGON' %}
 {% for table_name in ["circulation_cell", "climate_zone"] %}
     CREATE TABLE {{ table_name }}_input (
         {% include 'defs/primary_key.sql' %}
@@ -16,8 +16,7 @@
       , max_latitude REAL
       , label TEXT
       , category TEXT
-      , uuid TEXT NOT NULL
-      , the_geom LINESTRING NOT NULL
+      , {% include 'defs/standard_cols.sql' %}
     );
 
     {% include 'register_geom.sql' %}
