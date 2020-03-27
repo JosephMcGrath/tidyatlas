@@ -1,8 +1,8 @@
 {% extends "import_data.sql" %}
 {% block import %}
-INSERT INTO tectonic_plate_movement
+INSERT INTO {{table_name}}
     (direction, uuid, created, modified, the_geom)
 SELECT
     direction, uuid, created, modified, the_geom
-FROM previous.tectonic_plate_movement;
+FROM previous.{{table_name}};
 {% endblock %}

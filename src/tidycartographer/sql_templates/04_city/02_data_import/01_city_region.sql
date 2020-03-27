@@ -1,9 +1,9 @@
 {% extends "import_data.sql" %}
 {% block import %}
 /*City Region*/
-INSERT INTO city_region
+INSERT INTO {{table_name}}
     (name, purpose, notes, colour, uuid, area, created, modified, the_geom)
 SELECT
     name, purpose, notes, colour, uuid, area, created, modified, the_geom
-FROM previous.city_region;
+FROM previous.{{table_name}};
 {% endblock %}

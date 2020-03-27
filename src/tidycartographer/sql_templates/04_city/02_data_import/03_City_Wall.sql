@@ -1,9 +1,9 @@
 {% extends "import_data.sql" %}
 {% block import %}
 /*City Wall*/
-INSERT INTO city_wall
+INSERT INTO {{table_name}}
     (class, uuid, created, modified, the_geom)
 SELECT
     class, uuid, created, modified, the_geom
-FROM previous.city_wall;
+FROM previous.{{table_name}};
 {% endblock %}
