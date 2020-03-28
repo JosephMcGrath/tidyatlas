@@ -55,12 +55,12 @@ class Builder:
         for item in self.config:
             if "floors" in item:
                 item["floors"] = [make_floor(n) for n in item["floors"]]
-            if "previous_db" in item:
+            if item.get("previous_db") is not None:
                 if not os.path.isabs(item["previous_db"]):
                     item["previous_db"] = os.path.join(
                         item["config_dir"], item["previous_db"]
                     )
-            if "dst_dir" in item:
+            if item.get("dst_dir") is not None:
                 if not os.path.isabs(item["dst_dir"]):
                     item["dst_dir"] = os.path.join(item["config_dir"], item["dst_dir"])
                 item["dst_path"] = os.path.join(item["dst_dir"], item["name"]) + ".sql"
@@ -84,6 +84,8 @@ class Builder:
 
     def backup(self):
         for x in self.config:
+            if x.get("previous_db") is None:
+                continue
             if not os.path.exists(x["previous_db"]):
                 continue
             self._backup_file(x["previous_db"], x["backup_dir"])
