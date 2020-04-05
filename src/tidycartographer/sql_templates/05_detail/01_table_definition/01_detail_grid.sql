@@ -1,5 +1,6 @@
 {% extends "base.sql" %}
 {% block content %}
+{% with table_name='detail_area', geom_type='MULTIPOLYGON', srid = local_datum %}
 /*TODO : part-scale grids for details (use Jinja loops).*/
 /*TODO : Parameterise table names here.*/
     CREATE TABLE detail_area (
@@ -155,4 +156,5 @@
     END;
 
     {% include '05_detail/02_data_import/01_detail_grid.sql' %}
+{% endwith %}
 {% endblock %}

@@ -3,4 +3,4 @@
 from .merge_database import Builder
 
 # Version of the tidycartographer package
-__version__ = "20.03.05"
+__version__ = "20.04.01"
